@@ -135,9 +135,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 732046671886911333, guid: 0305a4294eda88d46a01485874d38bdb, type: 2}
-  - {fileID: 7190214438434491697, guid: 63d58fe672629e041bee02cf88a2833a, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -655,11 +653,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HoloLen4Labs
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Petr Havel
+  metroCertificateIssuer: Petr Havel
+  metroCertificateNotAfter: 80f30a24d7dbda01
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: Hololens4Labs
