@@ -9,7 +9,10 @@ using System.Linq;
 using UnityEngine.Windows.WebCam;
 #endif
 
-namespace HoloLens4Labs.Scripts.Managers
+using HoloLens4Labs.Scripts.Managers;
+using HoloLens4Labs.Scripts.DTOs;
+
+namespace HoloLens4Labs.Scripts.Controllers
 {
     public class SceneController : MonoBehaviour
     {

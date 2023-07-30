@@ -1,7 +1,10 @@
 using Microsoft.WindowsAzure.Storage.Table;
 
-public class Experiment : TableEntity
+namespace HoloLens4Labs.Scripts.DTOs
 {
-    public string Name { get; set; }
+    public class Experiment : TableEntity
+    {
+        public string Name { get; set; }
 
+    }
 }

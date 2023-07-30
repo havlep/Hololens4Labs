@@ -1,7 +1,9 @@
 using Microsoft.WindowsAzure.Storage.Table;
 
-
-public class Photo : TableEntity{
+namespace HoloLens4Labs.Scripts.DTOs
+{
+    public class Photo : TableEntity
+    {
 
         public string Name { get; set; }
         public string Description { get; set; }
@@ -9,12 +11,12 @@ public class Photo : TableEntity{
 
 
         public Photo() { }
-    
+
         public Photo(string name)
         {
-           Name = name;
-           RowKey = name;
-         }
+            Name = name;
+            RowKey = name;
+        }
 
+    }
 }
-

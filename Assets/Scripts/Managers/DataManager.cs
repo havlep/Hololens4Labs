@@ -12,6 +12,9 @@ using UnityEngine.Events;
 using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole project
 
 
+using HoloLens4Labs.Scripts.DTOs;
+
+
 namespace HoloLens4Labs.Scripts.Managers
 {
     public class DataManager : MonoBehaviour
@@ -29,7 +32,7 @@ namespace HoloLens4Labs.Scripts.Managers
         [SerializeField]
         private string experimentsTableName = "experiments";
         [SerializeField]
-        private string photosTableName = "photos";
+        private string textLogsTableName = "textLogs";
         [SerializeField]
         private string partitionKey = "main";
         [SerializeField]
@@ -37,7 +40,7 @@ namespace HoloLens4Labs.Scripts.Managers
 
         [Header("Blob Settings")]
         [SerializeField]
-        private string blockBlobContainerName = "tracked-photos-thumbnails";
+        private string blockBlobContainerName = "tracked-textLogs-thumbnails";
         [SerializeField]
         private bool tryCreateBlobContainerOnStart = true;
 
@@ -50,7 +53,7 @@ namespace HoloLens4Labs.Scripts.Managers
         private CloudStorageAccount storageAccount;
         private CloudTableClient cloudTableClient;
         private CloudTable experimentsTable;
-        private CloudTable photosTable;
+        private CloudTable textLogsTable;
         private CloudBlobClient blobClient;
         private CloudBlobContainer blobContainer;
 
@@ -59,7 +62,8 @@ namespace HoloLens4Labs.Scripts.Managers
             storageAccount = CloudStorageAccount.Parse(connectionString);
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
-            photosTable = cloudTableClient.GetTableReference(photosTableName);
+            textLogsTable = cloudTableClient.GetTableReference(textLogsTableName);
+
             if (tryCreateTableOnStart)
             {
                 try
@@ -68,9 +72,9 @@ namespace HoloLens4Labs.Scripts.Managers
                     {
                         Debug.Log($"Created table {experimentsTableName}.");
                     }
-                    if (await photosTable.CreateIfNotExistsAsync())
+                    if (await textLogsTable.CreateIfNotExistsAsync())
                     {
-                        Debug.Log($"Created table {photosTableName}.");
+                        Debug.Log($"Created table {textLogsTableName}.");
                     }
                 }
                 catch (StorageException ex)
@@ -148,76 +152,77 @@ namespace HoloLens4Labs.Scripts.Managers
             return result.Result != null;
         }
 
+
         /// <summary>
-        /// Insert a new or update an PhotoExperiment instance on the table storage.
+        /// Insert a new or update an TextLogExperiment instance on the table storage.
         /// </summary>
-        /// <param name="photo">Instance to write or update.</param>
+        /// <param name="textLog">Instance to write or update.</param>
         /// <returns>Success result.</returns>
-        public async Task<bool> UploadOrUpdate(Photo photo)
+        public async Task<bool> UploadOrUpdate(TextLog textLog)
         {
-            if (string.IsNullOrWhiteSpace(photo.PartitionKey))
+            if (string.IsNullOrWhiteSpace(textLog.PartitionKey))
             {
-                photo.PartitionKey = partitionKey;
+                textLog.PartitionKey = partitionKey;
             }
 
-            var insertOrMergeOperation = TableOperation.InsertOrMerge(photo);
-            var result = await photosTable.ExecuteAsync(insertOrMergeOperation);
+            var insertOrMergeOperation = TableOperation.InsertOrMerge(textLog);
+            var result = await textLogsTable.ExecuteAsync(insertOrMergeOperation);
 
             return result.Result != null;
         }
 
         /// <summary>
-        /// Get all PhotoExperiments from the table.
+        /// Get all TextLogExperiments from the table.
         /// </summary>
-        /// <returns>List of all PhotoExperiments from table.</returns>
-        public async Task<List<Photo>> GetAllPhotos()
+        /// <returns>List of all TextLogExperiments from table.</returns>
+        public async Task<List<TextLog>> GetAllTextLogs()
         {
-            var query = new TableQuery<Photo>();
-            var segment = await photosTable.ExecuteQuerySegmentedAsync(query, null);
+            var query = new TableQuery<TextLog>();
+            var segment = await textLogsTable.ExecuteQuerySegmentedAsync(query, null);
 
             return segment.Results;
         }
 
         /// <summary>
-        /// Find a PhotoExperiment by a given Id (partition key).
+        /// Find a TextLogExperiment by a given Id (partition key).
         /// </summary>
         /// <param name="id">Id/Partition Key to search by.</param>
-        /// <returns>Found PhotoExperiment, null if nothing is found.</returns>
-        public async Task<Photo> FindPhotoById(string id)
+        /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
+        public async Task<TextLog> FindTextLogById(string id)
         {
-            var retrieveOperation = TableOperation.Retrieve<Photo>(partitionKey, id);
-            var result = await photosTable.ExecuteAsync(retrieveOperation);
-            var photo = result.Result as Photo;
+            var retrieveOperation = TableOperation.Retrieve<TextLog>(partitionKey, id);
+            var result = await textLogsTable.ExecuteAsync(retrieveOperation);
+            var textLog = result.Result as TextLog;
 
-            return photo;
+            return textLog;
         }
 
         /// <summary>
-        /// Find a PhotoExperiment by its name.
+        /// Find a TextLogExperiment by its name.
         /// </summary>
-        /// <param name="photoName">Name to search by.</param>
-        /// <returns>Found PhotoExperiment, null if nothing is found.</returns>
-        public async Task<Photo> FindPhotoByName(string photoName)
+        /// <param name="textLogName">Name to search by.</param>
+        /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
+        public async Task<TextLog> FindTextLogByName(string textLogName)
         {
-            var query = new TableQuery<Photo>().Where(
+            var query = new TableQuery<TextLog>().Where(
                 TableQuery.CombineFilters(
                     TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey),
                     TableOperators.And,
-                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, photoName)));
-            var segment = await photosTable.ExecuteQuerySegmentedAsync(query, null);
+                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, textLogName)));
+            var segment = await textLogsTable.ExecuteQuerySegmentedAsync(query, null);
 
             return segment.Results.FirstOrDefault();
         }
 
         /// <summary>
-        /// Delete a PhotoExperiment from the table.
+        /// Delete a TextLogExperiment from the table.
         /// </summary>
         /// <param name="instance">Object to delete.</param>
         /// <returns>Success result of deletion.</returns>
-        public async Task<bool> DeletePhoto(Photo instance)
+        public async Task<bool> DeleteTextLog(TextLog instance)
         {
             var deleteOperation = TableOperation.Delete(instance);
-            var result = await photosTable.ExecuteAsync(deleteOperation);
+            var result = await textLogsTable.ExecuteAsync(deleteOperation);
 
             return result.HttpStatusCode == (int)HttpStatusCode.OK;
         }
