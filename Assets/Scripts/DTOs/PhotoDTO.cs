@@ -2,7 +2,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace HoloLens4Labs.Scripts.DTOs
 {
-    public class Photo : TableEntity
+    public class PhotoDTO : TableEntity
     {
 
         public string Name { get; set; }
@@ -10,9 +10,9 @@ namespace HoloLens4Labs.Scripts.DTOs
         public string ThumbnailBlobName { get; set; }
 
 
-        public Photo() { }
+        public PhotoDTO() { }
 
-        public Photo(string name)
+        public PhotoDTO(string name)
         {
             Name = name;
             RowKey = name;

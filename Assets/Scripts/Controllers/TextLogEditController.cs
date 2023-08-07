@@ -1,4 +1,4 @@
-using System;
+using System.Threading.Tasks;
 using Microsoft.MixedReality.Toolkit.UI;
 using TMPro;
 using UnityEngine;
@@ -38,7 +38,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private Interactable[] buttons = default;
 
-        private TextLog textLog;
+        private TextLogDTO textLog;
 
         private void Awake()
         {
@@ -49,19 +49,12 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
 
-
-
-        private void Start()
-        {
-    
-        }
-
         /// <summary>
-        /// Init the menu with the given TextLog.
+        /// Init the menu with the given TextLogDTO.
         /// Should be called from the previous menu.
         /// </summary>
-        /// <param name="source">TextLog source</param>
-        public void Init(TextLog source)
+        /// <param name="source">TextLogDTO source</param>
+        public void Init(TextLogDTO source)
         {
             textLog = source;
             logNameLabel.SetText(textLog.Name);
@@ -74,7 +67,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Save changes for the TextLog into the azure table storage.
+        /// Save changes for the TextLogDTO into the azure table storage.
         /// </summary>
         public async void SaveChanges()
         {

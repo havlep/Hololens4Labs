@@ -13,6 +13,7 @@ using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole pr
 
 
 using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model;
 
 
 namespace HoloLens4Labs.Scripts.Managers
@@ -112,9 +113,9 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Get a experiment or create one if it does not exist.
         /// </summary>
         /// <returns>Experiment instance from database.</returns>
-        public async Task<Experiment> GetOrCreateExperiment()
+        public async Task<ExperimentDTO> GetOrCreateExperiment()
         {
-            var query = new TableQuery<Experiment>().Where(
+            var query = new TableQuery<ExperimentDTO>().Where(
                 TableQuery.CombineFilters(
                     TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey),
                     TableOperators.And,
@@ -127,7 +128,7 @@ namespace HoloLens4Labs.Scripts.Managers
                 return experiment;
             }
 
-            experiment = new Experiment()
+            experiment = new ExperimentDTO()
             {
                 Name = experimentName,
                 RowKey = experimentName,
@@ -144,7 +145,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// <summary>
         /// Update the experiment changes back to the table store;
         /// </summary>
-        public async Task<bool> UpdateExperiment(Experiment experiment)
+        public async Task<bool> UpdateExperiment(ExperimentDTO experiment)
         {
             var insertOrMergeOperation = TableOperation.InsertOrMerge(experiment);
             var result = await experimentsTable.ExecuteAsync(insertOrMergeOperation);
@@ -158,7 +159,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// </summary>
         /// <param name="textLog">Instance to write or update.</param>
         /// <returns>Success result.</returns>
-        public async Task<bool> UploadOrUpdate(TextLog textLog)
+        public async Task<bool> UploadOrUpdate(TextLogDTO textLog)
         {
             if (string.IsNullOrWhiteSpace(textLog.PartitionKey))
             {
@@ -175,9 +176,9 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Get all TextLogExperiments from the table.
         /// </summary>
         /// <returns>List of all TextLogExperiments from table.</returns>
-        public async Task<List<TextLog>> GetAllTextLogs()
+        public async Task<List<TextLogDTO>> GetAllTextLogs()
         {
-            var query = new TableQuery<TextLog>();
+            var query = new TableQuery<TextLogDTO>();
             var segment = await textLogsTable.ExecuteQuerySegmentedAsync(query, null);
 
             return segment.Results;
@@ -188,11 +189,11 @@ namespace HoloLens4Labs.Scripts.Managers
         /// </summary>
         /// <param name="id">Id/Partition Key to search by.</param>
         /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
-        public async Task<TextLog> FindTextLogById(string id)
+        public async Task<TextLogDTO> FindTextLogById(string id)
         {
-            var retrieveOperation = TableOperation.Retrieve<TextLog>(partitionKey, id);
+            var retrieveOperation = TableOperation.Retrieve<TextLogDTO>(partitionKey, id);
             var result = await textLogsTable.ExecuteAsync(retrieveOperation);
-            var textLog = result.Result as TextLog;
+            var textLog = result.Result as TextLogDTO;
 
             return textLog;
         }
@@ -202,9 +203,9 @@ namespace HoloLens4Labs.Scripts.Managers
         /// </summary>
         /// <param name="textLogName">Name to search by.</param>
         /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
-        public async Task<TextLog> FindTextLogByName(string textLogName)
+        public async Task<TextLogDTO> FindTextLogByName(string textLogName)
         {
-            var query = new TableQuery<TextLog>().Where(
+            var query = new TableQuery<TextLogDTO>().Where(
                 TableQuery.CombineFilters(
                     TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey),
                     TableOperators.And,
@@ -219,7 +220,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// </summary>
         /// <param name="instance">Object to delete.</param>
         /// <returns>Success result of deletion.</returns>
-        public async Task<bool> DeleteTextLog(TextLog instance)
+        public async Task<bool> DeleteTextLog(TextLogDTO instance)
         {
             var deleteOperation = TableOperation.Delete(instance);
             var result = await textLogsTable.ExecuteAsync(deleteOperation);

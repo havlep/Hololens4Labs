@@ -18,7 +18,7 @@ namespace HoloLens4Labs.Scripts.Controllers
     {
 
         public bool IsCameraActive { private set; get; }
-        public Experiment CurrentExperiment { get; private set; }
+        public ExperimentDTO CurrentExperiment { get; private set; }
 
         public DataManager DataManager => dataManager;
 

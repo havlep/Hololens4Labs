@@ -2,7 +2,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace HoloLens4Labs.Scripts.DTOs
 {
-    public class TextLog : TableEntity
+    public class TextLogDTO : TableEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -10,9 +10,9 @@ namespace HoloLens4Labs.Scripts.DTOs
         public string CreatedOn { get; set; }
         public string LastModifiedOn { get; set; }
 
-        public TextLog() { }
+        public TextLogDTO() { }
 
-        public TextLog(string name)
+        public TextLogDTO(string name)
         {
             Name = name;
             RowKey = name;
