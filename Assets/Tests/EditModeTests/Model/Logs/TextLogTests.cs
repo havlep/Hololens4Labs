@@ -12,7 +12,6 @@ public class TextLogTests
 {
 
     DateTime textDateTime;
-    TextData textData;
     Scientist scientist;
     Experiment experiment;
 
@@ -23,7 +22,6 @@ public class TextLogTests
         textDateTime = new DateTime(2022, 12, 25);
         scientist = new Scientist("Robert Oppenheimer");
         experiment = new Experiment("Trinity");
-        textData = new TextData(101, textDateTime, scientist, experiment, "Three quarks for master Mark");
 
 
     }
@@ -35,20 +33,22 @@ public class TextLogTests
     {
 
         var dateTime = new DateTime(2023, 1, 20);
-        var textLog = new TextLog(101, dateTime, scientist, experiment, textData);
+        var textLog = new TextLog(101, dateTime, scientist, experiment);
+        var textData = new TextData(101, textDateTime, scientist, textLog, "Three quarks for master Mark");
+        textLog.TextData = textData;
 
         try
         {
 
-            Assert.That(textLog.Id, Is.EqualTo(101));
-            Assert.That(textLog.Text, Is.EqualTo(textData));
-            Assert.That(textLog.DateTime, Is.EqualTo(dateTime));
+           Assert.That(textLog.Id, Is.EqualTo(101));
+           Assert.That(textLog.TextData, Is.EqualTo(textData));
+           Assert.That(textLog.DateTime, Is.EqualTo(dateTime));
 
         }
-        catch (Exception)
+        catch (Exception e)
         {
 
-            Assert.Fail();
+            Assert.Fail(e.ToString());
 
         }
 
@@ -58,12 +58,14 @@ public class TextLogTests
     [Test]
     public void OnlyTextInConstructor()
     {
-        var textLog = new TextLog(scientist, experiment, textData);
+        var textLog = new TextLog(scientist, experiment);
+        var textData = new TextData(101, textDateTime, scientist, textLog, "Three quarks for master Mark");
+        textLog.TextData = textData;
         var dateTime = DateTime.Now;
 
         try
         {
-            Assert.That(textLog.Text, Is.EqualTo(textData));
+            Assert.That(textLog.TextData, Is.EqualTo(textData));
             Assert.That(System.Math.Abs((dateTime - textLog.DateTime).Milliseconds), Is.LessThan(10));
 
         }
@@ -79,7 +81,9 @@ public class TextLogTests
     public void OnlyTextNoIdException()
     {
 
-        var textLog = new TextLog(scientist, experiment, textData);
+        var textLog = new TextLog(scientist, experiment);
+        var textData = new TextData(101, textDateTime, scientist, textLog, "Three quarks for master Mark");
+        textLog.TextData = textData;
         try
         {
             var i = textLog.Id;

@@ -1,4 +1,5 @@
 using Microsoft.WindowsAzure.Storage.Table;
+using System;
 
 namespace HoloLens4Labs.Scripts.DTOs
 {
@@ -6,7 +7,7 @@ namespace HoloLens4Labs.Scripts.DTOs
     {
 
         public string LogID { get; set; }
-        public string TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; }
         public string ExperimentID { get; set; }
         public string ScientistID { get; set; }
 

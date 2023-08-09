@@ -19,8 +19,10 @@ public class TextLogMapperTests
 
         experiment = new Experiment("Michelson-Morely");
         scientist = new Scientist("Albert A. Michelson");
-        data = new TextData(299792,new DateTime(1983,1,1),scientist, experiment,"To be or not to be");
-        textLog = new TextLog(31459, new DateTime(2031, 1, 1), scientist, experiment, data);
+    
+        textLog = new TextLog(31459, new DateTime(2031, 1, 1), scientist, experiment);
+        data = new TextData(299792, new DateTime(1983, 1, 1), scientist,textLog, "To be or not to be");
+        textLog.TextData = data;
 
     }
 
@@ -33,9 +35,10 @@ public class TextLogMapperTests
         Assert.IsNotNull(dto);
         Assert.AreEqual(textLog.Id.ToString(), dto.LogID);
         Assert.AreEqual(textLog.Id.ToString(), dto.TextLogID);
-        Assert.AreEqual(textLog.Text.Id.ToString(), dto.TextID);
+        Assert.AreEqual(textLog.TextData.Id.ToString(), dto.TextID);
 
     }
+
     [Test]
     public void CreateDTOTest()
     {

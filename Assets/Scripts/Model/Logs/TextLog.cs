@@ -13,29 +13,25 @@ namespace HoloLens4Labs.Scripts.Model.Logs
 
         private TextData text;
                 
-        public TextData Text
+        public TextData TextData
         {
             get => text;
+            set => text = value;
         }
 
 
-        public TextLog(Scientist createdBy, Experiment doneWithin, TextData textData) : base(createdBy, doneWithin)
-        {
-            text = textData;
-        }
+       
 
 
-        public TextLog(DateTime at, Scientist createdBy, Experiment doneWithin, TextData textData) : base(at,createdBy,doneWithin)
-        {
-            text = textData;
-        }
+        public TextLog(DateTime at, Scientist createdBy, Experiment doneWithin) : base(at,createdBy,doneWithin)
+        { }
+
+        public TextLog(int id, DateTime at, Scientist createdBy, Experiment doneWithin) : base(id, at, createdBy, doneWithin)
+        {}
+
+        public TextLog(Scientist createdBy, Experiment doneWithin) : base(createdBy, doneWithin)
+        { }
 
 
-
-        public TextLog(int id, DateTime at, Scientist createdBy, Experiment doneWithin, TextData textData) : base(id, at, createdBy, doneWithin)
-        {
-            text = textData;
-        }
-        
     }
 }

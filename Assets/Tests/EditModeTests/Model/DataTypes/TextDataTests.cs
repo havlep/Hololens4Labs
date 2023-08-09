@@ -1,24 +1,26 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
-using System.Security.Cryptography;
+using HoloLens4Labs.Scripts.Model.Logs;
 
 public class TextDataTests
 {
 
-    Experiment experiment;
+    Log textLog;
     Scientist scientist;
+    Experiment experiment;
 
     [SetUp]
     public void Init() {
 
-        experiment = new Experiment("Michelson-Morely");
+        experiment = new Experiment("Michelson-Morley");
+             
         scientist = new Scientist ("Albert A. Michelson");
-    
+        textLog = new TextLog(scientist, experiment);
+
+
     }
 
     // Test the basic full instatiation of a textData object when all variables are available
@@ -26,7 +28,7 @@ public class TextDataTests
     public void FullDefinitionConstructor()
     {
         var dateTime = new DateTime(2022,12, 25);
-        var textData = new TextData(101, dateTime, scientist, experiment , "Three quarks for master Mark");
+        var textData = new TextData(101, dateTime, scientist, textLog , "Three quarks for master Mark");
 
         try
         {
@@ -52,7 +54,7 @@ public class TextDataTests
     [Test]
     public void OnlyTextInConstructor()
     {
-        var textData = new TextData(scientist, experiment, "Three quarks for master Mark");
+        var textData = new TextData(scientist, textLog, "Three quarks for master Mark");
         var dateTime = DateTime.Now;
 
         try
@@ -73,7 +75,7 @@ public class TextDataTests
     public void OnlyTextNoIdException()
     {
 
-        var textData = new TextData(scientist, experiment, "Three quarks for master Mark");
+        var textData = new TextData(scientist, textLog, "Three quarks for master Mark");
         try
         {
             var i = textData.Id;

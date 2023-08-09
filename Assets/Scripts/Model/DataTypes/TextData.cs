@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using HoloLens4Labs.Scripts.Model.Logs;
 
 namespace HoloLens4Labs.Scripts.Model.DataTypes
 {
@@ -11,12 +9,12 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         private string text = String.Empty;
         public string Text { get => text; }
 
-        public TextData(Scientist createdBy, Experiment doneWithin, string textValue) : base(createdBy, doneWithin)
+        public TextData(Scientist createdBy, Log doneWithinLog, string textValue) : base(createdBy, doneWithinLog)
         {
             text = textValue;
         }
 
-        public TextData( int id, DateTime dateTime, Scientist createdBy, Experiment doneWithin, string textValue ) : base(id, dateTime, createdBy, doneWithin )
+        public TextData( int id, DateTime dateTime, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, dateTime, createdBy, doneWithinLog )
         {
             text = textValue;
         }
