@@ -56,6 +56,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <param name="source">TextLogDTO source</param>
         public void Init(TextLogDTO source)
         {
+
+            /*
             textLog = source;
             logNameLabel.SetText(textLog.Name);
             createdOnLabel.SetText(textLog.CreatedOn);
@@ -63,6 +65,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             lastModifiedLabel.SetText(textLog.LastModifiedOn);
             descriptionInputField.text = textLog.Description;
             SetButtonsInteractiveState(true);
+            */
 
         }
 
@@ -71,6 +74,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public async void SaveChanges()
         {
+            /*
             SetButtonsInteractiveState(false);
             textLog.Description = descriptionInputField.text;
             textLog.CreatedOn = createdOnLabel.text;
@@ -81,6 +85,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             var success = await sceneController.DataManager.UploadOrUpdate(textLog);
             messageLabel.text = success ? "Updated data in database." : "Failed to update database.";
             SetButtonsInteractiveState(true);
+            */
         }
         
 

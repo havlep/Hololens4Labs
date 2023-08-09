@@ -27,7 +27,7 @@ namespace HoloLens4Labs.Scripts.Managers
         [SerializeField]
         private string connectionString = default;
         [SerializeField]
-        private string experimentName = "MyAzurePowerToolsProject";
+        private string experimentName = "ExperimentDefault";
 
         [Header("Table Settings")]
         [SerializeField]
@@ -86,31 +86,12 @@ namespace HoloLens4Labs.Scripts.Managers
                 }
             }
 
-            blobClient = storageAccount.CreateCloudBlobClient();
-            blobContainer = blobClient.GetContainerReference(blockBlobContainerName);
-            if (tryCreateBlobContainerOnStart)
-            {
-                try
-                {
-                    if (await blobContainer.CreateIfNotExistsAsync())
-                    {
-                        Debug.Log($"Created container {blockBlobContainerName}.");
-                    }
-                }
-                catch (StorageException ex)
-                {
-                    Debug.LogError("Failed to connect with Azure Storage.\nIf you are running with the default storage emulator configuration, please make sure you have started the storage emulator.");
-                    Debug.LogException(ex);
-                    onDataManagerInitFailed?.Invoke();
-                }
-            }
-
             IsReady = true;
             onDataManagerReady?.Invoke();
         }
 
         /// <summary>
-        /// Get a experiment or create one if it does not exist.
+        /// Get an experiment or create one if it does not exist.
         /// </summary>
         /// <returns>Experiment instance from database.</returns>
         public async Task<ExperimentDTO> GetOrCreateExperiment()
@@ -155,7 +136,7 @@ namespace HoloLens4Labs.Scripts.Managers
 
 
         /// <summary>
-        /// Insert a new or update an TextLogExperiment instance on the table storage.
+        /// Insert a new or update a TextLog instance on the table storage.
         /// </summary>
         /// <param name="textLog">Instance to write or update.</param>
         /// <returns>Success result.</returns>
@@ -173,9 +154,9 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Get all TextLogExperiments from the table.
+        /// Get all TextLog from the table.
         /// </summary>
-        /// <returns>List of all TextLogExperiments from table.</returns>
+        /// <returns>List of all TextLog from table.</returns>
         public async Task<List<TextLogDTO>> GetAllTextLogs()
         {
             var query = new TableQuery<TextLogDTO>();
@@ -228,44 +209,5 @@ namespace HoloLens4Labs.Scripts.Managers
             return result.HttpStatusCode == (int)HttpStatusCode.OK;
         }
 
-        /// <summary>
-        /// Upload data to a blob.
-        /// </summary>
-        /// <param name="data">Data to upload.</param>
-        /// <param name="blobName">Name of the blob, ideally with file type.</param>
-        /// <returns>Uri to the blob.</returns>
-        public async Task<string> UploadBlob(byte[] data, string blobName)
-        {
-            var blockBlob = blobContainer.GetBlockBlobReference(blobName);
-            await blockBlob.UploadFromByteArrayAsync(data, 0, data.Length);
-
-            return blockBlob.Name;
-        }
-
-        /// <summary>
-        /// Download data from a blob.
-        /// </summary>
-        /// <param name="blobName">Name of the blob.</param>
-        /// <returns>Data as byte array.</returns>
-        public async Task<byte[]> DownloadBlob(string blobName)
-        {
-            var blockBlob = blobContainer.GetBlockBlobReference(blobName);
-            using (var stream = new MemoryStream())
-            {
-                await blockBlob.DownloadToStreamAsync(stream);
-                return stream.ToArray();
-            }
-        }
-
-        /// <summary>
-        /// Delete a blob if it exists.
-        /// </summary>
-        /// <param name="blobName">Name of the blob to delete.</param>
-        /// <returns>Success result of deletion.</returns>
-        public async Task<bool> DeleteBlob(string blobName)
-        {
-            var blockBlob = blobContainer.GetBlockBlobReference(blobName);
-            return await blockBlob.DeleteIfExistsAsync();
-        }
     }
 }
