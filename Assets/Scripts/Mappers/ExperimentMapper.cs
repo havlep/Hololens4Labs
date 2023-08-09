@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.DTOs;
 
-public class ExperimentMapper : MonoBehaviour
+namespace HoloLens4Labs.Scripts.Mappers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ExperimentMapper : MapperInterface<Experiment, ExperimentDTO, ExperimentDTO>
     {
-        
-    }
+        public ExperimentDTO CreateDTO(Experiment obj)
+        {
+            return ToDTO(obj);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public ExperimentDTO ToDTO(Experiment obj)
+        {
+            ExperimentDTO dto = new ExperimentDTO();
+
+            dto.ExperimentID   = obj.Id.ToString();
+            dto.Name = obj.Name;
+
+            return dto;
+
+        }
+
     }
 }

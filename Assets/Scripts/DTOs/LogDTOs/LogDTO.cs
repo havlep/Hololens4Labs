@@ -7,7 +7,7 @@ namespace HoloLens4Labs.Scripts.DTOs
     {
 
         public string LogID { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public DateTime DateTime { get; set; }
         public string ExperimentID { get; set; }
         public string ScientistID { get; set; }
 

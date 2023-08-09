@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.DTOs;
 
-public class ScientistMapper : MonoBehaviour
+namespace HoloLens4Labs.Scripts.Mappers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ScientistMapper : MapperInterface<Scientist, ScientistDTO, ScientistDTO>
     {
-        
-    }
+        public ScientistDTO CreateDTO(Scientist obj)
+        {
+            return ToDTO(obj);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public ScientistDTO ToDTO(Scientist obj)
+        {
+            ScientistDTO dto = new ScientistDTO();
+
+            dto.ScientistID   = obj.Id.ToString();
+            dto.Name = obj.Name;
+
+            return dto;
+
+        }
+
     }
 }
