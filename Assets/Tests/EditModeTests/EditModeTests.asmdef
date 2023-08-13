@@ -2,9 +2,9 @@
     "name": "EditModeTests",
     "rootNamespace": "",
     "references": [
-        "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Scripts"
+        "Scripts",
+        "UnityEngine.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
@@ -13,7 +13,10 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "nunit.framework.dll"
+        "nunit.framework.dll",
+        "Microsoft.WindowsAzure.Storage.dll",
+        "Moq.dll",
+        "Castle.Core.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [
