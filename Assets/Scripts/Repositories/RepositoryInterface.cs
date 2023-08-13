@@ -1,14 +1,16 @@
+using System.Threading.Tasks;
 
-namespace HoloLens4Labs.Scripts.Repositories { 
+namespace HoloLens4Labs.Scripts.Repositories
+{
 
 
-    public interface RepositoryInterface<DTO, CDTO> 
+    public interface RepositoryInterface<DTO, CDTO>
     {
 
-        public DTO Create(CDTO obj);
-        public DTO Update(DTO obj);
-        public bool Delete(DTO obj);
-        public DTO Read(int i);
+        public Task<DTO> Create(CDTO obj);
+        public Task<DTO> Update(DTO obj);
+        public Task<bool> Delete(DTO obj);
+        public Task<DTO> Read(int i);
 
     }
 }

@@ -1,6 +1,6 @@
 
 
-
+using System.Threading.Tasks;
 using HoloLens4Labs.Scripts.Repositories;
 using HoloLens4Labs.Scripts.Mappers;
 
@@ -22,7 +22,7 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
         }
 
-        public DTO Create(OBJ obj)
+        public Task<DTO> Create(OBJ obj)
         {
 
             CDTO cdto = _mapper.CreateDTO(obj);
@@ -31,21 +31,21 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
         }
 
-        public DTO Update(OBJ obj)
+        public Task<DTO> Update(OBJ obj)
         {
 
             return _repo.Update(_mapper.ToDTO(obj));
 
         }
 
-        public bool Delete(OBJ obj)
+        public Task<bool> Delete(OBJ obj)
         {
 
             return _repo.Delete(_mapper.ToDTO(obj));
 
         }
 
-        public DTO Read(int id)
+        public Task<DTO> Read(int id)
         {
 
             return _repo.Read(id);
