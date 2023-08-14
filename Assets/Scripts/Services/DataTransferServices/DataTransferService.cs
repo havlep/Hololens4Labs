@@ -31,7 +31,7 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
         }
 
-        public Task<DTO> Update(OBJ obj)
+        public Task<bool> Update(OBJ obj)
         {
 
             return _repo.Update(_mapper.ToDTO(obj));
@@ -45,7 +45,7 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
         }
 
-        public Task<DTO> Read(int id)
+        public Task<DTO> Read(string id)
         {
 
             return _repo.Read(id);
