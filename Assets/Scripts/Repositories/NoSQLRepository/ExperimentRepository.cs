@@ -17,6 +17,7 @@ namespace HoloLens4Labs.Scripts.Repositories
         /// <returns>Experiment instance from database.</returns>
         public override async Task<ExperimentDTO> Create(ExperimentDTO obj)
         {
+            
 
             // See if there is an experiment with a similiar id
             var query = new TableQuery<ExperimentDTO>().Where(
@@ -30,14 +31,20 @@ namespace HoloLens4Labs.Scripts.Repositories
             if (experiment != null)
             {
                 // Experiment with a given id already exists throw an exception
-                throw new ObjectDataBaseException("Object od given ID already exists");
+                throw new ObjectDataBaseException("Object of given ID already exists");
             }
 
             // Insert the object into the database
             var insertOrMergeOperation = TableOperation.InsertOrMerge(obj);
-            await this.table.ExecuteAsync(insertOrMergeOperation);
+            var res = await this.table.ExecuteAsync(insertOrMergeOperation);
+            
+            if (res.Result == null) {
 
-            return experiment;
+                throw new ObjectDataBaseException();
+
+            }
+
+            return (ExperimentDTO)res.Result;
 
         }
 
