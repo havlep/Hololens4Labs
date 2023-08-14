@@ -9,6 +9,6 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
     public class LogTransferService : DataTransferService<Log, LogDTO, LogDTO>
     {
-        LogTransferService(RepositoryInterface<LogDTO, LogDTO> repository, MapperInterface<Log, LogDTO, LogDTO> mapper) : base(repository, mapper) { }
+        public LogTransferService(RepositoryInterface<LogDTO, LogDTO> repository, MapperInterface<Log, LogDTO, LogDTO> mapper) : base(repository, mapper) { }
     }
 }

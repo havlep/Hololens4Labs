@@ -14,7 +14,9 @@ using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole pr
 
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model;
-
+using HoloLens4Labs.Scripts.Services.DataTransferServices;
+using HoloLens4Labs.Scripts.Repositories;
+using HoloLens4Labs.Scripts.Mappers;
 
 namespace HoloLens4Labs.Scripts.Managers
 {
@@ -33,7 +35,13 @@ namespace HoloLens4Labs.Scripts.Managers
         [SerializeField]
         private string experimentsTableName = "experiments";
         [SerializeField]
+        private string scientistsTableName = "scientists";
+        [SerializeField]
         private string textLogsTableName = "textLogs";
+        [SerializeField]
+        private string logsTableName = "logs";
+        [SerializeField]
+        private string textDataTableName = "textData";
         [SerializeField]
         private string partitionKey = "main";
         [SerializeField]
@@ -55,15 +63,29 @@ namespace HoloLens4Labs.Scripts.Managers
         private CloudTableClient cloudTableClient;
         private CloudTable experimentsTable;
         private CloudTable textLogsTable;
+        private CloudTable logsTable;
+        private CloudTable textDataTable;
+        private CloudTable scientistsTable;
+
         private CloudBlobClient blobClient;
         private CloudBlobContainer blobContainer;
+
+        private ExperimentTransferService experimentService;
+        private ScientistTransferService scientistService;
+        private TextDataTransferService textDataService;
+        private TextLogTransferService textLogService;
+        private LogTransferService logService;
+
 
         private async void Awake()
         {
             storageAccount = CloudStorageAccount.Parse(connectionString);
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
+            scientistsTable = cloudTableClient.GetTableReference(scientistsTableName);
             textLogsTable = cloudTableClient.GetTableReference(textLogsTableName);
+            textDataTable = cloudTableClient.GetTableReference(textDataTableName);
+            logsTable = cloudTableClient.GetTableReference(logsTableName);
 
             if (tryCreateTableOnStart)
             {
@@ -73,10 +95,23 @@ namespace HoloLens4Labs.Scripts.Managers
                     {
                         Debug.Log($"Created table {experimentsTableName}.");
                     }
+                    if (await scientistsTable.CreateIfNotExistsAsync())
+                    {
+                        Debug.Log($"Created table {scientistsTableName}.");
+                    }
                     if (await textLogsTable.CreateIfNotExistsAsync())
                     {
                         Debug.Log($"Created table {textLogsTableName}.");
                     }
+                    if (await logsTable.CreateIfNotExistsAsync())
+                    {
+                        Debug.Log($"Created table {logsTableName}.");
+                    }
+                    if (await textDataTable.CreateIfNotExistsAsync())
+                    {
+                        Debug.Log($"Created table {textDataTableName}.");
+                    }
+
                 }
                 catch (StorageException ex)
                 {
@@ -85,6 +120,15 @@ namespace HoloLens4Labs.Scripts.Managers
                     onDataManagerInitFailed?.Invoke();
                 }
             }
+
+            
+            // Setup the services that will be used to get data
+            experimentService = new ExperimentTransferService(new ExperimentRepository(experimentsTable, partitionKey), new ExperimentMapper());
+            scientistService = new ScientistTransferService(new ScientistRepository(scientistsTable, partitionKey), new ScientistMapper());
+            textDataService = new TextDataTransferService(new TextDataRepository(textDataTable, partitionKey), new TextDataMapper());
+            textLogService = new TextLogTransferService(new TextLogRepository(textLogsTable, partitionKey), new TextLogMapper());
+            logService = new LogTransferService(new LogRepository(logsTable,partitionKey), new LogMapper());
+
 
             IsReady = true;
             onDataManagerReady?.Invoke();

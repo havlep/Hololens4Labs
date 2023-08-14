@@ -16,9 +16,6 @@ using HoloLens4Labs.Scripts.Exceptions;
 using System.Net;
 using HoloLens4Labs.Tests;
 
-
-
-
 public class ExperimentRepositoryTests
 {
     public class CloudTableMock : CloudTable

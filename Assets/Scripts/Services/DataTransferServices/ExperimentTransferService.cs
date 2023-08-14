@@ -9,6 +9,6 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
     public class ExperimentTransferService : DataTransferService<Experiment, ExperimentDTO, ExperimentDTO>
     {
-        ExperimentTransferService(RepositoryInterface<ExperimentDTO, ExperimentDTO> repository, MapperInterface<Experiment, ExperimentDTO, ExperimentDTO> mapper) : base(repository, mapper) { }
+        public ExperimentTransferService(RepositoryInterface<ExperimentDTO, ExperimentDTO> repository, MapperInterface<Experiment, ExperimentDTO, ExperimentDTO> mapper) : base(repository, mapper) { }
     }
 }

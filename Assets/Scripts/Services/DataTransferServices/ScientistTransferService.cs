@@ -9,6 +9,6 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
     public class ScientistTransferService : DataTransferService<Scientist, ScientistDTO, ScientistDTO>
     {
-        ScientistTransferService(RepositoryInterface<ScientistDTO, ScientistDTO> repository, MapperInterface<Scientist, ScientistDTO, ScientistDTO> mapper) : base(repository, mapper) { }
+        public ScientistTransferService(RepositoryInterface<ScientistDTO, ScientistDTO> repository, MapperInterface<Scientist, ScientistDTO, ScientistDTO> mapper) : base(repository, mapper) { }
     }
 }

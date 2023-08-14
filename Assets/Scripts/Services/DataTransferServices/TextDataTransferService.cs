@@ -9,6 +9,6 @@ namespace HoloLens4Labs.Scripts.Services.DataTransferServices
 
     public class TextDataTransferService : DataTransferService<TextData, TextDataDTO, TextDataDTO>
     {
-       TextDataTransferService(RepositoryInterface<TextDataDTO, TextDataDTO> repository, MapperInterface<TextData, TextDataDTO, TextDataDTO> mapper): base(repository, mapper) { }
+       public TextDataTransferService(RepositoryInterface<TextDataDTO, TextDataDTO> repository, MapperInterface<TextData, TextDataDTO, TextDataDTO> mapper): base(repository, mapper) { }
     }
 }
