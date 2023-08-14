@@ -19,7 +19,7 @@ using HoloLens4Labs.Tests;
 
 
 
-public class ExperimentRepositoryTests
+public class TextLogRepositoryTests
 {
     public class CloudTableMock : CloudTable
     {
@@ -32,39 +32,38 @@ public class ExperimentRepositoryTests
     {
 
 
-        var experimentList = new List<ExperimentDTO>
+        var textLogList = new List<TextLogDTO>
         {
-            new ExperimentDTO {
-                Name = "experiment1",
-                ExperimentID = "135"
+            new TextLogDTO {
+                TextLogID = "135"
             }
         };
 
 
-        var constructorInfo = typeof(TableQuerySegment<ExperimentDTO>)
+        var constructorInfo = typeof(TableQuerySegment<TextLogDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
         .FirstOrDefault(c => c.GetParameters().Count() == 1);
 
         var mockQuerySegment = constructorInfo.Invoke(new object[] {
-            experimentList
-        }) as TableQuerySegment<ExperimentDTO>;
+            textLogList
+        }) as TableQuerySegment<TextLogDTO>;
 
         var mockTable = new Mock<CloudTableMock>();
         mockTable
-          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<ExperimentDTO>>(),
+          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<TextLogDTO>>(),
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
-        var experimentDto = new ExperimentDTO() {
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
+        var textLogDto = new TextLogDTO()
+        {
 
-            Name = "Experiment2",
-            ExperimentID ="246"
+            TextLogID ="246"
 
         };
 
         Assert.Throws<ObjectDataBaseException>(
-                          () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experimentDto)));
+                          () => UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Create(textLogDto)));
 
 
     }
@@ -73,32 +72,31 @@ public class ExperimentRepositoryTests
     public void CreateSuccessfull()
     {
 
-        var constructorInfo = typeof(TableQuerySegment<ExperimentDTO>)
+        var constructorInfo = typeof(TableQuerySegment<TextLogDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
         .FirstOrDefault(c => c.GetParameters().Count() == 1);
 
         var mockQuerySegment = constructorInfo.Invoke(new object[] {
-            new List<ExperimentDTO >()
-        }) as TableQuerySegment<ExperimentDTO>;
+            new List<TextLogDTO >()
+        }) as TableQuerySegment<TextLogDTO>;
 
         var mockTable = new Mock<CloudTableMock>();
         mockTable
-          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<ExperimentDTO>>(),
+          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<TextLogDTO>>(),
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
 
-        var experimentDto = new ExperimentDTO()
+        var textLogDto = new TextLogDTO()
         {
-
-            Name = "Experiment2",
-            ExperimentID ="2467"
+            TextLogID ="2467"
 
         };
 
-        var operationResult = new TableResult {
+        var operationResult = new TableResult
+        {
 
-            Result = experimentDto
+            Result = textLogDto
 
         };
 
@@ -106,13 +104,13 @@ public class ExperimentRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
 
         Assert.DoesNotThrow(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experimentDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Create(textLogDto)));
 
-        var result = UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experimentDto));
-        Assert.That(result, Is.EqualTo(experimentDto));
+        var result = UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Create(textLogDto));
+        Assert.That(result, Is.EqualTo(textLogDto));
 
     }
 
@@ -120,26 +118,25 @@ public class ExperimentRepositoryTests
     public void CreateOnSyncException()
     {
 
-        var constructorInfo = typeof(TableQuerySegment<ExperimentDTO>)
+        var constructorInfo = typeof(TableQuerySegment<TextLogDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
         .FirstOrDefault(c => c.GetParameters().Count() == 1);
 
         var mockQuerySegment = constructorInfo.Invoke(new object[] {
-           new List<ExperimentDTO>()
-         }) as TableQuerySegment<ExperimentDTO>;
+           new List<TextLogDTO>()
+         }) as TableQuerySegment<TextLogDTO>;
 
         var mockTable = new Mock<CloudTableMock>();
         mockTable
-          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<ExperimentDTO>>(),
+          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<TextLogDTO>>(),
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
 
-        var experimentDto = new ExperimentDTO()
+        var textLogDto = new TextLogDTO()
         {
 
-            Name = "Experiment2",
-            ExperimentID ="2467"
+            TextLogID ="2467"
 
         };
 
@@ -155,10 +152,10 @@ public class ExperimentRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experimentDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Create(textLogDto)));
 
 
     }
@@ -167,11 +164,10 @@ public class ExperimentRepositoryTests
     public void DeleteSuccess()
     {
 
-        var experimentDto = new ExperimentDTO()
+        var textLogDto = new TextLogDTO()
         {
 
-            Name = "Experiment",
-            ExperimentID ="2467",
+            TextLogID ="2467",
             RowKey = "id",
             PartitionKey = "l",
             ETag = "*"
@@ -191,8 +187,8 @@ public class ExperimentRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Delete(experimentDto));
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Delete(textLogDto));
         Assert.IsTrue(result);
 
     }
@@ -201,80 +197,79 @@ public class ExperimentRepositoryTests
     public void ReadSuccess()
     {
 
-        var experimentDTO = new ExperimentDTO
+        var textLogDTO = new TextLogDTO
         {
-            Name = "experiment1",
-            ExperimentID = "135"
+
+            TextLogID = "135"
         };
 
-        var experimentList = new List<ExperimentDTO>
+        var textLogList = new List<TextLogDTO>
         {
-            experimentDTO
+            textLogDTO
         };
 
-        var constructorInfo = typeof(TableQuerySegment<ExperimentDTO>)
+        var constructorInfo = typeof(TableQuerySegment<TextLogDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
         .FirstOrDefault(c => c.GetParameters().Count() == 1);
 
         var mockQuerySegment = constructorInfo.Invoke(new object[] {
-            experimentList
-        }) as TableQuerySegment<ExperimentDTO>;
+            textLogList
+        }) as TableQuerySegment<TextLogDTO>;
 
         var mockTable = new Mock<CloudTableMock>();
         mockTable
-          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<ExperimentDTO>>(),
+          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<TextLogDTO>>(),
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
 
-        var result = UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Read(experimentDTO.ExperimentID));
-        Assert.That(result, Is.EqualTo(experimentDTO));
+        var result = UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Read(textLogDTO.TextLogID));
+        Assert.That(result, Is.EqualTo(textLogDTO));
 
 
     }
     [Test]
     public void ReadDoesNotExistException()
     {
-        
-        var experimentDto = new ExperimentDTO()
+
+        var textLogDto = new TextLogDTO()
         {
 
-            Name = "Experiment2",
-            ExperimentID ="2467"
+            TextLogID ="2467"
 
         };
 
-        var constructorInfo = typeof(TableQuerySegment<ExperimentDTO>)
+        var constructorInfo = typeof(TableQuerySegment<TextLogDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
         .FirstOrDefault(c => c.GetParameters().Count() == 1);
 
         var mockQuerySegment = constructorInfo.Invoke(new object[] {
-           new List<ExperimentDTO>()
-         }) as TableQuerySegment<ExperimentDTO>;
+           new List<TextLogDTO>()
+         }) as TableQuerySegment<TextLogDTO>;
 
         var mockTable = new Mock<CloudTableMock>();
         mockTable
-          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<ExperimentDTO>>(),
+          .Setup(w => w.ExecuteQuerySegmentedAsync(It.IsAny<TableQuery<TextLogDTO>>(),
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
-                          () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Read(experimentDto.ExperimentID)));
+                          () => UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Read(textLogDto.TextLogID)));
 
     }
 
 
     [Test]
-    public void UpdateSuccessfull() {
+    public void UpdateSuccessfull()
+    {
 
-        var experimentDto = new ExperimentDTO()
+        var textLogDto = new TextLogDTO()
         {
 
-            Name = "Experiment",
-            ExperimentID ="2467",
+            TextLogID ="2467",
             RowKey = "id",
             PartitionKey = "l",
             ETag = "*"
@@ -284,7 +279,7 @@ public class ExperimentRepositoryTests
         var operationResult = new TableResult
         {
 
-           Result = experimentDto
+            Result = textLogDto
 
         };
 
@@ -294,8 +289,8 @@ public class ExperimentRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Update(experimentDto));
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Update(textLogDto));
         Assert.IsTrue(result);
 
     }
@@ -304,11 +299,10 @@ public class ExperimentRepositoryTests
     public void UpdateNotSuccessfull()
     {
 
-        var experimentDto = new ExperimentDTO()
+        var textLogDto = new TextLogDTO()
         {
 
-            Name = "Experiment",
-            ExperimentID ="2467",
+            TextLogID ="2467",
             RowKey = "id",
             PartitionKey = "l",
             ETag = "*"
@@ -328,8 +322,8 @@ public class ExperimentRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var experimentRepository = new ExperimentRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Update(experimentDto));
+        var textLogRepository = new TextLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => textLogRepository.Update(textLogDto));
         Assert.IsFalse(result);
 
     }

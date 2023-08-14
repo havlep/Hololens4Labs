@@ -6,7 +6,7 @@ namespace HoloLens4Labs.Scripts.DTOs
     public class TextDataDTO: TableEntity
     {
 
-        public string TextID { get; set; }
+        public string TextDataID { get; set; }
 
         
         public string ScientistID { get; set; }

@@ -34,7 +34,7 @@ public class TextDataMapperTests
         var dto = mapper.ToDTO(data);
 
         Assert.IsNotNull(dto);
-        Assert.AreEqual(data.Id.ToString(), dto.TextID);
+        Assert.AreEqual(data.Id.ToString(), dto.TextDataID);
         Assert.AreEqual(data.DoneWithinLogID.ToString(), dto.TextLogID); 
         Assert.AreEqual(data.Text, dto.Text);
         Assert.AreEqual(data.DateTime, dto.Created);
@@ -52,7 +52,7 @@ public class TextDataMapperTests
 
         Assert.IsNotNull(cdto);
         Assert.IsNotNull(dto);
-        Assert.AreEqual(cdto.TextID, dto.TextID);
+        Assert.AreEqual(cdto.TextDataID, dto.TextDataID);
         Assert.AreEqual(cdto.TextLogID, dto.TextLogID);
         Assert.AreEqual(cdto.Text, dto.Text);
         Assert.AreEqual(cdto.Created, dto.Created);

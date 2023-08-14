@@ -16,7 +16,7 @@ namespace HoloLens4Labs.Scripts.Mappers
         {
             TextDataDTO dto = new TextDataDTO();
 
-            dto.TextID = obj.Id.ToString();
+            dto.TextDataID = obj.Id.ToString();
             dto.TextLogID = obj.DoneWithinLogID.ToString();
             dto.ScientistID = obj.CreatedById.ToString();
             dto.Created = obj.DateTime;
