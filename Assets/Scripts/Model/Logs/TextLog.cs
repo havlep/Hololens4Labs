@@ -23,7 +23,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         public TextLog(DateTime at, Scientist createdBy, Experiment doneWithin) : base(at,createdBy,doneWithin)
         { }
 
-        public TextLog(int id, DateTime at, Scientist createdBy, Experiment doneWithin) : base(id, at, createdBy, doneWithin)
+        public TextLog(string id, DateTime at, Scientist createdBy, Experiment doneWithin) : base(id, at, createdBy, doneWithin)
         {}
 
         public TextLog(Scientist createdBy, Experiment doneWithin) : base(createdBy, doneWithin)

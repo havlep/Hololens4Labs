@@ -14,7 +14,7 @@ namespace HoloLens4Labs.Scripts.Mappers
         {
             ScientistDTO dto = new ScientistDTO();
 
-            dto.ScientistID   = obj.Id.ToString();
+            dto.ScientistID   = obj.Id;
             dto.Name = obj.Name;
 
             return dto;

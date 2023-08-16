@@ -14,10 +14,10 @@ public class TextDataTests
 
     [SetUp]
     public void Init() {
-
-        experiment = new Experiment("Michelson-Morley");
              
         scientist = new Scientist ("Albert A. Michelson");
+        experiment = new Experiment("Michelson-Morley", scientist);
+
         textLog = new TextLog(scientist, experiment);
 
 
@@ -28,12 +28,12 @@ public class TextDataTests
     public void FullDefinitionConstructor()
     {
         var dateTime = new DateTime(2022,12, 25);
-        var textData = new TextData(101, dateTime, scientist, textLog , "Three quarks for master Mark");
+        var textData = new TextData("101", dateTime, scientist, textLog , "Three quarks for master Mark");
 
         try
         {
 
-            Assert.That(textData.Id, Is.EqualTo(101));
+            Assert.That(textData.Id, Is.EqualTo("101"));
 
             Assert.That(textData.Text, Is.EqualTo("Three quarks for master Mark"));
 
@@ -71,20 +71,4 @@ public class TextDataTests
         }
     }
 
-    [Test]
-    public void OnlyTextNoIdException()
-    {
-
-        var textData = new TextData(scientist, textLog, "Three quarks for master Mark");
-        try
-        {
-            var i = textData.Id;
-            Assert.Fail();
-        }
-        catch (ObjectDataBaseException)
-        {
-            // Exception of correct type raised
-        }
-
-    }
 }

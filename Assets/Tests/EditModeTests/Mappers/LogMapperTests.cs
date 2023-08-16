@@ -14,9 +14,9 @@ public class LogMapperTests
     public void Init()
     {
 
-        experiment = new Experiment(12,"Michelson-Morely");
-        scientist = new Scientist(1,"Albert A. Michelson");
-        textLog = new TextLog(31459, new DateTime(2031, 2, 1), scientist, experiment);
+        scientist = new Scientist("1","Albert A. Michelson");
+        experiment = new Experiment("12","Michelson-Morely", scientist);
+        textLog = new TextLog("31459", new DateTime(2031, 2, 1), scientist, experiment);
 
     }
 

@@ -17,11 +17,11 @@ public class TextDataMapperTests
     public void Init()
     {
 
-        experiment = new Experiment(12,"Michelson-Morely");
-        scientist = new Scientist(11,"Albert A. Michelson");
+        scientist = new Scientist("11","Albert A. Michelson");
+        experiment = new Experiment("12","Michelson-Morely",scientist);
 
-        textLog = new TextLog(31459, new DateTime(2031, 1, 1), scientist, experiment);
-        data = new TextData(299792, new DateTime(1983, 1, 1), scientist, textLog, "To be or not to be");
+        textLog = new TextLog("31459", new DateTime(2031, 1, 1), scientist, experiment);
+        data = new TextData("299792", new DateTime(1983, 1, 1), scientist, textLog, "To be or not to be");
         textLog.TextData = data;
 
     }

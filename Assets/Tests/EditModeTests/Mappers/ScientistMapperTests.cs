@@ -11,7 +11,7 @@ public class ScientistMapperTests
     public void Init()
     {
 
-        scientist = new Scientist(12, "Michelson-Morely");
+        scientist = new Scientist("12", "Michelson-Morely");
 
 
     }

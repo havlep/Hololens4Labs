@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -17,6 +12,9 @@ using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Services.DataTransferServices;
 using HoloLens4Labs.Scripts.Repositories;
 using HoloLens4Labs.Scripts.Mappers;
+using HoloLens4Labs.Scripts.Model.Logs;
+using HoloLens4Labs.Scripts.Exceptions;
+using UnityEditor;
 
 namespace HoloLens4Labs.Scripts.Managers
 {
@@ -121,137 +119,158 @@ namespace HoloLens4Labs.Scripts.Managers
                 }
             }
 
-            
+
             // Setup the services that will be used to get data
             experimentService = new ExperimentTransferService(new ExperimentRepository(experimentsTable, partitionKey), new ExperimentMapper());
             scientistService = new ScientistTransferService(new ScientistRepository(scientistsTable, partitionKey), new ScientistMapper());
             textDataService = new TextDataTransferService(new TextDataRepository(textDataTable, partitionKey), new TextDataMapper());
             textLogService = new TextLogTransferService(new TextLogRepository(textLogsTable, partitionKey), new TextLogMapper());
-            logService = new LogTransferService(new LogRepository(logsTable,partitionKey), new LogMapper());
+            logService = new LogTransferService(new LogRepository(logsTable, partitionKey), new LogMapper());
 
 
             IsReady = true;
             onDataManagerReady?.Invoke();
+
         }
 
-        /// <summary>
-        /// Get an experiment or create one if it does not exist.
-        /// </summary>
-        /// <returns>Experiment instance from database.</returns>
-        public async Task<ExperimentDTO> GetOrCreateExperiment()
-        {
-            var query = new TableQuery<ExperimentDTO>().Where(
-                TableQuery.CombineFilters(
-                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey),
-                    TableOperators.And,
-                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, experimentName)));
-            var segment = await experimentsTable.ExecuteQuerySegmentedAsync(query, null);
 
-            var experiment = segment.Results.FirstOrDefault();
-            if (experiment != null)
+        public async Task<Experiment> CreateExperiment(Experiment experiment)
+        {
+
+            if(experiment.CreatedByID == string.Empty)
             {
-                return experiment;
+                if (experiment.CreatedBy != null)
+                    experiment.CreatedBy = await CreateScientist(experiment.CreatedBy);
+                else
+                    throw new ObjectNotInitializedException("Scientist not intialized for experiment");
             }
 
-            experiment = new ExperimentDTO()
-            {
-                Name = experimentName,
-                RowKey = experimentName,
-                PartitionKey = partitionKey,
-           
-            };
-
-            var insertOrMergeOperation = TableOperation.InsertOrMerge(experiment);
-            await experimentsTable.ExecuteAsync(insertOrMergeOperation);
-
+            var experimentDTO = await experimentService.Create(experiment);
+            experiment.Id = experimentDTO.ExperimentID;
             return experiment;
+
         }
 
-        /// <summary>
-        /// Update the experiment changes back to the table store;
-        /// </summary>
-        public async Task<bool> UpdateExperiment(ExperimentDTO experiment)
-        {
-            var insertOrMergeOperation = TableOperation.InsertOrMerge(experiment);
-            var result = await experimentsTable.ExecuteAsync(insertOrMergeOperation);
+        public async Task<bool> UpdateExperiment(Experiment experiment)
+        { 
+        
+            return await experimentService.Update(experiment);
 
-            return result.Result != null;
+        }
+
+        public async Task<Experiment> CreateOrUpdateExperiment(Experiment experiment)
+        {
+
+            if (experiment.Id == string.Empty)
+                await CreateExperiment(experiment);
+            
+            if(await UpdateExperiment(experiment))
+                return experiment;
+
+            return null;
+            
+        
+        }
+
+        public async Task<Scientist> CreateScientist(Scientist scientist)
+        {
+
+          
+            var scientistDTO = await scientistService.Create(scientist);
+            scientist.Id = scientistDTO.ScientistID;
+            return scientist;
+
+        }
+
+        public async Task<bool> UpdateScientist(Scientist scientist)
+        {
+
+            return await scientistService.Update(scientist);
+
+        }
+
+        public async Task<Scientist> CreateOrUpdateScientist(Scientist scientist)
+        {
+
+            if (scientist.Id == string.Empty)
+                await CreateScientist(scientist);
+
+            if (await UpdateScientist(scientist))
+                return scientist;
+
+            return null;
+
+
         }
 
 
-        /// <summary>
-        /// Insert a new or update a TextLog instance on the table storage.
-        /// </summary>
-        /// <param name="textLog">Instance to write or update.</param>
-        /// <returns>Success result.</returns>
-        public async Task<bool> UploadOrUpdate(TextLogDTO textLog)
+        public async Task<Log> CreateLog(Log log)
         {
-            if (string.IsNullOrWhiteSpace(textLog.PartitionKey))
+
+            var logDto = await logService.Create(log);
+            log.Id = logDto.LogID;
+
+            if (log is TextLog)
             {
-                textLog.PartitionKey = partitionKey;
+
+                var textLog = log as TextLog;
+                if (textLog.TextData != null)
+                {
+
+                    textLog.TextData.DoneWithinLog = textLog;
+                    textLog.TextData.Id = (await textDataService.Create(textLog.TextData)).TextDataID;
+
+                }
+
+                await textLogService.Create(textLog);
+                return log;
+
+            }
+            else {
+
+                throw new MissingComponentException();
+            
             }
 
-            var insertOrMergeOperation = TableOperation.InsertOrMerge(textLog);
-            var result = await textLogsTable.ExecuteAsync(insertOrMergeOperation);
-
-            return result.Result != null;
         }
 
-        /// <summary>
-        /// Get all TextLog from the table.
-        /// </summary>
-        /// <returns>List of all TextLog from table.</returns>
-        public async Task<List<TextLogDTO>> GetAllTextLogs()
+        public async Task<bool> UpdateLog(Log log)
         {
-            var query = new TableQuery<TextLogDTO>();
-            var segment = await textLogsTable.ExecuteQuerySegmentedAsync(query, null);
 
-            return segment.Results;
+            if (await logService.Update(log))
+            {
+                if (log is TextLog) { 
+
+                    var textLog = log as TextLog;
+                    return await textDataService.Update(textLog.TextData) &&  await textLogService.Update(textLog);
+
+                }
+                else
+                {
+
+                    throw new MissingComponentException();
+
+                }
+            }
+            return false;
+
         }
 
-        /// <summary>
-        /// Find a TextLogExperiment by a given Id (partition key).
-        /// </summary>
-        /// <param name="id">Id/Partition Key to search by.</param>
-        /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
-        public async Task<TextLogDTO> FindTextLogById(string id)
-        {
-            var retrieveOperation = TableOperation.Retrieve<TextLogDTO>(partitionKey, id);
-            var result = await textLogsTable.ExecuteAsync(retrieveOperation);
-            var textLog = result.Result as TextLogDTO;
+        public async Task<Log> CreateOrUpdateLog(Log log) { 
+        
+            if(log.Id == string.Empty)
+                return await CreateLog(log);
+            if (await UpdateLog(log))
+                return log;
+            return null;
 
-            return textLog;
         }
 
-        /// <summary>
-        /// Find a TextLogExperiment by its name.
-        /// </summary>
-        /// <param name="textLogName">Name to search by.</param>
-        /// <returns>Found TextLogExperiment, null if nothing is found.</returns>
-        public async Task<TextLogDTO> FindTextLogByName(string textLogName)
-        {
-            var query = new TableQuery<TextLogDTO>().Where(
-                TableQuery.CombineFilters(
-                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey),
-                    TableOperators.And,
-                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, textLogName)));
-            var segment = await textLogsTable.ExecuteQuerySegmentedAsync(query, null);
 
-            return segment.Results.FirstOrDefault();
-        }
+    
 
-        /// <summary>
-        /// Delete a TextLogExperiment from the table.
-        /// </summary>
-        /// <param name="instance">Object to delete.</param>
-        /// <returns>Success result of deletion.</returns>
-        public async Task<bool> DeleteTextLog(TextLogDTO instance)
-        {
-            var deleteOperation = TableOperation.Delete(instance);
-            var result = await textLogsTable.ExecuteAsync(deleteOperation);
 
-            return result.HttpStatusCode == (int)HttpStatusCode.OK;
-        }
+
 
     }
 }

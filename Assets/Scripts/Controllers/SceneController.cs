@@ -55,7 +55,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             if (CurrentExperiment == null)
             {
-                CurrentExperiment = await dataManager.GetOrCreateExperiment();
+               // CurrentExperiment = await dataManager.CreateExperiment();
             }
         }
 

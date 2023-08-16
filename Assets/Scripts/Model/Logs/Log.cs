@@ -8,7 +8,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
 {
     public abstract class Log 
     {
-        private int id = -1;
+        private string id = string.Empty;
         private DateTime dateTime;
         private Scientist scientist;
         private Experiment experiment;
@@ -17,7 +17,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         public Scientist CreatedBy { get => scientist; }
         public Experiment DoneWithin { get => experiment; }
 
-        public int Id { get => id < 0 ? throw new ObjectDataBaseException() : id; }
+        public string Id { get => id; set => id = value; }
 
         public Log(DateTime creationDateTime, Scientist createdBy, Experiment doneWithin) 
         {
@@ -26,7 +26,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
             this.dateTime = creationDateTime; 
         }
         public Log(Scientist createdBy, Experiment doneWithin) : this(DateTime.Now,createdBy,doneWithin) { }
-        public Log(int logId, DateTime creationDateTime, Scientist createdBy, Experiment doneWithin) : this (creationDateTime, createdBy, doneWithin)
+        public Log(string logId, DateTime creationDateTime, Scientist createdBy, Experiment doneWithin) : this (creationDateTime, createdBy, doneWithin)
         {
             id = logId;
         }

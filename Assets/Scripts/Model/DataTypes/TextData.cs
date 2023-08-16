@@ -14,7 +14,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
             text = textValue;
         }
 
-        public TextData( int id, DateTime dateTime, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, dateTime, createdBy, doneWithinLog )
+        public TextData( string id, DateTime dateTime, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, dateTime, createdBy, doneWithinLog )
         {
             text = textValue;
         }

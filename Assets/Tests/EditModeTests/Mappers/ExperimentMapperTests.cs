@@ -11,7 +11,7 @@ public class ExperimentMapperTests
     public void Init()
     {
 
-        experiment = new Experiment(12, "Michelson-Morely");
+        experiment = new Experiment("12", "Michelson-Morely","12");
 
 
     }

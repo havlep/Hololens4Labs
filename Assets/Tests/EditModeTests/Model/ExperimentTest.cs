@@ -14,14 +14,15 @@ public class ExperimentTest
     [Test]
     public void FullDefinitionConstructor()
     {
-        var experiment = new Experiment(22, "Trinity");
+        var experiment = new Experiment("22", "Trinity","99");
 
         try
         {
 
-            Assert.That(experiment.Id, Is.EqualTo(22));
+            Assert.That(experiment.Id, Is.EqualTo("22"));
             Assert.That(experiment.Name, Is.EqualTo("Trinity"));
-
+            Assert.That(experiment.CreatedByID, Is.EqualTo("99"));
+            Assert.That(experiment.CreatedBy, Is.EqualTo(null));
 
         }
         catch (Exception)
@@ -37,11 +38,15 @@ public class ExperimentTest
     [Test]
     public void OnlyNameInConstructor()
     {
-        var experiment = new Experiment("Trinity");
+        var scientist = new Scientist("21", "Rutherford");
+        var experiment = new Experiment("Trinity",scientist);
 
         try
         {
             Assert.That(experiment.Name, Is.EqualTo("Trinity"));
+            Assert.That(experiment.CreatedByID, Is.EqualTo("21"));
+            Assert.That(experiment.CreatedBy, Is.EqualTo(scientist));
+            Assert.That(experiment.Id, Is.EqualTo(string.Empty));
 
         }
         catch (Exception)
@@ -53,47 +58,5 @@ public class ExperimentTest
     }
 
 
-    [Test]
-    public void OnlyNameNoIdException()
-    {
-
-        var experiment = new Experiment("Trinity");
-        try
-        {
-            var i = experiment.Id;
-            Assert.Fail();
-        }
-        catch (ObjectDataBaseException)
-        {
-            // Exception of correct type raised
-        }
-
-    }
-
-    [Test]
-    public void NoIdOrNameExceptions()
-    {
-
-        var experiment = new Experiment();
-        try
-        {
-            var i = experiment.Id;
-            Assert.Fail();
-        }
-        catch (ObjectDataBaseException)
-        {
-            // Exception of correct type raised
-        }
-
-        try
-        {
-            var i = experiment.Name;
-            Assert.Fail();
-        }
-        catch (ObjectNotInitializedException)
-        {
-            // Exception of correct type raised
-        }
-
-    }
+    
 }
