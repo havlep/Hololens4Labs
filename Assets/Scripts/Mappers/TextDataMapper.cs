@@ -21,6 +21,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.ScientistID = obj.CreatedById;
             dto.Created = obj.CreatedOn;
             dto.Text = obj.Text;
+            dto.RowKey = obj.Id;
 
             return dto;
 

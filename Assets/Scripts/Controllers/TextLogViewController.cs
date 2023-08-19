@@ -34,6 +34,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private Interactable[] buttons = default;
 
+
         private TextLog textLog;
 
 
@@ -69,8 +70,15 @@ namespace HoloLens4Labs.Scripts.Controllers
             logNameLabel.SetText(textLog.Id);
             createdOnLabel.SetText(textLog.CreatedOn.ToShortTimeString());
             createdByLabel.SetText(textLog.CreatedBy.Name);
-            lastModifiedLabel.SetText(textLog.TextData.CreatedOn.ToShortTimeString());
-            descriptionInputField.text = textLog.TextData.Text;
+            if (textLog.TextData != null)
+            {
+                lastModifiedLabel.SetText(textLog.TextData.CreatedOn.ToShortTimeString());
+                descriptionInputField.text = textLog.TextData.Text;
+            }
+            else {
+                lastModifiedLabel.SetText(string.Empty);
+                descriptionInputField.text = string.Empty;
+            }
             SetButtonsInteractiveState(true);
 
         }

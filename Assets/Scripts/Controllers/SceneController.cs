@@ -10,7 +10,7 @@ using UnityEngine.Windows.WebCam;
 #endif
 
 using HoloLens4Labs.Scripts.Managers;
-using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
@@ -18,7 +18,8 @@ namespace HoloLens4Labs.Scripts.Controllers
     {
 
         public bool IsCameraActive { private set; get; }
-        public ExperimentDTO CurrentExperiment { get; private set; }
+        public Experiment CurrentExperiment { get; private set; }
+        public Scientist CurrentUser { get; private set; }
 
         public DataManager DataManager => dataManager;
 
@@ -53,9 +54,12 @@ namespace HoloLens4Labs.Scripts.Controllers
         // Should be called from DataManager ready callback to ensure DB is ready.
         public async void Init()
         {
+            CurrentUser = new Scientist("11","Rutherford");
+            await dataManager.CreateOrUpdateScientist(CurrentUser);
+
             if (CurrentExperiment == null)
             {
-               // CurrentExperiment = await dataManager.CreateExperiment();
+                CurrentExperiment = await dataManager.CreateOrUpdateExperiment(new Experiment("12", "Electron 1", CurrentUser));
             }
         }
 

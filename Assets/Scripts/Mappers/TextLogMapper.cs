@@ -18,6 +18,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.TextID = obj.TextData.Id;
             dto.LogID = obj.Id;
             dto.TextLogID = obj.Id;
+            dto.RowKey = obj.Id;
 
             return dto;
 

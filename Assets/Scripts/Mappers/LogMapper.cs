@@ -28,6 +28,8 @@ namespace HoloLens4Labs.Scripts.Mappers
                 throw new System.Exception("No yet implemented log type");
             
             }
+            dto.RowKey = dto.LogID;
+
 
             return dto;
 

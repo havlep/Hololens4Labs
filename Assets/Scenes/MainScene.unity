@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec75b2634850734b8f94ba1cd6a60d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionString: 
+  connectionString: DefaultEndpointsProtocol=https;AccountName=hololens4labsdev;AccountKey=5aGVTB0sWv1kSRQBzdRflqI8WXqz5rhdS21NDgeFLWll6WNU075vRfiMZulRi/65MCBS+7WBN4f4+AStfvGCiQ==;EndpointSuffix=core.windows.net
   experimentName: MyExperimentationSetup
   experimentsTableName: experiments
   scientistsTableName: scientists
@@ -1223,7 +1223,20 @@ MonoBehaviour:
   tryCreateBlobContainerOnStart: 1
   onDataManagerReady:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 300311138}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.SceneController,
+          Scripts
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDataManagerInitFailed:
     m_PersistentCalls:
       m_Calls: []
@@ -1387,19 +1400,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820117436947738420, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2820117436947738420, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2101367143}
     - target: {fileID: 2820117436947738420, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: CreateNewTextLog
       objectReference: {fileID: 0}
     - target: {fileID: 2820117436947738420, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: LogSelectionController, Scripts
       objectReference: {fileID: 0}
     - target: {fileID: 2820117436947738420, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -1440,3 +1453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d411c56afa4c93a4c99e3a1f0cbe5a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataManager: {fileID: 1048221456}
+  sceneController: {fileID: 300311138}
+  textLogViewPrefab: {fileID: 5227341890195094783, guid: ef7e5e96a999bea41a35da369bfb67e9, type: 3}
+  mainMenu: {fileID: 0}

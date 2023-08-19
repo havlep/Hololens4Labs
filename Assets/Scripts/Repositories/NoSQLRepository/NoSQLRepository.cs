@@ -21,6 +21,11 @@ namespace HoloLens4Labs.Scripts.Repositories
         public async Task<DTO> Create(DTO obj) {
 
             // If the object does not have a partiation key then create a new one
+            if (string.IsNullOrWhiteSpace(obj.PartitionKey))
+            {
+                obj.PartitionKey = partitionKey;
+            }
+
             if (obj.RowKey == string.Empty)
                 obj.RowKey = Guid.NewGuid().ToString();
 
@@ -73,6 +78,10 @@ namespace HoloLens4Labs.Scripts.Repositories
         }
         public async Task<bool> Delete(DTO obj) {
 
+            if (string.IsNullOrWhiteSpace(obj.PartitionKey))
+            {
+                obj.PartitionKey = partitionKey;
+            }
             var deleteOperation = TableOperation.Delete(obj);
             var result = await this.table.ExecuteAsync(deleteOperation);
 
@@ -81,6 +90,10 @@ namespace HoloLens4Labs.Scripts.Repositories
         }
         public async Task<bool> Update(DTO obj) {
 
+            if (string.IsNullOrWhiteSpace(obj.PartitionKey))
+            {
+                obj.PartitionKey = partitionKey;
+            }
             var insertOrMergeOperation = TableOperation.InsertOrMerge(obj);
             var result = await this.table.ExecuteAsync(insertOrMergeOperation);
 
