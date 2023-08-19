@@ -37,7 +37,7 @@ public class TextDataMapperTests
         Assert.AreEqual(data.Id.ToString(), dto.TextDataID);
         Assert.AreEqual(data.DoneWithinLogID.ToString(), dto.TextLogID); 
         Assert.AreEqual(data.Text, dto.Text);
-        Assert.AreEqual(data.DateTime, dto.Created);
+        Assert.AreEqual(data.CreatedOn, dto.Created);
         Assert.AreEqual(data.CreatedById.ToString(), dto.ScientistID);
 
     }

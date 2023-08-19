@@ -146,7 +146,7 @@ namespace HoloLens4Labs.Scripts.Managers
             }
 
             var experimentDTO = await experimentService.Create(experiment);
-            experiment.Id = experimentDTO.ExperimentID;
+            experiment.Id = experimentDTO.RowKey;
             return experiment;
 
         }

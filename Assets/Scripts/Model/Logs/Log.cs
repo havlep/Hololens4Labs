@@ -9,24 +9,25 @@ namespace HoloLens4Labs.Scripts.Model.Logs
     public abstract class Log 
     {
         private string id = string.Empty;
-        private DateTime dateTime;
+        private DateTime creationDateTime;
+   
         private Scientist scientist;
         private Experiment experiment;
 
-        public DateTime DateTime { get => dateTime; }
+        public DateTime CreatedOn { get => creationDateTime; }
         public Scientist CreatedBy { get => scientist; }
         public Experiment DoneWithin { get => experiment; }
 
         public string Id { get => id; set => id = value; }
 
-        public Log(DateTime creationDateTime, Scientist createdBy, Experiment doneWithin) 
+        public Log(DateTime createdOn, Scientist createdBy, Experiment doneWithin) 
         {
             this.scientist = createdBy;
             this.experiment = doneWithin;
-            this.dateTime = creationDateTime; 
+            this.creationDateTime = createdOn; 
         }
         public Log(Scientist createdBy, Experiment doneWithin) : this(DateTime.Now,createdBy,doneWithin) { }
-        public Log(string logId, DateTime creationDateTime, Scientist createdBy, Experiment doneWithin) : this (creationDateTime, createdBy, doneWithin)
+        public Log(string logId, DateTime createdOn, Scientist createdBy, Experiment doneWithin) : this (createdOn, createdBy, doneWithin)
         {
             id = logId;
         }

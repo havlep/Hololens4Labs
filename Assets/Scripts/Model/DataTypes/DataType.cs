@@ -20,17 +20,17 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         private string logID = string.Empty;
 
         public string Id { get => id; set => id = value; }
-        public DateTime DateTime { get => dateTime; }
+        public DateTime CreatedOn { get => dateTime; }
         public Scientist CreatedBy { get => scientist; set => scientist = value; }
         public Log DoneWithinLog { get => log; set => log = value; }
         public string CreatedById { get => scientist != null ? scientist.Id : scientistID == string.Empty ? throw new ObjectDataBaseException() : scientistID; }
         public string CreatedByName { get => scientist != null ? scientist.Name : scientistName == null ? throw new ObjectDataBaseException() : scientistName; }
         public string DoneWithinLogID { get => log != null ? log.Id : logID == string.Empty ? throw new ObjectDataBaseException() : logID; }
 
-        public DataType(string dataTypeId, DateTime creationTime, string createdById, string createdByName, string doneWithinLogId)
+        public DataType(string dataTypeId, DateTime createdOn, string createdById, string createdByName, string doneWithinLogId)
         {
 
-            this.dateTime = creationTime;
+            this.dateTime = createdOn;
             this.id = dataTypeId;
             this.scientistID = createdById;
             this.scientistName = createdByName;
@@ -38,15 +38,15 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
 
         }
 
-        public DataType(DateTime creationTime, Scientist createdBy, Log doneWithinLog) { 
-            this.dateTime = creationTime; 
+        public DataType(DateTime createdOn, Scientist createdBy, Log doneWithinLog) { 
+            this.dateTime = createdOn; 
             this.scientist = createdBy;
             this.log = doneWithinLog;
         }
 
         public DataType(Scientist createdBy, Log doneWithinLog): this(DateTime.Now, createdBy, doneWithinLog){ }
 
-        public DataType(string dataTypeId, DateTime creationTime, Scientist createdBy, Log doneWithinLog): this(creationTime, createdBy, doneWithinLog)
+        public DataType(string dataTypeId, DateTime createdOn, Scientist createdBy, Log doneWithinLog): this(createdOn, createdBy, doneWithinLog)
         { this.id = dataTypeId; }
 
     }

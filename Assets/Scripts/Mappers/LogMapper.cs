@@ -15,7 +15,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             LogDTO dto = new LogDTO();
 
             dto.LogID   = obj.Id;
-            dto.DateTime = obj.DateTime;
+            dto.DateTime = obj.CreatedOn;
             dto.ExperimentID = obj.DoneWithin.Id.ToString();
             dto.ScientistID = obj.CreatedBy.Id.ToString();
 

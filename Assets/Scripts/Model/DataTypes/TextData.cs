@@ -9,12 +9,12 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         private string text = String.Empty;
         public string Text { get => text; }
 
-        public TextData(Scientist createdBy, Log doneWithinLog, string textValue) : base(createdBy, doneWithinLog)
+        public TextData(DateTime createdOn, Scientist createdBy, Log doneWithinLog, string textValue) : base(createdOn, createdBy, doneWithinLog)
         {
             text = textValue;
         }
 
-        public TextData( string id, DateTime dateTime, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, dateTime, createdBy, doneWithinLog )
+        public TextData( string id, DateTime createdOn, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, createdOn, createdBy, doneWithinLog )
         {
             text = textValue;
         }

@@ -29,7 +29,7 @@ public class LogMapperTests
 
         Assert.IsNotNull(dto);
         Assert.AreEqual(textLog.Id.ToString(), dto.LogID);
-        Assert.AreEqual(textLog.DateTime, dto.DateTime);
+        Assert.AreEqual(textLog.CreatedOn, dto.DateTime);
         Assert.AreEqual(textLog.DoneWithin.Id.ToString(), dto.ExperimentID);
         Assert.AreEqual(textLog.CreatedBy.Id.ToString(), dto.ScientistID);
         Assert.AreEqual(textLog.Id.ToString(), dto.TextLogID);

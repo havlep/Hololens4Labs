@@ -4,6 +4,7 @@ using HoloLens4Labs.Scripts.Exceptions;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
+using System;
 
 namespace HoloLens4Labs.Scripts.Repositories
 {
@@ -19,6 +20,10 @@ namespace HoloLens4Labs.Scripts.Repositories
         }
         public async Task<DTO> Create(DTO obj) {
 
+            // If the object does not have a partiation key then create a new one
+            if (obj.RowKey == string.Empty)
+                obj.RowKey = Guid.NewGuid().ToString();
+
             // See if there is an experiment with a similiar id
             var query = new TableQuery<DTO>().Where(
             TableQuery.CombineFilters(
@@ -31,7 +36,7 @@ namespace HoloLens4Labs.Scripts.Repositories
             if (experiment != null)
             {
                 // Experiment with a given id already exists throw an exception
-                throw new ObjectDataBaseException("Object of given ID already exists");
+                throw new ObjectDataBaseException("Object of given ID" + this.partitionKey +" already exists");
             }
 
             // Insert the object into the database

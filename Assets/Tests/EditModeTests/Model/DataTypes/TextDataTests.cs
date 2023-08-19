@@ -37,7 +37,7 @@ public class TextDataTests
 
             Assert.That(textData.Text, Is.EqualTo("Three quarks for master Mark"));
 
-            Assert.That(textData.DateTime, Is.EqualTo(dateTime));
+            Assert.That(textData.CreatedOn, Is.EqualTo(dateTime));
 
 
         }
@@ -54,13 +54,14 @@ public class TextDataTests
     [Test]
     public void OnlyTextInConstructor()
     {
-        var textData = new TextData(scientist, textLog, "Three quarks for master Mark");
         var dateTime = DateTime.Now;
+        var textData = new TextData(dateTime, scientist, textLog, "Three quarks for master Mark");
+        
 
         try
         {
             Assert.That(textData.Text, Is.EqualTo("Three quarks for master Mark"));
-            Assert.That(System.Math.Abs((dateTime - textData.DateTime).Milliseconds), Is.LessThan(10));
+            Assert.That(System.Math.Abs((dateTime - textData.CreatedOn).Milliseconds), Is.LessThan(10));
 
         }
         catch (Exception)

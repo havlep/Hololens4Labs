@@ -13,7 +13,6 @@ namespace HoloLens4Labs.Scripts.Model {
         string id = string.Empty;
         string name = string.Empty;
 
-        // TODO throw exception if name is empty on get
         public string Name {
             get => name;
             set => name = value; 

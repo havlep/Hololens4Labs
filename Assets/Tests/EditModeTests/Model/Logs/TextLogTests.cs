@@ -42,7 +42,7 @@ public class TextLogTests
 
            Assert.That(textLog.Id, Is.EqualTo("101"));
            Assert.That(textLog.TextData, Is.EqualTo(textData));
-           Assert.That(textLog.DateTime, Is.EqualTo(dateTime));
+           Assert.That(textLog.CreatedOn, Is.EqualTo(dateTime));
 
         }
         catch (Exception e)
@@ -66,7 +66,7 @@ public class TextLogTests
         try
         {
             Assert.That(textLog.TextData, Is.EqualTo(textData));
-            Assert.That(System.Math.Abs((dateTime - textLog.DateTime).Milliseconds), Is.LessThan(10));
+            Assert.That(System.Math.Abs((dateTime - textLog.CreatedOn).Milliseconds), Is.LessThan(10));
 
         }
         catch (Exception)

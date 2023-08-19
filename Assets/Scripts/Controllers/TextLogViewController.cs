@@ -1,27 +1,23 @@
-using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.Model.DataTypes;
+using HoloLens4Labs.Scripts.Model.Logs;
 using Microsoft.MixedReality.Toolkit.UI;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
-using HoloLens4Labs.Scripts.DTOs;
-
 
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
-    /// <summary>
-    /// Handles UI/UX for creation of a new tracked object.
-    /// </summary>
-
-    public class TextLogEditController : MonoBehaviour
+    public class TextLogViewController : MonoBehaviour
     {
 
         [Header("Managers")]
         [SerializeField]
         private SceneController sceneController;
-        [Header("UI Elements")]
 
+        [Header("UI Elements")]
         [SerializeField]
         private TMP_Text logNameLabel = default;
         [SerializeField]
@@ -38,7 +34,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private Interactable[] buttons = default;
 
-        private TextLogDTO textLog;
+        private TextLog textLog;
+
 
         private void Awake()
         {
@@ -48,24 +45,33 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
         }
 
+        private void OnDisable()
+        {
+            sceneController.OpenMainMenu();
+        }
+
+        public void CloseCard()
+        {
+            sceneController.OpenMainMenu();
+            Destroy(gameObject);
+        }
+
 
         /// <summary>
         /// Init the menu with the given TextLogDTO.
         /// Should be called from the previous menu.
         /// </summary>
         /// <param name="source">TextLogDTO source</param>
-        public void Init(TextLogDTO source)
+        public void Init(TextLog source)
         {
 
-            /*
             textLog = source;
-            logNameLabel.SetText(textLog.Name);
-            createdOnLabel.SetText(textLog.CreatedOn);
-            createdByLabel.SetText(textLog.CreatedBy);
-            lastModifiedLabel.SetText(textLog.LastModifiedOn);
-            descriptionInputField.text = textLog.Description;
+            logNameLabel.SetText(textLog.Id);
+            createdOnLabel.SetText(textLog.CreatedOn.ToShortTimeString());
+            createdByLabel.SetText(textLog.CreatedBy.Name);
+            lastModifiedLabel.SetText(textLog.TextData.CreatedOn.ToShortTimeString());
+            descriptionInputField.text = textLog.TextData.Text;
             SetButtonsInteractiveState(true);
-            */
 
         }
 
@@ -74,20 +80,27 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public async void SaveChanges()
         {
-            /*
+            // TODO - createdBy should be changed to the current user 
+            textLog.TextData = new TextData(DateTime.Now, textLog.CreatedBy, textLog, descriptionInputField.text);
+
             SetButtonsInteractiveState(false);
-            textLog.Description = descriptionInputField.text;
-            textLog.CreatedOn = createdOnLabel.text;
-            textLog.CreatedBy = createdByLabel.text;
-            textLog.LastModifiedOn = lastModifiedLabel.text;
 
             messageLabel.text = "Updating data, please wait ...";
-            var success = await sceneController.DataManager.UploadOrUpdate(textLog);
-            messageLabel.text = success ? "Updated data in database." : "Failed to update database.";
+            try
+            {
+                var success = await sceneController.DataManager.CreateOrUpdateLog(textLog);
+                messageLabel.text = "Updated data in the database.";
+
+            }
+            catch (Exception e)  { 
+            
+                messageLabel.text = "Failed to update database." +  e.Message;
+            }
+     
+
             SetButtonsInteractiveState(true);
-            */
+
         }
-        
 
         private void SetButtonsInteractiveState(bool state)
         {
@@ -96,6 +109,7 @@ namespace HoloLens4Labs.Scripts.Controllers
                 interactable.IsEnabled = state;
             }
         }
-  
+
+
     }
 }
