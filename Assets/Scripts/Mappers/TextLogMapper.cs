@@ -24,5 +24,9 @@ namespace HoloLens4Labs.Scripts.Mappers
 
         }
 
+        public TextLog ToOBJ(TextLogDTO dto)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

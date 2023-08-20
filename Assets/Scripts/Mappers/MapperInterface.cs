@@ -5,5 +5,6 @@ namespace HoloLens4Labs.Scripts.Mappers {
        
         DTO ToDTO(OBJ obj);
         CDTO CreateDTO(OBJ obj);
+        OBJ ToOBJ(DTO dto);
     }
 }

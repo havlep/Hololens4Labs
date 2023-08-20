@@ -18,7 +18,7 @@ namespace HoloLens4Labs.Scripts.Model {
             set => name = value; 
         }
 
-        // TODO throw exception for negative value
+     
         public string Id { get => id; set => id = value; }
 
         public Scientist() { }

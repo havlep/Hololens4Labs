@@ -14,14 +14,17 @@ namespace HoloLens4Labs.Scripts.Mappers
         {
             ExperimentDTO dto = new ExperimentDTO();
 
-            dto.ExperimentID   = obj.Id;
+            dto.RowKey = dto.ExperimentID  = obj.Id;
             dto.Name = obj.Name;
             dto.ScientistsID = obj.CreatedByID;
-            dto.RowKey = obj.Id;
 
             return dto;
 
         }
 
+        public Experiment ToOBJ(ExperimentDTO dto)
+        {
+            return new Experiment(dto.RowKey, dto.Name, dto.ScientistsID);
+        }
     }
 }
