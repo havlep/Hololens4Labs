@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System;
 using System.Linq;
-
+using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {

@@ -4,7 +4,6 @@ using UnityEngine;
 using HoloLens4Labs.Scripts.Exceptions;
 using System.Threading.Tasks;
 using HoloLens4Labs.Scripts.DTOs;
-using HoloLens4Labs.Scripts.Services.DataTransferServices;
 
 namespace HoloLens4Labs.Scripts.Model {
 

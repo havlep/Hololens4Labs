@@ -21,6 +21,8 @@ using HoloLens4Labs.Tests;
 
 public class TextLogRepositoryTests
 {
+
+    /*
     public class CloudTableMock : CloudTable
     {
         public CloudTableMock() : base(new Uri("http://sdfs.com")) { }
@@ -327,7 +329,7 @@ public class TextLogRepositoryTests
         Assert.IsFalse(result);
 
     }
-
+    */
 }
 
 

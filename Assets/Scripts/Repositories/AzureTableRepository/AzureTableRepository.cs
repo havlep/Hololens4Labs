@@ -19,7 +19,7 @@ using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole pr
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
 
-    public class AzureTableRepository : MonoBehaviour
+    public class AzureTableRepository : MonoBehaviour, RepositoryInterface
     {
 
 
@@ -156,19 +156,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-        public async Task<Experiment> CreateOrUpdateExperiment(Experiment experiment)
-        {
-
-            if (experiment.Id == string.Empty)
-                await CreateExperiment(experiment);
-
-            if (await UpdateExperiment(experiment))
-                return experiment;
-
-            return null;
-
-
-        }
 
         public async Task<Scientist> CreateScientist(Scientist scientist)
         {
@@ -183,19 +170,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-        public async Task<Scientist> CreateOrUpdateScientist(Scientist scientist)
-        {
-
-            if (scientist.Id == string.Empty)
-                await CreateScientist(scientist);
-
-            if (await UpdateScientist(scientist))
-                return scientist;
-
-            return null;
-
-
-        }
 
         public async Task<Log> CreateLog(Log log)
         {
@@ -211,15 +185,20 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-        public async Task<Log> CreateOrUpdateLog(Log log)
+
+        public Task<bool> DeleteExperiment(Experiment experiment)
         {
+            throw new System.NotImplementedException();
+        }
 
-            if (log.Id == string.Empty)
-                return await CreateLog(log);
-            if (await UpdateLog(log))
-                return log;
-            return null;
+        public Task<bool> DeleteScientist(Scientist scientist)
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public Task<bool> DeleteLog(Log log)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

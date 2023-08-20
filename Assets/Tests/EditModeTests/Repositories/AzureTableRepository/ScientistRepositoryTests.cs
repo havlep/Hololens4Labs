@@ -15,10 +15,9 @@ using System.Collections.Generic;
 using HoloLens4Labs.Scripts.Exceptions;
 using System.Net;
 using HoloLens4Labs.Tests;
-
-
-
-
+using HoloLens4Labs.Scripts.Repositories.AzureTables;
+using HoloLens4Labs.Scripts.Model;
+using static UnityEngine.Networking.UnityWebRequest;
 
 public class ScientistRepositoryTests
 {
@@ -33,14 +32,18 @@ public class ScientistRepositoryTests
     {
 
 
-        var scientistList = new List<ScientistDTO>
+        var scientistdto = new ScientistDTO
         {
-            new ScientistDTO {
-                Name = "scientist1",
-                ScientistID = "135"
-            }
+            Name = "scientist1",
+            ScientistID = "135"
         };
 
+        var scientistList = new List<ScientistDTO>
+        {
+            scientistdto
+        };
+
+        var scientist = new Scientist(scientistdto.ScientistID, scientistdto.Name);
 
         var constructorInfo = typeof(TableQuerySegment<ScientistDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
@@ -56,17 +59,11 @@ public class ScientistRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
-        var scientistDto = new ScientistDTO()
-        {
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
 
-            Name = "Scientist2",
-            ScientistID ="246"
-
-        };
 
         Assert.Throws<ObjectDataBaseException>(
-                          () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientistDto)));
+                          () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientist)));
 
 
     }
@@ -94,9 +91,13 @@ public class ScientistRepositoryTests
         {
 
             Name = "Scientist2",
-            ScientistID ="2467"
+            ScientistID ="2467",
+            RowKey = "2467"
 
         };
+
+        var scientist = new Scientist(scientistDto.Name);
+
 
         var operationResult = new TableResult
         {
@@ -109,13 +110,15 @@ public class ScientistRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
 
         Assert.DoesNotThrow(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientistDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientist)));
 
-        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientistDto));
-        Assert.That(result, Is.EqualTo(scientistDto));
+        Scientist result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientist));
+        Assert.That(result.Id, Is.EqualTo(scientistDto.RowKey));
+        Assert.That(result.Name, Is.EqualTo(scientistDto.Name));
+
 
     }
 
@@ -137,7 +140,6 @@ public class ScientistRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-
         var scientistDto = new ScientistDTO()
         {
 
@@ -153,15 +155,17 @@ public class ScientistRepositoryTests
 
         };
 
+        var scientist = new Scientist("2467", "Scientist");
+
 
         mockTable
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientistDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Create(scientist)));
 
 
     }
@@ -170,16 +174,9 @@ public class ScientistRepositoryTests
     public void DeleteSuccess()
     {
 
-        var scientistDto = new ScientistDTO()
-        {
+       
+        var scientist = new Scientist("2467", "Scientist");
 
-            Name = "Scientist",
-            ScientistID ="2467",
-            RowKey = "id",
-            PartitionKey = "l",
-            ETag = "*"
-
-        };
 
         var operationResult = new TableResult
         {
@@ -194,8 +191,8 @@ public class ScientistRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Delete(scientistDto));
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Delete(scientist));
         Assert.IsTrue(result);
 
     }
@@ -204,11 +201,16 @@ public class ScientistRepositoryTests
     public void ReadSuccess()
     {
 
+        var scientist = new Scientist("2467", "Scientist");
+
         var scientistDTO = new ScientistDTO
         {
-            Name = "scientist1",
-            ScientistID = "135"
+            Name = scientist.Name,
+            ScientistID = scientist.Id,
+            RowKey = scientist.Id
         };
+
+
 
         var scientistList = new List<ScientistDTO>
         {
@@ -229,10 +231,11 @@ public class ScientistRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
 
         var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Read(scientistDTO.ScientistID));
-        Assert.That(result, Is.EqualTo(scientistDTO));
+        Assert.That(result.Id, Is.EqualTo(scientist.Id));
+        Assert.That(result.Name, Is.EqualTo(scientist.Name));
 
 
     }
@@ -262,7 +265,7 @@ public class ScientistRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
                           () => UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Read(scientistDto.ScientistID)));
@@ -285,6 +288,9 @@ public class ScientistRepositoryTests
 
         };
 
+
+        var scientist = new Scientist("2467", "Scientist");
+
         var operationResult = new TableResult
         {
 
@@ -298,8 +304,8 @@ public class ScientistRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Update(scientistDto));
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Update(scientist));
         Assert.IsTrue(result);
 
     }
@@ -319,6 +325,8 @@ public class ScientistRepositoryTests
 
         };
 
+        var scientist = new Scientist("2467", "Scientist");
+
         var operationResult = new TableResult
         {
 
@@ -332,8 +340,8 @@ public class ScientistRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var scientistRepository = new ScientistRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Update(scientistDto));
+        var scientistRepository = new ATScientistRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => scientistRepository.Update(scientist));
         Assert.IsFalse(result);
 
     }

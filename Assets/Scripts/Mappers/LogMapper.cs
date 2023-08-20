@@ -14,10 +14,11 @@ namespace HoloLens4Labs.Scripts.Mappers
         {
             LogDTO dto = new LogDTO();
 
-            dto.LogID   = obj.Id;
+            dto.LogID   = dto.RowKey = obj.Id;
             dto.DateTime = obj.CreatedOn;
             dto.ExperimentID = obj.DoneWithin.Id.ToString();
             dto.ScientistID = obj.CreatedBy.Id.ToString();
+            dto.ETag = "*";
 
             if (obj is TextLog)
             {
