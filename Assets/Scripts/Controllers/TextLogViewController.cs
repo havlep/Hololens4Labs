@@ -35,7 +35,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         private Interactable[] buttons = default;
 
 
-        private TextLog textLog;
+        private GameObject parentObject = default;
+        private TextLog textLog = default;
 
 
         private void Awake()
@@ -63,9 +64,9 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// Should be called from the previous menu.
         /// </summary>
         /// <param name="source">TextLogDTO source</param>
-        public void Init(TextLog source)
+        public void Init(TextLog source, GameObject parent)
         {
-
+            Debug.Log($"Initializing textlog");
             textLog = source;
             logNameLabel.SetText(textLog.Id);
             createdOnLabel.SetText(textLog.CreatedOn.ToShortTimeString());
@@ -79,6 +80,7 @@ namespace HoloLens4Labs.Scripts.Controllers
                 lastModifiedLabel.SetText(string.Empty);
                 descriptionInputField.text = string.Empty;
             }
+            parentObject = parent;
             SetButtonsInteractiveState(true);
 
         }
@@ -89,6 +91,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         public async void SaveChanges()
         {
             // TODO - createdBy should be changed to the current user 
+            Debug.Log($"Saving Log.");
             textLog.TextData = new TextData(DateTime.Now, textLog.CreatedBy, textLog, descriptionInputField.text);
 
             SetButtonsInteractiveState(false);
@@ -104,11 +107,12 @@ namespace HoloLens4Labs.Scripts.Controllers
             
                 messageLabel.text = "Failed to update database." +  e.Message;
             }
-     
 
-            SetButtonsInteractiveState(true);
+            parentObject.SetActive(true);
+            Destroy(gameObject);
 
         }
+
 
         private void SetButtonsInteractiveState(bool state)
         {
