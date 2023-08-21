@@ -16,7 +16,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         private Log log = null;
         private Scientist scientist = null;
         private string scientistID = string.Empty;
-        private string scientistName = null;
+        
         private string logID = string.Empty;
 
         public string Id { get => id; set => id = value; }
@@ -24,16 +24,16 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         public Scientist CreatedBy { get => scientist; set => scientist = value; }
         public Log DoneWithinLog { get => log; set => log = value; }
         public string CreatedById { get => scientist != null ? scientist.Id : scientistID == string.Empty ? throw new ObjectDataBaseException() : scientistID; }
-        public string CreatedByName { get => scientist != null ? scientist.Name : scientistName == null ? throw new ObjectDataBaseException() : scientistName; }
+      
         public string DoneWithinLogID { get => log != null ? log.Id : logID == string.Empty ? throw new ObjectDataBaseException() : logID; }
 
-        public DataType(string dataTypeId, DateTime createdOn, string createdById, string createdByName, string doneWithinLogId)
+        public DataType(string dataTypeId, DateTime createdOn, string createdById, string doneWithinLogId)
         {
 
             this.dateTime = createdOn;
             this.id = dataTypeId;
             this.scientistID = createdById;
-            this.scientistName = createdByName;
+            
             this.logID = doneWithinLogId;
 
         }

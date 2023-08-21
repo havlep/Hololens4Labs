@@ -12,11 +12,18 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         private DateTime creationDateTime;
    
         private Scientist scientist;
+        private string scientistID;
         private Experiment experiment;
+        private string experimentID;
 
         public DateTime CreatedOn { get => creationDateTime; }
         public Scientist CreatedBy { get => scientist; }
+
+        public string CreatedByID { get => scientist != null ? scientist.Id : scientistID; }
+
+
         public Experiment DoneWithin { get => experiment; }
+        public string DoneWithinID { get => experiment != null ? experiment.Id : experimentID; }
 
         public string Id { get => id; set => id = value; }
 
@@ -31,6 +38,15 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         {
             id = logId;
         }
+
+        public Log(string logId, DateTime createdOn, string createdByID, string doneWithinID)
+        {
+            id = logId;
+            creationDateTime = createdOn;
+            scientistID = createdByID;
+            experimentID = doneWithinID;
+        }
+
 
     }
 }

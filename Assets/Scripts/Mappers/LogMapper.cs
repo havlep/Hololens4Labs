@@ -1,5 +1,6 @@
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model.DataTypes;
 
 namespace HoloLens4Labs.Scripts.Mappers
 {
@@ -14,22 +15,32 @@ namespace HoloLens4Labs.Scripts.Mappers
         {
             LogDTO dto = new LogDTO();
 
-            dto.LogID   = dto.RowKey = obj.Id;
+            dto.RowKey = obj.Id;
             dto.DateTime = obj.CreatedOn;
-            dto.ExperimentID = obj.DoneWithin.Id.ToString();
-            dto.ScientistID = obj.CreatedBy.Id.ToString();
+            dto.ExperimentID = obj.DoneWithin.Id;
+            dto.ScientistID = obj.CreatedBy.Id;
             dto.ETag = "*";
 
             if (obj is TextLog)
             {
-                dto.TextLogID = obj.Id.ToString();
+                var textLog = (TextLog)obj;
+
+                dto.TextLogID = textLog.Id;
+                if (textLog.TextData != null)
+                {
+                    dto.TextID = textLog.TextData.Id;
+                    dto.DataDateTime = textLog.TextData.CreatedOn;
+                    dto.DataScientistID = textLog.TextData.CreatedById;
+                    dto.Text = textLog.TextData.Text;
+                }
+
             }
             else {
 
-                throw new System.Exception("No yet implemented log type");
+                throw new System.NotImplementedException("No yet implemented log type");
             
             }
-            dto.RowKey = dto.LogID;
+            
 
 
             return dto;
@@ -38,7 +49,22 @@ namespace HoloLens4Labs.Scripts.Mappers
 
         public Log ToOBJ(LogDTO dto)
         {
-            throw new System.NotImplementedException();
+            if (dto.TextLogID != null)
+            {
+
+                TextData data = null;
+                if(dto.TextID != null)    
+                    data = new TextData(dto.TextID, dto.DataDateTime, dto.DataScientistID, dto.RowKey ,dto.Text );
+
+                TextLog textLog = new TextLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
+
+                return textLog;
+
+
+            }
+            else {
+                throw new System.NotImplementedException("No yet implemented log type");
+            }
         }
     }
 }

@@ -15,17 +15,37 @@ using System.Collections.Generic;
 using HoloLens4Labs.Scripts.Exceptions;
 using System.Net;
 using HoloLens4Labs.Tests;
-
-
-
+using HoloLens4Labs.Scripts.Repositories.AzureTables;
+using HoloLens4Labs.Scripts.Model.Logs;
+using HoloLens4Labs.Scripts.Model.DataTypes;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.Mappers;
 
 public class LogRepositoryTests
 {
-    /*
+
+
+    TextLog log = default;
+    TextData data = default;
+    Scientist scientist = default;
+    Experiment experiment = default;
+    LogMapper mapper = default;
+
     public class CloudTableMock : CloudTable
     {
         public CloudTableMock() : base(new Uri("http://sdfs.com")) { }
 
+    }
+
+    [SetUp]
+    public void init() {
+
+        scientist = new Scientist("12", "Galileo");
+        experiment = new Experiment("13", "Gravity", "12");
+        log = new TextLog (scientist, experiment);
+        data = new TextData("14", DateTime.Now, scientist,log, "Feathers and weights have a different acceleration");
+        mapper = new LogMapper();
+    
     }
 
     [Test]
@@ -33,11 +53,16 @@ public class LogRepositoryTests
     {
 
 
+        var logDto = new LogDTO()
+        {
+
+            RowKey = log.Id
+
+        };
+
         var logList = new List<LogDTO>
         {
-            new LogDTO {
-                LogID = "135"
-            }
+            logDto
         };
 
 
@@ -55,16 +80,11 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
-        var logDto = new LogDTO()
-        {
-
-            LogID ="246"
-
-        };
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
+ 
 
         Assert.Throws<ObjectDataBaseException>(
-                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(logDto)));
+                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
 
 
     }
@@ -88,11 +108,7 @@ public class LogRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
 
-        var logDto = new LogDTO()
-        {
-            LogID ="2467"
-
-        };
+        var logDto = mapper.ToDTO(log);
 
         var operationResult = new TableResult
         {
@@ -105,13 +121,17 @@ public class LogRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
 
         Assert.DoesNotThrow(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(logDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
 
-        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(logDto));
-        Assert.That(result, Is.EqualTo(logDto));
+        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log));
+        
+        // TODO 
+        Assert.That(result.Id, Is.EqualTo(logDto.RowKey));
+        Assert.That(result.CreatedByID, Is.EqualTo(logDto.ScientistID));
+        Assert.That(result.CreatedOn, Is.EqualTo(logDto.DateTime));
 
     }
 
@@ -137,7 +157,7 @@ public class LogRepositoryTests
         var logDto = new LogDTO()
         {
 
-            LogID ="2467"
+            RowKey ="2467"
 
         };
 
@@ -153,10 +173,10 @@ public class LogRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
-                         () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(logDto)));
+                         () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
 
 
     }
@@ -168,8 +188,7 @@ public class LogRepositoryTests
         var logDto = new LogDTO()
         {
 
-            LogID ="2467",
-            RowKey = "id",
+            RowKey ="2467",
             PartitionKey = "l",
             ETag = "*"
 
@@ -188,8 +207,8 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Delete(logDto));
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Delete(log));
         Assert.IsTrue(result);
 
     }
@@ -198,12 +217,10 @@ public class LogRepositoryTests
     public void ReadSuccess()
     {
 
-        var logDTO = new LogDTO
-        {
- 
-            LogID = "135"
-        };
+        var logDTO = mapper.ToDTO(log);
 
+        logDTO.RowKey = "135";
+   
         var logList = new List<LogDTO>
         {
             logDTO
@@ -223,11 +240,14 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
 
-        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDTO.LogID));
-        Assert.That(result, Is.EqualTo(logDTO));
+        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDTO.RowKey));
 
+        // TODO 
+        Assert.That(result.Id, Is.EqualTo(logDTO.RowKey));
+        Assert.That(result.CreatedByID, Is.EqualTo(logDTO.ScientistID));
+        Assert.That(result.CreatedOn, Is.EqualTo(logDTO.DateTime));
 
     }
     [Test]
@@ -237,7 +257,7 @@ public class LogRepositoryTests
         var logDto = new LogDTO()
         {
 
-            LogID ="2467"
+            RowKey ="2467"
 
         };
 
@@ -255,10 +275,10 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
 
         Assert.Throws<ObjectDataBaseException>(
-                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDto.LogID)));
+                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDto.RowKey)));
 
     }
 
@@ -270,8 +290,7 @@ public class LogRepositoryTests
         var logDto = new LogDTO()
         {
 
-            LogID ="2467",
-            RowKey = "id",
+            RowKey ="2467",
             PartitionKey = "l",
             ETag = "*"
 
@@ -290,8 +309,8 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(logDto));
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(log));
         Assert.IsTrue(result);
 
     }
@@ -300,15 +319,6 @@ public class LogRepositoryTests
     public void UpdateNotSuccessfull()
     {
 
-        var logDto = new LogDTO()
-        {
-
-            LogID ="2467",
-            RowKey = "id",
-            PartitionKey = "l",
-            ETag = "*"
-
-        };
 
         var operationResult = new TableResult
         {
@@ -323,12 +333,12 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new LogRepository(mockTable.Object, "l");
-        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(logDto));
+        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(log));
         Assert.IsFalse(result);
 
     }
-    */
+    
 
 }
 
