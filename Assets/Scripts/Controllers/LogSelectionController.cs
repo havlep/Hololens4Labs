@@ -38,8 +38,7 @@ public class LogSelectionController : MonoBehaviour
 
     public void CreateNewTextLog() {
 
-
-                var textLogView =  Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
+        var textLogView =  Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
         var textLog = new TextLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment  );
         textLogView.Init(textLog, gameObject);
         gameObject.SetActive(false);

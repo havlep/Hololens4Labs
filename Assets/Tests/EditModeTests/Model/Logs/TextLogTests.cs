@@ -54,7 +54,7 @@ public class TextLogTests
 
     }
 
-    // Test the basic full instatiation of a textLog object when all variables are available
+    // Test the basic full instatiation of a log object when all variables are available
     [Test]
     public void OnlyTextInConstructor()
     {

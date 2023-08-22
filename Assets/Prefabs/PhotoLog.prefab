@@ -5494,7 +5494,7 @@ GameObject:
   - component: {fileID: 1818443554742764195}
   - component: {fileID: 4427581483838422879}
   m_Layer: 0
-  m_Name: ImageLog
+  m_Name: PhotoLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
