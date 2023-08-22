@@ -1210,18 +1210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec75b2634850734b8f94ba1cd6a60d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionString: DefaultEndpointsProtocol=https;AccountName=hololens4labsdev;AccountKey=5aGVTB0sWv1kSRQBzdRflqI8WXqz5rhdS21NDgeFLWll6WNU075vRfiMZulRi/65MCBS+7WBN4f4+AStfvGCiQ==;EndpointSuffix=core.windows.net
-  experimentName: MyExperimentationSetup
-  experimentsTableName: experiments
-  scientistsTableName: scientists
-  textLogsTableName: textLogs
-  logsTableName: logs
-  textDataTableName: textData
-  partitionKey: main
-  tryCreateTableOnStart: 1
-  blockBlobContainerName: tracked-photos-thumbnails
-  tryCreateBlobContainerOnStart: 1
-  onDataManagerReady:
+  repositoryObject: {fileID: 1052920035}
+  onRepoReadyReady:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 300311138}
@@ -1237,9 +1227,79 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDataManagerInitFailed:
+--- !u!1 &1052920035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052920037}
+  - component: {fileID: 1052920036}
+  m_Layer: 0
+  m_Name: AzureTableRepository
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1052920036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052920035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05882da9d4d4b5c4c9a34329d351c5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectionString: DefaultEndpointsProtocol=https;AccountName=hololens4labsdev;AccountKey=5aGVTB0sWv1kSRQBzdRflqI8WXqz5rhdS21NDgeFLWll6WNU075vRfiMZulRi/65MCBS+7WBN4f4+AStfvGCiQ==;EndpointSuffix=core.windows.net
+  experimentName: ExperimentDefault
+  experimentsTableName: experiments
+  scientistsTableName: scientists
+  textLogsTableName: textLogs
+  logsTableName: logs
+  textDataTableName: textData
+  partitionKey: main
+  tryCreateTableOnStart: 1
+  blockBlobContainerName: tracked-textLogs-thumbnails
+  tryCreateBlobContainerOnStart: 1
+  onRepoReadyReady:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1048221456}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Managers.DataManager, Scripts
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRepoReadyInitFailed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1052920037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052920035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623676120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2470460023258091445, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}

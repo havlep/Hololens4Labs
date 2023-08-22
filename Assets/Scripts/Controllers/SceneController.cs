@@ -55,7 +55,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         public async void Init()
         {
             CurrentUser = new Scientist("11","Rutherford");
-            await dataManager.CreateOrUpdateScientist(CurrentUser);
+            CurrentUser = await dataManager.CreateOrUpdateScientist(CurrentUser);
 
             if (CurrentExperiment == null)
             {

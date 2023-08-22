@@ -40,6 +40,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if (dto.RowKey == string.Empty)
                 dto.RowKey = Guid.NewGuid().ToString();
 
+            if (dto.PartitionKey == string.Empty)
+                dto.PartitionKey = defaultPartitionKey;
+
             // See if there is an object with a similiar id
             var query = new TableQuery<DTO>().Where(
             TableQuery.CombineFilters(
@@ -50,22 +53,18 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             var respDTO = segment.Results.FirstOrDefault();
             if (respDTO != null)
-            {
                 // Object with a given id already exists throw an exception
                 throw new ObjectDataBaseException("Object of given ID" + dto.PartitionKey +" already exists");
-            }
+            
 
             // Insert the object into the database
             var insertOrMergeOperation = TableOperation.InsertOrMerge(dto);
             var res = await this.table.ExecuteAsync(insertOrMergeOperation);
 
             if (res.Result == null)
-            {
-
                 throw new ObjectDataBaseException();
 
-            }
-
+            Debug.Log($"Object {dto.RowKey} created in repo");
             return mapper.ToOBJ((DTO)res.Result);
 
         }
@@ -100,6 +99,8 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         {
 
             var dto = mapper.ToDTO(obj);
+            if (dto.PartitionKey == string.Empty)
+                dto.PartitionKey = defaultPartitionKey;
 
             var deleteOperation = TableOperation.Delete(dto);
             var result = await this.table.ExecuteAsync(deleteOperation);
@@ -113,6 +114,11 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 throw new NotSupportedException("Table was not initialized for this type");
 
             var dto = mapper.ToDTO(obj);
+
+
+            if (dto.PartitionKey == null)
+                dto.PartitionKey = defaultPartitionKey;
+
             var insertOrMergeOperation = TableOperation.InsertOrMerge(dto);
             var result = await this.table.ExecuteAsync(insertOrMergeOperation);
 

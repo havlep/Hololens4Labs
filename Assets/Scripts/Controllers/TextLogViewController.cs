@@ -70,7 +70,11 @@ namespace HoloLens4Labs.Scripts.Controllers
             textLog = source;
             logNameLabel.SetText(textLog.Id);
             createdOnLabel.SetText(textLog.CreatedOn.ToShortTimeString());
-            createdByLabel.SetText(textLog.CreatedBy.Name);
+            if (textLog.CreatedBy != null)
+                createdByLabel.SetText(textLog.CreatedBy.Name);
+            else
+                createdByLabel.SetText("User not found!");
+
             if (textLog.TextData != null)
             {
                 lastModifiedLabel.SetText(textLog.TextData.CreatedOn.ToShortTimeString());
@@ -106,8 +110,10 @@ namespace HoloLens4Labs.Scripts.Controllers
             catch (Exception e)  { 
             
                 messageLabel.text = "Failed to update database." +  e.Message;
+                throw e;
             }
 
+            Debug.Log($"Log saved.");
             parentObject.SetActive(true);
             Destroy(gameObject);
 

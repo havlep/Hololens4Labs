@@ -14,16 +14,43 @@ using HoloLens4Labs.Scripts.Model.Logs;
 namespace HoloLens4Labs.Scripts.Managers
 {
 
- 
-
 
     public class DataManager : MonoBehaviour, RepositoryInterface
     {
 
         [Header("Repository")]
-
         [SerializeField]
+        private GameObject repositoryObject;
+
+
+        [Header("Events")]
+        [SerializeField]
+        private UnityEvent onRepoReadyReady = default;
+
         private RepositoryInterface repo = default;
+
+        private void Awake()
+        {
+            if (!repositoryObject.TryGetComponent<RepositoryInterface>(out repo)) {
+
+                Debug.Log($"Repository object does not implement the Repository Interface.");
+                throw new MissingReferenceException("Unity project is not setup correctly");
+            }
+            if (repo.IsReady())
+                Debug.Log($"Repository object has been setup properly.");
+            else
+                Debug.Log($"Repository object has not been initialized.");
+
+
+        }
+
+        public async void Init()
+        {
+             // Check that the right repository was intialized and propagate the info
+             if (IsReady())
+                 onRepoReadyReady?.Invoke();
+
+        }
 
         public Task<Experiment> CreateExperiment(Experiment experiment)
         {
@@ -74,7 +101,7 @@ namespace HoloLens4Labs.Scripts.Managers
         {
 
             if (scientist.Id == string.Empty)
-                await CreateScientist(scientist);
+                return await CreateScientist(scientist);
 
             if (await UpdateScientist(scientist))
                 return scientist;
@@ -88,7 +115,7 @@ namespace HoloLens4Labs.Scripts.Managers
         {
 
             if (experiment.Id == string.Empty)
-                await CreateExperiment(experiment);
+                return await CreateExperiment(experiment);
 
             if (await UpdateExperiment(experiment))
                 return experiment;
@@ -109,5 +136,9 @@ namespace HoloLens4Labs.Scripts.Managers
 
         }
 
+        public bool IsReady()
+        {
+            return repo.IsReady();
+        }
     }
 }

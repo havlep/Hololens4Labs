@@ -63,9 +63,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         private CloudStorageAccount storageAccount;
         private CloudTableClient cloudTableClient;
         private CloudTable experimentsTable;
-        private CloudTable textLogsTable;
+
         private CloudTable logsTable;
-        private CloudTable textDataTable;
+
         private CloudTable scientistsTable;
 
         private CloudBlobClient blobClient;
@@ -75,14 +75,13 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         private ATScientistRepository atScientistRepository;
         private ATLogRepository atLogRepository;
 
+
         private async void Awake()
         {
             storageAccount = CloudStorageAccount.Parse(connectionString);
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
             scientistsTable = cloudTableClient.GetTableReference(scientistsTableName);
-            textLogsTable = cloudTableClient.GetTableReference(textLogsTableName);
-            textDataTable = cloudTableClient.GetTableReference(textDataTableName);
             logsTable = cloudTableClient.GetTableReference(logsTableName);
 
             if (tryCreateTableOnStart)
@@ -97,17 +96,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                     {
                         Debug.Log($"Created table {scientistsTableName}.");
                     }
-                    if (await textLogsTable.CreateIfNotExistsAsync())
-                    {
-                        Debug.Log($"Created table {textLogsTableName}.");
-                    }
                     if (await logsTable.CreateIfNotExistsAsync())
                     {
                         Debug.Log($"Created table {logsTableName}.");
-                    }
-                    if (await textDataTable.CreateIfNotExistsAsync())
-                    {
-                        Debug.Log($"Created table {textDataTableName}.");
                     }
 
                 }
@@ -124,9 +115,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             atExperimentRepository = new ATExperimentRepository(experimentsTable, partitionKey);
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
+            atLogRepository = new ATLogRepository(logsTable, partitionKey);
 
 
-
+            Debug.Log($"Azure repository intialized.");
             IsReady = true;
             onRepoReadyReady?.Invoke();
 
@@ -199,6 +191,11 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         public Task<bool> DeleteLog(Log log)
         {
             throw new System.NotImplementedException();
+        }
+
+        bool RepositoryInterface.IsReady()
+        {
+            return IsReady;
         }
     }
 }

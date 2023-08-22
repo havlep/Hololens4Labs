@@ -27,6 +27,8 @@ namespace HoloLens4Labs.Scripts.Repositories
 
         public Task<bool> DeleteLog(Log log);
 
+        bool IsReady();
+
 
     }
 }

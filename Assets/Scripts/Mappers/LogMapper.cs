@@ -19,6 +19,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.DateTime = obj.CreatedOn;
             dto.ExperimentID = obj.DoneWithin.Id;
             dto.ScientistID = obj.CreatedBy.Id;
+            dto.PartitionKey = dto.ExperimentID;
             dto.ETag = "*";
 
             if (obj is TextLog)
