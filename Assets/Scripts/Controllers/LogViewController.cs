@@ -50,7 +50,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         public void CloseCard()
         {
-            sceneController.OpenMainMenu();
+            parentObject.SetActive(true);
             Destroy(gameObject);
         }
 
@@ -76,9 +76,6 @@ namespace HoloLens4Labs.Scripts.Controllers
             SetButtonsInteractiveState(true);
 
         }
-
-        
-
 
         protected void SetButtonsInteractiveState(bool state)
         {

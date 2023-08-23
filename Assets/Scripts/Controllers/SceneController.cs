@@ -1,6 +1,3 @@
-using System;
-using System.Threading.Tasks;
-
 using UnityEngine;
 using UnityEngine.Events;
 #if UNITY_WSA
@@ -11,38 +8,33 @@ using UnityEngine.Windows.WebCam;
 
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;
+using System.Threading.Tasks;
+using System;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
     public class SceneController : MonoBehaviour
     {
 
-        public bool IsCameraActive { private set; get; }
+
         public Experiment CurrentExperiment { get; private set; }
         public Scientist CurrentUser { get; private set; }
 
         public DataManager DataManager => dataManager;
 
+        public PhotoCameraController PhotoCameraController => cameraController;
+
 
         [Header("Managers")]
         [SerializeField]
         private DataManager dataManager = default;
+        [SerializeField]
+        private PhotoCameraController cameraController = default;
 
         [Header("Misc Settings")]
         [SerializeField]
         private GameObject mainMenu = default;
 
-        [Header("Events")]
-        [SerializeField]
-        private UnityEvent onCameraStarted = default;
-        [SerializeField]
-        private UnityEvent onCameraStopped = default;
-
-#if UNITY_WSA
-    private UnityEngine.Windows.WebCam.PhotoCapture photoCapture;
-#else
-        private WebCamTexture webCamTexture;
-#endif
 
 
         // Start is called before the first frame update
@@ -63,11 +55,6 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void OpenMainMenu()
         {
