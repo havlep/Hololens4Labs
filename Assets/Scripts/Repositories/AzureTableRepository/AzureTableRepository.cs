@@ -2,6 +2,7 @@
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
+using HoloLens4Labs.Scripts.Repositories.AzureBlob;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -36,11 +37,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         [SerializeField]
         private string scientistsTableName = "scientists";
         [SerializeField]
-        private string textLogsTableName = "textLogs";
-        [SerializeField]
         private string logsTableName = "logs";
-        [SerializeField]
-        private string textDataTableName = "textData";
         [SerializeField]
         private string partitionKey = "main";
         [SerializeField]
@@ -73,10 +70,25 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         private ATScientistRepository atScientistRepository;
         private ATLogRepository atLogRepository;
 
+        private AzureBlobRepository blobRepository;
+
 
         private async void Awake()
         {
+            
             storageAccount = CloudStorageAccount.Parse(connectionString);
+            
+            this.SetupTablesRepository();
+            this.SetupBlobRepository();
+
+            Debug.Log($"Azure repository intialized.");
+            IsReady = true;
+            onRepoReadyReady?.Invoke();
+
+        }
+
+        private async void SetupTablesRepository()
+        {
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
             scientistsTable = cloudTableClient.GetTableReference(scientistsTableName);
@@ -108,17 +120,35 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 }
             }
 
-
             // Setup the services that will be used to get data
 
             atExperimentRepository = new ATExperimentRepository(experimentsTable, partitionKey);
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
             atLogRepository = new ATLogRepository(logsTable, partitionKey);
+        }
 
+        void SetupBlobRepository()
+        {
+            blobClient = storageAccount.CreateCloudBlobClient();
+            blobContainer = blobClient.GetContainerReference(blockBlobContainerName);
 
-            Debug.Log($"Azure repository intialized.");
-            IsReady = true;
-            onRepoReadyReady?.Invoke();
+            if (tryCreateBlobContainerOnStart)
+            {
+                try
+                {
+                    if (blobContainer.CreateIfNotExistsAsync().Result)
+                    {
+                        Debug.Log($"Created blob container {blockBlobContainerName}.");
+                    }
+                }
+                catch (StorageException ex)
+                {
+                    Debug.LogError("Failed to connect with Azure Storage.\nIf you are running with the default storage emulator configuration, please make sure you have started the storage emulator.");
+                    Debug.LogException(ex);
+                    onRepoReadyInitFailed?.Invoke();
+                }
+            }
+            blobRepository = new AzureBlobRepository(blobContainer);
 
         }
 
