@@ -12,10 +12,6 @@ public class ImageLogViewController : LogViewController
 {
 
 
-    [Header("Managers")]
-    [SerializeField]
-    private SceneController SceneController;
-
     [Header("UI Elements")]
     [SerializeField]
     protected Image imageCanvas = default;
@@ -23,26 +19,34 @@ public class ImageLogViewController : LogViewController
     [SerializeField]
     private Sprite placeHolderImage = default;
 
-    private bool isWaitingForAirtap;
-    private GameObject hintTextInstance;
+    [SerializeField]
+    private PhotoCameraController photoCapturePanelPrefab;
+
+
     ImageLog log;
 
 
-    public void Init(ImageLog log, GameObject parentObj)
+    public void InitWithExisting(ImageLog log, GameObject parentObj)
     {
 
-        if (log.ImageData != null)
-        {
-            lastModifiedLabel.SetText(log.ImageData.CreatedOn.ToShortTimeString());
-            imageCanvas.sprite = spriteFromImage(log.ImageData);
-        }
-        else
-        {
-            lastModifiedLabel.SetText(string.Empty);
-            imageCanvas.sprite = placeHolderImage;
-        }
+        if (log.ImageData == null)
+            throw new System.Exception("No image in existing image log");
+    
+        lastModifiedLabel.SetText(log.ImageData.CreatedOn.ToShortTimeString());
+        imageCanvas.sprite = spriteFromImage(log.ImageData);
+        
         base.Init(log, parentObj);
-        sceneController.PhotoCameraController.StartCamera();
+
+    }
+
+    public void InitNew(ImageLog log, GameObject parentObj)
+    {
+
+        gameObject.SetActive(false);
+        this.log = log;
+        var photoCaptureView = Instantiate(photoCapturePanelPrefab, this.transform.position, Quaternion.identity);
+        photoCaptureView.Init(log, this);
+        base.Init(log, parentObj);
 
     }
 
@@ -51,24 +55,12 @@ public class ImageLogViewController : LogViewController
         return Sprite.Create(imageData.Texture, new Rect(0, 0, imageData.Texture.width, imageData.Texture.height), new Vector2(0.5f, 0.5f));
     }
 
-    public void HandleOnPointerClick()
+
+    public void ImageCaptured(ImageData imageData)
     {
-        if (isWaitingForAirtap)
-        {
-            CapturePhoto();
-        }
-    }
-
-    private async void CapturePhoto()
-    {
-        isWaitingForAirtap = false;
-        hintTextInstance.SetActive(false);
-
-        log.ImageData = await sceneController.PhotoCameraController.TakePhotoWithThumbnail(log);
-        imageCanvas.sprite =  spriteFromImage(log.ImageData);
-
-
-        SetButtonsInteractiveState(true);
+        log.ImageData = imageData;
+        imageCanvas.sprite = spriteFromImage(log.ImageData);
+        gameObject.SetActive(true);
     }
 
 

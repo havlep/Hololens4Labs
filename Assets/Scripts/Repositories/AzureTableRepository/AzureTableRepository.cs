@@ -29,8 +29,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         [SerializeField]
         private string connectionString = default;
-        [SerializeField]
-        private string experimentName = "ExperimentDefault";
 
         [Header("Table Settings")]
         [SerializeField]
@@ -50,7 +48,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         [Header("Blob Settings")]
         [SerializeField]
-        private string blockBlobContainerName = "tracked-textLogs-thumbnails";
+        private string blockBlobContainerName = "log-images";
         [SerializeField]
         private bool tryCreateBlobContainerOnStart = true;
 
@@ -123,7 +121,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             onRepoReadyReady?.Invoke();
 
         }
-
 
         public async Task<Experiment> CreateExperiment(Experiment experiment)
         {

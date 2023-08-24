@@ -14,10 +14,12 @@ public class LogSelectionController : MonoBehaviour
     public DataManager dataManager = default;
     public SceneController sceneController = default;
 
-
+          
     [Header("UI Elements")]
     [SerializeField]
     private TextLogViewController textLogViewPrefab = default;
+    [SerializeField]
+    private ImageLogViewController photoLogViewPrefab = default;
 
     [Header("Misc Settings")]
     [SerializeField]
@@ -41,6 +43,16 @@ public class LogSelectionController : MonoBehaviour
         var textLogView =  Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
         var textLog = new TextLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment  );
         textLogView.Init(textLog, gameObject);
+        gameObject.SetActive(false);
+
+    }
+
+    public void CreateNewImageLog()
+    {
+
+        var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);       
+        var imageLog = new ImageLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
+        imageLogView.InitNew(imageLog, gameObject);
         gameObject.SetActive(false);
 
     }

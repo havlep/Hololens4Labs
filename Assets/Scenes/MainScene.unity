@@ -1034,13 +1034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataManager: {fileID: 1048221456}
+  cameraController: {fileID: 0}
   mainMenu: {fileID: 1005639539}
-  onCameraStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  onCameraStopped:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &300311139
 Transform:
   m_ObjectHideFlags: 0
@@ -1482,6 +1477,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4202340983966216823, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202340983966216823, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2101367143}
+    - target: {fileID: 4202340983966216823, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreateNewImageLog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202340983966216823, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LogSelectionController, Scripts
+      objectReference: {fileID: 0}
     - target: {fileID: 4638735462144643097, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1516,4 +1527,5 @@ MonoBehaviour:
   dataManager: {fileID: 1048221456}
   sceneController: {fileID: 300311138}
   textLogViewPrefab: {fileID: 713272363589697347, guid: ef7e5e96a999bea41a35da369bfb67e9, type: 3}
+  photoLogViewPrefab: {fileID: 7179814431767217727, guid: 4b0a9e02addbc9840ac3fb026af98177, type: 3}
   mainMenu: {fileID: 0}

@@ -22,14 +22,13 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         public DataManager DataManager => dataManager;
 
-        public PhotoCameraController PhotoCameraController => cameraController;
+
 
 
         [Header("Managers")]
         [SerializeField]
         private DataManager dataManager = default;
-        [SerializeField]
-        private PhotoCameraController cameraController = default;
+
 
         [Header("Misc Settings")]
         [SerializeField]
