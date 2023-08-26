@@ -1,4 +1,5 @@
 
+using Codice.Client.BaseCommands.Ls;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
@@ -204,7 +205,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 && (log as TextLog).TextData.Id == string.Empty)
                 (log as TextLog).TextData.Id = System.Guid.NewGuid().ToString();
 
-            if (log is ImageLog && (log as ImageLog).Data != null) { 
+            else if (log is ImageLog && (log as ImageLog).Data != null) { 
                 var imageLog = log as ImageLog;
                 
                 if (imageLog.Data.Id == string.Empty)
@@ -212,18 +213,38 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
                  imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
                 
-            }
+            } else if(log is TranscriptionLog  && (log as TranscriptionLog).Data != null)
+            {
+                var transcriptionLog = log as TranscriptionLog;
+
+                if (transcriptionLog.Data.Id == string.Empty)
+                    transcriptionLog.Data.Id = System.Guid.NewGuid().ToString();
+
+                transcriptionLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(transcriptionLog.Data.Data, transcriptionLog.Data.Id);
+
+            }else 
+                throw new System.NotImplementedException();
+
             return await atLogRepository.Create(log);
 
         }
 
         public async Task<bool> UpdateLog(Log log)
         {
+
+            //TODO : Refactor after datatypes have been refactored
             if (log is ImageLog)
             {
                 var imageLog = log as ImageLog;
                 if (imageLog.Data != null)
                     imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
+
+            }else if (log is TranscriptionLog)
+            {
+
+                var transcriptionLog = log as TranscriptionLog;
+                if (transcriptionLog.Data != null)
+                    transcriptionLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(transcriptionLog.Data.Data, transcriptionLog.Data.Id);
 
             }
             return await atLogRepository.Update(log);
@@ -252,8 +273,15 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                     ! await blobRepository.DeleteBlob(imageLog.Data.ThumbnailBlobName))
                 throw new ObjectDataBaseException($"Could not delete image{imageLog.Data.Id}");
 
+            }else if (log is TranscriptionLog)
+            {
+                var transcriptionLog = log as TranscriptionLog;
+                if (transcriptionLog.Data != null &&
+                                       ! await blobRepository.DeleteBlob(transcriptionLog.Data.ThumbnailBlobName))
+                    throw new ObjectDataBaseException($"Could not delete transcription{transcriptionLog.Data.Id}");
             }
             throw new System.NotImplementedException();
+
         }
 
         bool RepositoryInterface.IsReady()

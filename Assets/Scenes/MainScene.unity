@@ -1469,6 +1469,18 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3527488640508777415, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2101367143}
+    - target: {fileID: 3527488640508777415, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CreateNewTranscriptionLog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527488640508777415, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LogSelectionController, Scripts
+      objectReference: {fileID: 0}
     - target: {fileID: 3538644376959783520, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1524,4 +1536,5 @@ MonoBehaviour:
   sceneController: {fileID: 300311138}
   textLogViewPrefab: {fileID: 713272363589697347, guid: ef7e5e96a999bea41a35da369bfb67e9, type: 3}
   photoLogViewPrefab: {fileID: 7179814431767217727, guid: 4b0a9e02addbc9840ac3fb026af98177, type: 3}
+  transcriptionLogViewPrefab: {fileID: 3705874457011644958, guid: b237db4edf2fbe746846c3bca66bae55, type: 3}
   mainMenu: {fileID: 0}

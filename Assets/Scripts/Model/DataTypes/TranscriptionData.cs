@@ -29,6 +29,8 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         {
 
         }
+
+        
     }
   
 }

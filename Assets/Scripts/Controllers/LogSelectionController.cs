@@ -20,6 +20,8 @@ public class LogSelectionController : MonoBehaviour
     private TextLogViewController textLogViewPrefab = default;
     [SerializeField]
     private ImageLogViewController photoLogViewPrefab = default;
+    [SerializeField]
+    private TranscriptionLogViewController transcriptionLogViewPrefab = default;
 
     [Header("Misc Settings")]
     [SerializeField]
@@ -53,6 +55,15 @@ public class LogSelectionController : MonoBehaviour
         var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);       
         var imageLog = new ImageLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
         imageLogView.InitNew(imageLog, gameObject);
+        gameObject.SetActive(false);
+
+    }
+
+    public void CreateNewTranscriptionLog() {
+
+        var transcriptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
+        TranscriptionLog transcriptionLog = new TranscriptionLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
+        transcriptionLogView.InitNew(transcriptionLog, gameObject);
         gameObject.SetActive(false);
 
     }

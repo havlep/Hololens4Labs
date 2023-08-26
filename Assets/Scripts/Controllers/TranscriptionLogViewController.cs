@@ -52,11 +52,18 @@ public class TranscriptionLogViewController : LogViewController
 
     public override void ImageCaptured(DataType data)
     {
-        if(! (data is TranscriptionData) )
+        if(! (data is ImageData) )
             throw new System.Exception("Wrong data type call for transcription log");
 
+        var imageData = data as ImageData;
+
+        // Ugly hack to get the data to the right type until I can refactor the data type to ImageData
+        var transData = new TranscriptionData(imageData.Id, imageData.CreatedOn, imageData.CreatedBy, imageData.DoneWithinLog);
+        transData.Data = imageData.Data;
+        transData.Texture = imageData.Texture;
+
         var imagelog = log as TranscriptionLog;
-        imagelog.Data = (TranscriptionData)data;
+        imagelog.Data = transData;
         imageCanvas.sprite = spriteFromImage(imagelog.Data);
         gameObject.SetActive(true);
 
