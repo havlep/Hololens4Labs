@@ -40,7 +40,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         protected Interactable[] buttons = default;
 
         private Log log;
-        ImageLogViewController parentObj;
+        LogViewController parentObj;
 
 #if UNITY_WSA
         private PhotoCapture photoCapture;
@@ -52,7 +52,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         private bool isWaitingForAirtap;
 
 
-        public void Init(Log log, ImageLogViewController parentObj) { 
+        public void Init(Log log, LogViewController parentObj) { 
         
             this.log = log;
             this.parentObj = parentObj;

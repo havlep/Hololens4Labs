@@ -1,3 +1,4 @@
+using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using Microsoft.MixedReality.Toolkit.UI;
 using System;
@@ -113,6 +114,10 @@ namespace HoloLens4Labs.Scripts.Controllers
             parentObject.SetActive(true);
             Destroy(gameObject);
 
+        }
+
+        public virtual void ImageCaptured(DataType data)
+        {
         }
 
 

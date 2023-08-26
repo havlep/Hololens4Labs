@@ -1,15 +1,10 @@
 using HoloLens4Labs.Scripts.Controllers;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageLogViewController : LogViewController
+public class TranscriptionLogViewController : LogViewController
 {
 
 
@@ -25,20 +20,20 @@ public class ImageLogViewController : LogViewController
 
 
 
-    public void InitWithExisting(ImageLog log, GameObject parentObj)
+    public void InitWithExisting(TranscriptionLog log, GameObject parentObj)
     {
 
         if (log.Data == null)
             throw new System.Exception("No image in existing image imagelog");
-    
+
         lastModifiedLabel.SetText(log.Data.CreatedOn.ToShortTimeString());
         imageCanvas.sprite = spriteFromImage(log.Data);
-        
+
         base.Init(log, parentObj);
 
     }
 
-    public void InitNew(ImageLog log, GameObject parentObj)
+    public void InitNew(TranscriptionLog log, GameObject parentObj)
     {
 
         gameObject.SetActive(false);
@@ -49,22 +44,22 @@ public class ImageLogViewController : LogViewController
 
     }
 
-    private  Sprite spriteFromImage(ImageData imageData)
+    private Sprite spriteFromImage(TranscriptionData data)
     {
-        return Sprite.Create(imageData.Texture, new Rect(0, 0, imageData.Texture.width, imageData.Texture.height), new Vector2(0.5f, 0.5f));
+        return Sprite.Create(data.Texture, new Rect(0, 0, data.Texture.width, data.Texture.height), new Vector2(0.5f, 0.5f));
     }
 
 
-    override public void ImageCaptured(DataType data)
+    public override void ImageCaptured(DataType data)
     {
-        if (!(data is ImageData))
-            throw new System.Exception("Wrong data type call for image log");
+        if(! (data is TranscriptionData) )
+            throw new System.Exception("Wrong data type call for transcription log");
 
-        var imagelog = log as ImageLog;
-        imagelog.Data = (ImageData)data;
+        var imagelog = log as TranscriptionLog;
+        imagelog.Data = (TranscriptionData)data;
         imageCanvas.sprite = spriteFromImage(imagelog.Data);
         gameObject.SetActive(true);
-    
+
     }
 
 }
