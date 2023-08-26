@@ -17,9 +17,9 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
             
         }
 
-        public ImageData(string id, DateTime createdOn, string createdByID, string doneWithinLogID) : base(id, createdOn, createdByID, doneWithinLogID)
+        public ImageData(string id, DateTime createdOn, string createdByID, string doneWithinLogID, string thumbnailBlobName) : base(id, createdOn, createdByID, doneWithinLogID)
         {
-            
+            ThumbnailBlobName = thumbnailBlobName;
         }
 
         public ImageData(string id, DateTime createdOn, Scientist createdBy, Log doneWithinLog) : base(id, createdOn, createdBy, doneWithinLog)

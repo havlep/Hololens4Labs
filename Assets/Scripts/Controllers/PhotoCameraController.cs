@@ -75,7 +75,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         
         }
 
-        public async void CaptureCompleted(ImageData imageData)
+        public void CaptureCompleted(ImageData imageData)
         {
 
             StopCamera();

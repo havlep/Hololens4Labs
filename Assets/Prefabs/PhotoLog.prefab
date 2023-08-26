@@ -1763,21 +1763,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ToggleRecording
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SaveRecordedInput
+      - m_Target: {fileID: 7179814431767217727}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.LogViewController,
+          Scripts
+        m_MethodName: CloseCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2725,9 +2714,8 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.TextLogViewController,
-          Scripts
+      - m_Target: {fileID: 7179814431767217727}
+        m_TargetAssemblyTypeName: ImageLogViewController, Scripts
         m_MethodName: SaveChanges
         m_Mode: 1
         m_Arguments:
@@ -3251,9 +3239,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnToggleHandMesh
+      - m_Target: {fileID: 7179814431767217727}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.LogViewController,
+          Scripts
+        m_MethodName: CloseCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5672,7 +5661,6 @@ MonoBehaviour:
   lastModifiedLabel: {fileID: 1818443555572153016}
   messageLabel: {fileID: 539103117196184338}
   buttons: []
-  SceneController: {fileID: 0}
   imageCanvas: {fileID: 1209953930718632391}
   placeHolderImage: {fileID: 21300000, guid: a7a7756327a58884d8a292d7c995f89f, type: 3}
   photoCapturePanelPrefab: {fileID: 6985602484427985672, guid: 3ff978cb74b52094bad82df7ac3beca2, type: 3}

@@ -1034,7 +1034,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataManager: {fileID: 1048221456}
-  cameraController: {fileID: 0}
   mainMenu: {fileID: 1005639539}
 --- !u!4 &300311139
 Transform:
@@ -1233,7 +1232,7 @@ GameObject:
   - component: {fileID: 1052920037}
   - component: {fileID: 1052920036}
   m_Layer: 0
-  m_Name: AzureTableRepository
+  m_Name: AzureRepository
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1252,15 +1251,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectionString: DefaultEndpointsProtocol=https;AccountName=hololens4labsdev;AccountKey=5aGVTB0sWv1kSRQBzdRflqI8WXqz5rhdS21NDgeFLWll6WNU075vRfiMZulRi/65MCBS+7WBN4f4+AStfvGCiQ==;EndpointSuffix=core.windows.net
-  experimentName: ExperimentDefault
   experimentsTableName: experiments
   scientistsTableName: scientists
-  textLogsTableName: textLogs
   logsTableName: logs
-  textDataTableName: textData
   partitionKey: main
   tryCreateTableOnStart: 1
-  blockBlobContainerName: tracked-textLogs-thumbnails
+  blockBlobContainerName: images
   tryCreateBlobContainerOnStart: 1
   onRepoReadyReady:
     m_PersistentCalls:

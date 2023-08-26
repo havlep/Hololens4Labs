@@ -20,8 +20,8 @@ namespace HoloLens4Labs.Scripts.Managers
 
         [Header("Repository")]
         [SerializeField]
-        private GameObject tableRepositoryObject;
-        private GameObject bolbRepositoryObject;
+        private GameObject repositoryObject;
+  
 
 
         [Header("Events")]
@@ -32,7 +32,7 @@ namespace HoloLens4Labs.Scripts.Managers
 
         private void Awake()
         {
-            if (!tableRepositoryObject.TryGetComponent<RepositoryInterface>(out repo)) {
+            if (!repositoryObject.TryGetComponent<RepositoryInterface>(out repo)) {
 
                 Debug.Log($"Repository object does not implement the Repository Interface.");
                 throw new MissingReferenceException("Unity project is not setup correctly");
@@ -45,7 +45,7 @@ namespace HoloLens4Labs.Scripts.Managers
 
         }
 
-        public async void Init()
+        public void Init()
         {
              // Check that the right repository was intialized and propagate the info
              if (IsReady())

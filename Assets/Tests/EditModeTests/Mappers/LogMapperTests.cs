@@ -53,7 +53,7 @@ public class LogMapperTests
         Assert.IsNull(dto.Text);
         Assert.IsNull(dto.TranscriptionLogID);
         Assert.IsNull(dto.WeightLogID);
-        Assert.IsNull(dto.PhotoLogID);
+        Assert.IsNull(dto.ImageLogID);
 
     }
 
@@ -80,7 +80,7 @@ public class LogMapperTests
 
         Assert.IsNull(dto.TranscriptionLogID);
         Assert.IsNull(dto.WeightLogID);
-        Assert.IsNull(dto.PhotoLogID);
+        Assert.IsNull(dto.ImageLogID);
 
     }
 

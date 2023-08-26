@@ -3,6 +3,7 @@ using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Repositories.AzureBlob;
+using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -78,7 +79,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             
             storageAccount = CloudStorageAccount.Parse(connectionString);
             
-            this.SetupTablesRepository();
+            await this.SetupTablesRepository();
             this.SetupBlobRepository();
 
             Debug.Log($"Azure repository intialized.");
@@ -87,7 +88,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-        private async void SetupTablesRepository()
+        private async Task<bool> SetupTablesRepository()
         {
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
@@ -125,9 +126,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             atExperimentRepository = new ATExperimentRepository(experimentsTable, partitionKey);
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
             atLogRepository = new ATLogRepository(logsTable, partitionKey);
+            return true;
         }
 
-        void SetupBlobRepository()
+        private bool SetupBlobRepository()
         {
             blobClient = storageAccount.CreateCloudBlobClient();
             blobContainer = blobClient.GetContainerReference(blockBlobContainerName);
@@ -149,6 +151,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 }
             }
             blobRepository = new AzureBlobRepository(blobContainer);
+            return true;
 
         }
 
@@ -193,13 +196,36 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         public async Task<Log> CreateLog(Log log)
         {
 
+            if (log.Id == string.Empty)
+                log.Id = System.Guid.NewGuid().ToString();
+
+            if (log is TextLog 
+                && (log as TextLog).TextData != null  
+                && (log as TextLog).TextData.Id == string.Empty)
+                (log as TextLog).TextData.Id = System.Guid.NewGuid().ToString();
+
+            if (log is ImageLog && (log as ImageLog).ImageData != null) { 
+                var imageLog = log as ImageLog;
+                
+                if (imageLog.ImageData.Id == string.Empty)
+                    imageLog.ImageData.Id = System.Guid.NewGuid().ToString();
+
+                 imageLog.ImageData.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.ImageData.Data, imageLog.ImageData.Id);
+                
+            }
             return await atLogRepository.Create(log);
 
         }
 
         public async Task<bool> UpdateLog(Log log)
         {
+            if (log is ImageLog)
+            {
+                var imageLog = log as ImageLog;
+                if (imageLog.ImageData != null)
+                    imageLog.ImageData.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.ImageData.Data, imageLog.ImageData.Id);
 
+            }
             return await atLogRepository.Update(log);
 
         }
@@ -215,8 +241,18 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> DeleteLog(Log log)
+        public async  Task<bool> DeleteLog(Log log)
         {
+
+            if (log is ImageLog)
+            {
+            
+                var imageLog = log as ImageLog;
+                if (imageLog.ImageData != null &&
+                    ! await blobRepository.DeleteBlob(imageLog.ImageData.ThumbnailBlobName))
+                throw new ObjectDataBaseException($"Could not delete image{imageLog.ImageData.Id}");
+
+            }
             throw new System.NotImplementedException();
         }
 

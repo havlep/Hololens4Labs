@@ -11,20 +11,20 @@ namespace HoloLens4Labs.Scripts.Mappers
             return ToDTO(obj);
         }
 
-        public LogDTO ToDTO(Log obj)
+        public LogDTO ToDTO(Log log)
         {
             LogDTO dto = new LogDTO();
 
-            dto.RowKey = obj.Id;
-            dto.DateTime = obj.CreatedOn;
-            dto.ExperimentID = obj.DoneWithin.Id;
-            dto.ScientistID = obj.CreatedBy.Id;
+            dto.RowKey = log.Id;
+            dto.DateTime = log.CreatedOn;
+            dto.ExperimentID = log.DoneWithin.Id;
+            dto.ScientistID = log.CreatedBy.Id;
             dto.PartitionKey = dto.ExperimentID;
             dto.ETag = "*";
 
-            if (obj is TextLog)
+            if (log is TextLog)
             {
-                var textLog = (TextLog)obj;
+                var textLog = (TextLog)log;
 
                 dto.TextLogID = textLog.Id;
                 if (textLog.TextData != null)
@@ -35,11 +35,25 @@ namespace HoloLens4Labs.Scripts.Mappers
                     dto.Text = textLog.TextData.Text;
                 }
 
+            }if (log is ImageLog)
+            {
+                var imageLog = (ImageLog)log;
+
+                dto.ImageLogID = imageLog.Id;
+                if (imageLog.ImageData != null)
+                {
+                    dto.ImageID = imageLog.ImageData.Id;
+                    dto.DataDateTime = imageLog.ImageData.CreatedOn;
+                    dto.DataScientistID = imageLog.ImageData.CreatedById;
+                    dto.ThumbnailBlobName = imageLog.ImageData.ThumbnailBlobName;
+
+                }
             }
-            else {
+            else
+            {
 
                 throw new System.NotImplementedException("No yet implemented log type");
-            
+
             }
             
 
@@ -62,6 +76,15 @@ namespace HoloLens4Labs.Scripts.Mappers
                 return textLog;
 
 
+            } else if (dto.ImageLogID != null)
+            {
+                ImageData data = null;
+                if(dto.ImageID != null)    
+                    data = new ImageData(dto.TextID, dto.DataDateTime, dto.DataScientistID, dto.RowKey ,dto.ThumbnailBlobName );
+
+                ImageLog imageLog = new ImageLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
+
+                return imageLog;
             }
             else {
                 throw new System.NotImplementedException("No yet implemented log type");

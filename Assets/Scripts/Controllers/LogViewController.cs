@@ -1,5 +1,6 @@
 using HoloLens4Labs.Scripts.Model.Logs;
 using Microsoft.MixedReality.Toolkit.UI;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -83,6 +84,35 @@ namespace HoloLens4Labs.Scripts.Controllers
             {
                 interactable.IsEnabled = state;
             }
+        }
+
+        /// <summary>
+        /// Save changes for the log into the azure table storage.
+        /// </summary>
+        virtual public async void SaveChanges() 
+        {
+
+            Debug.Log($"Saving Log.");
+            SetButtonsInteractiveState(false);
+
+            messageLabel.text = "Updating data, please wait ...";
+            try
+            {
+                var success = await sceneController.DataManager.CreateOrUpdateLog(log);
+                messageLabel.text = "Updated data in the database.";
+
+            }
+            catch (Exception e)
+            {
+
+                messageLabel.text = "Failed to update database." +  e.Message;
+                throw e;
+            }
+
+            Debug.Log($"Log saved.");
+            parentObject.SetActive(true);
+            Destroy(gameObject);
+
         }
 
 

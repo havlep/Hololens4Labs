@@ -1,6 +1,7 @@
 using HoloLens4Labs.Scripts.Controllers;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -23,14 +24,12 @@ public class ImageLogViewController : LogViewController
     private PhotoCameraController photoCapturePanelPrefab;
 
 
-    ImageLog log;
-
 
     public void InitWithExisting(ImageLog log, GameObject parentObj)
     {
 
         if (log.ImageData == null)
-            throw new System.Exception("No image in existing image log");
+            throw new System.Exception("No image in existing image imagelog");
     
         lastModifiedLabel.SetText(log.ImageData.CreatedOn.ToShortTimeString());
         imageCanvas.sprite = spriteFromImage(log.ImageData);
@@ -58,10 +57,12 @@ public class ImageLogViewController : LogViewController
 
     public void ImageCaptured(ImageData imageData)
     {
-        log.ImageData = imageData;
-        imageCanvas.sprite = spriteFromImage(log.ImageData);
-        gameObject.SetActive(true);
-    }
 
+        var imagelog = log as ImageLog;
+        imagelog.ImageData = imageData;
+        imageCanvas.sprite = spriteFromImage(imagelog.ImageData);
+        gameObject.SetActive(true);
+    
+    }
 
 }
