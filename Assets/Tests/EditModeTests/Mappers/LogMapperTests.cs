@@ -47,13 +47,13 @@ public class LogMapperTests
         Assert.AreEqual(textLog.DoneWithin.Id, dto.ExperimentID);
         Assert.AreEqual(textLog.CreatedBy.Id, dto.ScientistID);
         Assert.AreEqual(textLog.Id, dto.TextLogID);
-        Assert.IsNull(dto.TextID);
-        Assert.IsNull(dto.DataScientistID);
+        Assert.IsEmpty(dto.DataID);
+        Assert.IsEmpty(dto.DataScientistID);
         Assert.AreEqual(dto.DataDateTime, DateTime.MinValue);
-        Assert.IsNull(dto.Text);
-        Assert.IsNull(dto.TranscriptionLogID);
-        Assert.IsNull(dto.WeightLogID);
-        Assert.IsNull(dto.ImageLogID);
+        Assert.IsEmpty(dto.Text);
+        Assert.IsEmpty(dto.TranscriptionLogID);
+        Assert.IsEmpty(dto.WeightLogID);
+        Assert.IsEmpty(dto.ImageLogID);
 
     }
 
@@ -72,15 +72,15 @@ public class LogMapperTests
         Assert.AreEqual(textLog.DoneWithin.Id, dto.ExperimentID);
         Assert.AreEqual(textLog.CreatedBy.Id, dto.ScientistID);
         Assert.AreEqual(textLog.Id, dto.TextLogID);
-        Assert.AreEqual(textLog.TextData.Id, dto.TextID);
+        Assert.AreEqual(textLog.TextData.Id, dto.DataID);
         Assert.AreEqual(textLog.TextData.CreatedOn, dto.DataDateTime);
         Assert.AreEqual(textLog.TextData.CreatedById, dto.DataScientistID);
         Assert.AreEqual(textLog.TextData.Text, dto.Text);
 
 
-        Assert.IsNull(dto.TranscriptionLogID);
-        Assert.IsNull(dto.WeightLogID);
-        Assert.IsNull(dto.ImageLogID);
+        Assert.IsEmpty(dto.TranscriptionLogID);
+        Assert.IsEmpty(dto.WeightLogID);
+        Assert.IsEmpty(dto.ImageLogID);
 
     }
 
@@ -104,7 +104,7 @@ public class LogMapperTests
     public void ToObjWithData() {
 
 
-        logDTO.TextID = "1";
+        logDTO.DataID = "1";
         logDTO.DataDateTime = DateTime.Now;
         logDTO.DataScientistID = "1";
         logDTO.Text = "My test data";
@@ -121,7 +121,7 @@ public class LogMapperTests
         Assert.AreEqual(mappedTextLog.DoneWithinID, logDTO.ExperimentID);
         Assert.AreEqual(mappedTextLog.CreatedByID, logDTO.ScientistID);
         Assert.AreEqual(mappedTextLog.Id, logDTO.TextLogID);
-        Assert.AreEqual(mappedTextLog.TextData.Id, logDTO.TextID);
+        Assert.AreEqual(mappedTextLog.TextData.Id, logDTO.DataID);
         Assert.AreEqual(mappedTextLog.TextData.CreatedOn, logDTO.DataDateTime);
         Assert.AreEqual(mappedTextLog.TextData.CreatedById, logDTO.DataScientistID);
         Assert.AreEqual(mappedTextLog.TextData.Text, logDTO.Text);

@@ -108,6 +108,7 @@ public class LogRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
 
+        log.Id = "15";
         var logDto = mapper.ToDTO(log);
 
         var operationResult = new TableResult
@@ -217,9 +218,8 @@ public class LogRepositoryTests
     public void ReadSuccess()
     {
 
+        log.Id = "135";
         var logDTO = mapper.ToDTO(log);
-
-        logDTO.RowKey = "135";
    
         var logList = new List<LogDTO>
         {

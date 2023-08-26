@@ -1,22 +1,14 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using HoloLens4Labs.Scripts.Model.DataTypes;
-using HoloLens4Labs.Scripts.Model;
-
 
 namespace HoloLens4Labs.Scripts.Model.Logs
 {
     public class ImageLog : Log
     {
 
-        private ImageData image;
-
-        public ImageData ImageData
+        public ImageData Data
         {
-            get => image;
-            set => image = value;
+            get; set;
         }
 
 
@@ -28,7 +20,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
 
         public ImageLog(string id, DateTime at, string createdByID, string doneWithinID, ImageData data) : base(id, at, createdByID, doneWithinID)
         {
-            ImageData = data;
+            Data = data;
 
         }
 

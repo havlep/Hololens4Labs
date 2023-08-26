@@ -282,7 +282,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             isWaitingForAirtap = false;
 
             var imageData = await TakePhotoWithThumbnail(log);
-            //imageCanvas.sprite =  spriteFromImage(log.ImageData);
+            //imageCanvas.sprite =  spriteFromImage(log.Data);
 
 
             SetButtonsInteractiveState(true);

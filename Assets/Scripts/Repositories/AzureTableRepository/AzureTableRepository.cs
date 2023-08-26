@@ -204,13 +204,13 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 && (log as TextLog).TextData.Id == string.Empty)
                 (log as TextLog).TextData.Id = System.Guid.NewGuid().ToString();
 
-            if (log is ImageLog && (log as ImageLog).ImageData != null) { 
+            if (log is ImageLog && (log as ImageLog).Data != null) { 
                 var imageLog = log as ImageLog;
                 
-                if (imageLog.ImageData.Id == string.Empty)
-                    imageLog.ImageData.Id = System.Guid.NewGuid().ToString();
+                if (imageLog.Data.Id == string.Empty)
+                    imageLog.Data.Id = System.Guid.NewGuid().ToString();
 
-                 imageLog.ImageData.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.ImageData.Data, imageLog.ImageData.Id);
+                 imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
                 
             }
             return await atLogRepository.Create(log);
@@ -222,8 +222,8 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if (log is ImageLog)
             {
                 var imageLog = log as ImageLog;
-                if (imageLog.ImageData != null)
-                    imageLog.ImageData.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.ImageData.Data, imageLog.ImageData.Id);
+                if (imageLog.Data != null)
+                    imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
 
             }
             return await atLogRepository.Update(log);
@@ -248,9 +248,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             {
             
                 var imageLog = log as ImageLog;
-                if (imageLog.ImageData != null &&
-                    ! await blobRepository.DeleteBlob(imageLog.ImageData.ThumbnailBlobName))
-                throw new ObjectDataBaseException($"Could not delete image{imageLog.ImageData.Id}");
+                if (imageLog.Data != null &&
+                    ! await blobRepository.DeleteBlob(imageLog.Data.ThumbnailBlobName))
+                throw new ObjectDataBaseException($"Could not delete image{imageLog.Data.Id}");
 
             }
             throw new System.NotImplementedException();

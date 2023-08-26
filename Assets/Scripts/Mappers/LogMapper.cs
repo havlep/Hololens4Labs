@@ -2,6 +2,7 @@ using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 
+
 namespace HoloLens4Labs.Scripts.Mappers
 {
     public class LogMapper : MapperInterface<Log, LogDTO, LogDTO>
@@ -23,70 +24,122 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.ETag = "*";
 
             if (log is TextLog)
-            {
-                var textLog = (TextLog)log;
-
-                dto.TextLogID = textLog.Id;
-                if (textLog.TextData != null)
-                {
-                    dto.TextID = textLog.TextData.Id;
-                    dto.DataDateTime = textLog.TextData.CreatedOn;
-                    dto.DataScientistID = textLog.TextData.CreatedById;
-                    dto.Text = textLog.TextData.Text;
-                }
-
-            }if (log is ImageLog)
-            {
-                var imageLog = (ImageLog)log;
-
-                dto.ImageLogID = imageLog.Id;
-                if (imageLog.ImageData != null)
-                {
-                    dto.ImageID = imageLog.ImageData.Id;
-                    dto.DataDateTime = imageLog.ImageData.CreatedOn;
-                    dto.DataScientistID = imageLog.ImageData.CreatedById;
-                    dto.ThumbnailBlobName = imageLog.ImageData.ThumbnailBlobName;
-
-                }
-            }
+                dto = ToDTO((TextLog)log, dto);
+            else if (log is TranscriptionLog)
+                dto = ToDTO((TranscriptionLog)log, dto);
+            else if (log is ImageLog)
+                dto = ToDTO((ImageLog)log, dto);
             else
-            {
-
                 throw new System.NotImplementedException("No yet implemented log type");
 
+            return dto;
+
+        }
+
+        private LogDTO ToDTO(TextLog textLog, LogDTO dto)
+        {
+
+            dto.TextLogID = textLog.Id;
+
+            dto = LogDTO(textLog.TextData, dto);
+
+            return dto;
+
+        }
+
+        private LogDTO LogDTO(TextData textData, LogDTO dto)
+        {
+            if (textData != null)
+            {
+                dto.DataID = textData.Id;
+                dto.DataDateTime = textData.CreatedOn;
+                dto.DataScientistID = textData.CreatedById;
+                dto.Text = textData.Text;
             }
-            
 
+            return dto;
 
+        }
+
+        private LogDTO ToDTO(ImageLog imageLog, LogDTO dto)
+        {
+
+            dto.ImageLogID = imageLog.Id;
+
+            dto = ToDTO(imageLog.Data, dto);
+
+            return dto;
+
+        }
+
+        private LogDTO ToDTO(TranscriptionLog transcriptionLog, LogDTO dto) {
+
+            dto.TranscriptionLogID = transcriptionLog.Id;
+
+            dto = ToDTO(transcriptionLog.Data, dto);
+
+            return dto;
+
+        }
+
+        private LogDTO ToDTO(TranscriptionData transcriptionData, LogDTO dto)
+        {
+            if (transcriptionData != null)
+            {
+                dto.DataID = transcriptionData.Id;
+                dto.DataDateTime = transcriptionData.CreatedOn;
+                dto.DataScientistID = transcriptionData.CreatedById;
+                dto.ThumbnailBlobName = transcriptionData.ThumbnailBlobName;
+            }
+            return dto;
+
+        }
+
+        private LogDTO ToDTO(ImageData imageData, LogDTO dto)
+        {
+
+            if (imageData != null)
+            {
+                dto.DataID = imageData.Id;
+                dto.DataDateTime = imageData.CreatedOn;
+                dto.DataScientistID = imageData.CreatedById;
+                dto.ThumbnailBlobName = imageData.ThumbnailBlobName;
+            }
             return dto;
 
         }
 
         public Log ToOBJ(LogDTO dto)
         {
-            if (dto.TextLogID != null)
+            if (dto.TextLogID != null && dto.TextLogID != string.Empty )
             {
 
                 TextData data = null;
-                if(dto.TextID != null)    
-                    data = new TextData(dto.TextID, dto.DataDateTime, dto.DataScientistID, dto.RowKey ,dto.Text );
+                if (dto.DataID != null && dto.DataID != string.Empty)
+                    data = new TextData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.Text);
 
-                TextLog textLog = new TextLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
+                return new TextLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
 
-                return textLog;
-
-
-            } else if (dto.ImageLogID != null)
+            }
+            else if (dto.ImageLogID != null && dto.ImageLogID != string.Empty)
             {
                 ImageData data = null;
-                if(dto.ImageID != null)    
-                    data = new ImageData(dto.TextID, dto.DataDateTime, dto.DataScientistID, dto.RowKey ,dto.ThumbnailBlobName );
+                if (dto.DataID != null && dto.DataID != string.Empty)
+                    data = new ImageData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.ThumbnailBlobName);
 
-                ImageLog imageLog = new ImageLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
+                return new ImageLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
 
-                return imageLog;
             }
-            else {
+            else if (dto.TranscriptionLogID != null && dto.TranscriptionLogID != string.Empty) {
+                TranscriptionData data = null;
+                if (dto.DataID != null && dto.DataID != string.Empty)
+                    data = new TranscriptionData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.ThumbnailBlobName, dto.Text);
+
+                return new TranscriptionLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
+
+            }
+            else
+            {
                 throw new System.NotImplementedException("No yet implemented log type");
             }
         }

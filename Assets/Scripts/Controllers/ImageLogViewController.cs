@@ -28,11 +28,11 @@ public class ImageLogViewController : LogViewController
     public void InitWithExisting(ImageLog log, GameObject parentObj)
     {
 
-        if (log.ImageData == null)
+        if (log.Data == null)
             throw new System.Exception("No image in existing image imagelog");
     
-        lastModifiedLabel.SetText(log.ImageData.CreatedOn.ToShortTimeString());
-        imageCanvas.sprite = spriteFromImage(log.ImageData);
+        lastModifiedLabel.SetText(log.Data.CreatedOn.ToShortTimeString());
+        imageCanvas.sprite = spriteFromImage(log.Data);
         
         base.Init(log, parentObj);
 
@@ -59,8 +59,8 @@ public class ImageLogViewController : LogViewController
     {
 
         var imagelog = log as ImageLog;
-        imagelog.ImageData = imageData;
-        imageCanvas.sprite = spriteFromImage(imagelog.ImageData);
+        imagelog.Data = imageData;
+        imageCanvas.sprite = spriteFromImage(imagelog.Data);
         gameObject.SetActive(true);
     
     }
