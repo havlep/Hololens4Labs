@@ -4,24 +4,18 @@ using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Model.DataTypes
 {
-    public class TranscriptionData : DataType
+    public class TranscriptionData : ImageData
     {
         public string Text { get; set; }
-
-        public byte[] Data { get; set; }
-
-        public Texture2D Texture { get; set; }
-
-        public string ThumbnailBlobName { get; set; }
 
         public TranscriptionData(DateTime createdOn, Scientist createdBy, Log doneWithinLog) : base(createdOn, createdBy, doneWithinLog)
         {
 
         }
 
-        public TranscriptionData(string id, DateTime createdOn, string createdByID, string doneWithinLogID, string thumbnailBlobName, string text) : base(id, createdOn, createdByID, doneWithinLogID)
+        public TranscriptionData(string id, DateTime createdOn, string createdByID, string doneWithinLogID, string thumbnailBlobName, string text) : base(id, createdOn, createdByID, doneWithinLogID,thumbnailBlobName)
         {
-            this.ThumbnailBlobName = thumbnailBlobName;
+            
             this.Text = text;
         }
 

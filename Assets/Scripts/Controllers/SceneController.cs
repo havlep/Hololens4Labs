@@ -22,12 +22,14 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         public DataManager DataManager => dataManager;
 
-
+        public ImageAnalysisManager ImageAnalysisManager => imageAnalysisManager;
 
 
         [Header("Managers")]
         [SerializeField]
         private DataManager dataManager = default;
+        [SerializeField]
+        private ImageAnalysisManager imageAnalysisManager = default;
 
 
         [Header("Misc Settings")]
@@ -52,6 +54,8 @@ namespace HoloLens4Labs.Scripts.Controllers
             {
                 CurrentExperiment = await dataManager.CreateOrUpdateExperiment(new Experiment("12", "Electron 1", CurrentUser));
             }
+
+           
         }
 
 

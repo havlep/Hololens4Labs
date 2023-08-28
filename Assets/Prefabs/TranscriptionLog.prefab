@@ -4543,9 +4543,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3705874457011644958}
-        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.LogViewController,
-          Scripts
-        m_MethodName: CloseCard
+        m_TargetAssemblyTypeName: TranscriptionLogViewController, Scripts
+        m_MethodName: captureImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5069,8 +5068,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3705874457011644958}
-        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.LogViewController,
-          Scripts
+        m_TargetAssemblyTypeName: TranscriptionLogViewController, Scripts
         m_MethodName: SaveChanges
         m_Mode: 1
         m_Arguments:
@@ -10768,6 +10766,7 @@ MonoBehaviour:
   messageLabel: {fileID: 5607459787104489016}
   buttons: []
   imageCanvas: {fileID: 6512322892539895021}
+  descriptionInputField: {fileID: 6498434130853872083}
   placeHolderImage: {fileID: 21300000, guid: a7a7756327a58884d8a292d7c995f89f, type: 3}
   photoCapturePanelPrefab: {fileID: 6985602484427985672, guid: 3ff978cb74b52094bad82df7ac3beca2, type: 3}
 --- !u!1 &6023174578578588600
@@ -13000,9 +12999,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3705874457011644958}
-        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.LogViewController,
-          Scripts
-        m_MethodName: CloseCard
+        m_TargetAssemblyTypeName: TranscriptionLogViewController, Scripts
+        m_MethodName: ClearDescription
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
