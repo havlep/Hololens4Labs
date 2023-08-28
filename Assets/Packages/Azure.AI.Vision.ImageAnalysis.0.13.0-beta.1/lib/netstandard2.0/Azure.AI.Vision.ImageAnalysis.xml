@@ -1,0 +1,930 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Azure.AI.Vision.ImageAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.Details.ImageAnalysisCoreResultReason">
+            <summary>
+            A direct mapping of the core property "result.reason" enumeration into C#. This is merged with the core "session.stopped.reason"
+            for simplification in the public Image Analysis surface.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.Details.ImageAnalysisCoreResultReason.Stopped">
+            <summary>
+            Indicates the requested operation was stopped. Not supported at the moment.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.Details.ImageAnalysisCoreResultReason.Analyzed">
+            <summary>
+            Indicates that Image Analysis results are available.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.Details.ImageAnalysisCoreStopReason">
+            <summary>
+            A direct mapping of the core property "session.stopped.reason" enumeration into C#. This is merged with the core "result.reason"
+            for simplification in the public Image Analysis surface.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.Details.ImageAnalysisCoreStopReason.Error">
+            <summary>
+            An error occurred.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorDetails">
+            <summary>
+            A representation of an error associated with an image analysis result.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorDetails.Message">
+            <summary>
+            Get the detailed error message.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorDetails.ErrorCode">
+            <summary>
+            Gets a standardized code for the error.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorDetails.Reason">
+            <summary>
+            Gets the category of the error.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorDetails.FromResult(Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult)">
+            <summary>
+            Creates an object that contains additional error information for a failed ImageAnalysisResult.
+            </summary>
+            <remarks>
+            ImageAnalysisErrorDetail objects can only be created from ImageAnalysisResults that stopped due to an
+            error. This corresponds to a value of "Error" for ImageAnalysisResult.Reason.
+            Attempting to create an ImageAnalysisErrorDetails from a result that did not stop due to an error will
+            return null.
+            </remarks>
+            <param name="result">The result object from a failed image analysis operation</param>
+            <returns>A new ImageAnalysisErrorDetails</returns>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason">
+            <summary>
+            A categorical representation of error classes that can cause an Image Analysis request to fail.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.AuthenticationFailure">
+            <summary>
+            Indicates an authentication error.
+            An authentication error occurs if subscription key or authorization token is invalid, expired,
+            or does not match the region being used.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.BadRequest">
+            <summary>
+            Indicates that one or more image analysis parameters are invalid or the image format is not supported.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.TooManyRequests">
+            <summary>
+            Indicates that the number of parallel requests exceeded the number of allowed concurrent analysis
+            operations for the subscription.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.Forbidden">
+            <summary>
+            Indicates that the free subscription used by the request ran out of quota.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.ConnectionFailure">
+            <summary>
+            Indicates a connection error.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.ServiceTimeout">
+            <summary>
+            Indicates a timeout when waiting for a response from the Computer Vision service.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.ServiceError">
+            <summary>
+            Indicates an internal service error.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.ServiceUnavailable">
+            <summary>
+            Indicates that the service is currently unavailable.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisErrorReason.RuntimeError">
+            <summary>
+            Indicates any other service errors.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisPropertiesExtensions">
+            <summary>
+            Extension methods to allow string-based access to properties.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisPropertiesExtensions.SetProperty(Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The property name</param>
+            <param name="value">The property value to set</param>
+            <param name="advancedOptions">The ImageAnalysisOptions object that contains the property</param>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisPropertiesExtensions.TryGetProperty(Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">The property name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="advancedOptions">The ImageAnalysisOptions object that contains the property</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisPropertiesExtensions.TryGetProperty(Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="resultDetails">the ImageAnalysisResultDetails object that contains the property</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer">
+            <summary>
+            An object that facilitates Image Analysis operations with the Computer Vision service.
+            </summary>
+        </member>
+        <member name="E:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer.Analyzed">
+            <summary>
+            Event that is raised when a new ImageAnalysisResult is available
+            (either analysis succeeded or an error occurred)
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer.#ctor(Azure.AI.Vision.Common.VisionServiceOptions,Azure.AI.Vision.Common.VisionSource,Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions)">
+            <summary>
+            Creates a new ImageAnalyzer instance
+            </summary>
+            <param name="serviceOptions">The Vision Service Options used to connect to the service</param>
+            <param name="visionSource">The Vision Source to use</param>
+            <param name="analysisOptions">The Image Analysis Options to use</param>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer.Analyze">
+            <summary>
+            Performs a single Image Analysis operation using the source provided when this ImageAnalyzer was created.
+            This is a synchronous (blocking) call, that will return after the results are available from the service.
+            </summary>
+            <returns>An ImageAnalysisResult for the analysis operation</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer.AnalyzeAsync">
+            <summary>
+            Begins a single Image Analysis operation against the source provided when this ImageAnalyzer was created.
+            </summary>
+            <returns>A task that completes when an ImageAnalysisResult is available</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalyzer.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature">
+            <summary>
+            Defines the supported visual features to detect in an image.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.None">
+            <summary>
+            No analysis features are requested.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.Tags">
+            <summary>
+            Tags the image with a detailed list of recognizable objects, living beings, scenery, and actions that appear in the image.
+            The language of the tags can be specified by setting the property ImageAnalysisOptions.Language.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.Caption">
+            <summary>
+            Generates a human-readable phrase that describes the image content, in one of the supported languages.
+            </summary>
+            <remarks>
+            Gender neutral caption can be requested by setting the property ImageAnalysisOptions.GenderNeutralCaption.
+            The language can be specified by setting the property ImageAnalysisOptions.Language.
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.DenseCaptions">
+            <summary>
+            Dense Captions provides more details than ImageAnalysisFeature.Caption, by generating one sentence
+            descriptions of up to 10 regions of the image in addition to describing the whole image.
+            </summary>
+            <remarks>
+            Dense Captions also returns bounding box coordinates of the described image region.
+            Gender neutral caption can be requested by setting the property ImageAnalysisOptions.GenderNeutralCaption.
+            The language can be specified by setting the property ImageAnalysisOptions.Language.
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.Objects">
+            <summary>
+            Detects various objects within an image, including the approximate location.
+            Object names are only available in English at the moment.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.People">
+            <summary>
+            Detects people in the image, including their approximate location.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.Text">
+            <summary>
+            Also known as Read or OCR. Performs Optical Character Recognition (OCR)
+            and returns the text detected in the image, including the approximate location
+            of every text line and word.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisFeature.CropSuggestions">
+            <summary>
+            Also known as SmartCrops. Returns recommendations for image crop operations that
+            preserve content (for example for thumbnail generation)
+            </summary>
+            <remarks>
+            Provide requested aspect ratios by calling ImageAnalysisOptions.SetCroppingAspectRatios
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions">
+            <summary>
+            Represents the configuration options that control the function of the ImageAnalyzer
+            </summary>
+            <remarks>
+            ImageAnalysisOptions must specify at least one ImageAnalysisFeature before the ImageAnalyzer is
+            used to analyze an image. There is no default selection for the features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.GenderNeutralCaption">
+            <summary>
+            Gets or sets the gender neutrality of the Image Analysis caption result.
+            </summary>
+            <remarks>
+            If \"true\", caption will not have gendered terms.
+            If \"true\", the words \"Man/Woman\" will be replaced by \"Person\", and \"Boy/Girl\" will be replaced by \"Child\".
+            If not set, defaults to \"false\."
+            Only relevant if ImageAnalysisFeature.Caption is included in the Features property.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.Language">
+            <summary>
+            Gets or sets the language that Image Analysis should use in the results.
+            </summary>
+            <remarks>
+            This language should be provided as an ISO 639-1 code, e.g. "en" for English or "fr" for French.
+            If this value is not set, the default value is "en" for English.
+            See https://aka.ms/cv-languages for a list of supported language codes and which
+            visual features are supported for each language.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.ModelVersion">
+            <summary>
+            Gets or sets the model version that Image Analysis Service should use.
+            </summary>
+            <remarks>
+            Unless otherwise specified, a default of "latest" will be used.
+            "latest" is the only value currently supported by the service.
+            In future service updates, supported model versions will be "latest" or
+            in the form "YYYY-MM-DD" or "YYYY-MM-DD-preview",
+            where YYYY, MM, DD are year, month, and day respectively.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.ModelName">
+            <summary>
+            Gets or sets the name of the custom-trained model that the Image Analysis Service
+            should use.
+            </summary>
+            <remarks>
+            If this option is not set, the default (standard) model will be used.
+            A ModelName that is an empty string indicates that no customization is done
+            and the standard model is used.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.Features">
+            <summary>
+            Gets or sets one or more visual features to extract from the image
+            </summary>
+            <remarks>
+            Features are specified as a bit-masked enum, with multiple selections made by using the bitwise 'or'
+            operator (e.g. `Features = ImageAnalysisFeature.Caption | ImageAnalysisFeature.Tags`).
+            If you are using the default (standard) model, at least one ImageAnalysisFeature must be
+            specified before the ImageAnalyzer is used to analyze an image. There is no default selection
+            for the features.
+            Avoiding the specification of features that will not be used may improve the speed, cost, and/or other
+            dimensions of Image Analysis requests.
+            If you are using a custom-trained model (see ModelName), you do not need to specify features, as they are
+            implied from the model.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.CroppingAspectRatios">
+            <summary>
+            Gets or sets the list of aspect ratios that crop suggestions should attempt to fit (also known as smart crops)
+            </summary>
+            <remarks>
+            An aspect ratio is calculated by dividing the target crop width by the height.
+            Supported values are from 0.75 to 1.8 (inclusive).
+            Setting this property is only relevant when the ImageAnalysisFeature.CropSuggestions option
+            was selected as part of the ImageAnalysisOptions.Features.
+            If you do not set CroppingAspectRatios, and ImageAnalysisFeature.CropSuggestions was selected,
+            the service will return one crop suggestion with an aspect ratio it sees fit between
+            0.5 and 2.0 (inclusive).
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.SegmentationMode">
+            <summary>
+            Gets or sets the segmentation mode that the Image Analysis Service should use.
+            </summary>
+            <remarks>
+            By setting either SegmentationMode.BackgroundRemoval or SegmentationMode.ForegroundMatting,
+            the Image Analysis service will perform a segmentation operation, and if succesfull,
+            will return a single PNG image of the resulting segmentation.
+            By default no segmentation is done.
+            Note that you can extract visual features (by setting ImageAnalyaisOptions.Features and/or ImageAnalyaisOptions.ModelName) or
+            do segmentation (by calling ImageAnalyaisOptions.SegmentationMode) but you cannot do both at the same time.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisOptions.#ctor">
+            <summary>
+            Creates a new instance of ImageAnalysisOptions
+            </summary>
+            <remarks>
+            Configuration properties on this instance should be set prior to using this instance during the creation
+            of an ImageAnalyzer.
+            The only mandatory property to be set is `Features`. All others are optional.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageSegmentationMode">
+            <summary>
+            Defines the segmentation mode supported by the Image Analysis service.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageSegmentationMode.None">
+            <summary>
+            The default value. No segmentation is performed.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageSegmentationMode.BackgroundRemoval">
+            <summary>
+            Background removal. Segmentation results in a PNG image of the detected
+            foreground object with a transparent background.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageSegmentationMode.ForegroundMatting">
+            <summary>
+            Foreground matting. Segmentation results in a grayscale alpha matte PNG image
+            showing the opacity of the detected foreground object.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ContentCaption">
+            <summary>
+            Represents a generated phrase that describes the content of the image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentCaption.Content">
+            <summary>
+            Gets a generated phrase that describes the content of the image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentCaption.Confidence">
+            <summary>
+            Gets a score that represents the likelihood that this image caption is accurate.
+            </summary>
+            <remarks>
+            Confidence scores span the range of 0.0 to 1.0 (inclusive), with higher values indicating higher
+            probability.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentCaption.BoundingBox">
+            <summary>
+            A rectangular boundary to which the caption applies.
+            </summary>
+            <remarks>
+            Coordinates are are in pixels, with (0,0) being the top-left of the source image.
+            For the ImageAnalysisFeature.Caption result, this will be the whole image.
+            For the ImageAnalysisFeature.DenseCaption result, this will either be the whole image
+            or a region within the image.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ContentTag">
+            <summary>
+            Represent an image tag. A tag can be a recognizable object, living being, scenery, or actions that appear in the image.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ContentTag.Name">
+            <summary>
+            Gets the name of the tag
+            </summary>
+            <remarks>
+            Note that you can control the tag language by setting the property ImageAnalysisOptions.Language.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentTag.Confidence">
+            <summary>
+            Gets a score that represents the likelihood that this detection was accurate.
+            </summary>
+            <remarks>
+            Confidence scores span the range of 0.0 to 1.0 (inclusive), with higher values indicating higher
+            probability.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ContentTags">
+            <summary>
+            Represents a list of image tags
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentTags.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ContentTags.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ContentTags.GetEnumerator">
+            <summary>
+            Gets a strongly-typed enumerator for the underlying ContentTags objects in this collection
+            </summary>
+            <returns>
+            A strongly-typed enumerator for the underlying ContentTags objects in this collection
+            </returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ContentTags.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.CropSuggestion">
+            <summary>
+            Represents a suggested image cropping that preserves much of the image content.
+            </summary>
+            <remarks>
+            Suggestions preserve topical content while achieving a desired aspect ratio.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.CropSuggestion.AspectRatio">
+             <summary>
+             The aspect ratio of this crop suggestion
+             </summary>
+             <remarks>
+             Aspect ratios are calculated by dividing the width of the cropped region by its height.
+             You can request particular aspect ratios by setting ImageAnalysisOptions.CroppingAspectRatios.
+            
+             AspectRatio will be in the range 0.75 to 1.8 (inclusive) if ImageAnalysisOptions.CroppingAspectRatios
+             was called, otherwise it will be in the range 0.5 to 2.0 (inclusive).
+             </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.CropSuggestion.BoundingBox">
+            <summary>
+            Gets the rectangular bounds of the crop suggestion.
+            </summary>
+            <remarks>
+            Coordinates are are in pixels, with (0,0) being the top-left of the source image.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.CropSuggestions">
+            <summary>
+            Represents a list of image crop suggestions that preserve most of the image content
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.CropSuggestions.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.CropSuggestions.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.CropSuggestions.GetEnumerator">
+            <summary>
+            Gets a strongly-typed enumerator for the underlying CropSuggestion objects in this collection
+            </summary>
+            <returns> A strongly-typed enumerator for the underlying CropSuggestion objects in this collection </returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.CropSuggestions.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DenseCaptions">
+            <summary>
+            Represents a list of up to 10 captions for different regions of the image.
+            </summary>
+            <remarks>
+            The first caption in the list represents the the whole image, and it is identical to the result
+            returned if you select the option ImageAnalysisFeature.Caption.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DenseCaptions.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DenseCaptions.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DenseCaptions.GetEnumerator">
+            <summary>
+            Gets a strongly-typed enumerator for the underlying ContentCaption items in this collection
+            </summary>
+            <returns> A strongly-typed enumerator for the underlying ContentCaption items in this collection </returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DenseCaptions.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedObject">
+            <summary>
+            Represents a physical object detected in an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedObject.Name">
+            <summary>
+            Gets a label that briefly describes the detected object.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedObject.Confidence">
+            <summary>
+            Gets a score that represents the likelihood that this detection was accurate.
+            </summary>
+            <remarks>
+            Confidence scores span the range of 0.0 to 1.0 (inclusive), with higher values indicating higher
+            probability.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedObject.BoundingBox">
+            <summary>
+            Gets a rectangular boundary within which the object was detected.
+            </summary>
+            <remarks>
+            Coordinates are are in pixels, with (0,0) being the top-left of the source image.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedObjects">
+            <summary>
+            Represents a list of physical objects detected in an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedObjects.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedObjects.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DetectedObjects.GetEnumerator">
+            <summary>
+            Gets a strongly-typed enumerator for the underlying DetectedObject items in this collection
+            </summary>
+            <returns> A strongly-typed enumerator for the underlying DetectedObject items in this collection </returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DetectedObjects.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedPeople">
+            <summary>
+            Represents people detected in an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedPeople.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedPeople.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DetectedPeople.GetEnumerator">
+            <summary>
+            Gets a strongly-typed enumerator for the underlying DetectedPerson objects in this collection
+            </summary>
+            <returns> A strongly-typed enumerator for the underlying DetectedPerson objects in this collection </returns>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.DetectedPeople.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedPerson">
+            <summary>
+            Represents a person detected in an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedPerson.BoundingBox">
+            <summary>
+            Gets a rectangular boundary within which the person was detected.
+            </summary>
+            <remarks>
+            Coordinates are in pixels, with (0,0) being the top-left of the source image.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedPerson.Confidence">
+            <summary>
+            Gets a score that represents the likelihood that this detection was accurate.
+            </summary>
+            <remarks>
+            Confidence scores span the range of 0.0 to 1.0 (inclusive), with higher values indicating higher
+            probability.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedText">
+            <summary>
+            Represents the text lines detected in an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedText.Lines">
+            <summary>
+            Gets the full list of all lines of text detected in an image.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedTextLine">
+            <summary>
+            Represents a single, contiguous line of text as detected within an image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextLine.Content">
+            <summary>
+            Gets the text detected in this line.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextLine.BoundingPolygon">
+             <summary>
+             Gets a bounding polygon with points that enclose this line of text.
+             </summary>
+             <remarks>
+             These points are polygon vertices, presented in clockwise order from the left (-180 degrees, inclusive)
+             relative to the line's orientation.
+            
+             Coordinates are are in pixels, with (0,0) being the top-left of the source image.
+             </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextLine.Words">
+            <summary>
+            Gets a list of detected words associated with this line.
+            </summary>
+            <returns>
+            The list of detected words that comprise this line's textual content.
+            </returns>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.DetectedTextWord">
+            <summary>
+            Represents a single word that was detected in an image.
+            </summary>
+            <remarks>
+            Words consist of a contiguous sequence of characters.
+            For non-space delimited languages such as Chinese, Japanese, and Korean, each character is represented as its
+            own word.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextWord.Content">
+            <summary>
+            Gets the text detected within the bounds of this word.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextWord.Confidence">
+            <summary>
+            Gets a score that represents the likelihood that this detection was accurate.
+            </summary>
+            <remarks>
+            Confidence scores span the range of 0.0 to 1.0 (inclusive), with higher values indicating higher
+            probability.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.DetectedTextWord.BoundingPolygon">
+             <summary>
+             Gets a bounding polygon with points that enclose the word.
+             </summary>
+             <remarks>
+             These points are polygon vertices, presented in clockwise order from the left (-180 degrees, inclusive)
+             relative to the word's orientation.
+            
+             Coordinates are are in pixels, with (0,0) being the top-left of the source image.
+             </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisEventArgs">
+            <summary>
+            Represents an asynchronous Image Analysis result payload as an event argument.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisEventArgs.Result">
+            <summary>
+            Gets the Image Analysis result associated with this event.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult">
+            <summary>
+            Represents the outcome of an Image Analysis operation.
+            </summary>
+            <remarks>
+            Always start by checking the value of Reason property to determine if the analysis
+            operation was successful or not.
+            When an analysis operation is successful, applicable properties in this object
+            will be populated based on the selected features (ImageAnalysisOptions.Features)
+            or custom-trained model (ImageAnalysisOptions.ModelName).
+            These results are parsed from the service JSON response.
+            Other properties will be null.
+            Call ImageAnalysisResultDetails.FromResult to get access to additional
+            information about the result, such as the raw JSON response.
+            When analysis operation failed, call ImageAnalysisErrorDetails.FromResult
+            to get access to additional information about the error.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.Reason">
+            <summary>
+            Gets a value indicating why this result was generated.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.ModelVersion">
+            <summary>
+            Gets the model version used by the Image Analysis Service to create this result.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.ImageHeight">
+            <summary>
+            Gets the height, in pixels, of the analyzed image.
+            </summary>
+            <remarks>
+            Only populated if the image was analyzed successfully
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.ImageWidth">
+            <summary>
+            Gets the width, in pixels, of the analyzed image.
+            </summary>
+            <remarks>
+            Only populated if the image was analyzed successfully
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.Caption">
+            <summary>
+            Gets a generated phrase that describes the content of the analyzed image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.Caption was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.DenseCaptions">
+            <summary>
+            Gets up to 10 generated phrases, the first describing the content of the whole image,
+            and the others describing the content of different regions of the image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.DenseCaptions was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.Tags">
+            <summary>
+            Gets a list of content tag detections from the analyzed image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.Tags was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.CustomTags">
+            <summary>
+            Gets a list of content tag detections from the analyzed image, using
+            the provided custom-trained model.
+            </summary>
+            <remarks>
+            This property may be populated if ImageAnalysisOptions.ModelName was set
+            to the name of a custom-trained model.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.Objects">
+            <summary>
+            Gets a collection of object detections from the analyzed image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.Objects was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.CustomObjects">
+            <summary>
+            Gets a collection of object detections from the analyzed image, using
+            the provided custom-trained model.
+            </summary>
+            <remarks>
+            This property may be populated if ImageAnalysisOptions.ModelName was set
+            to the name of a custom-trained model.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.People">
+            <summary>
+            Gets a collection of detected people from the analyzed image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.People was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.Text">
+            <summary>
+            Gets a collection of extracted text lines and words from the analyzed image.
+            </summary>
+            <remarks>
+            This property will only be populated if ImageAnalysisFeature.Text was included
+            while setting ImageAnalysisOptions.Features.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.CropSuggestions">
+             <summary>
+             Gets a collection of suggested image crop operations of the analyzed 
+             image at the desired aspect ratios (if provided).
+             </summary>
+             <remarks>
+             Also knows as SmartCrops. These cropping suggestions preserve as much content 
+             as possible while achieving the specified aspect ratios (if provided).
+            
+             This property will only be populated if ImageAnalysisFeature.CropSuggestions was included
+             while setting ImageAnalysisOptions.Features.
+            
+             Optionally, specify one or more desired cropping aspect ratios by setting
+             ImageAnalysisOptions.CroppingAspectRatios. If CroppingAspectRatios is not set, the Service will
+             return one crop suggestion with an aspect ratio it sees fit.
+             </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult.SegmentationResult">
+            <summary>
+            Gets the segmentation result, holding a PNG image and associated metadata.
+            </summary>
+            <remarks>
+            This result will only be populated if ImageAnalysisOptions.SegmentationMode
+            was set to either ImageSegmentationMode.BackgroundRemoval or
+            ImageSegmentationMode.ForegroundMatting.
+            </remarks>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails">
+            <summary>
+            Represents additional information related to an image analysis result.
+            </summary>
+            <remarks>
+            This includes the raw JSON response from the service, and other
+            details related to the service connection and image source.
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails.ResultId">
+            <summary>
+            Gets a unique identifier from the Vision Service, associated with this result.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails.ImageId">
+            <summary>
+            Gets the identifier of the analyzed image. This could be the full-path
+            image file name or the image URL, depending on how the VisionSource was created.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails.ConnectionUrl">
+            <summary>
+            Gets the full URL used to connect to the Image Analysis service
+            to get these results. It includes the query URL parameters.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails.JsonResult">
+            <summary>
+            Gets the JSON response payload from the Vision Service that was deserialized 
+            to create the provided ImageAnalysisResult.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultDetails.FromResult(Azure.AI.Vision.ImageAnalysis.ImageAnalysisResult)">
+            <summary>
+            Creates a new instance that provides access to advanced details about a provided ImageAnalysisResult.
+            </summary>
+            <param name="result">The original ImageAnalysisResult from which to retrieve details </param>
+            <returns>A new AdvancedImageAnalysisResultDetails instance </returns>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultReason">
+            <summary>
+            Represents the reasons why an Image Analysis operation concluded.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultReason.Error">
+            <summary>
+            Indicates that a result was generated due to an error during Image Analysis.
+            </summary>
+            <remarks>
+            More information about the error can be obtained by creating an ImageAnalysisErrorDetails object
+            by calling ImageAnalysisErrorDetails.FromResult(), and passing in the result.
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.ImageAnalysis.ImageAnalysisResultReason.Analyzed">
+            <summary>
+            Indicates that Image Analysis was successful and results are available.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.SegmentationResult">
+            <summary>
+            Holds a single segmentation result image of PNG format and associated metadata.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.SegmentationResult.ImageBuffer">
+            <summary>
+            Gets the result image buffer in PNG format.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.SegmentationResult.ImageHeight">
+            <summary>
+            Gets the height, in pixels, of the segmentation result image.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.ImageAnalysis.SegmentationResult.ImageWidth">
+            <summary>
+            Gets the width, in pixels, of the segmentation result image.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.ImageAnalysis.SegmentationResult.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.ImageAnalysis.ImageAnalyzerUtils">
+            <summary>
+            A static collection of helper methods to consolidate common code patterns for ImageAnalyzer.
+            </summary>
+        </member>
+    </members>
+</doc>

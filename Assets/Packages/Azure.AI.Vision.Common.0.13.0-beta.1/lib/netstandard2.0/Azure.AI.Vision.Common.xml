@@ -1,0 +1,1389 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Azure.AI.Vision.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Azure.AI.Common.Internal.AsyncOpContext">
+            <summary>
+            Serves as the context for an async operation.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Common.Internal.AsyncOpContext.finalResult">
+            <summary>
+            The task completion source for the Operation's return value.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Common.Internal.AsyncOpContext.resultSet">
+            <summary>
+            Indicates if the return value has been set.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Common.Internal.AsyncOpContext.asyncResultSource">
+            <summary>
+            A TaskCompletionSource that will be resolved when the C async result source has been set.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.AsyncOpContext.AsyncOpHandle">
+            <summary>
+            Gets or sets the native async operation handle associated with this context.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.SetResult(Azure.AI.Common.Internal.InteropSafeResultHandle)">
+            <summary>
+            Sets the result for the Async operation
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.GetFinalResultTask">
+            <summary>
+            Gets the task that will contian the final result.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.SetAsyncOp(Azure.AI.Common.Internal.InteropSafeAsyncOpHandle)">
+            <summary>
+            Sets the handle for the async operation that will return the final result
+            </summary>
+            <param name="asyncOp"></param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.GetAsyncResultSource">
+            <summary>
+            Gets a task that will be resolved when the async operation has been started.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.AsyncOpContext.Handle">
+            <summary>
+            A GC Handle respreseting this class instance.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.AsyncOpContext.CallbackHandle">
+            <summary>
+            Handle to the callback that will be invoked to signal the async op is done.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.Finalize">
+            <summary>
+            The base destructor
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.AsyncOpContext.Dispose">
+            <summary>
+            Disposes the current object. It is safe to call this multiple times
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.IReadOnlyPropertyCollection">
+            <summary>
+            A read only property collection
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.IReadOnlyPropertyCollection.Item(System.String)">
+            <summary>
+            Gets the value of the specified property
+            </summary>
+            <param name="name">The name of the property</param>
+            <returns>The value of the property, or null</returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.IReadOnlyPropertyCollection.TryGetProperty(System.String,System.String@)">
+            <summary>
+            Gets the value associated with the specified property name.
+            </summary>
+            <param name="name"> The name of the property. </param>
+            <param name="value">
+            If the key is found, this parameter is populated with the value associated with the key; otherwise,
+            it's populated with an empty string.
+            </param>
+            <returns> True if the provided property name was found; false otherwise. </returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.IReadOnlyPropertyCollection.GetBinaryDataProperty(System.String,System.UInt32@)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="binarySize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.IPropertyCollection">
+            <summary>
+            A property collection
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.IPropertyCollection.Item(System.String)">
+            <summary>
+            Gets or sets a property
+            </summary>
+            <param name="name">The name of the property</param>
+            <returns>The value of the property, or null</returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.IPropertyCollection.SetProperty(System.String,System.String)">
+            <summary>
+            Sets the value of a property
+            </summary>
+            <param name="name">The name of the property</param>
+            <param name="value">The value to set</param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.IPropertyCollection.SetBinaryDataProperty(System.String,System.ReadOnlySpan{System.Byte})">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.PropertyCollectionExtensions">
+            <summary>
+            Helper extension methods to make working with property collections simpler
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.PropertyCollectionExtensions.TryGetProperty``1(Azure.AI.Common.Internal.IReadOnlyPropertyCollection,System.String,``0@)">
+            <summary>
+            Gets a value, automatically performing type conversion.
+            </summary>
+            <typeparam name="TVal"> The type with which automatic conversion should be performed. </typeparam>
+            <param name="props"> The properties this extension method is invoked upon. </param>
+            <param name="propName"> The name of the property to attempt to find a value for. </param>
+            <param name="value">
+            If the named property is found, this value is populated with the discovered value; otherwise,
+            an empty string.
+            </param>
+            <returns> True if the named property was found; false otherwise. </returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.PropertyCollectionExtensions.SetProperty``1(Azure.AI.Common.Internal.IPropertyCollection,System.String,``0)">
+            <summary>
+            Sets a value. This will automatically do type conversion
+            </summary>
+            <typeparam name="TVal">The type of the value to set</typeparam>
+            <param name="props">The properties to set the value on</param>
+            <param name="propName">The name of the property to set</param>
+            <param name="value">The value to set. This will be automatically converted to a string</param>
+            <exception cref="T:System.NotSupportedException">If the C# type converters don't know how to convert your value to a string</exception>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.PropertyCollectionExtensions.ConvertFromString``1(System.String)">
+            <summary>
+            Uses the C# type conversion system to convert from a string into a value
+            </summary>
+            <typeparam name="TVal">The type of the value</typeparam>
+            <param name="str">The string to convert</param>
+            <returns>The converted value</returns>
+            <exception cref="T:System.NotSupportedException">If we don't know how to convert into a value from the string</exception>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.PropertyCollectionExtensions.ConvertToString``1(``0)">
+            <summary>
+            Uses the C# type conversion system to convert from a value to a string
+            </summary>
+            <typeparam name="TVal">The type of the value</typeparam>
+            <param name="value">The value to convert</param>
+            <returns>The string equivalent of the value</returns>
+            <exception cref="T:System.NotSupportedException">If we don't know how to convert into a string from the value</exception>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.InteropSafeHandle.Handle">
+            <summary>
+            Gets or sets the value of the underlying, unsafe, raw handle and takes lifetime ownership of it.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.InteropSafeHandle.IsInvalid">
+            <summary>
+            Gets a value indicating whether the underlying handle is still valid.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.Utf8StringMarshaler">
+            <summary>
+            UTF-8 string marshaler.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringMarshaler.MarshalNativeToManaged(System.IntPtr)">
+            <summary>Converts the unmanaged data to managed data.</summary>
+            <param name="native">A pointer to the unmanaged data to be wrapped.</param>
+            <returns>An object that represents the managed view of the COM data.</returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringMarshaler.MarshalManagedToNative(System.String)">
+            <summary>Converts the managed data to unmanaged data.</summary>
+            <param name="str">The managed string to be converted.</param>
+            <returns>A pointer to the COM view of the managed object.</returns>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.Utf8StringHandle">
+            <summary>
+            Helper class to simplify marshaling a UTF8 string to native and back. You should use
+            this in a using() block.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Common.Internal.Utf8StringHandle.Null">
+            <summary>
+            Returns a null UTF8 native string handle
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringHandle.#ctor(System.String)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="str">The string to marshal</param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringHandle.#ctor(System.UInt32)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="maxLength">The maximum string length including the terminating \0</param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringHandle.#ctor">
+            <summary>
+            This is deliberately private to prevent using as an out parameter. You cannot free
+            native code in managed unless it was explicitly allocated using LocalAlloc or
+            CoTaskMemAlloc(). Using this as an out parameter could result in trying to free
+            memory allocated using malloc or new().
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.Utf8StringHandle.Length">
+            <summary>
+            Gets the length of the native string handle (including the trailing \0).
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringHandle.ToString">
+            <summary>
+            Gets the managed string representation of the native string
+            </summary>
+            <returns>The managed string representation</returns>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.Utf8StringHandle.IsInvalid">
+            <summary>Gets a value that indicates whether the handle is invalid.</summary>
+            <returns>
+                <see langword="true" /> if the handle is not valid; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.Utf8StringHandle.ReleaseHandle">
+            <summary>
+            Executes the code required to free the handle.
+            </summary>
+            <returns>
+                <see langword="true" /> if the handle is released successfully; otherwise, in the event of a catastrophic failure, <see langword=" false" />.
+            </returns>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.InteropPropertyConnection">
+            <summary>
+            Represents a property collection backed by a live, native handle in the core layer.
+            </summary>
+            <remarks>
+            InteropPropertyConnection maintains an *additional* native reference to its underlying handle; it does not
+            take ownership of a handle.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.#ctor(Azure.AI.Common.Internal.InteropSafeHandle)">
+            <summary>
+            Creates a new InteropPropertyConnection against the best-match property bag handle for the provided
+            interop reference.
+            </summary>
+            <remarks>
+            This InteropPropertyConnection will maintain a new, additionally-referenced-counted handle; creating
+            an InteropPropertyConnection does *not* take ownership of an existing handle and callers are still
+            responsible for releasing existing references.
+            </remarks>
+            <param name="originHandle">
+            The handle for the native interop object whose properties will underly this connection
+            </param>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.#ctor">
+            <summary>
+            Creates a new InteropPropertyConnection against a new native property bag. As this is a new property
+            collection, its lifetime will typically be scoped to the lifetime of this InteropPropertyConnection.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Common.Internal.InteropPropertyConnection.Item(System.String)">
+            <summary>
+            Gets or sets a property value by name
+            </summary>
+            <param name="name">The name of the property</param>
+            <returns>The value of the property (null if the property doesn't exist)</returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.TryGetProperty(System.String,System.String@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.SetProperty(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.GetBinaryDataProperty(System.String,System.UInt32@)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="binarySize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.SetBinaryDataProperty(System.String,System.ReadOnlySpan{System.Byte})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Azure.AI.Common.Internal.InteropPropertyConnection.ThrowIfDisposed">
+            <summary>
+            Throws an exception if the object has been disposed
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">If the object has been disposed</exception>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.DiagnosticPropertyKeys">
+            <summary>
+            Represents string keys used for setting properties in diagnostic components.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Common.Internal.InputPropertyKeys">
+            <summary>
+            Represents string keys used for setting properties in input components.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger">
+            <summary>
+            Controls SDK logging to System.Console
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger.Start(System.Boolean)">
+            <summary>
+            Starts console logging
+            </summary>
+            <param name="logToStderr">true to log to stderr, false for stdout</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger.Stop">
+            <summary>
+            Stops console logging
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger.SetFilters(System.String[])">
+            <summary>
+            Sets filters for console logging.
+            </summary>
+            <param name="filters">A set of filters</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)">
+            <summary>
+            Sets the level of the messages to be captured by the logger
+            </summary>
+            <param name="level">Maximum level of detail to be captured by the logger.</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.EventLogger">
+            <summary>
+            An event logger for SDK mesages
+            </summary>
+        </member>
+        <member name="E:Azure.AI.Vision.Common.Diagnostics.Logging.EventLogger.OnMessage">
+            <summary>
+            Event that is raised for each log message.
+            </summary>
+            <remarks>This call is on the working thread in the SDK.</remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.EventLogger.SetFilters(System.String[])">
+            <summary>
+            Filters for the event
+            </summary>
+            <param name="filters">A set of filters</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.EventLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)">
+            <summary>
+            Sets the level of the messages to be captured by the logger
+            </summary>
+            <param name="level">Maximum level of detail to be captured by the logger.</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.EventSourceLogger">
+            <summary>
+            An event source logger for SDK mesages
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.EventSourceLogger.SetFilters(System.String[])">
+            <summary>
+            Filters for the event
+            </summary>
+            <param name="filters">A set of filters</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.EventSourceLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)">
+            <summary>
+            Sets the level of the messages to be captured by the logger
+            </summary>
+            <param name="level">Maximum level of detail to be captured by the logger.</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger">
+            <summary>
+            Represents a process-wide singleton that emits log data to a provided file-based target.
+            </summary>
+            <remarks>Logging is a process wide construct.</remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.Start(System.String,System.String[])">
+            <summary>
+            Starts logging to a file.
+            </summary>
+            <param name="filePath">Path to log file</param>
+            <param name="filters">Filters that will be applied to lines logged to the file.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.Start(System.String,System.Boolean,System.String[])">
+            <summary>
+            Starts logging to a file.
+            </summary>
+            <param name="filePath">Path to log file</param>
+            <param name="filters">Filters that will be applied to lines logged to the file.</param>
+            <param name="append">Wether or not any existing log file should be appended to.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.Stop">
+            <summary>
+            Stops file logging.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.SetFilters(System.String[])">
+            <summary>
+            Changes the filters that apply to file logging.
+            </summary>
+            <param name="filters">New filters, or null to remove the filters.</param>
+            <remarks>When setting there filters there may be a turbulent period where no filters apply.</remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)">
+            <summary>
+            Sets the level of the messages to be captured by the logger
+            </summary>
+            <param name="level">Maximum level of detail to be capture by the logger.</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.VisionEventSource">
+            <summary>
+            An event logger for SDK mesages
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.Level">
+            <summary>
+            Defines the different available log levels.
+            </summary>
+            <remarks>
+            This is used by different loggers to set the maximum level of detail they will output.
+            <see cref="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)" />
+            <see cref="M:Azure.AI.Vision.Common.Diagnostics.Logging.EventLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)" />
+            <see cref="M:Azure.AI.Vision.Common.Diagnostics.Logging.FileLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)" />
+            <see cref="M:Azure.AI.Vision.Common.Diagnostics.Logging.ConsoleLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)" />
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Diagnostics.Logging.Level.Error">
+            <summary>
+            Represents Errors.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Diagnostics.Logging.Level.Warning">
+            <summary>
+            Represents Warnings.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Diagnostics.Logging.Level.Info">
+            <summary>
+            Represents Info messages.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Diagnostics.Logging.Level.Verbose">
+            <summary>
+            All log messages
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger">
+            <summary>
+            Represents an in-memory buffer of SDK trace messages
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.Start">
+            <summary>
+            Starts the internal buffer.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.Stop">
+            <summary>
+            Stops the internal buffer.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.Dump(System.IO.TextWriter)">
+            <summary>
+            Writes the contents of the buffer to the specified TextWriter
+            </summary>
+            <param name="writer">A TextWriter (Such as System.Console) to write to.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.Dump">
+            <summary>
+            Returns the log buffer as an IEnumerable&lt;string&gt;
+            </summary>
+            <returns>The contents of the memory log buffer.</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.Dump(System.String)">
+            <summary>
+            Dumps the memory log to the specfied file.
+            </summary>
+            <param name="filePath">file path to dump the log contents to</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Diagnostics.Logging.MemoryLogger.SetLevel(Azure.AI.Vision.Common.Diagnostics.Logging.Level)">
+            <summary>
+            Sets the level of the messages to be captured by the logger
+            </summary>
+            <param name="level">Maximum level of detail to be captured by the logger.</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Frame">
+            <summary>
+            Represents a Frame being passed into or retrieved from the Vision SDK.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.Frame.Data">
+            <summary>
+            Gets available data from the frame.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Frame.#ctor(System.Memory{System.Byte})">
+            <summary>
+            Constructs a frame object with existing data.
+            </summary>
+            <param name="data">The memory that contains the frame.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Frame.#ctor(Azure.AI.Common.Internal.InteropSafeFrameHandle)">
+            <summary>
+            Internal constructor
+            </summary>
+            <param name="handle">The frame handle from the ABI layer</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Frame.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameFormat">
+            <summary>
+            Represents a collection of image format properties (e.g. FOURCC, width, height, stride, ...)
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameFormat.CreateFourCCFormat(System.Char,System.Char,System.Char,System.Char,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a FrameFormat from FourCC values
+            </summary>
+            <param name="ch1"></param>
+            <param name="ch2"></param>
+            <param name="ch3"></param>
+            <param name="ch4"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="stride"></param>
+            <returns>A FrameFormat</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameFormat.CreateRgbFormat(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a FrameFormat from RGB values
+            </summary>
+            <param name="bitsPerPixel"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="stride"></param>
+            <returns>A FrameFormat</returns>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.FourCC">
+            <summary>
+            Get the FourCC representation of the frame
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.Height">
+            <summary>
+            Get the height of the frame in pixels
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.Width">
+            <summary>
+            Get the width of the frame in pixels
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.Stride">
+            <summary>
+            Get the stride of the frame in pixels
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.SensorType">
+            <summary>
+            Get the sensor type used to capture the frame.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameFormat.BitsPerPixel">
+            <summary>
+            Get the bits per pixel of the frame
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameFormat.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.SensorType">
+            <summary>
+            Represnts the type of sensor used to capture the frame.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.SensorType.Unknown">
+            <summary>
+            Represents an unknown sensor type.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.SensorType.Color">
+            <summary>
+            Represnts visible light.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.SensorType.Infrared">
+            <summary>
+            Represnts infrared light.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.SensorType.Depth">
+            <summary>
+            Represents a depth sensor.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameReader">
+            <summary>
+            Represents the ability to read image frame data, for use as input with Vision AI operations.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.FromVisionSource(Azure.AI.Vision.Common.VisionSource)">
+            <summary>
+            Create a frame reader from vision source. Not implemented.
+            </summary>
+            <param name="source"></param>
+            <returns>The frame reader</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.Read">
+            <summary>
+            Read a frame. Not implemented.
+            </summary>
+            <returns>The frame as a memory buffer</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.ReadAsync">
+            <summary>
+            Asynchronously read a frame. Not implemented.
+            </summary>
+            <returns>A task that will hold the frame as a memory buffer</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.Read(System.Memory{System.Byte})">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="buffer"></param>
+            <returns>Count of bytes read.</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.ReadAsync(System.Memory{System.Byte})">
+            <summary>
+            Not implemented.
+            </summary>
+            <param name="buffer"></param>
+            <returns>Task with count of bytes read.</returns>
+        </member>
+        <member name="E:Azure.AI.Vision.Common.FrameReader.FrameAvailable">
+            <summary>
+            An event indicating a new frame is available
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameReader.Format">
+            <summary>
+            Get the frame format of the reader
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameReader.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSet">
+            <summary>
+            Represents a Frame being passed into or retrived from the Vision SDK.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSet.#ctor(Azure.AI.Common.Internal.InteropSafeFrameReaderHandle,System.UInt64)">
+            <summary>
+            Internal constructor
+            </summary>
+            <param name="frameReaderHandle">The frame handle from the ABI layer</param>
+            <param name="offset">Offset for this frameset</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSet.GetFrames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSet.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSetFormat">
+            <summary>
+            Represents a collection of image format properties (e.g. FOURCC, width, height, stride, ...)
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameSetFormat.Properties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetFormat.FromFrameFormats(Azure.AI.Vision.Common.FrameFormat[])">
+            <summary>
+            Create a FrameSetFormat from a collection of FrameFormats
+            </summary>
+            <param name="formats"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSetSourceReader">
+            <summary>
+            Not implemented.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSourceReader.Read">
+            <summary>
+            Not implemented.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSourceReader.ReadAsync">
+            <summary>
+            Not implemented.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSource">
+            <summary>
+            Represents a source of image frame data, used as input to or output from Vision AI operations.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameSource.Properties">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.FromFormat(Azure.AI.Vision.Common.FrameFormat,System.Action{Azure.AI.Vision.Common.FrameWriter})">
+            <summary>
+            Initializes a new instance of the FrameSource class from FrameFormat
+            </summary>
+            <param name="format"></param>
+            <param name="writeCallback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.GetReader">
+            <summary>
+            Gets a FrameReader associated with this FrameSource
+            </summary>
+            <returns>The FrameReader</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.GetWriter">
+            <summary>
+            Gets the FrameWriter associated with this FrameSource
+            </summary>
+            <returns>A FrameWriter</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.CloseWriter">
+            <summary>
+            Closes the frame source for writing.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSource.Dispose(System.Boolean)">
+            <summary>
+            Disposes of external resources
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameWriter">
+            <summary>
+            Represents the ability to write image frame data, for use as input with Vision AI scenario operations.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameWriter.Write(System.Memory{System.Byte})">
+             <summary>
+            
+             </summary>
+             <param name="frame"></param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameWriter.Write(Azure.AI.Vision.Common.Frame)">
+             <summary>
+            
+             </summary>
+             <param name="frame"></param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameWriter.GetMemory(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameWriter.GetSpan(System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="size"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameWriter.Dispose">
+            <summary>
+            Disposes the current object. It is safe to call this multiple times
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSetSource">
+            <summary>
+            Represents a source of image frame data, used as input to or output from Vision AI operations.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSource.#ctor(Azure.AI.Common.Internal.InteropSafeFrameSourceHandle,System.Action{Azure.AI.Vision.Common.FrameSetWriter})">
+            <summary>
+            Creates a FrameSetSource from a handle
+            </summary>
+            <param name="handle"></param>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSource.FromFrameSetFormat(Azure.AI.Vision.Common.FrameSetFormat,System.Action{Azure.AI.Vision.Common.FrameSetWriter})">
+            <summary>
+            Creates a FrameSetSource from a FrameSetFormat
+            </summary>
+            <param name="formats"></param>
+            <param name="callbackAction"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.FrameSetSource.Reader">
+            <summary>
+            Not implemented
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSource.GetWriter">
+            <summary>
+            Gets a FrameSetWriter associated with this source
+            </summary>
+            <returns>The associated FrameSetWriter</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetSource.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.FrameSetWriter">
+            <summary>
+            Represents the ability to write image frame data, for use as input with Vision AI operations.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetWriter.Write(System.Memory{System.Byte}[])">
+            <summary>
+            Writes a set of frames of image data to the underlying FrameSetSource.
+            </summary>
+            <param name="frames">The set of frames</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetWriter.Write(Azure.AI.Vision.Common.Frame[])">
+            <summary>
+            Writes a set of frames of image data to the underlying FrameSetSource.
+            </summary>
+            <param name="frames">The set of frames</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetWriter.GetMemory(System.Int32)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.FrameSetWriter.Dispose">
+            <summary>
+            Disposes the current object. It is safe to call this multiple times
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Internal.InteropCallbackClient.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Internal.SessionResultReason">
+            <summary>
+            The C# representation of the core layer's common result reasons
+            </summary>
+            <remarks>
+            See: $\source\core\interfaces\include\interfaces\ispx_recognition_result2.h for the native list.
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionResultReason.NoResult">
+            <summary>
+            No Result could be generated for the given data.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionResultReason.Stopped">
+            <summary>
+            The REA stopped or was unable to generate a result.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionResultReason.Timeout">
+            <summary>
+            A result could not be generated within the timeout requested by the API
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionResultReason.IntermediateResult">
+            <summary>
+            Represents an intermediate result.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionResultReason.FinalResult">
+            <summary>
+            Represents a final result.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Internal.SessionStoppedReason">
+            <summary>
+            The C# representation of the core layer's stop reasons
+            </summary>
+            <remarks>
+            See: $\source\core\interfaces\include\interfaces\ispx_recognition_result2.h for the native list.
+            </remarks>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionStoppedReason.Error">
+            <summary>
+            An error occurred.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionStoppedReason.NoMoreData">
+            <summary>
+            The end of the input stream was reached.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionStoppedReason.StopRequested">
+            <summary>
+            An API call was made to stop recognizing.
+            </summary>
+        </member>
+        <member name="F:Azure.AI.Vision.Common.Internal.SessionStoppedReason.NotStarted">
+            <summary>
+            The session was not started
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Internal.SessionViewManager.#ctor(System.String,Azure.AI.Vision.Common.VisionServiceOptions,Azure.AI.Common.Internal.BindingOnlyPropertyCollection,Azure.AI.Vision.Common.VisionSource)">
+            <summary>
+            
+            </summary>
+            <param name="viewName"></param>
+            <param name="serviceOptions"></param>
+            <param name="objectOptionsProperties"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.Internal.SessionViewManager.#ctor(System.String,Azure.AI.Common.Internal.BindingOnlyPropertyCollection,Azure.AI.Common.Internal.BindingOnlyPropertyCollection,Azure.AI.Vision.Common.VisionSource,Azure.Core.TokenCredential,Azure.AzureKeyCredential,Azure.Core.Pipeline.HttpPipelineTransport)">
+            <summary>
+            
+            </summary>
+            <param name="viewName"></param>
+            <param name="sessionOptionsProperties"></param>
+            <param name="objectOptionsProperties"></param>
+            <param name="source"></param>
+            <param name="tokenCredential"></param>
+            <param name="keyCredential"></param>
+            <param name="transport"></param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.Internal.VisionClientOptions">
+            <summary>
+            Internal representation of ClientOptions
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionCamera">
+            <summary>
+            Represents a camera device
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionCamera.Description">
+            <summary>
+            Gets a unique string describing the camera device
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionCamera.GetCameras">
+            <summary>
+            Enumerates all camera devices. Not implemented.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionLocalProcessingAdvancedOptions">
+            <summary>
+            Represents a collection of advanced options for local (on-device) vision processing
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionLocalProcessingOptions">
+            <summary>
+            Represents a collection of options for local (on-device) vision processing
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionLocalProcessingOptions.Advanced">
+            <summary>
+            Get a collection of advanced options
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionServiceAdvancedOptions">
+            <summary>
+            Represents advanced options and parameters on the VisionService object.
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceAdvancedOptions.HttpProxy">
+            <summary>
+            Gets or set the URL of the HTTP proxy server
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceAdvancedOptions.HttpProxyPort">
+            <summary>
+            Gets or set the port of the HTTP proxy server
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceAdvancedOptions.HttpProxyUserName">
+            <summary>
+            Gets or set the user name required to access the HTTP proxy server
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceAdvancedOptions.HttpProxyPassword">
+            <summary>
+            Gets or set the password required to access the HTTP proxy server
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceAdvancedOptions.Transport">
+            <summary>
+            The HttpPipelineTransport to be used for this client.
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionServiceOptions">
+            <summary>
+            Represents the configuration options used to connect to a remote Vision AI Service
+            </summary>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionServiceOptions.Advanced">
+            <summary>
+            Gets a collection of advanced options for the VisionService
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionServiceOptions.#ctor(System.Uri)">
+            <summary>
+            Constructs a new VisionServiceOptions
+            </summary>
+            <param name="url">The endpoint of the Vision Service</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionServiceOptions.#ctor(System.Uri,Azure.AzureKeyCredential)">
+            <summary>
+            Constructs a new VisionServiceOptions
+            </summary>
+            <param name="url">The endpoint URL of the Vision Service</param>
+            <param name="key">The Computer Vision key used to authenticate against the Vision Service</param>
+            <remarks>
+            Store your key securely. For example, using Azure Key Vault. Do not compile the value of your key into
+            your application source code. Fetch it at run-time when needed from a secure location.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionServiceOptions.#ctor(System.String,Azure.AzureKeyCredential)">
+            <summary>
+            Constructs a new VisionServiceOptions
+            </summary>
+            <param name="url">The endpoint of the Vision Service</param>
+            <param name="key">The Computer Vision key used to authenticate against the Vision Service</param>
+            <remarks>
+            Store your key securely. For example, using Azure Key Vault. Do not compile the value of your key into
+            your application source code. Fetch it at run-time when needed from a secure location.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionServiceOptions.#ctor(System.String,Azure.Core.TokenCredential)">
+            <summary>
+            Constructs a new VisionServiceOptions
+            </summary>
+            <param name="url">The endpoint of the Vision Service</param>
+            <param name="tokenCredential">A short-duration token derived from your Computer Vision key, used to authenticate against the Vision Service</param>
+        </member>
+        <member name="T:Azure.AI.Vision.Common.VisionSource">
+            <summary>
+            Represents a source of vision data, used as input to a Computer Vision operation
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFrameSource(Azure.AI.Vision.Common.FrameSource)">
+            <summary>
+            Builds a VisionSource from a stream input source
+            </summary>
+            <param name="frameSource">The stream that will serve as the input</param>
+            <returns>A VisionSource that uses the specified input stream</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFrameSources(Azure.AI.Vision.Common.FrameSource[])">
+            <summary>
+            Builds a VisionSource from an array of stream input sources
+            </summary>
+            <param name="frameSources">An array of streams that will serve as the input</param>
+            <returns>A VisionSource that uses the specified array of input streams</returns>
+            <remarks>
+            Not yet implemented.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFrameSetSource(Azure.AI.Vision.Common.FrameSetSource)">
+            <summary>
+            Builds a VisionSource from a frame-set stream input source
+            </summary>
+            <param name="frameSetSource">The frame-set stream that will serve as the input</param>
+            <returns>A VisionSource that uses the specified frame-set input</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFile(System.String)">
+            <summary>
+            Builds a VisionSource from a local input image or video file
+            </summary>
+            <param name="filePath">The full path name of the local file</param>
+            <returns>A VisionSource that uses the specified input file</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFiles(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Builds a VisionSource from a collection of local input image or video files
+            </summary>
+            <param name="filePaths">The collection of full path names of the local files</param>
+            <returns>A VisionSource that uses the specified file collection</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFiles(System.String[])">
+            <summary>
+            Builds a VisionSource from an array of local input image or video files
+            </summary>
+            <param name="filePaths">The array of full path names of the local files</param>
+            <returns>A VisionSource that uses the specified array of files</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromUrl(System.Uri)">
+            <summary>
+            Builds a VisionSource from an internet accessible URL
+            </summary>
+            <param name="fileUri">An accessible URL for the input media</param>
+            <returns>A VisionSource that uses the specified input URL</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromUrl(System.String)">
+            <summary>
+            Builds a VisionSource from an internet accessible URL
+            </summary>
+            <param name="fileUri">An accessible URL for input media</param>
+            <returns>A VisionSource that uses the specified input URL</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromFiles(System.Func{System.String})">
+            <summary>
+            Builds a VisionSource from a callback that returns file names
+            </summary>
+            <param name="getNextFilePath">A callback that will return one file name per call</param>
+            <returns>A VisionSource that uses the callback-specified input files</returns>
+            <remarks>
+            getNextFilePath will be called as each file input is completed and a new one is needed.
+            Return a null or string.empty to indicate there are no more files.
+            </remarks>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromDefaultCaptureDevice">
+            <summary>
+            Builds a VisionSource from the default capture device, such as a camera
+            </summary>
+            <returns>A VisionSource that uses the default capture device</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromCaptureDevice(System.String)">
+            <summary>
+            Builds a VisionSource from a capture device specified by its attributes
+            </summary>
+            <param name="deviceAttributes">Capture device attributes (e.g. "front=true;"), 
+            or an empty string for default capture device</param>
+            <returns>A VisionSource that uses this capture device</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromCamera(Azure.AI.Vision.Common.VisionCamera)">
+            <summary>
+            Builds a VisionSource from the specified VisionCamera object
+            </summary>
+            <param name="camera"></param>
+            <returns>A VisionSource that uses this camera</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromRTSPCamera(System.Uri)">
+            <summary>
+            Builds a VisionSource from an RTSP camera stream
+            </summary>
+            <param name="cameraLocation">The RTSP URI of the camera stream</param>
+            <returns>A VisionSource that uses this RTSP camera stream</returns>
+            <remarks>
+            Not yet supported for use with ImageAnalyzer.
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromVisionSources(Azure.AI.Vision.Common.VisionSource[])">
+            <summary>
+            Create a VisionSource from an array of other input VisionSource objects
+            </summary>
+            <param name="sources"></param>
+            <returns>A VisionSource that uses multiple input VisionSource objects</returns>
+            <remarks>
+            Not implemented
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.FromPayload(System.Byte[],System.String)">
+            <summary>
+            Create a VisionSource from an input byte array
+            </summary>
+            <param name="data">The binary data</param>
+            <param name="type">The data type</param>
+            <returns>A VisionSource that uses this input byte array</returns>
+            <remarks>
+            Not implemented
+            </remarks>
+        </member>
+        <member name="P:Azure.AI.Vision.Common.VisionSource.Id">
+            <summary>
+            The VisionSource's unique ID
+            </summary>
+            <remarks>
+            Not implemented
+            </remarks>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.Dispose(System.Boolean)">
+            <summary>
+            Releases resources
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Azure.AI.Vision.Common.VisionSource.Dispose">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:Azure.AI.Vision.Advanced.VisionPropertiesExtensions">
+            <summary>
+            Extension methods to allow string based access to properties.
+            </summary>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.Frame,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frame">The advanced options class that contains the properties.</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.Frame,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="frame">Frame containing properties collection.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.FrameFormat,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frameFormat">The advanced options class that contains the properties.</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.FrameFormat,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frameFormat">FrameFromat with properties</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.FrameSetFormat,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frameSetFormat">FrameFromat with properties</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.FrameSetFormat,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="frameSetFormat">FrameFromat with properties</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.FrameSource,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frameSource">FrameSource with properties</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.FrameSource,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="frameSource">FrameSource with properties</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.FrameSetSource,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="frameSetSource">FrameSetSource with properties</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.FrameSetSource,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="frameSetSource">FrameSetSource with properties</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.VisionSource,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="source">VisionSource with Properties.</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.VisionSource,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="source">VisionSource with Properties.</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.VisionLocalProcessingAdvancedOptions,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="options">VisionLocalProcessingAdvancedOptions containing properties</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.VisionLocalProcessingAdvancedOptions,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="options">VisionLocalProcessingAdvancedOptions containing properties</param>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.TryGetProperty(Azure.AI.Vision.Common.VisionServiceAdvancedOptions,System.String,System.String@)">
+            <summary>
+            Gets the value of an advanced property by name.
+            </summary>
+            <param name="name">Property Name</param>
+            <param name="value">Out parameter that contains the value if found</param>
+            <param name="options">VisionServiceAdvancedOptions containing properties</param>
+            <returns>true if the value is in the property bag, false otherwise</returns>
+        </member>
+        <member name="M:Azure.AI.Vision.Advanced.VisionPropertiesExtensions.SetProperty(Azure.AI.Vision.Common.VisionServiceAdvancedOptions,System.String,System.String)">
+            <summary>
+            Sets the value of an advanced property by name.
+            </summary>
+            <param name="name">The name of the property to set.</param>
+            <param name="value">The value to set the property to.</param>
+            <param name="options">VisionServiceAdvancedOptions containing properties</param>
+        </member>
+    </members>
+</doc>
