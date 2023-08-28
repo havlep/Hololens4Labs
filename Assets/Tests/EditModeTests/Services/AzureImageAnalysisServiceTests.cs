@@ -26,6 +26,7 @@ public class AzureImageAnalysisServiceTests
         Assert.AreEqual(task.Result, "Glacial\nA\ncetic\nacid");
 
     }
+
     [Test]
     public  void ImageWithMultipleLineTextSuccess()
     {
@@ -42,6 +43,5 @@ public class AzureImageAnalysisServiceTests
         Assert.AreEqual(task.Result, "One small crack\ndoes not mean you\nare broken, it means\nyou were put to the\ntest & you didn't\nfall apart.\nyou're amazing!\noperationbeautiful.com");
 
     }
-
    
 }
