@@ -65,7 +65,7 @@ public class LogSelectionController : MonoBehaviour
 
         foreach (Log log in logs)
         {
-            //scrollableListPopulator.AddItem(log);
+            scrollableListPopulator.AddItem(log);
         }
     }
 

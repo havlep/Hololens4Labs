@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 4311855069277197640}
   - component: {fileID: 2876519405087755745}
   - component: {fileID: 5900979214358855536}
+  - component: {fileID: 385776370465493937}
   m_Layer: 0
   m_Name: LogOverviewItemButton
   m_TagString: Untagged
@@ -926,6 +927,22 @@ MonoBehaviour:
   defaultButtonQuadMaterial: {fileID: 2100000, guid: fa419ab56051229449e3b813df8f295f, type: 2}
   iconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
   defaultIconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
+--- !u!114 &385776370465493937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311855069277197641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95dd47e492b4f1b469dbca1ae87c0060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logDateLabel: {fileID: 7870940158515110431}
+  logTextLabel: {fileID: 924902435393059486}
+  logIDLabel: {fileID: 63064272981107137}
+  logTypeLabel: {fileID: 2379108593186087651}
 --- !u!1 &4311855069576609332
 GameObject:
   m_ObjectHideFlags: 0
