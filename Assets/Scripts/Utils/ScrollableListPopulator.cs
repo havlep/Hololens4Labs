@@ -174,7 +174,7 @@ namespace HoloLens4Labs.Scripts.Utils
             }
             scrollView.gameObject.SetActive(true);
 
- 
+ /*
                         if (!lazyLoad)
                         {
                             for (int i = 0; i < numItems; i++)
@@ -193,7 +193,7 @@ namespace HoloLens4Labs.Scripts.Utils
 
                             StartCoroutine(UpdateListOverTime(loader, itemsPerFrame));
                         }
- 
+ */
         }
 
         private IEnumerator UpdateListOverTime(GameObject loaderViz, int instancesPerFrame)
@@ -226,12 +226,12 @@ namespace HoloLens4Labs.Scripts.Utils
        
         public void AddItem<T>(T data)
         {
-            /*
+            
             GameObject itemInstance = Instantiate(itemPrefab, gridObjectCollection.transform);
             itemInstance.SetActive(true);
-            //onInstantiateActions.Invoke(itemInstance, data);
+            onInstantiateActions.Invoke(itemInstance, data);
             gridObjectCollection.UpdateCollection();
-            */
+            
         }
     
 
