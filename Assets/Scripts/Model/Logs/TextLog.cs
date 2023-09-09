@@ -35,6 +35,11 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         public TextLog(Scientist createdBy, Experiment doneWithin) : base(createdBy, doneWithin)
         { }
 
+        public static new string GetTypeName()
+        {
+            return "Text";
+        }
+
 
     }
 }

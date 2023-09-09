@@ -288,5 +288,22 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         {
             return IsReady;
         }
+
+        public async Task<(Log[], TableContinuationToken)> GetLogsForExperiment(string experimentID, TableContinuationToken token)
+        {
+
+            
+               return await atLogRepository.GetLogsForExperiment(experimentID, 50, token);
+                        
+           
+        }
+
+        public async Task<Log[]> GetLogsForExperiment(string experimentID)
+        {
+            var (logs, token) = await GetLogsForExperiment(experimentID, null);
+            return logs;
+        }
+
+        
     }
 }

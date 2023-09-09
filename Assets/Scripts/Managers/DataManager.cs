@@ -207,5 +207,16 @@ namespace HoloLens4Labs.Scripts.Managers
         {
             return repo.IsReady();
         }
+
+        /// <summary>
+        /// Get all logs for experiment
+        /// </summary>
+        /// <param name="experimentID"></param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public Task<Log[]> GetLogsForExperiment(string experimentID)
+        {
+            return repo.GetLogsForExperiment(experimentID);
+        }
     }
 }

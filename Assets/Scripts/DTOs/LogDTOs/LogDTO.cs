@@ -15,7 +15,8 @@ namespace HoloLens4Labs.Scripts.DTOs
         // Properties related to the LogType
         public string TextLogID { get; set; } = string.Empty;
         public string ImageLogID { get; set; } = string.Empty;
-        public string TranscriptionLogID { get; set; } = string.Empty;        public string DataScientistID { get; set; } = string.Empty;
+        public string TranscriptionLogID { get; set; } = string.Empty;        
+        public string DataScientistID { get; set; } = string.Empty;
         public string WeightLogID { get; set; } = string.Empty;     
  
         // Properties related to the DataType

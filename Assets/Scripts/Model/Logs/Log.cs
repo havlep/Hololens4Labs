@@ -47,6 +47,11 @@ namespace HoloLens4Labs.Scripts.Model.Logs
             experimentID = doneWithinID;
         }
 
+        public static String GetTypeName()
+        {
+            return "Log";
+        }
+
 
     }
 }

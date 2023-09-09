@@ -6,15 +6,16 @@ using System.Net;
 using System;
 using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
     public abstract class AzureTableObjectRepository
         <OBJ, DTO> : ObjectRepositoryInterface<OBJ> where DTO : ITableEntity, new()
     {
-        private CloudTable table = null;
-        private MapperInterface<OBJ, DTO, DTO> mapper;
-        private string defaultPartitionKey = null;
+        protected CloudTable table = null;
+        protected MapperInterface<OBJ, DTO, DTO> mapper;
+        protected string defaultPartitionKey = null;
 
 
         public AzureTableObjectRepository(MapperInterface<OBJ, DTO, DTO> mapper, string defaultPartitionKey)
@@ -124,6 +125,21 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             return result.Result != null;
 
+        }
+
+
+
+        //TODO : Implement pagination
+        public async Task<(List<OBJ>, TableContinuationToken)> ReadOnePageAsync(int pageSize, TableContinuationToken continuationToken = null)
+        {
+            if (table == null)
+                throw new NotSupportedException("Table was not initialized for this type");
+
+            var query = new TableQuery<DTO>().Take(pageSize);
+            var segment = await table.ExecuteQuerySegmentedAsync(query, continuationToken);
+
+            var results = segment.Results.Select(x => mapper.ToOBJ(x)).ToList();
+            return (results, segment.ContinuationToken);
         }
     }
 }

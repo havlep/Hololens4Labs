@@ -27,6 +27,10 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         public ImageLog(Scientist createdBy, Experiment doneWithin) : base(createdBy, doneWithin)
         { }
 
+        public static new string GetTypeName()
+        {
+            return "Image";
+        }
 
     }
 }
