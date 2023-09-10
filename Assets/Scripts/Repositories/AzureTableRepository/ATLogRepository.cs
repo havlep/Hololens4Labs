@@ -3,8 +3,11 @@ using HoloLens4Labs.Scripts.Mappers;
 using HoloLens4Labs.Scripts.Model.Logs;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
+using System.Collections.Generic;
+
 using System.Linq;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
@@ -31,9 +34,20 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 .Take(pageSize);
 
             var segment = await this.table.ExecuteQuerySegmentedAsync(query, continuationToken);
-            var logs = segment.Results.Select(dto => mapper.ToOBJ(dto)).ToArray();
+            
+            // Map the result to the Log type skipping over any problematic entries
+            var logs = segment.Results.Aggregate( new List<Log>(), (acc, dto) => {
+                try
+                {
+                    acc.Add(mapper.ToOBJ(dto));
+                } catch (Exception e)
+                {
+                    Debug.Log(e.Message);
+                }
+                return acc;
+                });
 
-            return (logs, segment.ContinuationToken);
+            return (logs.ToArray(), segment.ContinuationToken);
         
         }
         

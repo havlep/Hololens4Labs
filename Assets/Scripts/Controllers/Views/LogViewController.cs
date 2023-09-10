@@ -47,7 +47,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         protected void OnDisable()
         {
-            sceneController.OpenMainMenu();
+            sceneController.OpenStartMenu();
         }
 
         public void CloseCard()

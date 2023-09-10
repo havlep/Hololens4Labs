@@ -1,29 +1,15 @@
 using UnityEngine;
-using UnityEngine.Events;
-#if UNITY_WSA
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine.Windows.WebCam;
-#endif
-
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;
-using System.Threading.Tasks;
-using System;
+
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
+    /// <summary>
+    /// Singleton class that manages the scene, 
+    /// </summary>
     public class SceneController : MonoBehaviour
     {
-
-
-        public Experiment CurrentExperiment { get; private set; }
-        public Scientist CurrentUser { get; private set; }
-
-        public DataManager DataManager => dataManager;
-
-        public ImageAnalysisManager ImageAnalysisManager => imageAnalysisManager;
-
 
         [Header("Managers")]
         [SerializeField]
@@ -32,36 +18,111 @@ namespace HoloLens4Labs.Scripts.Controllers
         private ImageAnalysisManager imageAnalysisManager = default;
 
 
-        [Header("Misc Settings")]
+        [Header("Menus")]
         [SerializeField]
-        private GameObject mainMenu = default;
+        private GameObject loadingMenu = default;
+        [SerializeField]
+        private GameObject startMenu = default;
+        [SerializeField]
+        private GameObject experimentListMenu = default;
+        [SerializeField]
+        private GameObject logSelectionMenu = default;
 
 
+        /// <summary>
+        /// The experiment that is currently being worked on
+        /// </summary>
+        public Experiment CurrentExperiment { get; set; }
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// The user currently using the app
+        /// </summary>
+        public Scientist CurrentUser { get; set; }
+
+        /// <summary>
+        /// DataManager instance
+        /// </summary>
+        public DataManager DataManager => dataManager;
+
+        /// <summary>
+        /// ImageAnalysisManager instance
+        /// </summary>
+        public ImageAnalysisManager ImageAnalysisManager => imageAnalysisManager;
+
+        /// <summary>
+        /// Singleton instance
+        /// </summary>
+        public static SceneController Instance { get; private set; }
+
+        private GameObject currentMenu = default;
+
+        /// <summary>
+        /// Set the loading menu as the current menu and turn all other menus off
+        /// </summary>
         void Start()
         {
-            OpenMainMenu();
+            loadingMenu?.SetActive(true);
+            currentMenu = loadingMenu;
+            startMenu?.SetActive(false);
+            experimentListMenu?.SetActive(false);
+            logSelectionMenu?.SetActive(false);
         }
 
-        // Should be called from DataManager ready callback to ensure DB is ready.
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+            }
+
+        }
+
+        /// <summary>
+        /// Initialize the scene controller called from the databasemanager once it is ready
+        /// </summary>
         public async void Init()
         {
+
             CurrentUser = new Scientist("11","Rutherford");
             CurrentUser = await dataManager.CreateOrUpdateScientist(CurrentUser);
 
-            if (CurrentExperiment == null)
-            {
-                CurrentExperiment = await dataManager.CreateOrUpdateExperiment(new Experiment("12", "Electron 1", CurrentUser));
-            }
+            OpenStartMenu();
 
-           
         }
 
-
-        public void OpenMainMenu()
+        /// <summary>
+        /// Open the start menu
+        /// </summary>
+        public void OpenStartMenu()
         {
-            mainMenu?.SetActive(true);
+            currentMenu?.SetActive(false);
+            startMenu?.SetActive(true);
+            currentMenu = startMenu;
         }
+
+        /// <summary>
+        /// Open the experiment list menu
+        /// </summary>
+        public void OpenExperimentListMenu()
+        {
+            currentMenu?.SetActive(false);
+            experimentListMenu?.SetActive(true);
+            currentMenu = experimentListMenu;
+        }
+
+        /// <summary>
+        /// Open the log selection menu
+        /// </summary>
+        public void OpenLogSelectionMenu()
+        {
+            currentMenu?.SetActive(false);
+            logSelectionMenu?.SetActive(true);
+            currentMenu = logSelectionMenu;
+        }
+
     }
 }
