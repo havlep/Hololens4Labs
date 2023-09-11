@@ -84,7 +84,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         /// <param name="itemInstance">The GameObject that represents the item in a list</param>
         /// <param name="data">The Log that contains the data</param>
-        public static void PopulateItemAction(GameObject itemInstance, object data)
+        public void PopulateItemAction(GameObject itemInstance, object data)
         {
 
             var logInfoButtonController = itemInstance.GetComponent<LogInfoButtonController>();
@@ -105,7 +105,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             var log = data as Log;
 
-            logInfoButtonController.Init(log);
+            logInfoButtonController.Init(log, this);
 
         }
 
@@ -117,7 +117,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             var textLogView = Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
             var textLog = new TextLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
-            textLogView.Init(textLog, gameObject);
+            textLogView.InitWithExisting(textLog, gameObject);
             gameObject.SetActive(false);
 
         }
@@ -144,6 +144,34 @@ namespace HoloLens4Labs.Scripts.Controllers
             var transcriptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
             TranscriptionLog transcriptionLog = new TranscriptionLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
             transcriptionLogView.InitNew(transcriptionLog, gameObject);
+            gameObject.SetActive(false);
+
+        }
+
+        
+        /// <summary>
+        /// Called when the log item button is clicked
+        /// </summary>
+        /// <param name="log">The log that was clicked</param>
+        public void OnLogItemSelected(Log log) { 
+
+            switch (log)
+            {
+                case TextLog textLog:
+                    var textLogView = Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
+                    textLogView.InitWithExisting(textLog, gameObject);
+                    break;
+                case ImageLog imageLog:
+                    var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);
+                    imageLogView.InitWithExisting(imageLog, gameObject);
+                    break;
+                case TranscriptionLog transcriptionLog:
+                    var tracsciptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
+                    tracsciptionLogView.InitWithExisting(transcriptionLog, gameObject);
+                    break;
+                 default:
+                    throw new NotImplementedException("Not implemented log type");
+            }
             gameObject.SetActive(false);
 
         }

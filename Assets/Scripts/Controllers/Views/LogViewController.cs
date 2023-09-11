@@ -58,7 +58,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
 
         /// <summary>
-        /// Init the menu with the given TextLogDTO.
+        /// InitWithExisting the menu with the given TextLogDTO.
         /// Should be called from the previous menu.
         /// </summary>
         /// <param name="source">TextLogDTO source</param>

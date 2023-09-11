@@ -22,7 +22,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         /// <param name="log"> The exisignt log </param>
         /// <param name="parentObj"> The calling object </param>
-        public void Init(TextLog log, GameObject parentObj)
+        public void InitWithExisting(TextLog log, GameObject parentObj)
         {
             if (log.TextData != null)
             {

@@ -22,54 +22,54 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         protected TMP_Text logTypeLabel = default;
 
+        protected LogSelectionController parent = default;
+        protected Log log = null;
+
         /// <summary>
         /// Initialize the button with the log data
         /// </summary>
         /// <param name="log"></param>
         /// <exception cref="NotImplementedException">If the log type in the DTO is not supported</exception>
-        public void Init(Log log)
+        public void Init(Log log, LogSelectionController parent)
         {
+
             logDateLabel.text = log.CreatedOn.ToShortTimeString();
             logIDLabel.text = log.Id;
 
-            if (log is TextLog)
+            switch (log)
             {
 
-                TextLog textLog = log as TextLog;
-                logTextLabel.text = textLog.TextData.Text;
-                logTypeLabel.text = TextLog.GetTypeName();
-
+                case TextLog textLog:
+                    logTextLabel.text = textLog.TextData.Text;
+                    logTypeLabel.text = TextLog.GetTypeName();
+                    break;
+                case ImageLog:
+                    logTextLabel.text = "";
+                    logTypeLabel.text = ImageLog.GetTypeName();
+                    break;
+                case TranscriptionLog transcriptionLog:
+                    if (transcriptionLog.Data != null)
+                        logTextLabel.text = transcriptionLog.Data.Text;
+                    logTypeLabel.text = TranscriptionLog.GetTypeName();
+                    break;
+                 default:
+                    throw new NotImplementedException("Not implemented log type");
+            
             }
 
-            else if (log is ImageLog)
-            {
+            this.log = log;
+            this.parent = parent;
 
-                ImageLog imageLog = log as ImageLog;
-                logTextLabel.text = "";
-                logTypeLabel.text = ImageLog.GetTypeName();
 
-            }
-            else if (log is TranscriptionLog)
-            {
+        }
 
-                TranscriptionLog transcriptionLog = log as TranscriptionLog;
-                if (transcriptionLog.Data != null)
-                    logTextLabel.text = transcriptionLog.Data.Text;
-                logTypeLabel.text = TranscriptionLog.GetTypeName();
+        /// <summary>
+        /// Called when the item button is clicked
+        /// </summary>
+        public void OnClick()
+        {
 
-            }
-            else if (log is WheightLog)
-            {
-
-                throw new NotImplementedException("Not implemented yet");
-                /*
-                Tran transcriptionLog = log as WheightLog;
-                if (transcriptionLog.Data != null)
-                    logTextLabel.text = transcriptionLog.Data.Text;
-                logTypeLabel.text = TranscriptionLog.GetTypeName();
-                */
-
-            }
+            parent.OnLogItemSelected(log);
 
         }
 
