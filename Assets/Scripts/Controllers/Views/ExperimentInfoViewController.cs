@@ -27,7 +27,10 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         protected GameObject parent;
 
-        private void Start()
+        /// <summary>
+        /// Initialize the view
+        /// </summary>
+        void Awake()
         {
             if (sceneController == null)
             {
@@ -47,6 +50,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             //createdOnLabel.text = experiment.CreatedOn.ToShortDateString();
             actionLabel.text = "Create New Experiment";
             this.parent = parent;
+            gameObject.SetActive(true);
 
         }
         
@@ -57,6 +61,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             createdByLabel.text = sceneController.CurrentUser.Name;
             actionLabel.text = "Create New Experiment";
+            gameObject.SetActive(true);
+            this.parent = parent;
         
         }
 
@@ -74,13 +80,13 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Close the current window and return to parent menu
+        /// Close the current View and return to parent menu
         /// </summary>
-        public void Close()
+        public void CloseView()
         {
         
             parent.SetActive(true);
-            Destroy(this);
+            Destroy(gameObject);
 
         }
     

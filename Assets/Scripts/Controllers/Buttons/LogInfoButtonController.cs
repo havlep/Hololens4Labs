@@ -1,11 +1,13 @@
 using HoloLens4Labs.Scripts.Model.Logs;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
+    /// <summary>
+    /// Controller for the log info button used in the log selection menu
+    /// </summary>
     public class LogInfoButtonController : MonoBehaviour
     {
 
@@ -20,7 +22,11 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         protected TMP_Text logTypeLabel = default;
 
-
+        /// <summary>
+        /// Initialize the button with the log data
+        /// </summary>
+        /// <param name="log"></param>
+        /// <exception cref="NotImplementedException">If the log type in the DTO is not supported</exception>
         public void Init(Log log)
         {
             logDateLabel.text = log.CreatedOn.ToShortTimeString();
@@ -55,7 +61,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             else if (log is WheightLog)
             {
 
-                throw new System.Exception("Not implemented yet");
+                throw new NotImplementedException("Not implemented yet");
                 /*
                 Tran transcriptionLog = log as WheightLog;
                 if (transcriptionLog.Data != null)

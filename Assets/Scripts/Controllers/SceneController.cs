@@ -6,7 +6,7 @@ using HoloLens4Labs.Scripts.Model;
 namespace HoloLens4Labs.Scripts.Controllers
 {
     /// <summary>
-    /// Singleton class that manages the scene, 
+    /// Singleton class that manages the scene, data, image analysis and menus
     /// </summary>
     public class SceneController : MonoBehaviour
     {
@@ -68,6 +68,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             logSelectionMenu?.SetActive(false);
         }
 
+        /// <summary>
+        /// Handeling of singleton uniqueness on Awake
+        /// </summary>
         private void Awake()
         {
             if (Instance != null && Instance != this)

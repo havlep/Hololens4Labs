@@ -1349,9 +1349,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LogSelectionController, Scripts
-        m_MethodName: CreateNewTextLog
+      - m_Target: {fileID: 8120024344444069194}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.ExperimentInfoViewController,
+          Scripts
+        m_MethodName: CloseView
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7440,9 +7441,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LogSelectionController, Scripts
-        m_MethodName: CreateNewImageLog
+      - m_Target: {fileID: 8120024344444069194}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.ExperimentInfoViewController,
+          Scripts
+        m_MethodName: SaveExperiment
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

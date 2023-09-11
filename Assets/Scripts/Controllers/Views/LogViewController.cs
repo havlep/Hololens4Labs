@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
+    /// <summary>
+    /// Controller for the log view
+    /// </summary>
     public class LogViewController
         : MonoBehaviour
     {
@@ -36,18 +39,15 @@ namespace HoloLens4Labs.Scripts.Controllers
         protected GameObject parentObject = default;
         protected Log log = default;
 
-
+        /// <summary>
+        /// Connect the scenecontroller if it is not set
+        /// </summary>
         protected void Awake()
         {
             if (sceneController == null)
             {
                 sceneController = FindObjectOfType<SceneController>();
             }
-        }
-
-        protected void OnDisable()
-        {
-            sceneController.OpenStartMenu();
         }
 
         public void CloseCard()
@@ -79,6 +79,10 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         }
 
+        /// <summary>
+        /// Set the buttons interactive state
+        /// </summary>
+        /// <param name="state"></param>
         protected void SetButtonsInteractiveState(bool state)
         {
             foreach (var interactable in buttons)
@@ -116,6 +120,9 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         }
 
+        /// <summary>
+        /// Callback for when the image is captured
+        /// </summary>
         public virtual void ImageCaptured(DataType data)
         {
         }

@@ -24,20 +24,26 @@ namespace HoloLens4Labs.Scripts.Controllers
         [Header("Views")]
         [SerializeField]
         private ExperimentInfoViewController experimentInfoViewPrefab = default;
-        
+
         // Todo implement the creation of a new experiment
         //private TextLogViewController textLogViewPrefab = default;
 
-        /// <summary>
-        /// Initialize the button with the experiment data
-        /// </summary>
-        void OnEnable()
-        {
 
+        private void Start()
+        {
             if (sceneController == null)
             {
                 sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
             }
+
+        }
+        
+
+        /// <summary>
+        /// Initialize the button with the experiment data
+        /// </summary>
+        private void OnEnable()
+        {
 
             scrollableListPopulator.MakeScrollingList();
 

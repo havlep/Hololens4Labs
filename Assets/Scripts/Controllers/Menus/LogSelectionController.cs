@@ -1,4 +1,3 @@
-using HoloLens4Labs.Scripts.Controllers;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Utils;
@@ -34,7 +33,10 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private GameObject mainMenu = default;
 
-        private void Start()
+        /// <summary>
+        /// Initialize the scene controller
+        /// </summary>
+        private void Awake()
         {
             if (sceneController == null)
             {
@@ -42,7 +44,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Create the scrolling list and populate it with the logs
+        /// </summary>
         void OnEnable()
         {
             scrollableListPopulator.MakeScrollingList();

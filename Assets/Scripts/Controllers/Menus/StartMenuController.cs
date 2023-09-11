@@ -1,11 +1,12 @@
-using HoloLens4Labs.Scripts.Controllers;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
+    /// <summary>
+    /// Controller for the start menu
+    /// </summary>
+
     public class StartMenuController : MonoBehaviour
     {
 
@@ -27,19 +28,18 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         [Header("Prefabs")]
         [SerializeField]
-        protected GameObject ExperimentDetailMenu = default;
-        [SerializeField]
-        protected GameObject ListExperimentsMenu = default;
-        [SerializeField]
-        protected GameObject CreateExperimentMenu = default;
+        protected ExperimentInfoViewController experimentInfoView = default;
 
-        // Start is called before the first frame update
+
+        /// <summary>
+        /// Initialize the view with the last experiment data
+        /// </summary>
         void Start()
         {
 
             if (sceneController == null)
             {
-                sceneController = FindObjectOfType<SceneController>();
+                sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
             }
 
             /*
@@ -59,22 +59,25 @@ namespace HoloLens4Labs.Scripts.Controllers
         // Select From Existing Experiments
 
         /// <summary>
-        /// Create a new experiment
+        /// Open the create experiment view
         /// </summary>
         public void CreateNewExperiment()
         {
-            Instantiate(CreateExperimentMenu);
-            Destroy(gameObject);
+
+            ExperimentInfoViewController view = Instantiate(experimentInfoView, this.transform.position, Quaternion.identity);
+            view.InitNew(gameObject);
+            gameObject.SetActive(false);
 
         }
 
         /// <summary>
-        /// List all experiments
+        /// Open the list all experiments menu
         /// </summary>
         public void ListAllExperiments()
         {
-            Instantiate(ListExperimentsMenu);
-            Destroy(gameObject);
+            sceneController.OpenExperimentListMenu();
+            gameObject.SetActive(false);
+
         }
 
     }

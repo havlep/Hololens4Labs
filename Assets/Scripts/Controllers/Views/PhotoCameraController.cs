@@ -17,6 +17,9 @@ using UnityEngine.Windows.WebCam;
 
 namespace HoloLens4Labs.Scripts.Controllers
 {
+    /// <summary>
+    /// Controller for the log view
+    /// </summary>
     public class PhotoCameraController: MonoBehaviour
     {
         public bool IsCameraActive { private set; get; }
@@ -52,19 +55,36 @@ namespace HoloLens4Labs.Scripts.Controllers
         private bool isWaitingForAirtap;
 
 
+        /// <summary>
+        /// Setup the scenecontroller if it is not set
+        /// </summary>
+        void Awake()
+        {
+            if (SceneController == null)
+            {
+                SceneController = FindObjectOfType<SceneController>();
+            }
+        }
+
+        /// <summary>
+        /// Initialize the view with the log that will be captured
+        /// </summary>
+        /// <param name="log">The log that will be filled in with data</param>
+        /// <param name="parentObj">The calling object</param>
+
         public void Init(Log log, LogViewController parentObj) { 
         
             this.log = log;
             this.parentObj = parentObj;
             isWaitingForAirtap = true;
 
-            SceneController = FindObjectOfType<SceneController>();
-
             StartCamera();
         }
 
 
-
+        /// <summary>
+        /// Cancel the capture and return to the previous menu
+        /// </summary>
         public void CancelCapture()
         {
 
@@ -74,6 +94,11 @@ namespace HoloLens4Labs.Scripts.Controllers
             Destroy(gameObject);
         
         }
+
+        /// <summary>
+        /// Callback that is called when the photo capture is completed
+        /// </summary>
+        /// <param name="imageData"></param>
 
         public void CaptureCompleted(ImageData imageData)
         {
@@ -87,8 +112,10 @@ namespace HoloLens4Labs.Scripts.Controllers
 
 
 #if UNITY_WSA
-        /// With WSA
-         
+        
+        /// <summary>
+        /// Start the camera
+        /// </summary>
         public void StartCamera()
         {
             if (IsCameraActive)
@@ -111,6 +138,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             IsCameraActive = true;
         }
 
+        /// <summary>
+        /// Start the photo mode
+        /// </summary>
         private void StartPhotoMode()
         {
             var cameraResolution = PhotoCapture.SupportedResolutions
@@ -135,6 +165,9 @@ namespace HoloLens4Labs.Scripts.Controllers
 
 
 #else
+        /// <summary>
+        /// Start the camera
+        /// </summary>
         public void StartCamera()
         {
             if (IsCameraActive)
@@ -255,7 +288,11 @@ namespace HoloLens4Labs.Scripts.Controllers
             });
         }
 
-
+        /// <summary>
+        /// Create a sprite from the image data
+        /// </summary>
+        /// <param name="imageData">ImageData as captured by the camera</param>
+        /// <returns></returns>
         private Sprite spriteFromImage(ImageData imageData)
         {
             return Sprite.Create(imageData.Texture, new Rect(0, 0, imageData.Texture.width, imageData.Texture.height), new Vector2(0.5f, 0.5f));
@@ -269,6 +306,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
         }
 
+        /// <summary>
+        /// Capture the photo and return to the previous menu
+        /// </summary>
         public async void CapturePhotoAndReturnAsync()
                                                       {
             
@@ -277,6 +317,10 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         }
 
+        /// <summary>
+        /// Capture the photo and return the ImageData
+        /// </summary>
+        /// <returns>The photo data bundled in Image data</returns>
         private async Task<ImageData> CapturePhoto()
         {
             isWaitingForAirtap = false;
@@ -306,6 +350,10 @@ namespace HoloLens4Labs.Scripts.Controllers
             messageLabel.text = "Look at object and do Airtap to take photo.";
         }
 
+        /// <summary>
+        /// Set the buttons interactive state
+        /// </summary>
+        /// <param name="state"></param>
         protected void SetButtonsInteractiveState(bool state)
         {
             foreach (var interactable in buttons)
