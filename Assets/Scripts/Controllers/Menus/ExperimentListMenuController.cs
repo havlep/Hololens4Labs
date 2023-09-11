@@ -1,4 +1,3 @@
-
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Utils;
 using System;
@@ -37,7 +36,6 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
 
         }
-        
 
         /// <summary>
         /// Initialize the button with the experiment data

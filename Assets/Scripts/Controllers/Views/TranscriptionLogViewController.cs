@@ -130,7 +130,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         /// <summary>
         /// Trascribes the image that was captured
-        /// <\summary>
+        /// </summary>
         /// <returns>The transcription</returns>
         private string Transcribe()
         {
