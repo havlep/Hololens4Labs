@@ -219,5 +219,14 @@ namespace HoloLens4Labs.Scripts.Managers
         {
             return repo.GetLogsForExperiment(experimentID);
         }
+
+        /// <summary>
+        /// Get all Experiments 
+        /// </summary>
+        /// <returns>List of all experiments</returns>
+        public async Task<Experiment[]> GetAllExperiments()
+        {
+            return await repo.GetAllExperiments();
+        }
     }
 }

@@ -29,6 +29,8 @@ namespace HoloLens4Labs.Scripts.Repositories
 
         public Task<Log[]> GetLogsForExperiment(string experimentID);
 
+        public Task<Experiment[]> GetAllExperiments();
+
         bool IsReady();
 
 

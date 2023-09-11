@@ -293,7 +293,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         {
 
             
-               return await atLogRepository.GetLogsForExperiment(experimentID, 50, token);
+               return await atLogRepository.GetLogsForExperiment(experimentID, 100, token);
                         
            
         }
@@ -304,6 +304,15 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             return logs;
         }
 
-        
+        public async Task<(Experiment[], TableContinuationToken)> GetAllExperiments(TableContinuationToken token)
+        {
+            return await atExperimentRepository.ReadOnePageAsync(100,token);
+        }
+
+        public async Task<Experiment[]> GetAllExperiments()
+        {
+            var (logs, token) = await GetAllExperiments(null);
+            return logs;
+        }
     }
 }

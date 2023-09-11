@@ -55,8 +55,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             }
 
 
-            PopulateList(Task<Experiment[]>.FromResult(experiments.ToArray()));
-            //PopulateList(sceneController.DataManager.GetLogsForExperiment(sceneController.CurrentExperiment.Id));
+            //PopulateList(Task<Experiment[]>.FromResult(experiments.ToArray()));
+            PopulateList(sceneController.DataManager.GetAllExperiments());
+
         }
 
         /// <summary>

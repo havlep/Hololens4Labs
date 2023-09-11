@@ -130,7 +130,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
 
         //TODO : Implement pagination
-        public async Task<(List<OBJ>, TableContinuationToken)> ReadOnePageAsync(int pageSize, TableContinuationToken continuationToken = null)
+        public async Task<(OBJ[], TableContinuationToken)> ReadOnePageAsync(int pageSize, TableContinuationToken continuationToken = null)
         {
             if (table == null)
                 throw new NotSupportedException("Table was not initialized for this type");
@@ -139,7 +139,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var segment = await table.ExecuteQuerySegmentedAsync(query, continuationToken);
 
             var results = segment.Results.Select(x => mapper.ToOBJ(x)).ToList();
-            return (results, segment.ContinuationToken);
+            return (results.ToArray(), segment.ContinuationToken);
         }
     }
 }
