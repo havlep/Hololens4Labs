@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['listallexperiments_0',['ListAllExperiments',['../class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller.html#a84d1bbef57c996485925f1c0a6247f98',1,'HoloLens4Labs::Scripts::Controllers::StartMenuController']]],
+  ['log_1',['log',['../class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html#a8b6e5f385b856c4f9d8be15824576b04',1,'HoloLens4Labs.Scripts.Model.Logs.Log.Log(DateTime createdOn, Scientist createdBy, Experiment doneWithin)'],['../class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html#af123450dcf12e6a60e6b6430188c4120',1,'HoloLens4Labs.Scripts.Model.Logs.Log.Log(Scientist createdBy, Experiment doneWithin)'],['../class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html#a628874731ce993e46409ee7e31dea2c2',1,'HoloLens4Labs.Scripts.Model.Logs.Log.Log(string logId, DateTime createdOn, Scientist createdBy, Experiment doneWithin)'],['../class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html#ad04e53842e7286cf0e40701649bc8268',1,'HoloLens4Labs.Scripts.Model.Logs.Log.Log(string logId, DateTime createdOn, string createdByID, string doneWithinID)']]]
+];

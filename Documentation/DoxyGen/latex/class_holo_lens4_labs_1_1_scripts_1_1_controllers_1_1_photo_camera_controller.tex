@@ -1,0 +1,210 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller}\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+
+
+Controller for the log view.  
+
+
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad649c215bf13bf67d9c651013ebf991f}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Log\+View\+Controller}} parent\+Obj)
+\begin{DoxyCompactList}\small\item\em Initialize the view with the log that will be captured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_abbb8208297dbcf23f6fc384048ee55e3}{Cancel\+Capture}} ()
+\begin{DoxyCompactList}\small\item\em Cancel the capture and return to the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_acbba39363d33e7727b58baf3c9d4fcc9}{Capture\+Completed}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} image\+Data)
+\begin{DoxyCompactList}\small\item\em Callback that is called when the photo capture is completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_addd957a951495a26851138fc32a8ef80}{Start\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Start the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_af2e8de00a8d9750f1ed3ee49a80fc39b}{Stop\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Stop camera the camera. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aec0e5c30d173f22912aada44f9367b7a}{Take\+Photo\+With\+Thumbnail}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\begin{DoxyCompactList}\small\item\em Take a photo from the Web\+Cam. Make sure the camera is active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8582b72c2c8042da57e2560d4ada021e}{Handle\+On\+Pointer\+Click}} ()
+\item 
+async void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aba773df8b4a12fa73b814b1d60a12485}{Capture\+Photo\+And\+Return\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Capture the photo and return to the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ac9a1eec4c981fb96bb5ad31edfb7fa11}{Take\+Thumbnail\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Take a thumbnail photo for the Tracked\+Object and upload to azure blob storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aaa406502bc4eb0da1b474e36da1943a3}{Set\+Buttons\+Interactive\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Set the buttons interactive state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8e1e5b4d032127ef1dfefaf8fc8a65e1}{log\+Name\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a3b988af153eacf744ceac17d2f7f2120}{message\+Label}} = default
+\item 
+Interactable\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad28a83c534feb6052d1bc2b5bb5e55a4}{buttons}} = default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a9f43663acc3b5518c885ffa9bde12731}{Is\+Camera\+Active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the log view. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_abbb8208297dbcf23f6fc384048ee55e3}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_abbb8208297dbcf23f6fc384048ee55e3} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!CancelCapture@{CancelCapture}}
+\index{CancelCapture@{CancelCapture}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{CancelCapture()}{CancelCapture()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Cancel\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancel the capture and return to the previous menu. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_acbba39363d33e7727b58baf3c9d4fcc9}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_acbba39363d33e7727b58baf3c9d4fcc9} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!CaptureCompleted@{CaptureCompleted}}
+\index{CaptureCompleted@{CaptureCompleted}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{CaptureCompleted()}{CaptureCompleted()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Capture\+Completed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}}}]{image\+Data }\end{DoxyParamCaption})}
+
+
+
+Callback that is called when the photo capture is completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Data} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aba773df8b4a12fa73b814b1d60a12485}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aba773df8b4a12fa73b814b1d60a12485} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!CapturePhotoAndReturnAsync@{CapturePhotoAndReturnAsync}}
+\index{CapturePhotoAndReturnAsync@{CapturePhotoAndReturnAsync}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{CapturePhotoAndReturnAsync()}{CapturePhotoAndReturnAsync()}}
+{\footnotesize\ttfamily async void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Capture\+Photo\+And\+Return\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Capture the photo and return to the previous menu. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8582b72c2c8042da57e2560d4ada021e}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8582b72c2c8042da57e2560d4ada021e} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!HandleOnPointerClick@{HandleOnPointerClick}}
+\index{HandleOnPointerClick@{HandleOnPointerClick}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{HandleOnPointerClick()}{HandleOnPointerClick()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Handle\+On\+Pointer\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad649c215bf13bf67d9c651013ebf991f}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad649c215bf13bf67d9c651013ebf991f} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!Init@{Init}}
+\index{Init@{Init}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Log\+View\+Controller}}}]{parent\+Obj }\end{DoxyParamCaption})}
+
+
+
+Initialize the view with the log that will be captured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The log that will be filled in with data\\
+\hline
+{\em parent\+Obj} & The calling object\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aaa406502bc4eb0da1b474e36da1943a3}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aaa406502bc4eb0da1b474e36da1943a3} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!SetButtonsInteractiveState@{SetButtonsInteractiveState}}
+\index{SetButtonsInteractiveState@{SetButtonsInteractiveState}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{SetButtonsInteractiveState()}{SetButtonsInteractiveState()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Set\+Buttons\+Interactive\+State (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the buttons interactive state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_addd957a951495a26851138fc32a8ef80}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_addd957a951495a26851138fc32a8ef80} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!StartCamera@{StartCamera}}
+\index{StartCamera@{StartCamera}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{StartCamera()}{StartCamera()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Start\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the camera. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_af2e8de00a8d9750f1ed3ee49a80fc39b}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_af2e8de00a8d9750f1ed3ee49a80fc39b} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!StopCamera@{StopCamera}}
+\index{StopCamera@{StopCamera}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{StopCamera()}{StopCamera()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Stop\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop camera the camera. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aec0e5c30d173f22912aada44f9367b7a}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_aec0e5c30d173f22912aada44f9367b7a} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!TakePhotoWithThumbnail@{TakePhotoWithThumbnail}}
+\index{TakePhotoWithThumbnail@{TakePhotoWithThumbnail}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{TakePhotoWithThumbnail()}{TakePhotoWithThumbnail()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Take\+Photo\+With\+Thumbnail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Take a photo from the Web\+Cam. Make sure the camera is active. 
+
+\begin{DoxyReturn}{Returns}
+Image data with a Texture for thumbnail.
+\end{DoxyReturn}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ac9a1eec4c981fb96bb5ad31edfb7fa11}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ac9a1eec4c981fb96bb5ad31edfb7fa11} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!TakeThumbnailPhoto@{TakeThumbnailPhoto}}
+\index{TakeThumbnailPhoto@{TakeThumbnailPhoto}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{TakeThumbnailPhoto()}{TakeThumbnailPhoto()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Take\+Thumbnail\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Take a thumbnail photo for the Tracked\+Object and upload to azure blob storage. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad28a83c534feb6052d1bc2b5bb5e55a4}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_ad28a83c534feb6052d1bc2b5bb5e55a4} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!buttons@{buttons}}
+\index{buttons@{buttons}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{buttons}{buttons}}
+{\footnotesize\ttfamily Interactable \mbox{[}$\,$\mbox{]} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+buttons = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8e1e5b4d032127ef1dfefaf8fc8a65e1}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a8e1e5b4d032127ef1dfefaf8fc8a65e1} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!logNameLabel@{logNameLabel}}
+\index{logNameLabel@{logNameLabel}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{logNameLabel}{logNameLabel}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+log\+Name\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a3b988af153eacf744ceac17d2f7f2120}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a3b988af153eacf744ceac17d2f7f2120} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!messageLabel@{messageLabel}}
+\index{messageLabel@{messageLabel}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{messageLabel}{messageLabel}}
+{\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+message\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a9f43663acc3b5518c885ffa9bde12731}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller_a9f43663acc3b5518c885ffa9bde12731} 
+\index{HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}!IsCameraActive@{IsCameraActive}}
+\index{IsCameraActive@{IsCameraActive}!HoloLens4Labs.Scripts.Controllers.PhotoCameraController@{HoloLens4Labs.Scripts.Controllers.PhotoCameraController}}
+\doxysubsubsection{\texorpdfstring{IsCameraActive}{IsCameraActive}}
+{\footnotesize\ttfamily bool Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Photo\+Camera\+Controller.\+Is\+Camera\+Active\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Views/\mbox{\hyperlink{_photo_camera_controller_8cs}{Photo\+Camera\+Controller.\+cs}}\end{DoxyCompactItemize}

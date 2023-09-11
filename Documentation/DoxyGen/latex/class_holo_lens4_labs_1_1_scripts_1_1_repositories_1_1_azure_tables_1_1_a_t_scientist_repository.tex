@@ -1,0 +1,56 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+ATScientist\+Repository Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository}\index{HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository@{HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+ATScientist\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.815235cm]{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository_a03c494ca368ef8da1580534e7e1c071e}{ATScientist\+Repository}} (Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}}, string partition\+Key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository$<$ Scientist, Scientist\+DTO $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a96c85afbc32d6ab654565b021ed3a431}{Azure\+Table\+Object\+Repository}} (\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ mapper, string default\+Partition\+Key)
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa734ee38a5da6784cce317b021ae2e73}{Azure\+Table\+Object\+Repository}} (\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ mapper, Cloud\+Table table, string default\+Partition\+Key)
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a3590aa657718315eb363d31ed9c1aece}{Create}} (OBJ obj)
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_ae621f0fb330b9b5e4af70f102d85708d}{Read}} (string id)
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a551f2e51ef60140b0997822e068bd199}{Read}} (string id, string partition\+Key)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a7d72538a755a48816638bf65e3eb2b67}{Delete}} (OBJ obj)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa44c0275d3bd83224d4c438232fedb63}{Update}} (OBJ obj)
+\item 
+async Task$<$(OBJ\mbox{[}$\,$\mbox{]}, Table\+Continuation\+Token)$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a49714068881c819d91ec1f7123287ad7}{Read\+One\+Page\+Async}} (int page\+Size, Table\+Continuation\+Token continuation\+Token=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository$<$ Scientist, Scientist\+DTO $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}}
+\item 
+\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539}{mapper}}
+\item 
+string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b}{default\+Partition\+Key}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository_a03c494ca368ef8da1580534e7e1c071e}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_scientist_repository_a03c494ca368ef8da1580534e7e1c071e} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository@{HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository}!ATScientistRepository@{ATScientistRepository}}
+\index{ATScientistRepository@{ATScientistRepository}!HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository@{HoloLens4Labs.Scripts.Repositories.AzureTables.ATScientistRepository}}
+\doxysubsubsection{\texorpdfstring{ATScientistRepository()}{ATScientistRepository()}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+ATScientist\+Repository.\+ATScientist\+Repository (\begin{DoxyParamCaption}\item[{Cloud\+Table}]{table,  }\item[{string}]{partition\+Key }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Repositories/\+Azure\+Table\+Repository/\mbox{\hyperlink{_a_t_scientist_repository_8cs}{ATScientist\+Repository.\+cs}}\end{DoxyCompactItemize}

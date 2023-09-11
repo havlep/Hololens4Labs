@@ -1,0 +1,114 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Text\+Log\+View\+Controller Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller}\index{HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}}
+
+
+Controller for the log view.  
+
+
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Text\+Log\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a8db242ef7f88895553ba61a889b373c6}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_text_log}{Text\+Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}}, Game\+Object parent\+Obj)
+\begin{DoxyCompactList}\small\item\em Initialize the view with the existing text log data. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a0d81497f1422d31284c065e527fecc4d}{Save\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em Save changes for the Text\+Log\+DTO into the azure table storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_af1b066a941f89dc95a4ccc3053989254}{Close\+Card}} ()
+\item 
+virtual void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a85d19b0b2f62ad1f265f6bc1dd5142ff}{Image\+Captured}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Data\+Type}} data)
+\begin{DoxyCompactList}\small\item\em Callback for when the image is captured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a73393e3601ca8f96dfd95dc4ff131ccd}{description\+Input\+Field}} = default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{Scene\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a23170771843a2bff3d0c6ef114f067e5}{scene\+Controller}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_ab3135ccc05fdac17ea3e6a425fb0ef7a}{log\+Name\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_af643be39f7ebd7a9e077b045ba30c07a}{created\+On\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a4ff0d85045ad881f77ba76672ad9d1b6}{created\+By\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a02d298df86793c5ccb503dc1a0999d13}{last\+Modified\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a6ceb6c3e9fedaed56394bcdebbcd1e2c}{message\+Label}} = default
+\item 
+Interactable\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a0224fab85f89da0683766bfe87aacf1c}{buttons}} = default
+\item 
+Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a5953be6c9c53cdd953438bf1d78d0c6c}{parent\+Object}} = default
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}} = default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a46a12989ab7ed28d28dc1949571edfeb}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Connect the scenecontroller if it is not set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a8444c6215f2f60c5136ca6f0e8dccf1d}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} source, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Init the menu with the given Text\+Log\+DTO. Should be called from the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{Set\+Buttons\+Interactive\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Set the buttons interactive state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the log view. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a8db242ef7f88895553ba61a889b373c6}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a8db242ef7f88895553ba61a889b373c6} 
+\index{HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}!Init@{Init}}
+\index{Init@{Init}!HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Text\+Log\+View\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_text_log}{Text\+Log}}}]{log,  }\item[{Game\+Object}]{parent\+Obj }\end{DoxyParamCaption})}
+
+
+
+Initialize the view with the existing text log data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The exisignt log \\
+\hline
+{\em parent\+Obj} & The calling object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a0d81497f1422d31284c065e527fecc4d}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a0d81497f1422d31284c065e527fecc4d} 
+\index{HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}!SaveChanges@{SaveChanges}}
+\index{SaveChanges@{SaveChanges}!HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}}
+\doxysubsubsection{\texorpdfstring{SaveChanges()}{SaveChanges()}}
+{\footnotesize\ttfamily override void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Text\+Log\+View\+Controller.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save changes for the Text\+Log\+DTO into the azure table storage. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_aeb216c894297126fd462046c1fd01068}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a73393e3601ca8f96dfd95dc4ff131ccd}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller_a73393e3601ca8f96dfd95dc4ff131ccd} 
+\index{HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}!descriptionInputField@{descriptionInputField}}
+\index{descriptionInputField@{descriptionInputField}!HoloLens4Labs.Scripts.Controllers.TextLogViewController@{HoloLens4Labs.Scripts.Controllers.TextLogViewController}}
+\doxysubsubsection{\texorpdfstring{descriptionInputField}{descriptionInputField}}
+{\footnotesize\ttfamily TMP\+\_\+\+Input\+Field Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Text\+Log\+View\+Controller.\+description\+Input\+Field = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Views/\mbox{\hyperlink{_text_log_view_controller_8cs}{Text\+Log\+View\+Controller.\+cs}}\end{DoxyCompactItemize}

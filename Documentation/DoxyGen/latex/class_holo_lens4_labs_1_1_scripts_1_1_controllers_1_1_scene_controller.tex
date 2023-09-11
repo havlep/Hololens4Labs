@@ -1,0 +1,141 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+
+
+Singleton class that manages the scene, data, image analysis and menus.  
+
+
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_afcaed6eb55cb065c8379d8a0d727fd53}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the scene controller called from the databasemanager once it is ready. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a2249d01155ce98dfa35aee0988e34f0c}{Open\+Start\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Open the start menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a26cc27191ba270bf4dcdfc6bdf6f9e94}{Open\+Experiment\+List\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Open the experiment list menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a0b99e6f17d088ebaf2d82d6a525bf11e}{Open\+Log\+Selection\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Open the log selection menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a06d25c0709e19dd919ce441601eba16a}{Current\+Experiment}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The experiment that is currently being worked on. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_aadf9794c6d6b11c9f5121b598d5f2d7e}{Current\+User}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The user currently using the app. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}{Data\+Manager}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a7e3519bcec3eeb7c3c7929fa5b42ab2d}{Data\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Data\+Manager instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}{Image\+Analysis\+Manager}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a332e6f7108a5c9c9f4cd390ea492e245}{Image\+Analysis\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Image\+Analysis\+Manager instance. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{Scene\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a03ca3bfddefbf77e5f63a40b28662147}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class that manages the scene, data, image analysis and menus. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_afcaed6eb55cb065c8379d8a0d727fd53}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_afcaed6eb55cb065c8379d8a0d727fd53} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!Init@{Init}}
+\index{Init@{Init}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily async void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the scene controller called from the databasemanager once it is ready. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a26cc27191ba270bf4dcdfc6bdf6f9e94}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a26cc27191ba270bf4dcdfc6bdf6f9e94} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!OpenExperimentListMenu@{OpenExperimentListMenu}}
+\index{OpenExperimentListMenu@{OpenExperimentListMenu}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{OpenExperimentListMenu()}{OpenExperimentListMenu()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Open\+Experiment\+List\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Open the experiment list menu. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a0b99e6f17d088ebaf2d82d6a525bf11e}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a0b99e6f17d088ebaf2d82d6a525bf11e} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!OpenLogSelectionMenu@{OpenLogSelectionMenu}}
+\index{OpenLogSelectionMenu@{OpenLogSelectionMenu}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{OpenLogSelectionMenu()}{OpenLogSelectionMenu()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Open\+Log\+Selection\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Open the log selection menu. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a2249d01155ce98dfa35aee0988e34f0c}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a2249d01155ce98dfa35aee0988e34f0c} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!OpenStartMenu@{OpenStartMenu}}
+\index{OpenStartMenu@{OpenStartMenu}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{OpenStartMenu()}{OpenStartMenu()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Open\+Start\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Open the start menu. 
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a06d25c0709e19dd919ce441601eba16a}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a06d25c0709e19dd919ce441601eba16a} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!CurrentExperiment@{CurrentExperiment}}
+\index{CurrentExperiment@{CurrentExperiment}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{CurrentExperiment}{CurrentExperiment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Current\+Experiment\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The experiment that is currently being worked on. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_aadf9794c6d6b11c9f5121b598d5f2d7e}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_aadf9794c6d6b11c9f5121b598d5f2d7e} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!CurrentUser@{CurrentUser}}
+\index{CurrentUser@{CurrentUser}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{CurrentUser}{CurrentUser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Current\+User\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The user currently using the app. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a7e3519bcec3eeb7c3c7929fa5b42ab2d}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a7e3519bcec3eeb7c3c7929fa5b42ab2d} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!DataManager@{DataManager}}
+\index{DataManager@{DataManager}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{DataManager}{DataManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}{Data\+Manager}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Data\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Data\+Manager instance. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a332e6f7108a5c9c9f4cd390ea492e245}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a332e6f7108a5c9c9f4cd390ea492e245} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!ImageAnalysisManager@{ImageAnalysisManager}}
+\index{ImageAnalysisManager@{ImageAnalysisManager}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{ImageAnalysisManager}{ImageAnalysisManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}{Image\+Analysis\+Manager}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Image\+Analysis\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Image\+Analysis\+Manager instance. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a03ca3bfddefbf77e5f63a40b28662147}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a03ca3bfddefbf77e5f63a40b28662147} 
+\index{HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}!Instance@{Instance}}
+\index{Instance@{Instance}!HoloLens4Labs.Scripts.Controllers.SceneController@{HoloLens4Labs.Scripts.Controllers.SceneController}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{Scene\+Controller}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Scene\+Controller.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Singleton instance. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\mbox{\hyperlink{_scene_controller_8cs}{Scene\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository}\index{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_aebde4b27ee501fca54579561588feca9}{Azure\+Blob\+Repository}} (Cloud\+Blob\+Container blob\+Container)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a}{Delete\+Blob}} (string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Delete a blob if it exists. \end{DoxyCompactList}\item 
+async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14}{Download\+Blob}} (string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Download data from a blob. \end{DoxyCompactList}\item 
+async Task$<$ string $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5}{Upload\+Blob}} (byte\mbox{[}$\,$\mbox{]} data, string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Upload data to a blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_aebde4b27ee501fca54579561588feca9}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_aebde4b27ee501fca54579561588feca9} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}!AzureBlobRepository@{AzureBlobRepository}}
+\index{AzureBlobRepository@{AzureBlobRepository}!HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}}
+\doxysubsubsection{\texorpdfstring{AzureBlobRepository()}{AzureBlobRepository()}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository.\+Azure\+Blob\+Repository (\begin{DoxyParamCaption}\item[{Cloud\+Blob\+Container}]{blob\+Container }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}!DeleteBlob@{DeleteBlob}}
+\index{DeleteBlob@{DeleteBlob}!HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}}
+\doxysubsubsection{\texorpdfstring{DeleteBlob()}{DeleteBlob()}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository.\+Delete\+Blob (\begin{DoxyParamCaption}\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Delete a blob if it exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blob\+Name} & Name of the blob to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Success result of deletion.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}!DownloadBlob@{DownloadBlob}}
+\index{DownloadBlob@{DownloadBlob}!HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}}
+\doxysubsubsection{\texorpdfstring{DownloadBlob()}{DownloadBlob()}}
+{\footnotesize\ttfamily async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository.\+Download\+Blob (\begin{DoxyParamCaption}\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Download data from a blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blob\+Name} & Name of the blob.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data as byte array.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}!UploadBlob@{UploadBlob}}
+\index{UploadBlob@{UploadBlob}!HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository@{HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository}}
+\doxysubsubsection{\texorpdfstring{UploadBlob()}{UploadBlob()}}
+{\footnotesize\ttfamily async Task$<$ string $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository.\+Upload\+Blob (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Upload data to a blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to upload.\\
+\hline
+{\em blob\+Name} & Name of the blob, ideally with file type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uri to the blob.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Repositories/\+Azure\+Blob\+Repository/\mbox{\hyperlink{_azure_blob_repository_8cs}{Azure\+Blob\+Repository.\+cs}}\end{DoxyCompactItemize}

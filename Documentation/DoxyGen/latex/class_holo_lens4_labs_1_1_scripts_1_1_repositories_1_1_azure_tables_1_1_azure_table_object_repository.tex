@@ -1,0 +1,127 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository\texorpdfstring{$<$}{<} OBJ, DTO \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository\texorpdfstring{$<$}{<} OBJ, DTO \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a96c85afbc32d6ab654565b021ed3a431}{Azure\+Table\+Object\+Repository}} (\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539}{mapper}}, string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b}{default\+Partition\+Key}})
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa734ee38a5da6784cce317b021ae2e73}{Azure\+Table\+Object\+Repository}} (\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539}{mapper}}, Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}}, string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b}{default\+Partition\+Key}})
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a3590aa657718315eb363d31ed9c1aece}{Create}} (OBJ obj)
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_ae621f0fb330b9b5e4af70f102d85708d}{Read}} (string id)
+\item 
+async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a551f2e51ef60140b0997822e068bd199}{Read}} (string id, string partition\+Key)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a7d72538a755a48816638bf65e3eb2b67}{Delete}} (OBJ obj)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa44c0275d3bd83224d4c438232fedb63}{Update}} (OBJ obj)
+\item 
+async Task$<$(OBJ\mbox{[}$\,$\mbox{]}, Table\+Continuation\+Token)$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a49714068881c819d91ec1f7123287ad7}{Read\+One\+Page\+Async}} (int page\+Size, Table\+Continuation\+Token continuation\+Token=null)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Object\+Repository\+Interface$<$ OBJ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ T $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface_af549dad056909dd49bf42c2e0d97c69e}{Create}} (T obj)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface_aa70c194fa85ce52ccf8d1bd1ae85a509}{Update}} (T obj)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface_a2726044267a1751db79966207b981583}{Delete}} (T obj)
+\item 
+Task$<$ T $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface_afff1e2852ef3e6a0d51ffeae8ad0e807}{Read}} (string id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}} = null
+\item 
+\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539}{mapper}}
+\item 
+string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b}{default\+Partition\+Key}} = null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a96c85afbc32d6ab654565b021ed3a431}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a96c85afbc32d6ab654565b021ed3a431} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!AzureTableObjectRepository@{AzureTableObjectRepository}}
+\index{AzureTableObjectRepository@{AzureTableObjectRepository}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{AzureTableObjectRepository()}{AzureTableObjectRepository()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Azure\+Table\+Object\+Repository}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$}]{mapper,  }\item[{string}]{default\+Partition\+Key }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa734ee38a5da6784cce317b021ae2e73}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa734ee38a5da6784cce317b021ae2e73} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!AzureTableObjectRepository@{AzureTableObjectRepository}}
+\index{AzureTableObjectRepository@{AzureTableObjectRepository}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{AzureTableObjectRepository()}{AzureTableObjectRepository()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Azure\+Table\+Object\+Repository}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$ OBJ, DTO, DTO $>$}]{mapper,  }\item[{Cloud\+Table}]{table,  }\item[{string}]{default\+Partition\+Key }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a3590aa657718315eb363d31ed9c1aece}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a3590aa657718315eb363d31ed9c1aece} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!Create@{Create}}
+\index{Create@{Create}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Create (\begin{DoxyParamCaption}\item[{OBJ}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a7d72538a755a48816638bf65e3eb2b67}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a7d72538a755a48816638bf65e3eb2b67} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Delete (\begin{DoxyParamCaption}\item[{OBJ}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_ae621f0fb330b9b5e4af70f102d85708d}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_ae621f0fb330b9b5e4af70f102d85708d} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!Read@{Read}}
+\index{Read@{Read}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Read (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a551f2e51ef60140b0997822e068bd199}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a551f2e51ef60140b0997822e068bd199} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!Read@{Read}}
+\index{Read@{Read}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$ OBJ $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Read (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{partition\+Key }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a49714068881c819d91ec1f7123287ad7}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a49714068881c819d91ec1f7123287ad7} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!ReadOnePageAsync@{ReadOnePageAsync}}
+\index{ReadOnePageAsync@{ReadOnePageAsync}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{ReadOnePageAsync()}{ReadOnePageAsync()}}
+{\footnotesize\ttfamily async Task$<$(OBJ\mbox{[}$\,$\mbox{]}, Table\+Continuation\+Token)$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Read\+One\+Page\+Async (\begin{DoxyParamCaption}\item[{int}]{page\+Size,  }\item[{Table\+Continuation\+Token}]{continuation\+Token = {\ttfamily null} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa44c0275d3bd83224d4c438232fedb63}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_aa44c0275d3bd83224d4c438232fedb63} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!Update@{Update}}
+\index{Update@{Update}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.Update (\begin{DoxyParamCaption}\item[{OBJ}]{obj }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2d489948cadc6cd8dde31462d48dd76b} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!defaultPartitionKey@{defaultPartitionKey}}
+\index{defaultPartitionKey@{defaultPartitionKey}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{defaultPartitionKey}{defaultPartitionKey}}
+{\footnotesize\ttfamily string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.default\+Partition\+Key = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a2a72bd0fe2267cee7c333cedddb7d539} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!mapper@{mapper}}
+\index{mapper@{mapper}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{mapper}{mapper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Mapper\+Interface}}$<$OBJ, DTO, DTO$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.mapper\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a} 
+\index{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}!table@{table}}
+\index{table@{table}!HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$@{HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository$<$ OBJ, DTO $>$}}
+\doxysubsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Object\+Repository}}$<$ OBJ, DTO $>$.table = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Repositories/\+Azure\+Table\+Repository/\mbox{\hyperlink{_azure_table_object_repository_8cs}{Azure\+Table\+Object\+Repository.\+cs}}\end{DoxyCompactItemize}

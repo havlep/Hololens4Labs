@@ -1,0 +1,176 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller}\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+
+
+Controller for the transcription log view prefab.  
+
+
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a254361c6d352b371fef319341f83fed9}{Init\+With\+Existing}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{Transcription\+Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}}, Game\+Object parent\+Obj)
+\begin{DoxyCompactList}\small\item\em Initializes the view with an existing transcription log. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_ad7d0357d2d705cebec928b1199931112}{Init\+New}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{Transcription\+Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}}, Game\+Object parent\+Obj)
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d}{capture\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Instatiate the capture image panel and hide this panel. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a300b262b25af55d0b317cc9b5b16cc81}{Image\+Captured}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Data\+Type}} data)
+\begin{DoxyCompactList}\small\item\em Called by the Photo\+Camera\+Controller when the image is captured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aec0c9b2fc27d245816ce04a8b1dc9e68}{Clear\+Description}} ()
+\begin{DoxyCompactList}\small\item\em Clears the description input field. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a6c0c6910c3aaf6b833ba4aff87b2d1ff}{Save\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em Save the changes to the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_af1b066a941f89dc95a4ccc3053989254}{Close\+Card}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Image \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a305072b881329fb1a268532c4da63d34}{image\+Canvas}} = default
+\item 
+TMP\+\_\+\+Input\+Field \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aee5125fe66e34bc4203a502197f6bc42}{description\+Input\+Field}} = default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{Scene\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a23170771843a2bff3d0c6ef114f067e5}{scene\+Controller}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_ab3135ccc05fdac17ea3e6a425fb0ef7a}{log\+Name\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_af643be39f7ebd7a9e077b045ba30c07a}{created\+On\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a4ff0d85045ad881f77ba76672ad9d1b6}{created\+By\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a02d298df86793c5ccb503dc1a0999d13}{last\+Modified\+Label}} = default
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a6ceb6c3e9fedaed56394bcdebbcd1e2c}{message\+Label}} = default
+\item 
+Interactable\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a0224fab85f89da0683766bfe87aacf1c}{buttons}} = default
+\item 
+Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a5953be6c9c53cdd953438bf1d78d0c6c}{parent\+Object}} = default
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}} = default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a46a12989ab7ed28d28dc1949571edfeb}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Connect the scenecontroller if it is not set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a8444c6215f2f60c5136ca6f0e8dccf1d}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} source, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Init the menu with the given Text\+Log\+DTO. Should be called from the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{Set\+Buttons\+Interactive\+State}} (bool state)
+\begin{DoxyCompactList}\small\item\em Set the buttons interactive state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for the transcription log view prefab. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!captureImage@{captureImage}}
+\index{captureImage@{captureImage}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{captureImage()}{captureImage()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+capture\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Instatiate the capture image panel and hide this panel. 
+
+~\newline
+ \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aec0c9b2fc27d245816ce04a8b1dc9e68}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aec0c9b2fc27d245816ce04a8b1dc9e68} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!ClearDescription@{ClearDescription}}
+\index{ClearDescription@{ClearDescription}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{ClearDescription()}{ClearDescription()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+Clear\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the description input field. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a300b262b25af55d0b317cc9b5b16cc81}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a300b262b25af55d0b317cc9b5b16cc81} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!ImageCaptured@{ImageCaptured}}
+\index{ImageCaptured@{ImageCaptured}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{ImageCaptured()}{ImageCaptured()}}
+{\footnotesize\ttfamily override void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+Image\+Captured (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Data\+Type}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called by the Photo\+Camera\+Controller when the image is captured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The image data\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a85d19b0b2f62ad1f265f6bc1dd5142ff}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_ad7d0357d2d705cebec928b1199931112}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_ad7d0357d2d705cebec928b1199931112} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!InitNew@{InitNew}}
+\index{InitNew@{InitNew}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{InitNew()}{InitNew()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+Init\+New (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{Transcription\+Log}}}]{log,  }\item[{Game\+Object}]{parent\+Obj }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a254361c6d352b371fef319341f83fed9}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a254361c6d352b371fef319341f83fed9} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!InitWithExisting@{InitWithExisting}}
+\index{InitWithExisting@{InitWithExisting}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{InitWithExisting()}{InitWithExisting()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+Init\+With\+Existing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{Transcription\+Log}}}]{log,  }\item[{Game\+Object}]{parent\+Obj }\end{DoxyParamCaption})}
+
+
+
+Initializes the view with an existing transcription log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The transcription log\\
+\hline
+{\em parent\+Obj} & The parent object\\
+\hline
+\end{DoxyParams}
+summary\texorpdfstring{$>$}{>} Initializes the view with a new transcription log /summary\texorpdfstring{$>$}{>} param name="{}log"{}\texorpdfstring{$>$}{>}The transcription log
+
+param name="{}parent\+Obj"{}\texorpdfstring{$>$}{>}The parent object\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a6c0c6910c3aaf6b833ba4aff87b2d1ff}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a6c0c6910c3aaf6b833ba4aff87b2d1ff} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!SaveChanges@{SaveChanges}}
+\index{SaveChanges@{SaveChanges}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{SaveChanges()}{SaveChanges()}}
+{\footnotesize\ttfamily override void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save the changes to the repository. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_aeb216c894297126fd462046c1fd01068}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aee5125fe66e34bc4203a502197f6bc42}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aee5125fe66e34bc4203a502197f6bc42} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!descriptionInputField@{descriptionInputField}}
+\index{descriptionInputField@{descriptionInputField}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{descriptionInputField}{descriptionInputField}}
+{\footnotesize\ttfamily TMP\+\_\+\+Input\+Field Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+description\+Input\+Field = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a305072b881329fb1a268532c4da63d34}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a305072b881329fb1a268532c4da63d34} 
+\index{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}!imageCanvas@{imageCanvas}}
+\index{imageCanvas@{imageCanvas}!HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController@{HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController}}
+\doxysubsubsection{\texorpdfstring{imageCanvas}{imageCanvas}}
+{\footnotesize\ttfamily Image Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Transcription\+Log\+View\+Controller.\+image\+Canvas = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Views/\mbox{\hyperlink{_transcription_log_view_controller_8cs}{Transcription\+Log\+View\+Controller.\+cs}}\end{DoxyCompactItemize}

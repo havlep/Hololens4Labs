@@ -1,0 +1,93 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface Interface Reference}
+\hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}{}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}\index{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ string $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f}{Upload\+Blob}} (byte\mbox{[}$\,$\mbox{]} data, string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Upload data to a blob. \end{DoxyCompactList}\item 
+Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796}{Download\+Blob}} (string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Download data from a blob. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067}{Delete\+Blob}} (string blob\+Name)
+\begin{DoxyCompactList}\small\item\em Delete a blob if it exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067} 
+\index{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}!DeleteBlob@{DeleteBlob}}
+\index{DeleteBlob@{DeleteBlob}!HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{DeleteBlob()}{DeleteBlob()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface.\+Delete\+Blob (\begin{DoxyParamCaption}\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Delete a blob if it exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blob\+Name} & Name of the blob to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Success result of deletion.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796} 
+\index{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}!DownloadBlob@{DownloadBlob}}
+\index{DownloadBlob@{DownloadBlob}!HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{DownloadBlob()}{DownloadBlob()}}
+{\footnotesize\ttfamily Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface.\+Download\+Blob (\begin{DoxyParamCaption}\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Download data from a blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em blob\+Name} & Name of the blob.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data as byte array.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f} 
+\index{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}!UploadBlob@{UploadBlob}}
+\index{UploadBlob@{UploadBlob}!HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface@{HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{UploadBlob()}{UploadBlob()}}
+{\footnotesize\ttfamily Task$<$ string $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Blob\+Repository\+Interface.\+Upload\+Blob (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{string}]{blob\+Name }\end{DoxyParamCaption})}
+
+
+
+Upload data to a blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to upload.\\
+\hline
+{\em blob\+Name} & Name of the blob, ideally with file type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uri to the blob.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Blob.\+Azure\+Blob\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Repositories/\mbox{\hyperlink{_blob_repository_interface_8cs}{Blob\+Repository\+Interface.\+cs}}\end{DoxyCompactItemize}

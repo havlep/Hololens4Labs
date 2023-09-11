@@ -1,0 +1,163 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface Interface Reference}
+\hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}{}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.311475cm]{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d}{Create\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}{Update\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}{Delete\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d}{Create\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aa5dac7394b482651028ed640a1f0e1d8}{Update\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ad3d618e9e3eacf7f89138da6048cef5b}{Delete\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aae4d123f9de30d6fa7d613205959001f}{Create\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae56c6ccbac2ebe5cac3c12e65308589b}{Update\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a80f716f66067771b33c8105f36f698f7}{Delete\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f}{Get\+Logs\+For\+Experiment}} (string experiment\+ID)
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb}{Get\+All\+Experiments}} ()
+\item 
+bool \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}{Is\+Ready}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!CreateExperiment@{CreateExperiment}}
+\index{CreateExperiment@{CreateExperiment}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{CreateExperiment()}{CreateExperiment()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Create\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_adfcfba314286e1891ecaf47191d68034}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aae4d123f9de30d6fa7d613205959001f}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aae4d123f9de30d6fa7d613205959001f} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!CreateLog@{CreateLog}}
+\index{CreateLog@{CreateLog}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{CreateLog()}{CreateLog()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Create\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a4566939e1da3c524e6d911c6fedde850}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!CreateScientist@{CreateScientist}}
+\index{CreateScientist@{CreateScientist}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{CreateScientist()}{CreateScientist()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Create\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a9e7ebee1e7c613500a31b105f72312e0}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!DeleteExperiment@{DeleteExperiment}}
+\index{DeleteExperiment@{DeleteExperiment}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{DeleteExperiment()}{DeleteExperiment()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Delete\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a807670e7572300ef7a504b38b617156d}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a80f716f66067771b33c8105f36f698f7}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a80f716f66067771b33c8105f36f698f7} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!DeleteLog@{DeleteLog}}
+\index{DeleteLog@{DeleteLog}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{DeleteLog()}{DeleteLog()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Delete\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a1a52552ec5a0b2229d8bb73e813b70a3}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ad3d618e9e3eacf7f89138da6048cef5b}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ad3d618e9e3eacf7f89138da6048cef5b} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!DeleteScientist@{DeleteScientist}}
+\index{DeleteScientist@{DeleteScientist}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{DeleteScientist()}{DeleteScientist()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Delete\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_ac3726e6d3b66dcfbd041cab092710199}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!GetAllExperiments@{GetAllExperiments}}
+\index{GetAllExperiments@{GetAllExperiments}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{GetAllExperiments()}{GetAllExperiments()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Get\+All\+Experiments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a26d08ae3861974fa94346f4597b27de4}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!GetLogsForExperiment@{GetLogsForExperiment}}
+\index{GetLogsForExperiment@{GetLogsForExperiment}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{GetLogsForExperiment()}{GetLogsForExperiment()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Get\+Logs\+For\+Experiment (\begin{DoxyParamCaption}\item[{string}]{experiment\+ID }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a4b3823a3829e083819ef27a8eda38617}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!IsReady@{IsReady}}
+\index{IsReady@{IsReady}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{IsReady()}{IsReady()}}
+{\footnotesize\ttfamily bool Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Is\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aa373a4d82bb8b2dd120b8e77df1bbd88}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a3f24c808a645636c4e24829c46ee0c3f}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!UpdateExperiment@{UpdateExperiment}}
+\index{UpdateExperiment@{UpdateExperiment}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{UpdateExperiment()}{UpdateExperiment()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Update\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_afd8f9e77526d955109c86ad9e3f6a538}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae56c6ccbac2ebe5cac3c12e65308589b}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae56c6ccbac2ebe5cac3c12e65308589b} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!UpdateLog@{UpdateLog}}
+\index{UpdateLog@{UpdateLog}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{UpdateLog()}{UpdateLog()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Update\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a9e02f83855f08ef735cae366a45296e6}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aa5dac7394b482651028ed640a1f0e1d8}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aa5dac7394b482651028ed640a1f0e1d8} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!UpdateScientist@{UpdateScientist}}
+\index{UpdateScientist@{UpdateScientist}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{UpdateScientist()}{UpdateScientist()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Update\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a19360744cbf7a04dde908bd0b6bf416b}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Repositories/\mbox{\hyperlink{_repository_interface_8cs}{Repository\+Interface.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator}\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+
+
+Simple demonstration of how to instantiate a Microsoft.\+Mixed\+Reality.\+Toolkit.\+UI.\+Scrolling\+Object\+Collection as well as use lazy loading to mitigate the perf cost of a large list of items.  
+
+
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ad6bfdb2be3bce9eb524a06644f65550d}{Make\+Scrolling\+List}} ()
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a8a8767d132b2399551951e9dbde2d67c}{Add\+Item$<$ T $>$}} (T data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_game_object_with_data_action_interface}{Game\+Object\+With\+Data\+Action\+Interface}}$<$ object $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a2e2018c810c972230016292742f011b0}{on\+Instantiate\+Actions}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Scrolling\+Object\+Collection \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ac68b24e2c85860b33f42adc4a660827e}{Scroll\+View}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Scrolling\+Object\+Collection to populate, if left empty. the populator will create on your behalf. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a5fae7b96d1c51084c3b70e3c93d2abca}{Dynamic\+Item}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Object to duplicate in Scroll\+View. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a93c1af1186627a07fd65deb7082f2ec3}{Num\+Items}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of items to generate. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a684477ee6ee1167554ef209202fc68c2}{Lazy\+Load}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Demonstrate lazy loading. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a1d7b243835da9efec6eb2a6f474d6199}{Items\+Per\+Frame}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of items to load each frame during lazy load. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a966e738017167445bbcc0b10618b7ead}{Loader}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indeterminate loader to hide / show for Lazy\+Load \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple demonstration of how to instantiate a Microsoft.\+Mixed\+Reality.\+Toolkit.\+UI.\+Scrolling\+Object\+Collection as well as use lazy loading to mitigate the perf cost of a large list of items. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a8a8767d132b2399551951e9dbde2d67c}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a8a8767d132b2399551951e9dbde2d67c} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!AddItem$<$ T $>$@{AddItem$<$ T $>$}}
+\index{AddItem$<$ T $>$@{AddItem$<$ T $>$}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{AddItem$<$ T $>$()}{AddItem< T >()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Add\+Item$<$ T $>$ (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ad6bfdb2be3bce9eb524a06644f65550d}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ad6bfdb2be3bce9eb524a06644f65550d} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!MakeScrollingList@{MakeScrollingList}}
+\index{MakeScrollingList@{MakeScrollingList}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{MakeScrollingList()}{MakeScrollingList()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Make\+Scrolling\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a2e2018c810c972230016292742f011b0}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a2e2018c810c972230016292742f011b0} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!onInstantiateActions@{onInstantiateActions}}
+\index{onInstantiateActions@{onInstantiateActions}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{onInstantiateActions}{onInstantiateActions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_game_object_with_data_action_interface}{Game\+Object\+With\+Data\+Action\+Interface}}$<$object$>$ Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+on\+Instantiate\+Actions}
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a5fae7b96d1c51084c3b70e3c93d2abca}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a5fae7b96d1c51084c3b70e3c93d2abca} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!DynamicItem@{DynamicItem}}
+\index{DynamicItem@{DynamicItem}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{DynamicItem}{DynamicItem}}
+{\footnotesize\ttfamily Game\+Object Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Dynamic\+Item\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Object to duplicate in Scroll\+View. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a1d7b243835da9efec6eb2a6f474d6199}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a1d7b243835da9efec6eb2a6f474d6199} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!ItemsPerFrame@{ItemsPerFrame}}
+\index{ItemsPerFrame@{ItemsPerFrame}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{ItemsPerFrame}{ItemsPerFrame}}
+{\footnotesize\ttfamily int Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Items\+Per\+Frame\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Number of items to load each frame during lazy load. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a684477ee6ee1167554ef209202fc68c2}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a684477ee6ee1167554ef209202fc68c2} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!LazyLoad@{LazyLoad}}
+\index{LazyLoad@{LazyLoad}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{LazyLoad}{LazyLoad}}
+{\footnotesize\ttfamily bool Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Lazy\+Load\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Demonstrate lazy loading. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a966e738017167445bbcc0b10618b7ead}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a966e738017167445bbcc0b10618b7ead} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!Loader@{Loader}}
+\index{Loader@{Loader}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{Loader}{Loader}}
+{\footnotesize\ttfamily Game\+Object Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Loader\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Indeterminate loader to hide / show for Lazy\+Load 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a93c1af1186627a07fd65deb7082f2ec3}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a93c1af1186627a07fd65deb7082f2ec3} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!NumItems@{NumItems}}
+\index{NumItems@{NumItems}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{NumItems}{NumItems}}
+{\footnotesize\ttfamily int Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Num\+Items\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Number of items to generate. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ac68b24e2c85860b33f42adc4a660827e}\label{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ac68b24e2c85860b33f42adc4a660827e} 
+\index{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}!ScrollView@{ScrollView}}
+\index{ScrollView@{ScrollView}!HoloLens4Labs.Scripts.Utils.ScrollableListPopulator@{HoloLens4Labs.Scripts.Utils.ScrollableListPopulator}}
+\doxysubsubsection{\texorpdfstring{ScrollView}{ScrollView}}
+{\footnotesize\ttfamily Scrolling\+Object\+Collection Holo\+Lens4\+Labs.\+Scripts.\+Utils.\+Scrollable\+List\+Populator.\+Scroll\+View\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The Scrolling\+Object\+Collection to populate, if left empty. the populator will create on your behalf. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Utils/\mbox{\hyperlink{_scrollable_list_populator_8cs}{Scrollable\+List\+Populator.\+cs}}\end{DoxyCompactItemize}

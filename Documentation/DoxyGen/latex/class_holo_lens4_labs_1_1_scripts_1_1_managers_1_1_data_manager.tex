@@ -1,0 +1,368 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.661721cm]{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a147464685c408b0546995441933cbb7f}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Check if the repository has been initialized. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}{Create\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\begin{DoxyCompactList}\small\item\em Save a new experiment. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}{Create\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\begin{DoxyCompactList}\small\item\em Create a new log. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{Create\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\begin{DoxyCompactList}\small\item\em Create a new scientist. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef}{Delete\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\begin{DoxyCompactList}\small\item\em Delete an experiment. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c}{Delete\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\begin{DoxyCompactList}\small\item\em Delete a log. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341}{Delete\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\begin{DoxyCompactList}\small\item\em Delete a scientist. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}{Update\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\begin{DoxyCompactList}\small\item\em Update an Experiment that is already in the repo. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}{Update\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\begin{DoxyCompactList}\small\item\em Update a Log that is already in the repo. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}{Update\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\begin{DoxyCompactList}\small\item\em Update a Scientist that is already in the repo. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a86c5b4bd9148a17782247887f77a77de}{Create\+Or\+Update\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
+\begin{DoxyCompactList}\small\item\em Create or update a Scientist. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1598fd7f056534656b7dbc3a22f71b33}{Create\+Or\+Update\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
+\begin{DoxyCompactList}\small\item\em Create or update an Experiment /// \texorpdfstring{$<$}{<}. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_afbde7460b9c8af2c7c9dd5b985faa6e5}{Create\+Or\+Update\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
+\begin{DoxyCompactList}\small\item\em Create or update a Log. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aa373a4d82bb8b2dd120b8e77df1bbd88}{Is\+Ready}} ()
+\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}{Get\+Logs\+For\+Experiment}} (string experiment\+ID)
+\begin{DoxyCompactList}\small\item\em Get all logs for experiment. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}{Get\+All\+Experiments}} ()
+\begin{DoxyCompactList}\small\item\em Get all Experiments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateExperiment@{CreateExperiment}}
+\index{CreateExperiment@{CreateExperiment}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateExperiment()}{CreateExperiment()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Save a new experiment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment} & The experiment\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new experiment with an ID in the repo
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateLog@{CreateLog}}
+\index{CreateLog@{CreateLog}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateLog()}{CreateLog()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Create a new log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The log\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new log with an ID in the repo
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aae4d123f9de30d6fa7d613205959001f}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1598fd7f056534656b7dbc3a22f71b33}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1598fd7f056534656b7dbc3a22f71b33} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateOrUpdateExperiment@{CreateOrUpdateExperiment}}
+\index{CreateOrUpdateExperiment@{CreateOrUpdateExperiment}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateOrUpdateExperiment()}{CreateOrUpdateExperiment()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Or\+Update\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Create or update an Experiment /// \texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment} & The Experiment that will be created or updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Experiment that was created or updated
+\end{DoxyReturn}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_afbde7460b9c8af2c7c9dd5b985faa6e5}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_afbde7460b9c8af2c7c9dd5b985faa6e5} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateOrUpdateLog@{CreateOrUpdateLog}}
+\index{CreateOrUpdateLog@{CreateOrUpdateLog}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateOrUpdateLog()}{CreateOrUpdateLog()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Or\+Update\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Create or update a Log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The Log that will be created or updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Log that was created or updated
+\end{DoxyReturn}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a86c5b4bd9148a17782247887f77a77de}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a86c5b4bd9148a17782247887f77a77de} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateOrUpdateScientist@{CreateOrUpdateScientist}}
+\index{CreateOrUpdateScientist@{CreateOrUpdateScientist}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateOrUpdateScientist()}{CreateOrUpdateScientist()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Or\+Update\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Create or update a Scientist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scientist} & The Scientist that will be created or updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Scientist that was created or updated
+\end{DoxyReturn}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!CreateScientist@{CreateScientist}}
+\index{CreateScientist@{CreateScientist}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{CreateScientist()}{CreateScientist()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Create\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Create a new scientist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scientist} & The scientist\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new scientist object with an ID in the repo
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!DeleteExperiment@{DeleteExperiment}}
+\index{DeleteExperiment@{DeleteExperiment}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{DeleteExperiment()}{DeleteExperiment()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Delete\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Delete an experiment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment} & The Experiment that will be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!DeleteLog@{DeleteLog}}
+\index{DeleteLog@{DeleteLog}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{DeleteLog()}{DeleteLog()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Delete\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Delete a log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The Log that will be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a80f716f66067771b33c8105f36f698f7}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!DeleteScientist@{DeleteScientist}}
+\index{DeleteScientist@{DeleteScientist}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{DeleteScientist()}{DeleteScientist()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Delete\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Delete a scientist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scientist} & The Scientist that will be deleted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ad3d618e9e3eacf7f89138da6048cef5b}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!GetAllExperiments@{GetAllExperiments}}
+\index{GetAllExperiments@{GetAllExperiments}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{GetAllExperiments()}{GetAllExperiments()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Get\+All\+Experiments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all Experiments. 
+
+\begin{DoxyReturn}{Returns}
+List of all experiments
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!GetLogsForExperiment@{GetLogsForExperiment}}
+\index{GetLogsForExperiment@{GetLogsForExperiment}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{GetLogsForExperiment()}{GetLogsForExperiment()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Get\+Logs\+For\+Experiment (\begin{DoxyParamCaption}\item[{string}]{experiment\+ID }\end{DoxyParamCaption})}
+
+
+
+Get all logs for experiment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a147464685c408b0546995441933cbb7f}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a147464685c408b0546995441933cbb7f} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!Init@{Init}}
+\index{Init@{Init}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the repository has been initialized. 
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aa373a4d82bb8b2dd120b8e77df1bbd88}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aa373a4d82bb8b2dd120b8e77df1bbd88} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!IsReady@{IsReady}}
+\index{IsReady@{IsReady}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{IsReady()}{IsReady()}}
+{\footnotesize\ttfamily bool Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Is\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!UpdateExperiment@{UpdateExperiment}}
+\index{UpdateExperiment@{UpdateExperiment}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{UpdateExperiment()}{UpdateExperiment()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Update\+Experiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+
+
+
+Update an Experiment that is already in the repo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment} & The Experiment that will be updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!UpdateLog@{UpdateLog}}
+\index{UpdateLog@{UpdateLog}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{UpdateLog()}{UpdateLog()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Update\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+
+
+
+Update a Log that is already in the repo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The Log that will be updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+~\newline
+ 
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae56c6ccbac2ebe5cac3c12e65308589b}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0} 
+\index{HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}!UpdateScientist@{UpdateScientist}}
+\index{UpdateScientist@{UpdateScientist}!HoloLens4Labs.Scripts.Managers.DataManager@{HoloLens4Labs.Scripts.Managers.DataManager}}
+\doxysubsubsection{\texorpdfstring{UpdateScientist()}{UpdateScientist()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager.\+Update\+Scientist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{scientist }\end{DoxyParamCaption})}
+
+
+
+Update a Scientist that is already in the repo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scientist} & The Scientist that will be updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aa5dac7394b482651028ed640a1f0e1d8}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Managers/\mbox{\hyperlink{_data_manager_8cs}{Data\+Manager.\+cs}}\end{DoxyCompactItemize}
