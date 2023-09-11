@@ -18,20 +18,28 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         protected TMP_Text experimentIDLabel = default;
 
+        protected ExperimentListMenuController parent = default;
+
         protected Experiment experiment = null;
 
         /// <summary>
         /// Initialize the button with the experiment data
         /// </summary>
         /// <param name="experiment">The experiment that will be shown in the button</param>
-        public void Init(Experiment experiment)
+        public void Init(Experiment experiment, ExperimentListMenuController parent)
         {
             // TODO implement the date in experiment
             //experimentDateLabel.text = experiment.CreatedOn.ToShortTimeString();
             experimentIDLabel.text = experiment.Id;
             experimentNameLabel.text = experiment.Name;
             this.experiment = experiment;
+            this.parent = parent;
 
+        }
+
+        public void OnClick()
+        {
+            parent.OnExperimentInfoButtonClick(experiment);
         }
 
     }

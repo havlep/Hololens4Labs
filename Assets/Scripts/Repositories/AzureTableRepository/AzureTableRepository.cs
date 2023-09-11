@@ -122,8 +122,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 }
             }
 
-            // Setup the services that will be used to get data
-
+            // Setup the repository objects that will be used to get data
             atExperimentRepository = new ATExperimentRepository(experimentsTable, partitionKey);
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
             atLogRepository = new ATLogRepository(logsTable, partitionKey);

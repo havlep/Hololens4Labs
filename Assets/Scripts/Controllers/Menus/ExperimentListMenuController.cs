@@ -80,7 +80,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <param name="itemInstance">Experiment info button instance</param>
         /// <param name="data">Experiment data</param>
         /// <exception cref="NotSupportedException"></exception>
-        public static void PopulateItemAction(GameObject itemInstance, object data)
+        public void PopulateItemAction(GameObject itemInstance, object data)
         {
 
             var experimentInfoButtonController = itemInstance.GetComponent<ExperimentInfoButtonController>();
@@ -101,7 +101,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             var experiment = data as Experiment;
 
-            experimentInfoButtonController.Init(experiment);
+            experimentInfoButtonController.Init(experiment, this);
 
         }
 
@@ -137,6 +137,16 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             sceneController.OpenStartMenu();
+
+        }
+
+
+        public void OnExperimentInfoButtonClick(Experiment experiment)
+        {
+
+            sceneController.CurrentExperiment = experiment;
+            sceneController.OpenLogSelectionMenu();
+            gameObject.SetActive(false);
 
         }
 

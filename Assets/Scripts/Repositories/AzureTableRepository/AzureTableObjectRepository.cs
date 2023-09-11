@@ -20,7 +20,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         public AzureTableObjectRepository(MapperInterface<OBJ, DTO, DTO> mapper, string defaultPartitionKey)
         {
-
             this.mapper = mapper;
             this.defaultPartitionKey=defaultPartitionKey;
         }
@@ -38,10 +37,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             var dto = mapper.CreateDTO(obj);
 
-            if (dto.RowKey == string.Empty)
+            if ( dto.RowKey == null || dto.RowKey == string.Empty )
                 dto.RowKey = Guid.NewGuid().ToString();
 
-            if (dto.PartitionKey == string.Empty)
+            if ( dto.PartitionKey == null || dto.PartitionKey == string.Empty )
                 dto.PartitionKey = defaultPartitionKey;
 
             // See if there is an object with a similiar id
@@ -106,6 +105,11 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var deleteOperation = TableOperation.Delete(dto);
             var result = await this.table.ExecuteAsync(deleteOperation);
 
+            if(result.HttpStatusCode == (int)HttpStatusCode.OK)
+                Debug.Log($"Object {dto.RowKey} deleted from the repo");
+            else 
+                Debug.LogError($"Failed to delete Object {dto.RowKey} from repo with status code" + result.HttpStatusCode);
+
             return result.HttpStatusCode == (int)HttpStatusCode.OK;
 
         }
@@ -117,17 +121,20 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var dto = mapper.ToDTO(obj);
 
 
-            if (dto.PartitionKey == null)
+            if (dto.PartitionKey == null || dto.PartitionKey == string.Empty)
                 dto.PartitionKey = defaultPartitionKey;
 
             var insertOrMergeOperation = TableOperation.InsertOrMerge(dto);
             var result = await this.table.ExecuteAsync(insertOrMergeOperation);
 
+            if(result.Result != null)
+                Debug.Log($"Object {dto.RowKey} updated in the repo");
+            else
+                Debug.LogError($"Failed to update Object {dto.RowKey} in repo with status code" + result.HttpStatusCode);
+
             return result.Result != null;
 
         }
-
-
 
         //TODO : Implement pagination
         public async Task<(OBJ[], TableContinuationToken)> ReadOnePageAsync(int pageSize, TableContinuationToken continuationToken = null)

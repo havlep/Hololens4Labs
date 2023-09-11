@@ -18,8 +18,6 @@ namespace HoloLens4Labs.Scripts.Utils
         [Tooltip("The ScrollingObjectCollection to populate, if left empty. the populator will create on your behalf.")]
         private ScrollingObjectCollection scrollView;
 
-
-
         /// <summary>
         /// The ScrollingObjectCollection to populate, if left empty. the populator will create on your behalf.
         /// </summary>
@@ -37,9 +35,6 @@ namespace HoloLens4Labs.Scripts.Utils
         [SerializeField]
         [Tooltip("Actions to perform on the instantiated prefab")]
         public GameObjectWithDataActionInterface<object> onInstantiateActions;  
-
-
-
 
         /// <summary>
         /// Object to duplicate in <see cref="ScrollView"/>. 
@@ -156,22 +151,26 @@ namespace HoloLens4Labs.Scripts.Utils
 
             gridObjectCollection = scrollView.GetComponentInChildren<GridObjectCollection>();
 
-            if (gridObjectCollection == null)
+            if(gridObjectCollection != null)
             {
-                GameObject collectionGameObject = new GameObject("Grid Object Collection");
-                collectionGameObject.transform.position = scrollView.transform.position;
-                collectionGameObject.transform.rotation = scrollView.transform.rotation;
-
-                gridObjectCollection = collectionGameObject.AddComponent<GridObjectCollection>();
-                gridObjectCollection.CellWidth = cellWidth;
-                gridObjectCollection.CellHeight = cellHeight;
-                gridObjectCollection.SurfaceType = ObjectOrientationSurfaceType.Plane;
-                gridObjectCollection.Layout = LayoutOrder.ColumnThenRow;
-                gridObjectCollection.Columns = cellsPerTier;
-                gridObjectCollection.Anchor = LayoutAnchor.UpperLeft;
-
-                scrollView.AddContent(collectionGameObject);
+                Destroy(gridObjectCollection.gameObject);
             }
+
+         
+            GameObject collectionGameObject = new GameObject("Grid Object Collection");
+            collectionGameObject.transform.position = scrollView.transform.position;
+            collectionGameObject.transform.rotation = scrollView.transform.rotation;
+
+            gridObjectCollection = collectionGameObject.AddComponent<GridObjectCollection>();
+            gridObjectCollection.CellWidth = cellWidth;
+            gridObjectCollection.CellHeight = cellHeight;
+            gridObjectCollection.SurfaceType = ObjectOrientationSurfaceType.Plane;
+            gridObjectCollection.Layout = LayoutOrder.ColumnThenRow;
+            gridObjectCollection.Columns = cellsPerTier;
+            gridObjectCollection.Anchor = LayoutAnchor.UpperLeft;
+
+            scrollView.AddContent(collectionGameObject);
+            
             scrollView.gameObject.SetActive(true);
 
  /*

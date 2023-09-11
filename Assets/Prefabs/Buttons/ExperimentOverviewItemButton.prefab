@@ -209,9 +209,10 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Increment
+      - m_Target: {fileID: 1114019843401873815}
+        m_TargetAssemblyTypeName: HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController,
+          Scripts
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
