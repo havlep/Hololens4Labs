@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using HoloLens4Labs.Scripts.Model.DataTypes;
+using HoloLens4Labs.Scripts.Services;
 using NUnit.Framework;
 
 

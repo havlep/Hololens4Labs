@@ -13,15 +13,18 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
     public class ATLogRepository : AzureTableObjectRepository<Log, LogDTO>
     {
+        /// <summary>
+        /// Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses
+        /// </summary>
         public ATLogRepository(CloudTable table, string partitionKey) : base(new LogMapper(), table, partitionKey) { }
 
         /// <summary>
-        /// Get all logs for experiment using pagination
+        /// Get all Logs for Experiment using pagination
         /// </summary>
-        /// <param name="experimentID"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="continuationToken"></param>
-        /// <returns></returns>
+        /// <param name="experimentID">The ID of the exeriment</param>
+        /// <param name="pageSize">The number of elements that should be retrieved per page</param>
+        /// <param name="continuationToken">The continuation token for the pagination session</param>
+        /// <returns>An array of Logs and a continuation token</returns>
         /// <exception cref="NotSupportedException"></exception>
         public async Task<(Log[], TableContinuationToken)> GetLogsForExperiment(string experimentID, int pageSize, TableContinuationToken continuationToken = null)
         {

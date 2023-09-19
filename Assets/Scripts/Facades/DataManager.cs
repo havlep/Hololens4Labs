@@ -1,20 +1,16 @@
 using System.Threading.Tasks;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
-
 using UnityEngine;
 using UnityEngine.Events;
-using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole project
-
+using Debug = UnityEngine.Debug;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Repositories;
 using HoloLens4Labs.Scripts.Model.Logs;
 
-
 namespace HoloLens4Labs.Scripts.Managers
 {
-
-
+    /// <summary>
+    /// A facade class that handles the communication with the repositories
+    /// </summary>
     public class DataManager : MonoBehaviour, RepositoryInterface
     {
 
@@ -59,7 +55,7 @@ namespace HoloLens4Labs.Scripts.Managers
 
 
         /// <summary>
-        /// Save a new experiment
+        /// Save a new experiment to the repository
         /// </summary>
         /// <param name="experiment">The experiment</param>
         /// <returns>A new experiment with an ID in the repo</returns>
@@ -69,7 +65,7 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Create a new log
+        /// Create a new log inside of the repository
         /// </summary>
         /// <param name="log">The log</param>
         /// <returns>A new log with an ID in the repo</returns>
@@ -79,7 +75,7 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Create a new scientist
+        /// Create a new scientist within the repository
         /// </summary>
         /// <param name="scientist">The scientist</param>
         /// <returns>A new scientist object with an ID in the repo</returns>
@@ -89,20 +85,20 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Delete an experiment
+        /// Delete an experiment from the repository
         /// </summary>
         /// <param name="experiment"> The Experiment that will be deleted </param>
-        /// <returns>true on success</returns>
+        /// <returns> True on success </returns>
         public Task<bool> DeleteExperiment(Experiment experiment)
         {
             return repo.DeleteExperiment(experiment);
         }
 
         /// <summary>
-        /// Delete a log
+        /// Delete a log from the repository 
         /// </summary>
         /// <param name="log"> The Log that will be deleted </param>
-        /// <returns>true on success</returns>
+        /// <returns> True on success </returns>
         public Task<bool> DeleteLog(Log log)
         {
             return repo.DeleteLog(log);
@@ -112,7 +108,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Delete a scientist
         /// </summary>
         /// <param name="scientist">The Scientist that will be deleted</param>
-        /// <returns>true on success</returns>
+        /// <returns> True on success </returns>
         public Task<bool> DeleteScientist(Scientist scientist)
         {
             return repo.DeleteScientist(scientist);
@@ -122,7 +118,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Update an Experiment that is already in the repo 
         /// </summary>
         /// <param name="experiment">The Experiment that will be updated</param>
-        /// <returns>true on success</returns>
+        /// <returns> True on success </returns>
         public Task<bool> UpdateExperiment(Experiment experiment)
         {
             return repo.UpdateExperiment(experiment);
@@ -132,7 +128,7 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Update a Log that is already in the repo
         /// </summary>
         /// <param name="log">The Log that will be updated</param>
-        /// <returns>true on success</returns>  
+        /// <returns> True on success </returns>  
         public Task<bool> UpdateLog(Log log)
         {
             return repo.UpdateLog(log);
@@ -142,17 +138,17 @@ namespace HoloLens4Labs.Scripts.Managers
         /// Update a Scientist that is already in the repo
         /// </summary>
         /// <param name="scientist">The Scientist that will be updated</param>
-        /// <returns>true on success</returns>
+        /// <returns> True on success </returns>
         public Task<bool> UpdateScientist(Scientist scientist)
         {
             return repo.UpdateScientist(scientist);
         }
 
         /// <summary>
-        /// Create or update a Scientist
+        /// Create or update a Scientist in the repository
         /// </summary>
-        /// <param name="scientist">The Scientist that will be created or updated</param>
-        /// <returns>The Scientist that was created or updated</returns>
+        /// <param name="scientist"> The Scientist that will be created or updated </param>
+        /// <returns> The Scientist that was created or updated </returns>
         public async Task<Scientist> CreateOrUpdateScientist(Scientist scientist)
         {
 
@@ -168,11 +164,10 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Create or update an Experiment
-        ///         /// <
+        /// Create or update an Experiment in the repository
         /// </summary>
-        /// <param name="experiment">The Experiment that will be created or updated</param>
-        /// <returns>The Experiment that was created or updated</returns>
+        /// <param name="experiment"> The Experiment that will be created or updated </param>
+        /// <returns> The Experiment that was created or updated </returns>
         public async Task<Experiment> CreateOrUpdateExperiment(Experiment experiment)
         {
 
@@ -188,10 +183,10 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Create or update a Log
+        /// Create or update a Log in the repository
         /// </summary>
-        /// <param name="log"> The Log that will be created or updated</param>
-        /// <returns>The Log that was created or updated</returns>
+        /// <param name="log"> The Log that will be created or updated </param>
+        /// <returns> The Log that was created or updated </returns>
         public async Task<Log> CreateOrUpdateLog(Log log)
         {
 
@@ -210,20 +205,19 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Get all logs for experiment
+        /// Get all logs for experiment from the repository
         /// </summary>
-        /// <param name="experimentID"></param>
-        /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
+        /// <param name="experimentID"> The Id of the Experiment </param>
+        /// <returns> A list of logs that were created under the Experiment </returns>
         public Task<Log[]> GetLogsForExperiment(string experimentID)
         {
             return repo.GetLogsForExperiment(experimentID);
         }
 
         /// <summary>
-        /// Get all Experiments 
+        /// Get all Experiments from the repository
         /// </summary>
-        /// <returns>List of all experiments</returns>
+        /// <returns> List of all experiments </returns>
         public async Task<Experiment[]> GetAllExperiments()
         {
             return await repo.GetAllExperiments();

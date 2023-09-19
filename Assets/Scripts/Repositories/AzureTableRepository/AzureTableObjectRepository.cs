@@ -6,29 +6,61 @@ using System.Net;
 using System;
 using System.Linq;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
+    /// <summary>
+    /// Abstract class for all Azure Table object repositories
+    /// </summary>
+    /// <typeparam name="DTO">The DTO type for the repository and data model class</typeparam>
+    /// <typeparam name="OBJ">The data model class stored in the repository</typeparam>
     public abstract class AzureTableObjectRepository
         <OBJ, DTO> : ObjectRepositoryInterface<OBJ> where DTO : ITableEntity, new()
     {
+        /// <summary>
+        /// A Azure Table object repository
+        /// </summary>
         protected CloudTable table = null;
+
+        /// <summary>
+        /// The mapper between the data model class and the DTO
+        /// </summary>
         protected MapperInterface<OBJ, DTO, DTO> mapper;
+        
+        /// <summary>
+        /// The default partition key for the repository
+        /// </summary>
         protected string defaultPartitionKey = null;
 
-
+        /// <summary>
+        /// Constructor for the Azure Table object repository when the table is not known at the time of construction
+        /// </summary>
+        /// <param name="mapper">Mapper for mapping DTOs and OBJs</param>
+        /// <param name="defaultPartitionKey">The default partition key</param>
         public AzureTableObjectRepository(MapperInterface<OBJ, DTO, DTO> mapper, string defaultPartitionKey)
         {
             this.mapper = mapper;
             this.defaultPartitionKey=defaultPartitionKey;
         }
 
-
+        /// <summary>
+        /// Constructor for the Azure Table object repository when the table is known at the time of construction
+        /// </summary>
+        /// <param name="mapper">Mapper for mapping DTOs and OBJs</param>
+        /// <param name="table">The Azure Table object repository</param>
+        /// <param name="defaultPartitionKey">The default partition key</param>
         public AzureTableObjectRepository(MapperInterface<OBJ, DTO, DTO> mapper, CloudTable table, string defaultPartitionKey) : this(mapper, defaultPartitionKey)
         {
             this.table = table;
         }
+
+        /// <summary>
+        /// Create an object in the repository
+        /// </summary>
+        /// <param name="obj">The OBJ that will be created in the repository</param>
+        /// <returns>The OBJ that was created in the repository</returns>
+        /// <exception cref="NotSupportedException"></exception>
+        /// <exception cref="ObjectDataBaseException"></exception>
         public async Task<OBJ> Create(OBJ obj)
         {
 
@@ -69,11 +101,22 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+        /// <summary>
+        /// Read an object from the repository using the default partition key
+        /// </summary>
+        /// <returns>The OBJ that was read from the repository</returns>
         public async Task<OBJ> Read(string id)
         {
 
             return await Read(id, defaultPartitionKey);
         }
+
+        /// <summary>
+        /// Read an object from the repository using the provided partition key
+        /// </summary>
+        /// <param name="id">The id of the object to be read</param>
+        /// <param name="partitionKey">The partition key of the object to be read</param>
+        /// <returns>The OBJ that was read from the repository</returns>
         public async Task<OBJ> Read(string id, string partitionKey)
         {
             if (table == null)
@@ -95,6 +138,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             throw new ObjectDataBaseException("Object of given ID does not exist");
 
         }
+
+        /// <summary>
+        /// Delete an object from the repository
+        /// </summary>
+        /// <param name="obj">The OBJ that will be deleted from the repository</param>
+        /// <returns>True if the object was deleted, false otherwise</returns>
         public async Task<bool> Delete(OBJ obj)
         {
 
@@ -113,6 +162,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             return result.HttpStatusCode == (int)HttpStatusCode.OK;
 
         }
+
+        /// <summary>
+        /// Update an object in the repository
+        /// </summary>
+        /// <param name="obj">The OBJ that will be updated in the repository</param>
+        /// <returns>True if the object was updated, false otherwise</returns>
         public async Task<bool> Update(OBJ obj)
         {
             if (table == null)
@@ -135,8 +190,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             return result.Result != null;
 
         }
-
-        //TODO : Implement pagination
+        /// <summary>
+        /// Read one page of objects from the repository
+        /// </summary>
+        /// <param name="pageSize">The number of objects to be read in one page</param>
+        /// <param name="continuationToken">The continuation token for the pagination session</param>
+        /// <returns>A list of objects and a session continuation token</returns>
         public async Task<(OBJ[], TableContinuationToken)> ReadOnePageAsync(int pageSize, TableContinuationToken continuationToken = null)
         {
             if (table == null)

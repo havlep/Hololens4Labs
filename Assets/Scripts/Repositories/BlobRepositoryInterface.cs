@@ -4,6 +4,10 @@ using System.Threading.Tasks;
 
 namespace HoloLens4Labs.Scripts.Repositories
 {
+
+    /// <summary>
+    /// Interface for the BlobRepository
+    /// </summary>
     public interface BlobRepositoryInterface
     {
         /// <summary>

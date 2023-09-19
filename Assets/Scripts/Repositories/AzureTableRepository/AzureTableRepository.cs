@@ -1,27 +1,20 @@
-
-using Codice.Client.BaseCommands.Ls;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Repositories.AzureBlob;
-using Microsoft.MixedReality.Toolkit.UI;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Table;
-
-
-
-
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
-using Debug = UnityEngine.Debug;//TODO look into how to do this for the whole project
-
-
+using Debug = UnityEngine.Debug;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
-
+    /// <summary>
+    /// A concrete implementation of the repository interface for the Azure Table service and Azure Blob service
+    /// </summary>
     public class AzureTableRepository : MonoBehaviour, RepositoryInterface
     {
 
@@ -32,7 +25,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         [SerializeField]
         private string connectionString = default;
 
-        
         [Header("Table Settings")]
         [SerializeField]
         private string experimentsTableName = "experiments";
@@ -75,7 +67,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         private AzureBlobRepository blobRepository;
 
         /// <summary>
-        /// Initialize the repository
+        /// Initialize the repository when the unity object is created
         /// </summary>
         private async void Awake()
         {
@@ -92,9 +84,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         }
 
         /// <summary>
-        /// Setup the tables repository
+        /// Setup the tables repository for all model objects
         /// </summary>
         /// <returns>True on success</returns>
+        /// <exception cref="StorageException">If the connection to the Azure Storage fails</exception>"
         private async Task<bool> SetupTablesRepository()
         {
             cloudTableClient = storageAccount.CreateCloudTableClient();
@@ -137,9 +130,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         }
 
         /// <summary>
-        /// Setup the blob repository
+        /// Setup the blob repository for holding the image data
         /// </summary>
         /// <returns>True on success</returns>
+        /// <exception cref="StorageException">If the connection to the Azure Blob Storage fails</exception>""
         private bool SetupBlobRepository()
         {
             blobClient = storageAccount.CreateCloudBlobClient();
@@ -193,7 +187,6 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// </summary>
         /// <param name="experiment">The experiment that will be updated</param>
         /// <returns>True on success</returns>
-
         public async Task<bool> UpdateExperiment(Experiment experiment)
         {
 
@@ -293,17 +286,32 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-
+        /// <summary>
+        /// Delete an experiment from the repository
+        /// </summary>
+        /// <param name="experiment">The Experiment that will be deleted</param>
+        /// <returns>True if the experiment was deleted</returns>
         public Task<bool> DeleteExperiment(Experiment experiment)
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Delete a scientist from the repository
+        /// </summary>
+        /// <param name="scientist">The Scientist that will be deleted</param>
+        /// <returns>True if the Scientist was deleted</returns>
         public Task<bool> DeleteScientist(Scientist scientist)
         {
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// Delete a log from the table repository and any associated blobs from the blob repository
+        /// </summary>
+        /// <param name="log">The Log that will be deleted</param>
+        /// <returns>True if the Log was deleted</returns>
+        /// <exception cref="ObjectDataBaseException">If the blob could not be deleted</exception>"
         public async  Task<bool> DeleteLog(Log log)
         {
 
@@ -326,11 +334,21 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+        /// <summary>
+        /// A method used for checking if the repository is ready
+        /// </summary>
+        /// <returns> True if all repositories are ready</returns>
         bool RepositoryInterface.IsReady()
         {
             return IsReady;
         }
 
+        /// <summary>
+        /// Get a page of 100 logs for an experiment
+        /// </summary>
+        /// <param name="experimentID"> The ID of the experiment </param>
+        /// <param name="token">The continuation token for the pagination session </param>
+        /// <returns> An array of logs and a continuation token </returns>
         public async Task<(Log[], TableContinuationToken)> GetLogsForExperiment(string experimentID, TableContinuationToken token)
         {
 
@@ -339,17 +357,31 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                         
            
         }
-
+        ///<summary>
+        /// Get all logs for an experiment
+        /// </summary>
+        /// <param name="experimentID"> The ID of the experiment </param>
+        /// <returns> An array of logs </returns>
         public async Task<Log[]> GetLogsForExperiment(string experimentID)
         {
             var (logs, token) = await GetLogsForExperiment(experimentID, null);
             return logs;
         }
 
+        /// <summary>
+        /// Get a page of 100 experiments
+        /// </summary>
+        /// <param name="token">The continuation token for the pagination session </param>
+        /// <returns>A list of experiments and a pagination token</returns>
         public async Task<(Experiment[], TableContinuationToken)> GetAllExperiments(TableContinuationToken token)
         {
             return await atExperimentRepository.ReadOnePageAsync(100,token);
         }
+
+        /// <summary>
+        /// Get all experiments
+        /// </summary>
+        /// <returns>A list of max 100 experiments</returns>
 
         public async Task<Experiment[]> GetAllExperiments()
         {

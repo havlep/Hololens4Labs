@@ -5,6 +5,9 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 {
+    /// <summary>
+    /// A concerete implementation of Azure Table object repository interface for the Experiment data model class
+    /// </summary>
     public class ATScientistRepository : AzureTableObjectRepository<Scientist, ScientistDTO>
     {
         public ATScientistRepository(CloudTable table, string partitionKey) : base(new ScientistMapper(), table, partitionKey) { }
