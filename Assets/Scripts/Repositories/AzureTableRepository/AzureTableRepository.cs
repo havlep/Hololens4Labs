@@ -29,10 +29,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         public bool IsReady { get; private set; }
 
         [Header("Base Settings")]
-
         [SerializeField]
         private string connectionString = default;
 
+        
         [Header("Table Settings")]
         [SerializeField]
         private string experimentsTableName = "experiments";
@@ -74,7 +74,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         private AzureBlobRepository blobRepository;
 
-
+        /// <summary>
+        /// Initialize the repository
+        /// </summary>
         private async void Awake()
         {
             
@@ -89,6 +91,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+        /// <summary>
+        /// Setup the tables repository
+        /// </summary>
+        /// <returns>True on success</returns>
         private async Task<bool> SetupTablesRepository()
         {
             cloudTableClient = storageAccount.CreateCloudTableClient();
@@ -127,8 +133,13 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
             atLogRepository = new ATLogRepository(logsTable, partitionKey);
             return true;
+
         }
 
+        /// <summary>
+        /// Setup the blob repository
+        /// </summary>
+        /// <returns>True on success</returns>
         private bool SetupBlobRepository()
         {
             blobClient = storageAccount.CreateCloudBlobClient();
@@ -155,6 +166,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+        /// <summary>
+        /// Create a new experiment
+        /// </summary>
+        /// <param name="experiment">The Experiment that will be created in the repository</param>
+        /// <returns>The experiment as returned by the repository</returns>
+        /// <exception cref="ObjectNotInitializedException">If the scientist was not initialized for the experiment</exception>
         public async Task<Experiment> CreateExperiment(Experiment experiment)
         {
 
@@ -171,6 +188,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+        /// <summary>
+        /// Update an experiment in the repository
+        /// </summary>
+        /// <param name="experiment">The experiment that will be updated</param>
+        /// <returns>True on success</returns>
+
         public async Task<bool> UpdateExperiment(Experiment experiment)
         {
 
@@ -178,13 +201,22 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-
+        /// <summary>
+        /// Create a new scientist in the repository
+        /// </summary>
+        /// <param name="scientist"> The scientist that will be created in the repository </param>
+        /// <returns> The scientist as returned by the repository </returns>
         public async Task<Scientist> CreateScientist(Scientist scientist)
         {
             return await atScientistRepository.Create(scientist);
 
         }
 
+        /// <summary>
+        /// Update a scientist in the repository
+        /// </summary>
+        /// <param name="scientist"> The scientist that will be updated in the repository </param>
+        /// <returns> true on sucess </returns>
         public async Task<bool> UpdateScientist(Scientist scientist)
         {
 
@@ -192,7 +224,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
-
+        /// <summary>
+        /// Create a new log in the repository
+        /// </summary>
+        /// <param name="log"> The log that will be created in the repository </param>
+        /// <returns> The log as returned by the repository after creation </returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         public async Task<Log> CreateLog(Log log)
         {
 
@@ -228,6 +265,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
         }
 
+
+        /// <summary>
+        /// Update a log in the repository
+        /// </summary>
+        /// <param name="log"> The log that will be updated in the repository </param>
+        /// <returns>True on success</returns>
         public async Task<bool> UpdateLog(Log log)
         {
 

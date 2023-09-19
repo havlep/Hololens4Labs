@@ -130,7 +130,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if(result.Result != null)
                 Debug.Log($"Object {dto.RowKey} updated in the repo");
             else
-                Debug.LogError($"Failed to update Object {dto.RowKey} in repo with status code" + result.HttpStatusCode);
+                Debug.Log($"Failed to update Object {dto.RowKey} in repo with status code" + result.HttpStatusCode);
 
             return result.Result != null;
 
@@ -145,8 +145,8 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var query = new TableQuery<DTO>().Take(pageSize);
             var segment = await table.ExecuteQuerySegmentedAsync(query, continuationToken);
 
-            var results = segment.Results.Select(x => mapper.ToOBJ(x)).ToList();
-            return (results.ToArray(), segment.ContinuationToken);
+            var results = segment.Results.Select(x => mapper.ToOBJ(x)).ToArray();
+            return (results, segment.ContinuationToken);
         }
     }
 }

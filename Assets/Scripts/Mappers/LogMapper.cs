@@ -7,11 +7,22 @@ namespace HoloLens4Labs.Scripts.Mappers
 {
     public class LogMapper : MapperInterface<Log, LogDTO, LogDTO>
     {
+
+        /// <summary>
+        /// Method for mapping from an Log to the DTO when creating in a database for the first time 
+        /// </summary>
+        /// <param name="obj">The Log being mapped</param>
+        /// <returns>An LogDTO</returns>
         public LogDTO CreateDTO(Log obj)
         {
             return ToDTO(obj);
         }
 
+        /// <summary>
+        /// Method for mapping from a Log to a LogDTO
+        /// </summary>
+        /// <param name="obj">The Log being mapped</param>
+        /// <returns>An LogDTO</returns>
         public LogDTO ToDTO(Log log)
         {
             LogDTO dto = new LogDTO();
@@ -109,6 +120,11 @@ namespace HoloLens4Labs.Scripts.Mappers
 
         }
 
+        /// <summary>
+        /// Method for mapping from a LogDTO to a Log data model object
+        /// </summary>
+        /// <param name="dto">The LogDTO being mapped</param>
+        /// <returns>A Log data model object</returns>
         public Log ToOBJ(LogDTO dto)
         {
             if (dto.TextLogID != null && dto.TextLogID != string.Empty )
