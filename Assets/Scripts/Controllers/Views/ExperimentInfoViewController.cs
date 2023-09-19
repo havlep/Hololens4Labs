@@ -71,7 +71,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public async void SaveExperiment() { 
         
-            var experiment = new Experiment(nameField.text, sceneController.CurrentUser.Id);
+            var experiment = new Experiment(nameField.text, sceneController.CurrentUser);
             experiment = await sceneController.DataManager.CreateOrUpdateExperiment(experiment);
             sceneController.CurrentExperiment = experiment;
             sceneController.OpenLogSelectionMenu();

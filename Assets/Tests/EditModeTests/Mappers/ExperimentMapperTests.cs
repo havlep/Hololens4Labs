@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using HoloLens4Labs.Scripts.Mappers;
 using HoloLens4Labs.Scripts.Model;
+using System;
 
 public class ExperimentMapperTests
 {
@@ -11,7 +12,7 @@ public class ExperimentMapperTests
     public void Init()
     {
 
-        experiment = new Experiment("12", "Michelson-Morely","12");
+        experiment = new Experiment("12", "Michelson-Morely","12", DateTime.Now);
 
 
     }

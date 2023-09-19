@@ -56,7 +56,7 @@ public class ExperimentRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
         var experimentRepository = new ATExperimentRepository(mockTable.Object, "l");
-        var experiment = new Experiment("Experiment", "11"); 
+        var experiment = new Experiment("Experiment", "11", DateTime.Now); 
 
         Assert.Throws<ObjectDataBaseException>(
                           () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experiment)));
@@ -83,7 +83,7 @@ public class ExperimentRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
 
-        var experiment = new Experiment("Experiment2", "12");
+        var experiment = new Experiment("Experiment2", "12", DateTime.Now);
         var experimentDTO = new ExperimentDTO() {
 
             Name = experiment.Name,
@@ -135,7 +135,7 @@ public class ExperimentRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
 
-        var experiment = new Experiment("Experiment2", "2467");
+        var experiment = new Experiment("Experiment2", "2467", DateTime.Now);
 
         var operationResult = new TableResult
         {
@@ -161,7 +161,7 @@ public class ExperimentRepositoryTests
     public void DeleteSuccess()
     {
 
-        var experiment = new Experiment("2467", "sdfsdf", "21");
+        var experiment = new Experiment("2467", "sdfsdf", "21", DateTime.Now);
 
         var operationResult = new TableResult
         {
@@ -270,7 +270,7 @@ public class ExperimentRepositoryTests
 
         };
 
-        var experiment = new Experiment("12", "testexp", "13");
+        var experiment = new Experiment("12", "testexp", "13",DateTime.Now);
 
         var operationResult = new TableResult
         {
@@ -306,7 +306,7 @@ public class ExperimentRepositoryTests
 
         };
 
-        var experiment = new Experiment("12", "testexp", "13");
+        var experiment = new Experiment("12", "testexp", "13", DateTime.Now);
 
 
         var operationResult = new TableResult

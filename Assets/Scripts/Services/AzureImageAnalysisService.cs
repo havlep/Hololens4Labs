@@ -45,6 +45,13 @@ namespace HoloLens4Labs.Scripts.Services
         public async Task<string> Transcribe(ImageData imageData)
         {
             HttpResponseMessage result;
+
+            if (imageData.Data == null)
+            {
+                Debug.LogError("Error in AzureImageAnalysisService: ImageData does not contain any image data");
+                throw new Exception("Error in AzureImageAnalysisService: ImageData does not contain any image data");
+            }
+
             using (var content = new ByteArrayContent(imageData.Data))
             {
 

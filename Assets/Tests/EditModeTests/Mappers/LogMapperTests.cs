@@ -18,7 +18,7 @@ public class LogMapperTests
     {
 
         scientist = new Scientist("1","Albert A. Michelson");
-        experiment = new Experiment("12","Michelson-Morely", scientist);
+        experiment = new Experiment("12","Michelson-Morely", scientist, DateTime.Now);
         textLog = new TextLog("31459", new DateTime(2031, 2, 1), scientist, experiment);
 
         logDTO = new LogDTO() {

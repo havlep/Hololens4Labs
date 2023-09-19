@@ -14,7 +14,7 @@ public class ExperimentTest
     [Test]
     public void FullDefinitionConstructor()
     {
-        var experiment = new Experiment("22", "Trinity","99");
+        var experiment = new Experiment("22", "Trinity","99", DateTime.Now);
 
         try
         {

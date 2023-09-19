@@ -44,18 +44,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             scrollableListPopulator.MakeScrollingList();
-
-            var experiments = new List<Experiment>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                var experiment = new Experiment("Experiment " + i.ToString(), "1");
-                experiment.Id = i.ToString();
-                experiments.Add(experiment);
-            }
-
-
-            //PopulateList(Task<Experiment[]>.FromResult(experiments.ToArray()));
             PopulateList(sceneController.DataManager.GetAllExperiments());
 
         }
