@@ -1,0 +1,114 @@
+\doxysection{Log\+View\+Controller.\+cs}
+\hypertarget{_log_view_controller_8cs_source}{}\label{_log_view_controller_8cs_source}\index{Controllers/Views/LogViewController.cs@{Controllers/Views/LogViewController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs}{HoloLens4Labs.Scripts.Model.Logs}};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Microsoft.MixedReality.Toolkit.UI;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_controllers}{HoloLens4Labs.Scripts.Controllers}}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00014}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{LogViewController}}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Managers"{}})]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{SceneController}}\ sceneController;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}UI\ Elements"{}})]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ createdOnLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ createdByLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ lastModifiedLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ messageLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ Interactable[]\ buttons\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ GameObject\ parentObject\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ log\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00043}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a46a12989ab7ed28d28dc1949571edfeb}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a46a12989ab7ed28d28dc1949571edfeb}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sceneController\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sceneController\ =\ FindObjectOfType<SceneController>();}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CloseCard()}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ parentObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00063}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a8444c6215f2f60c5136ca6f0e8dccf1d}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a8444c6215f2f60c5136ca6f0e8dccf1d}{Init}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ source,\ GameObject\ parent)}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Initializing\ textlog"{}});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ log\ =\ source;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ createdOnLabel.SetText(log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}{CreatedOn}}.ToString(\textcolor{stringliteral}{"{}dd/MM/yyyy\ HH:mm:ss"{}}));}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{CreatedBy}}\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdByLabel.SetText(log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{CreatedBy}}.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4}{Name}});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdByLabel.SetText(\textcolor{stringliteral}{"{}User\ not\ found!"{}});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ parentObject\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{SetButtonsInteractiveState}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00083}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{00083}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{SetButtonsInteractiveState}}(\textcolor{keywordtype}{bool}\ state)}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ interactable\ \textcolor{keywordflow}{in}\ buttons)}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interactable.IsEnabled\ =\ state;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00094}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_aeb216c894297126fd462046c1fd01068}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ async\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_aeb216c894297126fd462046c1fd01068}{SaveChanges}}()\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Saving\ Log."{}});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{SetButtonsInteractiveState}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ messageLabel.text\ =\ \textcolor{stringliteral}{"{}Updating\ data,\ please\ wait\ ..."{}};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ success\ =\ await\ sceneController.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a7e3519bcec3eeb7c3c7929fa5b42ab2d}{DataManager}}.CreateOrUpdateLog(log);}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ messageLabel.text\ =\ \textcolor{stringliteral}{"{}Updated\ data\ in\ the\ database."{}};}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ messageLabel.text\ =\ \textcolor{stringliteral}{"{}Failed\ to\ update\ database."{}}\ +\ \ e.Message;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ e;}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Log\ saved."{}});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ parentObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00123}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a85d19b0b2f62ad1f265f6bc1dd5142ff}{00123}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a85d19b0b2f62ad1f265f6bc1dd5142ff}{ImageCaptured}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{DataType}}\ data)}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_view_controller_8cs_source_l00129}00129\ \}}
+
+\end{DoxyCode}

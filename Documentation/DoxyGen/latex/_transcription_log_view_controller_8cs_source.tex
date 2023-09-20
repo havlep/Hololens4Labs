@@ -1,0 +1,115 @@
+\doxysection{Transcription\+Log\+View\+Controller.\+cs}
+\hypertarget{_transcription_log_view_controller_8cs_source}{}\label{_transcription_log_view_controller_8cs_source}\index{Controllers/Views/TranscriptionLogViewController.cs@{Controllers/Views/TranscriptionLogViewController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs}{HoloLens4Labs.Scripts.Model.Logs}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_controllers}{HoloLens4Labs.Scripts.Controllers}}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00014}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller}{TranscriptionLogViewController}}\ :\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller}{LogViewController}}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}UI\ Elements"{}})]}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ Image\ imageCanvas\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_InputField\ descriptionInputField\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Sprite\ placeHolderImage\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller}{PhotoCameraController}}\ photoCapturePanelPrefab;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00035}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a254361c6d352b371fef319341f83fed9}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a254361c6d352b371fef319341f83fed9}{InitWithExisting}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{TranscriptionLog}}\ log,\ GameObject\ parentObj)}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83}{Data}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.Exception(\textcolor{stringliteral}{"{}No\ image\ in\ existing\ image\ transcriptionLog"{}});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ lastModifiedLabel.SetText(log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83}{Data}}.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_a1690433fa23d53f092b5ef1e2ded0543}{CreatedOn}}.ToShortTimeString());}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ imageCanvas.sprite\ =\ spriteFromImage(log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83}{Data}});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ base.Init(log,\ parentObj);}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InitNew(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{TranscriptionLog}}\ log,\ GameObject\ parentObj)}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ this.log\ =\ log;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d}{captureImage}}();}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ base.Init(log,\ parentObj);}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00065}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a358e40e4674f65757c5081081ad6727d}{captureImage}}()}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ var\ photoCaptureView\ =\ Instantiate(photoCapturePanelPrefab,\ this.transform.position,\ Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ photoCaptureView.Init(log,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Sprite\ spriteFromImage(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{TranscriptionData}}\ data)}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Sprite.Create(data.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}{Texture}},\ \textcolor{keyword}{new}\ Rect(0,\ 0,\ data.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}{Texture}}.width,\ data.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}{Texture}}.height),\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f));}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00086}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a300b262b25af55d0b317cc9b5b16cc81}{00086}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a300b262b25af55d0b317cc9b5b16cc81}{ImageCaptured}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{DataType}}\ data)}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(data\ is\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{ImageData}}))}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.Exception(\textcolor{stringliteral}{"{}Wrong\ data\ type\ call\ for\ transcription\ log"{}});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ var\ imageData\ =\ data\ as\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{ImageData}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ugly\ hack\ to\ get\ the\ data\ to\ the\ right\ type\ until\ I\ can\ refactor\ the\ data\ type\ to\ ImageData}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ var\ transData\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{TranscriptionData}}(imageData.Id,\ imageData.CreatedOn,\ imageData.CreatedBy,\ imageData.DoneWithinLog);}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ transData.Data\ =\ imageData.Data;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ transData.Texture\ =\ imageData.Texture;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ transData.Text\ =\ Transcribe();}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (transData.Text\ ==\ \textcolor{keyword}{null}\ ||\ transData.Text\ ==\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ messageLabel.text\ =\ \textcolor{stringliteral}{"{}No\ transcription\ available"{}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ var\ transLog\ =\ log\ as\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{TranscriptionLog}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ transLog.Data\ =\ transData;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ imageCanvas.sprite\ =\ spriteFromImage(transLog.Data);}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00114}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aec0c9b2fc27d245816ce04a8b1dc9e68}{00114}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_aec0c9b2fc27d245816ce04a8b1dc9e68}{ClearDescription}}()}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ descriptionInputField.text\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00123}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a6c0c6910c3aaf6b833ba4aff87b2d1ff}{00123}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller_a6c0c6910c3aaf6b833ba4aff87b2d1ff}{SaveChanges}}()}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ var\ transLog\ =\ log\ as\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{TranscriptionLog}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ transLog.Data.Text\ =\ descriptionInputField.text;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ base.SaveChanges();}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ Transcribe()}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ var\ transcriptionLog\ =\ log\ as\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{TranscriptionLog}};}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sceneController.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a332e6f7108a5c9c9f4cd390ea492e245}{ImageAnalysisManager}}.TranscribeImage(transcriptionLog.Data).Result;}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_log_view_controller_8cs_source_l00144}00144\ \}}
+
+\end{DoxyCode}

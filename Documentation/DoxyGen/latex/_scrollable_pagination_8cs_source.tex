@@ -1,0 +1,43 @@
+\doxysection{Scrollable\+Pagination.\+cs}
+\hypertarget{_scrollable_pagination_8cs_source}{}\label{_scrollable_pagination_8cs_source}\index{Utils/ScrollablePagination.cs@{Utils/ScrollablePagination.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (c)\ Microsoft\ Corporation.}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00002}00002\ \textcolor{comment}{//\ Licensed\ under\ the\ MIT\ License.}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.MixedReality.Toolkit.UI;}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00007}\mbox{\hyperlink{namespace_microsoft}{00007}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos}{Microsoft.MixedReality.Toolkit.Examples.Demos}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00013}\mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination}{ScrollablePagination}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}The\ ScrollingObjectCollection\ to\ navigate"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ ScrollingObjectCollection\ scrollView;}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00022}\mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination_a8c913dc7e765f1f6a6ab4b8a7c07d4da}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ ScrollingObjectCollection\ \mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination_a8c913dc7e765f1f6a6ab4b8a7c07d4da}{ScrollView}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scrollView\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView\ =\ GetComponent<ScrollingObjectCollection>();}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scrollView;}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00041}\mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination_a59ca1d7fc8a3193d5f9c804eedbde94f}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination_a59ca1d7fc8a3193d5f9c804eedbde94f}{ScrollByTier}}(\textcolor{keywordtype}{int}\ amount)}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Assert(\mbox{\hyperlink{class_microsoft_1_1_mixed_reality_1_1_toolkit_1_1_examples_1_1_demos_1_1_scrollable_pagination_a8c913dc7e765f1f6a6ab4b8a7c07d4da}{ScrollView}}\ !=\ \textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Scroll\ view\ needs\ to\ be\ defined\ before\ using\ pagination."{}});}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.MoveByTiers(amount);}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_pagination_8cs_source_l00047}00047\ \}}
+
+\end{DoxyCode}

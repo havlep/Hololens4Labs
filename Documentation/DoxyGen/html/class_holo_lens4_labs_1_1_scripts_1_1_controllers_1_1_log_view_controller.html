@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -113,7 +113,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a46a12989ab7ed28d28dc1949571edfeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect the scenecontroller if it is not set.  <br /></td></tr>
 <tr class="separator:a46a12989ab7ed28d28dc1949571edfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8444c6215f2f60c5136ca6f0e8dccf1d" id="r_a8444c6215f2f60c5136ca6f0e8dccf1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a8444c6215f2f60c5136ca6f0e8dccf1d">Init</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a> source, GameObject parent)</td></tr>
-<tr class="memdesc:a8444c6215f2f60c5136ca6f0e8dccf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init the menu with the given TextLogDTO. Should be called from the previous menu.  <br /></td></tr>
+<tr class="memdesc:a8444c6215f2f60c5136ca6f0e8dccf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">InitWithExisting the menu with the given TextLogDTO. Should be called from the previous menu.  <br /></td></tr>
 <tr class="separator:a8444c6215f2f60c5136ca6f0e8dccf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a182e9c5958ee5154521786116834209b" id="r_a182e9c5958ee5154521786116834209b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a182e9c5958ee5154521786116834209b">SetButtonsInteractiveState</a> (bool state)</td></tr>
 <tr class="memdesc:a182e9c5958ee5154521786116834209b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the buttons interactive state.  <br /></td></tr>
@@ -123,8 +123,6 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a23170771843a2bff3d0c6ef114f067e5" id="r_a23170771843a2bff3d0c6ef114f067e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller.html">SceneController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a23170771843a2bff3d0c6ef114f067e5">sceneController</a></td></tr>
 <tr class="separator:a23170771843a2bff3d0c6ef114f067e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3135ccc05fdac17ea3e6a425fb0ef7a" id="r_ab3135ccc05fdac17ea3e6a425fb0ef7a"><td class="memItemLeft" align="right" valign="top">TMP_Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#ab3135ccc05fdac17ea3e6a425fb0ef7a">logNameLabel</a> = default</td></tr>
-<tr class="separator:ab3135ccc05fdac17ea3e6a425fb0ef7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af643be39f7ebd7a9e077b045ba30c07a" id="r_af643be39f7ebd7a9e077b045ba30c07a"><td class="memItemLeft" align="right" valign="top">TMP_Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#af643be39f7ebd7a9e077b045ba30c07a">createdOnLabel</a> = default</td></tr>
 <tr class="separator:af643be39f7ebd7a9e077b045ba30c07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ff0d85045ad881f77ba76672ad9d1b6" id="r_a4ff0d85045ad881f77ba76672ad9d1b6"><td class="memItemLeft" align="right" valign="top">TMP_Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a4ff0d85045ad881f77ba76672ad9d1b6">createdByLabel</a> = default</td></tr>
@@ -142,6 +140,8 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Controller for the log view. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00014">14</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a46a12989ab7ed28d28dc1949571edfeb" name="a46a12989ab7ed28d28dc1949571edfeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46a12989ab7ed28d28dc1949571edfeb">&#9670;&#160;</a></span>Awake()</h2>
@@ -168,6 +168,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Connect the scenecontroller if it is not set. </p>
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00043">43</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <a id="af1b066a941f89dc95a4ccc3053989254" name="af1b066a941f89dc95a4ccc3053989254"></a>
@@ -184,6 +186,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00051">51</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -214,6 +218,8 @@ Protected Attributes</h2></td></tr>
 <p>Callback for when the image is captured. </p>
 
 <p>Reimplemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a00b1f1eb2928b7ef9955cbbb1921a2c0">HoloLens4Labs.Scripts.Controllers.ImageLogViewController</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller.html#a300b262b25af55d0b317cc9b5b16cc81">HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00123">123</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -251,13 +257,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Init the menu with the given TextLogDTO. Should be called from the previous menu. </p>
+<p>InitWithExisting the menu with the given TextLogDTO. Should be called from the previous menu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source</td><td>TextLogDTO source</td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00063">63</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -287,6 +295,8 @@ Protected Attributes</h2></td></tr>
 <p>Save changes for the log into the azure table storage. </p>
 
 <p>Reimplemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_text_log_view_controller.html#a0d81497f1422d31284c065e527fecc4d">HoloLens4Labs.Scripts.Controllers.TextLogViewController</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_transcription_log_view_controller.html#a6c0c6910c3aaf6b833ba4aff87b2d1ff">HoloLens4Labs.Scripts.Controllers.TranscriptionLogViewController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00094">94</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -322,6 +332,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00083">83</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -345,6 +357,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00034">34</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <a id="a4ff0d85045ad881f77ba76672ad9d1b6" name="a4ff0d85045ad881f77ba76672ad9d1b6"></a>
@@ -366,6 +380,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00026">26</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -389,6 +405,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00024">24</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <a id="a02d298df86793c5ccb503dc1a0999d13" name="a02d298df86793c5ccb503dc1a0999d13"></a>
@@ -410,6 +428,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00028">28</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -433,27 +453,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ab3135ccc05fdac17ea3e6a425fb0ef7a" name="ab3135ccc05fdac17ea3e6a425fb0ef7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3135ccc05fdac17ea3e6a425fb0ef7a">&#9670;&#160;</a></span>logNameLabel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TMP_Text HoloLens4Labs.Scripts.Controllers.LogViewController.logNameLabel = default</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00038">38</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -477,6 +477,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00031">31</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <a id="a5953be6c9c53cdd953438bf1d78d0c6c" name="a5953be6c9c53cdd953438bf1d78d0c6c"></a>
@@ -498,6 +500,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00037">37</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -521,10 +525,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_log_view_controller_8cs_source.html#l00020">20</a> of file <a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Controllers/Views/<a class="el" href="_log_view_controller_8cs.html">LogViewController.cs</a></li>
+<li>Controllers/Views/<a class="el" href="_log_view_controller_8cs_source.html">LogViewController.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

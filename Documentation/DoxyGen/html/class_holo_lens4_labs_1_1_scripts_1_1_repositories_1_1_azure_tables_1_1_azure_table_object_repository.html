@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository&lt; OBJ, DTO &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract class for all Azure Table object repositories.  
+ <a href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableObjectRepository&lt; OBJ, DTO &gt;:</div>
 <div class="dyncontent">
@@ -93,41 +96,76 @@ Inheritance diagram for HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTabl
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a96c85afbc32d6ab654565b021ed3a431" id="r_a96c85afbc32d6ab654565b021ed3a431"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a96c85afbc32d6ab654565b021ed3a431">AzureTableObjectRepository</a> (<a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html">MapperInterface</a>&lt; OBJ, DTO, DTO &gt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2a72bd0fe2267cee7c333cedddb7d539">mapper</a>, string <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2d489948cadc6cd8dde31462d48dd76b">defaultPartitionKey</a>)</td></tr>
+<tr class="memdesc:a96c85afbc32d6ab654565b021ed3a431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Azure Table object repository when the table is not known at the time of construction.  <br /></td></tr>
 <tr class="separator:a96c85afbc32d6ab654565b021ed3a431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa734ee38a5da6784cce317b021ae2e73" id="r_aa734ee38a5da6784cce317b021ae2e73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#aa734ee38a5da6784cce317b021ae2e73">AzureTableObjectRepository</a> (<a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html">MapperInterface</a>&lt; OBJ, DTO, DTO &gt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2a72bd0fe2267cee7c333cedddb7d539">mapper</a>, CloudTable <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a061d28ed81c44c11ffed5f06902c0f9a">table</a>, string <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2d489948cadc6cd8dde31462d48dd76b">defaultPartitionKey</a>)</td></tr>
+<tr class="memdesc:aa734ee38a5da6784cce317b021ae2e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Azure Table object repository when the table is known at the time of construction.  <br /></td></tr>
 <tr class="separator:aa734ee38a5da6784cce317b021ae2e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3590aa657718315eb363d31ed9c1aece" id="r_a3590aa657718315eb363d31ed9c1aece"><td class="memItemLeft" align="right" valign="top">async Task&lt; OBJ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a3590aa657718315eb363d31ed9c1aece">Create</a> (OBJ obj)</td></tr>
+<tr class="memdesc:a3590aa657718315eb363d31ed9c1aece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object in the repository.  <br /></td></tr>
 <tr class="separator:a3590aa657718315eb363d31ed9c1aece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae621f0fb330b9b5e4af70f102d85708d" id="r_ae621f0fb330b9b5e4af70f102d85708d"><td class="memItemLeft" align="right" valign="top">async Task&lt; OBJ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#ae621f0fb330b9b5e4af70f102d85708d">Read</a> (string id)</td></tr>
+<tr class="memdesc:ae621f0fb330b9b5e4af70f102d85708d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an object from the repository using the default partition key.  <br /></td></tr>
 <tr class="separator:ae621f0fb330b9b5e4af70f102d85708d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551f2e51ef60140b0997822e068bd199" id="r_a551f2e51ef60140b0997822e068bd199"><td class="memItemLeft" align="right" valign="top">async Task&lt; OBJ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a551f2e51ef60140b0997822e068bd199">Read</a> (string id, string partitionKey)</td></tr>
+<tr class="memdesc:a551f2e51ef60140b0997822e068bd199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an object from the repository using the provided partition key.  <br /></td></tr>
 <tr class="separator:a551f2e51ef60140b0997822e068bd199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d72538a755a48816638bf65e3eb2b67" id="r_a7d72538a755a48816638bf65e3eb2b67"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a7d72538a755a48816638bf65e3eb2b67">Delete</a> (OBJ obj)</td></tr>
+<tr class="memdesc:a7d72538a755a48816638bf65e3eb2b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an object from the repository.  <br /></td></tr>
 <tr class="separator:a7d72538a755a48816638bf65e3eb2b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa44c0275d3bd83224d4c438232fedb63" id="r_aa44c0275d3bd83224d4c438232fedb63"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#aa44c0275d3bd83224d4c438232fedb63">Update</a> (OBJ obj)</td></tr>
+<tr class="memdesc:aa44c0275d3bd83224d4c438232fedb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an object in the repository.  <br /></td></tr>
 <tr class="separator:aa44c0275d3bd83224d4c438232fedb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49714068881c819d91ec1f7123287ad7" id="r_a49714068881c819d91ec1f7123287ad7"><td class="memItemLeft" align="right" valign="top">async Task&lt;(OBJ[], TableContinuationToken)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a49714068881c819d91ec1f7123287ad7">ReadOnePageAsync</a> (int pageSize, TableContinuationToken continuationToken=null)</td></tr>
+<tr class="memdesc:a49714068881c819d91ec1f7123287ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one page of objects from the repository.  <br /></td></tr>
 <tr class="separator:a49714068881c819d91ec1f7123287ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html">HoloLens4Labs.Scripts.Repositories.ObjectRepositoryInterface&lt; OBJ &gt;</a></td></tr>
 <tr class="memitem:af549dad056909dd49bf42c2e0d97c69e inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface" id="r_af549dad056909dd49bf42c2e0d97c69e"><td class="memItemLeft" align="right" valign="top">Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#af549dad056909dd49bf42c2e0d97c69e">Create</a> (T obj)</td></tr>
+<tr class="memdesc:af549dad056909dd49bf42c2e0d97c69e inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new object.  <br /></td></tr>
 <tr class="separator:af549dad056909dd49bf42c2e0d97c69e inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa70c194fa85ce52ccf8d1bd1ae85a509 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface" id="r_aa70c194fa85ce52ccf8d1bd1ae85a509"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#aa70c194fa85ce52ccf8d1bd1ae85a509">Update</a> (T obj)</td></tr>
+<tr class="memdesc:aa70c194fa85ce52ccf8d1bd1ae85a509 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing object.  <br /></td></tr>
 <tr class="separator:aa70c194fa85ce52ccf8d1bd1ae85a509 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2726044267a1751db79966207b981583 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface" id="r_a2726044267a1751db79966207b981583"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#a2726044267a1751db79966207b981583">Delete</a> (T obj)</td></tr>
+<tr class="memdesc:a2726044267a1751db79966207b981583 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing object from the repository.  <br /></td></tr>
 <tr class="separator:a2726044267a1751db79966207b981583 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff1e2852ef3e6a0d51ffeae8ad0e807 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface" id="r_afff1e2852ef3e6a0d51ffeae8ad0e807"><td class="memItemLeft" align="right" valign="top">Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#afff1e2852ef3e6a0d51ffeae8ad0e807">Read</a> (string id)</td></tr>
+<tr class="memdesc:afff1e2852ef3e6a0d51ffeae8ad0e807 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an object from the repository.  <br /></td></tr>
 <tr class="separator:afff1e2852ef3e6a0d51ffeae8ad0e807 inherit pub_methods_interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a061d28ed81c44c11ffed5f06902c0f9a" id="r_a061d28ed81c44c11ffed5f06902c0f9a"><td class="memItemLeft" align="right" valign="top">CloudTable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a061d28ed81c44c11ffed5f06902c0f9a">table</a> = null</td></tr>
+<tr class="memdesc:a061d28ed81c44c11ffed5f06902c0f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Azure Table object repository.  <br /></td></tr>
 <tr class="separator:a061d28ed81c44c11ffed5f06902c0f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a72bd0fe2267cee7c333cedddb7d539" id="r_a2a72bd0fe2267cee7c333cedddb7d539"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html">MapperInterface</a>&lt; OBJ, DTO, DTO &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2a72bd0fe2267cee7c333cedddb7d539">mapper</a></td></tr>
+<tr class="memdesc:a2a72bd0fe2267cee7c333cedddb7d539"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mapper between the data model class and the DTO.  <br /></td></tr>
 <tr class="separator:a2a72bd0fe2267cee7c333cedddb7d539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d489948cadc6cd8dde31462d48dd76b" id="r_a2d489948cadc6cd8dde31462d48dd76b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a2d489948cadc6cd8dde31462d48dd76b">defaultPartitionKey</a> = null</td></tr>
+<tr class="memdesc:a2d489948cadc6cd8dde31462d48dd76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default partition key for the repository.  <br /></td></tr>
 <tr class="separator:a2d489948cadc6cd8dde31462d48dd76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract class for all Azure Table object repositories. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DTO</td><td>The DTO type for the repository and data model class</td></tr>
+    <tr><td class="paramname">OBJ</td><td>The data model class stored in the repository</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>DTO</em></td><td>&#160;:</td><td valign="top"><em>ITableEntity</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>DTO</em></td><td>&#160;:</td><td valign="top"><em>new()</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00017">17</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a96c85afbc32d6ab654565b021ed3a431" name="a96c85afbc32d6ab654565b021ed3a431"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96c85afbc32d6ab654565b021ed3a431">&#9670;&#160;</a></span>AzureTableObjectRepository() <span class="overload">[1/2]</span></h2>
 
@@ -153,6 +191,17 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for the Azure Table object repository when the table is not known at the time of construction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapper</td><td>Mapper for mapping DTOs and OBJs</td></tr>
+    <tr><td class="paramname">defaultPartitionKey</td><td>The default partition key</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00040">40</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -188,6 +237,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor for the Azure Table object repository when the table is known at the time of construction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapper</td><td>Mapper for mapping DTOs and OBJs</td></tr>
+    <tr><td class="paramname">table</td><td>The Azure Table object repository</td></tr>
+    <tr><td class="paramname">defaultPartitionKey</td><td>The default partition key</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00052">52</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -207,6 +268,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create an object in the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The OBJ that will be created in the repository</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The OBJ that was created in the repository</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NotSupportedException</td><td></td></tr>
+    <tr><td class="paramname">ObjectDataBaseException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00064">64</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <a id="a7d72538a755a48816638bf65e3eb2b67" name="a7d72538a755a48816638bf65e3eb2b67"></a>
@@ -225,6 +304,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Delete an object from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The OBJ that will be deleted from the repository</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the object was deleted, false otherwise</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00147">147</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <a id="ae621f0fb330b9b5e4af70f102d85708d" name="ae621f0fb330b9b5e4af70f102d85708d"></a>
@@ -242,6 +332,11 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read an object from the repository using the default partition key. </p>
+<dl class="section return"><dt>Returns</dt><dd>The OBJ that was read from the repository</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00108">108</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -271,6 +366,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Read an object from the repository using the provided partition key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The id of the object to be read</td></tr>
+    <tr><td class="paramname">partitionKey</td><td>The partition key of the object to be read</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The OBJ that was read from the repository</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00120">120</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <a id="a49714068881c819d91ec1f7123287ad7" name="a49714068881c819d91ec1f7123287ad7"></a>
@@ -299,6 +406,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Read one page of objects from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pageSize</td><td>The number of objects to be read in one page</td></tr>
+    <tr><td class="paramname">continuationToken</td><td>The continuation token for the pagination session</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of objects and a session continuation token</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00199">199</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <a id="aa44c0275d3bd83224d4c438232fedb63" name="aa44c0275d3bd83224d4c438232fedb63"></a>
@@ -316,6 +435,17 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Update an object in the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The OBJ that will be updated in the repository</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the object was updated, false otherwise</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00171">171</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -340,6 +470,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The default partition key for the repository. </p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00033">33</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <a id="a2a72bd0fe2267cee7c333cedddb7d539" name="a2a72bd0fe2267cee7c333cedddb7d539"></a>
@@ -361,6 +495,10 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The mapper between the data model class and the DTO. </p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00028">28</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -384,10 +522,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>A Azure Table object repository. </p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_table_object_repository_8cs_source.html#l00023">23</a> of file <a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Repositories/AzureTableRepository/<a class="el" href="_azure_table_object_repository_8cs.html">AzureTableObjectRepository.cs</a></li>
+<li>Repositories/AzureTableRepository/<a class="el" href="_azure_table_object_repository_8cs_source.html">AzureTableObjectRepository.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

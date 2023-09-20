@@ -1,0 +1,38 @@
+\doxysection{Image\+Analysis\+Manager.\+cs}
+\hypertarget{_image_analysis_manager_8cs_source}{}\label{_image_analysis_manager_8cs_source}\index{Facades/ImageAnalysisManager.cs@{Facades/ImageAnalysisManager.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}};}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_services}{HoloLens4Labs.Scripts.Services}};}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_managers}{HoloLens4Labs.Scripts.Managers}}}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00012}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}{ImageAnalysisManager}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Azure\ Image\ Settings"{}})]}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ subscriptionKey;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ endpoint;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}{AzureImageAnalysisService}}\ AzureImageAnalysis\ ;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ AzureImageAnalysis\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}{AzureImageAnalysisService}}(subscriptionKey,\ endpoint,\ \textcolor{keyword}{new}\ System.Net.Http.HttpClient());}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00037}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager_aaa38d75f1be827deba8d6e5f4aada275}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<string>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager_aaa38d75f1be827deba8d6e5f4aada275}{TranscribeImage}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{ImageData}}\ image)}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ AzureImageAnalysis.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0}{Transcribe}}(image);}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_analysis_manager_8cs_source_l00044}00044\ \}}
+
+\end{DoxyCode}

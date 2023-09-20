@@ -1,0 +1,37 @@
+\doxysection{Transcription\+Data.\+cs}
+\hypertarget{_transcription_data_8cs_source}{}\label{_transcription_data_8cs_source}\index{Model/DataTypes/TranscriptionData.cs@{Model/DataTypes/TranscriptionData.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs}{HoloLens4Labs.Scripts.Model.Logs}};}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00010}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{TranscriptionData}}\ :\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{ImageData}}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00015}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aecca2629a5f9d3217977e0515985201b}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aecca2629a5f9d3217977e0515985201b}{Text}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00023}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ac35b7b92e7a542b3da65556b85fe0a2a}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ac35b7b92e7a542b3da65556b85fe0a2a}{TranscriptionData}}(DateTime\ createdOn,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ createdBy,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ doneWithinLog)\ :\ base(createdOn,\ createdBy,\ doneWithinLog)}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00038}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aa149f55389450d0cd3fb99d8a4ee5a3f}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aa149f55389450d0cd3fb99d8a4ee5a3f}{TranscriptionData}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ DateTime\ createdOn,\ \textcolor{keywordtype}{string}\ createdByID,\ \textcolor{keywordtype}{string}\ doneWithinLogID,\ \textcolor{keywordtype}{string}\ thumbnailBlobName,\ \textcolor{keywordtype}{string}\ text)\ :\ base(id,\ createdOn,\ createdByID,\ doneWithinLogID,thumbnailBlobName)}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ this.Text\ =\ text;}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00051}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ae65fdd4a71d3a0ad8950144e160eea78}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ae65fdd4a71d3a0ad8950144e160eea78}{TranscriptionData}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ DateTime\ createdOn,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ createdBy,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ doneWithinLog)\ :\ base(id,\ createdOn,\ createdBy,\ doneWithinLog)}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00058}00058\ \ \ }
+\DoxyCodeLine{\Hypertarget{_transcription_data_8cs_source_l00059}00059\ \}}
+
+\end{DoxyCode}

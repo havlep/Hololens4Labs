@@ -1,0 +1,42 @@
+\doxysection{Experiment\+Mapper.\+cs}
+\hypertarget{_experiment_mapper_8cs_source}{}\label{_experiment_mapper_8cs_source}\index{Mappers/ExperimentMapper.cs@{Mappers/ExperimentMapper.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model}{HoloLens4Labs.Scripts.Model}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_d_t_os}{HoloLens4Labs.Scripts.DTOs}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00004}\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_mappers}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_mappers}{HoloLens4Labs.Scripts.Mappers}}}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00010}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper}{ExperimentMapper}}\ :\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{MapperInterface}}<Experiment,\ ExperimentDTO,\ ExperimentDTO>}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00018}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a7e6bee6f51a78a2cda4c96d2754a17e1}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{ExperimentDTO}}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a7e6bee6f51a78a2cda4c96d2754a17e1}{CreateDTO}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ obj)}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0}{ToDTO}}(obj);}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00030}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{ExperimentDTO}}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0}{ToDTO}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ obj)}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{ExperimentDTO}}\ dto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{ExperimentDTO}}();}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ dto.RowKey\ =\ dto.ExperimentID\ \ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa64a32811bb0ed1ed646da04ff3e5e10}{Id}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ dto.Name\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa66a0f64e5ca72daa6a1044968debb5b}{Name}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ dto.ScientistsID\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad3f6d6711fa5b9f10cbe385d8464d39e}{CreatedByID}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ dto.DateTime\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_afbdcb6d68a624a751f5452ef7fa1d138}{CreatedOn}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ dto.ETag\ =\ \textcolor{stringliteral}{"{}*"{}};}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dto;}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00049}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_aa8ea2c8bcc22c40bbf3decf142a8b255}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_aa8ea2c8bcc22c40bbf3decf142a8b255}{ToOBJ}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{ExperimentDTO}}\ dto)}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}(dto.RowKey,\ dto.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o_a19ab4497942a5c500b4a4ac0234b1662}{Name}},\ dto.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o_afda21bab1550a7b0715c55bebd1398f2}{ScientistsID}},\ dto.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o_a03907a100275fb73bf88aea95612d7b3}{DateTime}});}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_experiment_mapper_8cs_source_l00054}00054\ \}}
+
+\end{DoxyCode}

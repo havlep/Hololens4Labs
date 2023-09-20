@@ -1,5 +1,10 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}\index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
+
+
+The Log data model class that represents logs.  
+
+
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,13 +15,13 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log\+:\begi
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a8b6e5f385b856c4f9d8be15824576b04}{Log}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for creating a new log when scientist and experiment is known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120}{Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor fore creating a new log at the current time when scientist and experiment is known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2}{Log}} (string log\+Id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of a log that is already present in the database when scientist and experiment are known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268}{Log}} (string log\+Id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+ID)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of a log that is already present in the database when scientist id and experiment id are known. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,17 +31,25 @@ static String \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_l
 \begin{DoxyCompactItemize}
 \item 
 Date\+Time \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}{Created\+On}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The data the that the log was created on. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{Created\+By}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The Scientist that created the log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb}{Created\+By\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em ~\newline
+ The id of the scientist that created the log \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691}{Done\+Within}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The Experiment that the log was created within. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a}{Done\+Within\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the Experiment that the log was created within. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property of getting the log id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Log data model class that represents logs. 
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -46,11 +59,43 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Log (\begin{DoxyParamCaption}\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
 
+
+
+Constructor for creating a new log when scientist and experiment is known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em created\+On} & The timestamp of when the log was created\\
+\hline
+{\em created\+By} & The Scientist who create the log\\
+\hline
+{\em done\+Within} & The Experiment that the log was created within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!Log@{Log}}
 \index{Log@{Log}!HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
 \doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
+
+
+
+Constructor fore creating a new log at the current time when scientist and experiment is known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em created\+By} & The Scientist who create the log\\
+\hline
+{\em done\+Within} & The Experiment that the log was created within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00090}{90}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!Log@{Log}}
@@ -58,11 +103,49 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Log (\begin{DoxyParamCaption}\item[{string}]{log\+Id,  }\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
 
+
+
+Constructor for creating a data model representation of a log that is already present in the database when scientist and experiment are known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Id} & The ID of the log in the database\\
+\hline
+{\em created\+On} & The timestamp of when the log was created\\
+\hline
+{\em created\+By} & The Scientist who create the log\\
+\hline
+{\em done\+Within} & The Experiment that the log was created within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00099}{99}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!Log@{Log}}
 \index{Log@{Log}!HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
 \doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Log (\begin{DoxyParamCaption}\item[{string}]{log\+Id,  }\item[{Date\+Time}]{created\+On,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+ID }\end{DoxyParamCaption})}
+
+
+
+Constructor for creating a data model representation of a log that is already present in the database when scientist id and experiment id are known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Id} & The ID of the log in the database\\
+\hline
+{\em created\+On} & The timestamp of when the log was created\\
+\hline
+{\em created\+By\+ID} & The ID of the Scientist who create the log\\
+\hline
+{\em done\+Within\+ID} & The ID of the Experiment that the log was created within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00111}{111}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
 
 
 
@@ -75,6 +158,10 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 
 
 
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00120}{120}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
+
+
 \doxysubsection{Property Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!CreatedBy@{CreatedBy}}
@@ -82,11 +169,28 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{CreatedBy}{CreatedBy}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Created\+By\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+The Scientist that created the log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!CreatedByID@{CreatedByID}}
 \index{CreatedByID@{CreatedByID}!HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
 \doxysubsubsection{\texorpdfstring{CreatedByID}{CreatedByID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Created\+By\+ID\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+~\newline
+ The id of the scientist that created the log 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!CreatedOn@{CreatedOn}}
@@ -94,17 +198,41 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{CreatedOn}{CreatedOn}}
 {\footnotesize\ttfamily Date\+Time Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Created\+On\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+The data the that the log was created on. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!DoneWithin@{DoneWithin}}
 \index{DoneWithin@{DoneWithin}!HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
 \doxysubsubsection{\texorpdfstring{DoneWithin}{DoneWithin}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Done\+Within\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+The Experiment that the log was created within. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!DoneWithinID@{DoneWithinID}}
 \index{DoneWithinID@{DoneWithinID}!HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}}
 \doxysubsubsection{\texorpdfstring{DoneWithinID}{DoneWithinID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log.\+Done\+Within\+ID\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The ID of the Experiment that the log was created within. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1} 
 \index{HoloLens4Labs.Scripts.Model.Logs.Log@{HoloLens4Labs.Scripts.Model.Logs.Log}!Id@{Id}}
@@ -114,6 +242,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 
 
 
+Property of getting the log id. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_8cs_source_l00070}{70}} of file \mbox{\hyperlink{_log_8cs_source}{Log.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Model/\+Logs/\mbox{\hyperlink{_log_8cs}{Log.\+cs}}\end{DoxyCompactItemize}
+Model/\+Logs/Log.\+cs\end{DoxyCompactItemize}

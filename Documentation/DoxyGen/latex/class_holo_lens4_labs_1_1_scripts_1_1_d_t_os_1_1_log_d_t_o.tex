@@ -1,5 +1,10 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o}\index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
+
+
+Log DTO for transfering logss to the Azure Table service.  
+
+
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,29 +15,39 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO\+:\begin{f
 \begin{DoxyCompactItemize}
 \item 
 Date\+Time \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_abf8e5666f9457901610ba66c905cb514}{Date\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The timestamp of when the log was created. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a315de6957b6283facc282e23698e5b89}{Experiment\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The id of the experiment that the log was created within. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad66612184a16beb0c1914b0def8c3f22}{Scientist\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The id of the scientist that created the log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ae5d0396f8c143338908b0ffcb5802a42}{Text\+Log\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the log if it is a Text\+Log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ac1481af02287ee7a87a560f8ef798385}{Image\+Log\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the log if it is a Image\+Log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a4a412581f1c5be932bc804aca534fccf}{Transcription\+Log\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
-string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad4399fc89847cb5a076cf81c916b6ff2}{Data\+Scientist\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the log if it is a Transcription\+Log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9251a0449f1c61b51b396bb914943eff}{Weight\+Log\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the log if it is a Weight\+Log. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad4399fc89847cb5a076cf81c916b6ff2}{Data\+Scientist\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Id of the scientist who created the Data\+Type element. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a83829494e299f51d49269729a86458b9}{Data\+ID}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the Data\+Type element ~\newline
+ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_abf8e5666f9457901610ba66c905cb514}{Date\+Time}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ae1699f33f05bc7a0d76c7487736251a0}{Data\+Date\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The timestamp of when the Data\+Type element was created. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a161fc6ee7714bad95b067894ecb6fcfd}{Text}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The text associated with the Data\+Type element. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9bbbd8d590ad4372f9c5cfb2dc7a2f4e}{Thumbnail\+Blob\+Name}} = string.\+Empty\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The Image associated with the Data\+Type element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Log DTO for transfering logss to the Azure Table service. 
+
+Rowkey is used for Log ID 
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 
 
 \doxysubsection{Property Documentation}
@@ -42,11 +57,28 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 \doxysubsubsection{\texorpdfstring{DataDateTime}{DataDateTime}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_abf8e5666f9457901610ba66c905cb514}{Date\+Time}} Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Data\+Date\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The timestamp of when the Data\+Type element was created. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00077}{77}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a83829494e299f51d49269729a86458b9}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a83829494e299f51d49269729a86458b9} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!DataID@{DataID}}
 \index{DataID@{DataID}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{DataID}{DataID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Data\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The ID of the Data\+Type element ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00072}{72}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad4399fc89847cb5a076cf81c916b6ff2}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad4399fc89847cb5a076cf81c916b6ff2} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!DataScientistID@{DataScientistID}}
@@ -54,11 +86,27 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 \doxysubsubsection{\texorpdfstring{DataScientistID}{DataScientistID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Data\+Scientist\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The Id of the scientist who created the Data\+Type element. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_abf8e5666f9457901610ba66c905cb514}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_abf8e5666f9457901610ba66c905cb514} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!DateTime@{DateTime}}
 \index{DateTime@{DateTime}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{DateTime}{DateTime}}
 {\footnotesize\ttfamily Date\+Time Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Date\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The timestamp of when the log was created. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a315de6957b6283facc282e23698e5b89}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a315de6957b6283facc282e23698e5b89} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!ExperimentID@{ExperimentID}}
@@ -66,11 +114,27 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 \doxysubsubsection{\texorpdfstring{ExperimentID}{ExperimentID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Experiment\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The id of the experiment that the log was created within. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ac1481af02287ee7a87a560f8ef798385}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ac1481af02287ee7a87a560f8ef798385} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!ImageLogID@{ImageLogID}}
 \index{ImageLogID@{ImageLogID}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{ImageLogID}{ImageLogID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Image\+Log\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The ID of the log if it is a Image\+Log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad66612184a16beb0c1914b0def8c3f22}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ad66612184a16beb0c1914b0def8c3f22} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!ScientistID@{ScientistID}}
@@ -78,11 +142,27 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 \doxysubsubsection{\texorpdfstring{ScientistID}{ScientistID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Scientist\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The id of the scientist that created the log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a161fc6ee7714bad95b067894ecb6fcfd}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a161fc6ee7714bad95b067894ecb6fcfd} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!Text@{Text}}
 \index{Text@{Text}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{Text}{Text}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Text = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The text associated with the Data\+Type element. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00083}{83}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ae5d0396f8c143338908b0ffcb5802a42}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_ae5d0396f8c143338908b0ffcb5802a42} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!TextLogID@{TextLogID}}
@@ -90,17 +170,41 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 \doxysubsubsection{\texorpdfstring{TextLogID}{TextLogID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Text\+Log\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The ID of the log if it is a Text\+Log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9bbbd8d590ad4372f9c5cfb2dc7a2f4e}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9bbbd8d590ad4372f9c5cfb2dc7a2f4e} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!ThumbnailBlobName@{ThumbnailBlobName}}
 \index{ThumbnailBlobName@{ThumbnailBlobName}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{ThumbnailBlobName}{ThumbnailBlobName}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Thumbnail\+Blob\+Name = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The Image associated with the Data\+Type element. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00089}{89}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a4a412581f1c5be932bc804aca534fccf}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a4a412581f1c5be932bc804aca534fccf} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!TranscriptionLogID@{TranscriptionLogID}}
 \index{TranscriptionLogID@{TranscriptionLogID}!HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}}
 \doxysubsubsection{\texorpdfstring{TranscriptionLogID}{TranscriptionLogID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+DTOs.\+Log\+DTO.\+Transcription\+Log\+ID = string.\+Empty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The ID of the log if it is a Transcription\+Log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9251a0449f1c61b51b396bb914943eff}\label{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o_a9251a0449f1c61b51b396bb914943eff} 
 \index{HoloLens4Labs.Scripts.DTOs.LogDTO@{HoloLens4Labs.Scripts.DTOs.LogDTO}!WeightLogID@{WeightLogID}}
@@ -110,6 +214,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t
 
 
 
+The ID of the log if it is a Weight\+Log. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_d_t_o_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_log_d_t_o_8cs_source}{Log\+DTO.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+DTOs/\+Log\+DTOs/\mbox{\hyperlink{_log_d_t_o_8cs}{Log\+DTO.\+cs}}\end{DoxyCompactItemize}
+DTOs/\+Log\+DTOs/Log\+DTO.\+cs\end{DoxyCompactItemize}

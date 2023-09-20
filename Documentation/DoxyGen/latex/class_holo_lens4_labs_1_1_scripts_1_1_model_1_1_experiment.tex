@@ -1,43 +1,89 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}\index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
+
+
+The data model class that holdes information about experiments.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a4ff7d096efa44255f384f3e5fd26712f}{Experiment}} ()
-\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a9d16920b45a8e1df00061b37d65222e8}{Experiment}} (string name, string created\+By\+ID)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad99d369675511da071a9602f608f08c7}{Experiment}} (string name, string created\+By\+ID, Date\+Time create\+On)
+\begin{DoxyCompactList}\small\item\em Constructor for creating a new experiment when name and scientist ID is known. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a17d77dbfa091ca8b2747578477a9c851}{Experiment}} (string name, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, Date\+Time created\+On)
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a66ec7532ccc5fa50298f6df081213e3e}{Experiment}} (string name, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By)
-\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a69b400bfe5a07edd3e0c7c4db02e1ade}{Experiment}} (string id, string name, string created\+By\+ID)
-\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a7e66f19c44574656ef817c7921245bb3}{Experiment}} (string id, string name, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for creating a new experiment when name and scientist are known. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ab85ae8dd4df6540d40f85a20b08d0291}{Experiment}} (string id, string name, string created\+By\+ID, Date\+Time created\+On)
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of an Experiment that is already present in the database when name, id and scientist is known. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_abbe02eced45df196d46f24a49fdcf91a}{Experiment}} (string id, string name, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, Date\+Time created\+On)
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of an Experiment that is already present in the database when name, id and scientist is known. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+Date\+Time \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_afbdcb6d68a624a751f5452ef7fa1d138}{Created\+On}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The date and time when the experiment was created. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a7a5ec19d2b02815f3d42b09dc7cb5c3d}{Created\+By}} = null\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The scientist who created the experiment. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa66a0f64e5ca72daa6a1044968debb5b}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the name of the experiment. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa64a32811bb0ed1ed646da04ff3e5e10}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the id of the experiment. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad3f6d6711fa5b9f10cbe385d8464d39e}{Created\+By\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the id of the scientist who created the experiment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The data model class that holdes information about experiments. 
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a4ff7d096efa44255f384f3e5fd26712f}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a4ff7d096efa44255f384f3e5fd26712f} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad99d369675511da071a9602f608f08c7}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad99d369675511da071a9602f608f08c7} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Experiment@{Experiment}}
 \index{Experiment@{Experiment}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{created\+By\+ID,  }\item[{Date\+Time}]{create\+On }\end{DoxyParamCaption})}
 
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a9d16920b45a8e1df00061b37d65222e8}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a9d16920b45a8e1df00061b37d65222e8} 
+
+
+Constructor for creating a new experiment when name and scientist ID is known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the experiment \\
+\hline
+{\em created\+By\+ID} & The id of the scientist who created the experiment \\
+\hline
+{\em created\+On} & The date and time when the experiment was created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a17d77dbfa091ca8b2747578477a9c851}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a17d77dbfa091ca8b2747578477a9c851} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Experiment@{Experiment}}
 \index{Experiment@{Experiment}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{created\+By\+ID }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{Date\+Time}]{created\+On }\end{DoxyParamCaption})}
+
+Constructor for creating a new experiment when name and scientist are known
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the experiment\\
+\hline
+{\em created\+By} & The Scientist object representing the user \\
+\hline
+{\em created\+On} & The date and time when the experiment was created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a66ec7532ccc5fa50298f6df081213e3e}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a66ec7532ccc5fa50298f6df081213e3e} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Experiment@{Experiment}}
@@ -45,17 +91,72 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experime
 \doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By }\end{DoxyParamCaption})}
 
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a69b400bfe5a07edd3e0c7c4db02e1ade}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a69b400bfe5a07edd3e0c7c4db02e1ade} 
+
+
+Constructor for creating a new experiment when name and scientist are known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the experiment\\
+\hline
+{\em created\+By} & The Scientist object representing the user \\
+\hline
+{\em created\+On} & The date and time when the experiment was created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00088}{88}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ab85ae8dd4df6540d40f85a20b08d0291}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ab85ae8dd4df6540d40f85a20b08d0291} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Experiment@{Experiment}}
 \index{Experiment@{Experiment}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name,  }\item[{string}]{created\+By\+ID }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name,  }\item[{string}]{created\+By\+ID,  }\item[{Date\+Time}]{created\+On }\end{DoxyParamCaption})}
 
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a7e66f19c44574656ef817c7921245bb3}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_a7e66f19c44574656ef817c7921245bb3} 
+
+
+Constructor for creating a data model representation of an Experiment that is already present in the database when name, id and scientist is known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the experiment \\
+\hline
+{\em name} & The name of the experiment \\
+\hline
+{\em created\+By\+ID} & The id of the scientist who created the experiment \\
+\hline
+{\em created\+On} & The date and time when the experiment was created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00097}{97}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_abbe02eced45df196d46f24a49fdcf91a}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_abbe02eced45df196d46f24a49fdcf91a} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Experiment@{Experiment}}
 \index{Experiment@{Experiment}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Experiment (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{Date\+Time}]{created\+On }\end{DoxyParamCaption})}
+
+
+
+Constructor for creating a data model representation of an Experiment that is already present in the database when name, id and scientist is known. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the experiment \\
+\hline
+{\em name} & The name of the experiment \\
+\hline
+{\em created\+By\+ID} & The Scientist object representing the user \\
+\hline
+{\em created\+On} & The date and time when the experiment was created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00109}{109}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
 
 
 
@@ -66,17 +167,55 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experime
 \doxysubsubsection{\texorpdfstring{CreatedBy}{CreatedBy}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Created\+By = null\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+The scientist who created the experiment. 
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad3f6d6711fa5b9f10cbe385d8464d39e}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_ad3f6d6711fa5b9f10cbe385d8464d39e} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!CreatedByID@{CreatedByID}}
 \index{CreatedByID@{CreatedByID}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{CreatedByID}{CreatedByID}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Created\+By\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+Property for getting and setting the id of the scientist who created the experiment. 
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_afbdcb6d68a624a751f5452ef7fa1d138}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_afbdcb6d68a624a751f5452ef7fa1d138} 
+\index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!CreatedOn@{CreatedOn}}
+\index{CreatedOn@{CreatedOn}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
+\doxysubsubsection{\texorpdfstring{CreatedOn}{CreatedOn}}
+{\footnotesize\ttfamily Date\+Time Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Created\+On\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The date and time when the experiment was created. 
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa64a32811bb0ed1ed646da04ff3e5e10}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa64a32811bb0ed1ed646da04ff3e5e10} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Id@{Id}}
 \index{Id@{Id}!HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}}
 \doxysubsubsection{\texorpdfstring{Id}{Id}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Experiment.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Property for getting and setting the id of the experiment. 
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa66a0f64e5ca72daa6a1044968debb5b}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa66a0f64e5ca72daa6a1044968debb5b} 
 \index{HoloLens4Labs.Scripts.Model.Experiment@{HoloLens4Labs.Scripts.Model.Experiment}!Name@{Name}}
@@ -86,6 +225,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experime
 
 
 
+Property for getting and setting the name of the experiment. 
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Model/\mbox{\hyperlink{_experiment_8cs}{Experiment.\+cs}}\end{DoxyCompactItemize}
+Model/Experiment.\+cs\end{DoxyCompactItemize}

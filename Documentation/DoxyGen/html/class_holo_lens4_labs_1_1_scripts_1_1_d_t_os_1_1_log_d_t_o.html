@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.DTOs.LogDTO Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Log DTO for transfering logss to the Azure Table service.  
+ <a href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.DTOs.LogDTO:</div>
 <div class="dyncontent">
@@ -89,31 +92,49 @@ Inheritance diagram for HoloLens4Labs.Scripts.DTOs.LogDTO:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:abf8e5666f9457901610ba66c905cb514" id="r_abf8e5666f9457901610ba66c905cb514"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#abf8e5666f9457901610ba66c905cb514">DateTime</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abf8e5666f9457901610ba66c905cb514"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp of when the log was created.  <br /></td></tr>
 <tr class="separator:abf8e5666f9457901610ba66c905cb514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a315de6957b6283facc282e23698e5b89" id="r_a315de6957b6283facc282e23698e5b89"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a315de6957b6283facc282e23698e5b89">ExperimentID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a315de6957b6283facc282e23698e5b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the experiment that the log was created within.  <br /></td></tr>
 <tr class="separator:a315de6957b6283facc282e23698e5b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66612184a16beb0c1914b0def8c3f22" id="r_ad66612184a16beb0c1914b0def8c3f22"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ad66612184a16beb0c1914b0def8c3f22">ScientistID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ad66612184a16beb0c1914b0def8c3f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">The id of the scientist that created the log.  <br /></td></tr>
 <tr class="separator:ad66612184a16beb0c1914b0def8c3f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5d0396f8c143338908b0ffcb5802a42" id="r_ae5d0396f8c143338908b0ffcb5802a42"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ae5d0396f8c143338908b0ffcb5802a42">TextLogID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ae5d0396f8c143338908b0ffcb5802a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the log if it is a TextLog.  <br /></td></tr>
 <tr class="separator:ae5d0396f8c143338908b0ffcb5802a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1481af02287ee7a87a560f8ef798385" id="r_ac1481af02287ee7a87a560f8ef798385"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ac1481af02287ee7a87a560f8ef798385">ImageLogID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ac1481af02287ee7a87a560f8ef798385"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the log if it is a ImageLog.  <br /></td></tr>
 <tr class="separator:ac1481af02287ee7a87a560f8ef798385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a412581f1c5be932bc804aca534fccf" id="r_a4a412581f1c5be932bc804aca534fccf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a4a412581f1c5be932bc804aca534fccf">TranscriptionLogID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a4a412581f1c5be932bc804aca534fccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the log if it is a TranscriptionLog.  <br /></td></tr>
 <tr class="separator:a4a412581f1c5be932bc804aca534fccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4399fc89847cb5a076cf81c916b6ff2" id="r_ad4399fc89847cb5a076cf81c916b6ff2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ad4399fc89847cb5a076cf81c916b6ff2">DataScientistID</a> = string.Empty<code> [get, set]</code></td></tr>
-<tr class="separator:ad4399fc89847cb5a076cf81c916b6ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9251a0449f1c61b51b396bb914943eff" id="r_a9251a0449f1c61b51b396bb914943eff"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a9251a0449f1c61b51b396bb914943eff">WeightLogID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a9251a0449f1c61b51b396bb914943eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the log if it is a WeightLog.  <br /></td></tr>
 <tr class="separator:a9251a0449f1c61b51b396bb914943eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4399fc89847cb5a076cf81c916b6ff2" id="r_ad4399fc89847cb5a076cf81c916b6ff2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ad4399fc89847cb5a076cf81c916b6ff2">DataScientistID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ad4399fc89847cb5a076cf81c916b6ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Id of the scientist who created the DataType element.  <br /></td></tr>
+<tr class="separator:ad4399fc89847cb5a076cf81c916b6ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83829494e299f51d49269729a86458b9" id="r_a83829494e299f51d49269729a86458b9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a83829494e299f51d49269729a86458b9">DataID</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a83829494e299f51d49269729a86458b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the DataType element <br  />
+  <br /></td></tr>
 <tr class="separator:a83829494e299f51d49269729a86458b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1699f33f05bc7a0d76c7487736251a0" id="r_ae1699f33f05bc7a0d76c7487736251a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#abf8e5666f9457901610ba66c905cb514">DateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ae1699f33f05bc7a0d76c7487736251a0">DataDateTime</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ae1699f33f05bc7a0d76c7487736251a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timestamp of when the DataType element was created.  <br /></td></tr>
 <tr class="separator:ae1699f33f05bc7a0d76c7487736251a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a161fc6ee7714bad95b067894ecb6fcfd" id="r_a161fc6ee7714bad95b067894ecb6fcfd"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a161fc6ee7714bad95b067894ecb6fcfd">Text</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a161fc6ee7714bad95b067894ecb6fcfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text associated with the DataType element.  <br /></td></tr>
 <tr class="separator:a161fc6ee7714bad95b067894ecb6fcfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bbbd8d590ad4372f9c5cfb2dc7a2f4e" id="r_a9bbbd8d590ad4372f9c5cfb2dc7a2f4e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#a9bbbd8d590ad4372f9c5cfb2dc7a2f4e">ThumbnailBlobName</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a9bbbd8d590ad4372f9c5cfb2dc7a2f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Image associated with the DataType element.  <br /></td></tr>
 <tr class="separator:a9bbbd8d590ad4372f9c5cfb2dc7a2f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Property Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Log DTO for transfering logss to the Azure Table service. </p>
+<p>Rowkey is used for Log ID </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00012">12</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+</div><h2 class="groupheader">Property Documentation</h2>
 <a id="ae1699f33f05bc7a0d76c7487736251a0" name="ae1699f33f05bc7a0d76c7487736251a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1699f33f05bc7a0d76c7487736251a0">&#9670;&#160;</a></span>DataDateTime</h2>
 
@@ -133,6 +154,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The timestamp of when the DataType element was created. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00077">77</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -156,6 +181,11 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The ID of the DataType element <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00072">72</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <a id="ad4399fc89847cb5a076cf81c916b6ff2" name="ad4399fc89847cb5a076cf81c916b6ff2"></a>
@@ -177,6 +207,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The Id of the scientist who created the DataType element. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00067">67</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -200,6 +234,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The timestamp of when the log was created. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00021">21</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <a id="a315de6957b6283facc282e23698e5b89" name="a315de6957b6283facc282e23698e5b89"></a>
@@ -221,6 +259,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The id of the experiment that the log was created within. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00027">27</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -244,6 +286,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The ID of the log if it is a ImageLog. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00046">46</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <a id="ad66612184a16beb0c1914b0def8c3f22" name="ad66612184a16beb0c1914b0def8c3f22"></a>
@@ -265,6 +311,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The id of the scientist that created the log. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00032">32</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -288,6 +338,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The text associated with the DataType element. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00083">83</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <a id="ae5d0396f8c143338908b0ffcb5802a42" name="ae5d0396f8c143338908b0ffcb5802a42"></a>
@@ -309,6 +363,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The ID of the log if it is a TextLog. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00040">40</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -332,6 +390,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The Image associated with the DataType element. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00089">89</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <a id="a4a412581f1c5be932bc804aca534fccf" name="a4a412581f1c5be932bc804aca534fccf"></a>
@@ -353,6 +415,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The ID of the log if it is a TranscriptionLog. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00052">52</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
 
 </div>
 </div>
@@ -376,10 +442,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The ID of the log if it is a WeightLog. </p>
+
+<p class="definition">Definition at line <a class="el" href="_log_d_t_o_8cs_source.html#l00059">59</a> of file <a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/DTOs/LogDTOs/<a class="el" href="_log_d_t_o_8cs.html">LogDTO.cs</a></li>
+<li>DTOs/LogDTOs/<a class="el" href="_log_d_t_o_8cs_source.html">LogDTO.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

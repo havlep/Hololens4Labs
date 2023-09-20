@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,17 +79,27 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Mappers.MapperInterface&lt; OBJ, DTO, CDTO &gt; Interface Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An interface for the mappers for mapping between the data model and the DTOs.  
+ <a href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8ea40edb2ea9e0d3b4a4280a452d2475" id="r_a8ea40edb2ea9e0d3b4a4280a452d2475"><td class="memItemLeft" align="right" valign="top">DTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html#a8ea40edb2ea9e0d3b4a4280a452d2475">ToDTO</a> (OBJ obj)</td></tr>
+<tr class="memdesc:a8ea40edb2ea9e0d3b4a4280a452d2475"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method for mapping from the data model to the DTO.  <br /></td></tr>
 <tr class="separator:a8ea40edb2ea9e0d3b4a4280a452d2475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99b84a3a0b8dd0cf9a29c50c0041885" id="r_af99b84a3a0b8dd0cf9a29c50c0041885"><td class="memItemLeft" align="right" valign="top">CDTO&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html#af99b84a3a0b8dd0cf9a29c50c0041885">CreateDTO</a> (OBJ obj)</td></tr>
+<tr class="memdesc:af99b84a3a0b8dd0cf9a29c50c0041885"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method for creating a DTO from the data model.  <br /></td></tr>
 <tr class="separator:af99b84a3a0b8dd0cf9a29c50c0041885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a843b411db0d68ca67127f737bf204431" id="r_a843b411db0d68ca67127f737bf204431"><td class="memItemLeft" align="right" valign="top">OBJ&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface.html#a843b411db0d68ca67127f737bf204431">ToOBJ</a> (DTO dto)</td></tr>
+<tr class="memdesc:a843b411db0d68ca67127f737bf204431"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method for mapping from the DTO to the data model.  <br /></td></tr>
 <tr class="separator:a843b411db0d68ca67127f737bf204431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An interface for the mappers for mapping between the data model and the DTOs. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mapper_interface_8cs_source.html#l00007">7</a> of file <a class="el" href="_mapper_interface_8cs_source.html">MapperInterface.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af99b84a3a0b8dd0cf9a29c50c0041885" name="af99b84a3a0b8dd0cf9a29c50c0041885"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af99b84a3a0b8dd0cf9a29c50c0041885">&#9670;&#160;</a></span>CreateDTO()</h2>
 
@@ -105,6 +115,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The method for creating a DTO from the data model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object to be mapped</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Create DTO for the data model object</dd></dl>
 
 </div>
 </div>
@@ -124,6 +143,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The method for mapping from the data model to the DTO. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object to be mapped</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The DTO for the data model object</dd></dl>
+
 </div>
 </div>
 <a id="a843b411db0d68ca67127f737bf204431" name="a843b411db0d68ca67127f737bf204431"></a>
@@ -142,10 +170,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The method for mapping from the DTO to the data model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dto</td><td>The DTO to be mapped</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The data model object</dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Mappers/<a class="el" href="_mapper_interface_8cs.html">MapperInterface.cs</a></li>
+<li>Mappers/<a class="el" href="_mapper_interface_8cs_source.html">MapperInterface.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

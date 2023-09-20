@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -80,15 +80,18 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Model.DataTypes.DataType Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract class for all data types.  
+ <a href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.Model.DataTypes.DataType:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.png" usemap="#HoloLens4Labs.Scripts.Model.DataTypes.DataType_map" alt=""/>
   <map id="HoloLens4Labs.Scripts.Model.DataTypes.DataType_map" name="HoloLens4Labs.Scripts.Model.DataTypes.DataType_map">
-<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html" alt="HoloLens4Labs.Scripts.Model.DataTypes.ImageData" shape="rect" coords="0,56,349,80"/>
-<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data.html" alt="HoloLens4Labs.Scripts.Model.DataTypes.TextData" shape="rect" coords="359,56,708,80"/>
-<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data.html" alt="HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData" shape="rect" coords="0,112,349,136"/>
+<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html" title="Class that represents image data." alt="HoloLens4Labs.Scripts.Model.DataTypes.ImageData" shape="rect" coords="0,56,349,80"/>
+<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data.html" title="Class that holds the text data of a Log." alt="HoloLens4Labs.Scripts.Model.DataTypes.TextData" shape="rect" coords="359,56,708,80"/>
+<area href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data.html" title="A data type that contains text data and image data for transcriptions." alt="HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData" shape="rect" coords="0,112,349,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -106,19 +109,29 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a2fa96f592890963caf730855bb9c7ac7" id="r_a2fa96f592890963caf730855bb9c7ac7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#a2fa96f592890963caf730855bb9c7ac7">Id</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2fa96f592890963caf730855bb9c7ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the database id of the data type.  <br /></td></tr>
 <tr class="separator:a2fa96f592890963caf730855bb9c7ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1690433fa23d53f092b5ef1e2ded0543" id="r_a1690433fa23d53f092b5ef1e2ded0543"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#a1690433fa23d53f092b5ef1e2ded0543">CreatedOn</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1690433fa23d53f092b5ef1e2ded0543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the timestamp of when the data type was created.  <br /></td></tr>
 <tr class="separator:a1690433fa23d53f092b5ef1e2ded0543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a930dd06ce4568e2311da4caa8078b58b" id="r_a930dd06ce4568e2311da4caa8078b58b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#a930dd06ce4568e2311da4caa8078b58b">CreatedBy</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a930dd06ce4568e2311da4caa8078b58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the Scientist that created the datatype.  <br /></td></tr>
 <tr class="separator:a930dd06ce4568e2311da4caa8078b58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68d497a8d7f858bb840029fa623cec4b" id="r_a68d497a8d7f858bb840029fa623cec4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#a68d497a8d7f858bb840029fa623cec4b">DoneWithinLog</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a68d497a8d7f858bb840029fa623cec4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the Log that the data type was created within.  <br /></td></tr>
 <tr class="separator:a68d497a8d7f858bb840029fa623cec4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa787d7e08d805212f140b77a773a233e" id="r_aa787d7e08d805212f140b77a773a233e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#aa787d7e08d805212f140b77a773a233e">CreatedById</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa787d7e08d805212f140b77a773a233e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the database id of the scientist that created the data type.  <br /></td></tr>
 <tr class="separator:aa787d7e08d805212f140b77a773a233e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf3cdacbabd1bde257bc7e2dd4ffa88" id="r_a0bf3cdacbabd1bde257bc7e2dd4ffa88"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html#a0bf3cdacbabd1bde257bc7e2dd4ffa88">DoneWithinLogID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0bf3cdacbabd1bde257bc7e2dd4ffa88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for getting and setting the database id of the log that the data type was created within.  <br /></td></tr>
 <tr class="separator:a0bf3cdacbabd1bde257bc7e2dd4ffa88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract class for all data types. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00010">10</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a73b63fa7a434f2b99c5c6223fae5e2c7" name="a73b63fa7a434f2b99c5c6223fae5e2c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73b63fa7a434f2b99c5c6223fae5e2c7">&#9670;&#160;</a></span>DataType() <span class="overload">[1/4]</span></h2>
 
@@ -156,6 +169,11 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>summary&gt; Constructor used when the data type is not yet in the database and the Scientist and Log exist as data model objects /summary&gt; param name="createdOn"&gt;The timestamp of when the data type was created</p>
+<p>param name="createdBy"&gt;The Scientist that created the data type</p>
+<p>param name="doneWithinLog"&gt;The Log that the data type was created within</p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00080">80</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
 
 </div>
 </div>
@@ -190,6 +208,10 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>summary&gt; Constructor used when to create a new data type at the current moment and the Scientist and Log exist as data model objects /summary&gt; param name="createdBy"&gt;The Scientist that created the data type</p>
+<p>param name="doneWithinLog"&gt;The Log that the data type was created within</p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00097">97</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
 
 </div>
 </div>
@@ -218,6 +240,12 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>summary&gt; Constructor used when the data type is already in the database and the Scientist and Log exist as data model objects /summary&gt; param name="dataTypeId"&gt;The id of the data type in the database</p>
+<p>param name="createdOn"&gt;The timestamp of when the data type was created</p>
+<p>param name="createdBy"&gt;The Scientist that created the data type</p>
+<p>param name="doneWithinLog"&gt;The Log that the data type was created within</p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00108">108</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
 
 </div>
 </div>
@@ -259,6 +287,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00117">117</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -282,6 +312,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Property for getting and setting the Scientist that created the datatype. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00056">56</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+
 </div>
 </div>
 <a id="aa787d7e08d805212f140b77a773a233e" name="aa787d7e08d805212f140b77a773a233e"></a>
@@ -303,6 +337,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Property for getting and setting the database id of the scientist that created the data type. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00066">66</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
 
 </div>
 </div>
@@ -326,6 +364,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Property for getting and setting the timestamp of when the data type was created. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00051">51</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+
 </div>
 </div>
 <a id="a68d497a8d7f858bb840029fa623cec4b" name="a68d497a8d7f858bb840029fa623cec4b"></a>
@@ -347,6 +389,10 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Property for getting and setting the Log that the data type was created within. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00061">61</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
 
 </div>
 </div>
@@ -370,6 +416,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Property for getting and setting the database id of the log that the data type was created within. </p>
+<p>summary&gt; Constructor used when the data type is in the database and the Scientist and Log don't exist as data model objects /summary&gt; param name="dataTypeId"&gt;The id of the data type in the database</p>
+<p>param name="createdOn"&gt;The timestamp of when the data type was created</p>
+<p>param name="createdById"&gt;The id of the Scientist that created the data type</p>
+<p>param name="doneWithinLogId"&gt;The id of the Log that the data type was created within</p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00071">71</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+
 </div>
 </div>
 <a id="a2fa96f592890963caf730855bb9c7ac7" name="a2fa96f592890963caf730855bb9c7ac7"></a>
@@ -392,10 +446,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Property for getting and setting the database id of the data type. </p>
+
+<p class="definition">Definition at line <a class="el" href="_data_type_8cs_source.html#l00046">46</a> of file <a class="el" href="_data_type_8cs_source.html">DataType.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Model/DataTypes/<a class="el" href="_data_type_8cs.html">DataType.cs</a></li>
+<li>Model/DataTypes/<a class="el" href="_data_type_8cs_source.html">DataType.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

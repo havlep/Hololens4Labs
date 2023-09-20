@@ -1,0 +1,48 @@
+\doxysection{Azure\+Blob\+Repository.\+cs}
+\hypertarget{_azure_blob_repository_8cs_source}{}\label{_azure_blob_repository_8cs_source}\index{Repositories/AzureBlobRepository/AzureBlobRepository.cs@{Repositories/AzureBlobRepository/AzureBlobRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Microsoft.WindowsAzure.Storage.Blob;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00006}\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_repositories}{00006}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob}{HoloLens4Labs.Scripts.Repositories.AzureBlob}}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00011}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository}{AzureBlobRepository}}\ :\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}{BlobRepositoryInterface}}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ CloudBlobContainer\ blobContainer;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00023}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_aebde4b27ee501fca54579561588feca9}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_aebde4b27ee501fca54579561588feca9}{AzureBlobRepository}}(CloudBlobContainer\ blobContainer)}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ this.blobContainer\ =\ blobContainer;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00033}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a122dd4859088f137655aa7a44f39933a}{DeleteBlob}}(\textcolor{keywordtype}{string}\ blobName)}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ var\ blockBlob\ =\ blobContainer.GetBlockBlobReference(blobName);}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ blockBlob.DeleteIfExistsAsync();}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00044}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<byte[]>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_adccae5615d53ffa02bc38c2931da7f14}{DownloadBlob}}(\textcolor{keywordtype}{string}\ blobName)}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ var\ blockBlob\ =\ blobContainer.GetBlockBlobReference(blobName);}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ stream\ =\ \textcolor{keyword}{new}\ MemoryStream())}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ blockBlob.DownloadToStreamAsync(stream);}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stream.ToArray();}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00058}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<string>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository_a3dbad38a5db0a0f57362c4c987d6f1d5}{UploadBlob}}(\textcolor{keywordtype}{byte}[]\ data,\ \textcolor{keywordtype}{string}\ blobName)}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ var\ blockBlob\ =\ blobContainer.GetBlockBlobReference(blobName);}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ await\ blockBlob.UploadFromByteArrayAsync(data,\ 0,\ data.Length);}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blockBlob.Name;}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_blob_repository_8cs_source_l00066}00066\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,78 @@
+\doxysection{Start\+Menu\+Controller.\+cs}
+\hypertarget{_start_menu_controller_8cs_source}{}\label{_start_menu_controller_8cs_source}\index{Controllers/Menus/StartMenuController.cs@{Controllers/Menus/StartMenuController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }TMPro;}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_controllers}{HoloLens4Labs.Scripts.Controllers}}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00010}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller}{StartMenuController}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Managers"{}})]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{SceneController}}\ sceneController;}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}UI\ Elements"{}})]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ lastExpEditDateLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ lastExpUsedLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ TMP\_Text\ lastExpEditNameLabel\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ GameObject\ ContinueLastExpButton\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Prefabs"{}})]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_view_controller}{ExperimentInfoViewController}}\ experimentInfoView\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sceneController\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sceneController\ =\ GameObject.Find(\textcolor{stringliteral}{"{}SceneController"{}}).GetComponent<\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{SceneController}}>();}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (ExperimentManager.Instance.LastExperiment\ !=\ null)}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastExpEditDateLabel.text\ =\ ExperimentManager.Instance.LastExperiment.LastEditDate.ToShortDateString();}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastExpEditNameLabel.text\ =\ ExperimentManager.Instance.LastExperiment.Name;}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastExpUsedLabel.text\ =\ ExperimentManager.Instance.LastExperiment.LastUseDate.ToShortDateString();}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00053}00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ContinueLastExpButton.SetActive(false);}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Select\ From\ Existing\ Experiments}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00064}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_ad9b3e60f445a6bd204acc0f96a181a97}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_ad9b3e60f445a6bd204acc0f96a181a97}{CreateNewExperiment}}()}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_view_controller}{ExperimentInfoViewController}}\ view\ =\ Instantiate(experimentInfoView,\ this.transform.position,\ Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ view.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_view_controller_a53a5644ab8eacd1a66d9141e339d8a4d}{InitNew}}(gameObject);}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00076}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a84d1bbef57c996485925f1c0a6247f98}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a84d1bbef57c996485925f1c0a6247f98}{ListAllExperiments}}()}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ sceneController.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller_a26cc27191ba270bf4dcdfc6bdf6f9e94}{OpenExperimentListMenu}}();}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_start_menu_controller_8cs_source_l00084}00084\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\doxysection{Azure\+Image\+Analysis\+Service.\+cs}
+\hypertarget{_azure_image_analysis_service_8cs_source}{}\label{_azure_image_analysis_service_8cs_source}\index{Services/AzureImageAnalysisService.cs@{Services/AzureImageAnalysisService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_d_t_os}{HoloLens4Labs.Scripts.DTOs}};}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}};}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Newtonsoft.Json;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Net.Http;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Net.Http.Headers;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00011}\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_services}{00011}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_services}{HoloLens4Labs.Scripts.Services}}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00016}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}{AzureImageAnalysisService}}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ requestParameters\ =\ \textcolor{stringliteral}{"{}/computervision/imageanalysis:analyze?features=read\&model-\/version=latest\&language=en\&api-\/version=2023-\/02-\/01-\/preview"{}};}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ requestURI;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ readonly\ HttpClient\ client;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00030}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_ad5c30a6b64d7de466899c4e70b1c6200}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_ad5c30a6b64d7de466899c4e70b1c6200}{AzureImageAnalysisService}}(\textcolor{keywordtype}{string}\ key,\ \textcolor{keywordtype}{string}\ endpoint,\ HttpClient\ client)}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ requestURI\ =\ endpoint\ +\ requestParameters;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ this.client\ =\ client;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ client.DefaultRequestHeaders.Add(\textcolor{stringliteral}{"{}Ocp-\/Apim-\/Subscription-\/Key"{}},\ key);}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00045}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<string>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0}{Transcribe}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{ImageData}}\ imageData)}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ HttpResponseMessage\ result;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageData.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190}{Data}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}Error\ in\ AzureImageAnalysisService:\ ImageData\ does\ not\ contain\ any\ image\ data"{}});}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Error\ in\ AzureImageAnalysisService:\ ImageData\ does\ not\ contain\ any\ image\ data"{}});}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ content\ =\ \textcolor{keyword}{new}\ ByteArrayContent(imageData.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190}{Data}}))}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ content.Headers.ContentType\ =\ \textcolor{keyword}{new}\ MediaTypeHeaderValue(\textcolor{stringliteral}{"{}application/octet-\/stream"{}});}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ await\ client.PostAsync(requestURI,\ content);}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ resultString\ =\ await\ result.Content.ReadAsStringAsync();}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.IsSuccessStatusCode\ \&\&\ result.StatusCode\ ==\ System.Net.HttpStatusCode.OK)}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonConvert.DeserializeObject<\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_image_trans_d_t_o}{ImageTransDTO}}>(resultString).readResult.content;}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.LogError(\textcolor{stringliteral}{"{}Error\ in\ AzureImageAnalysisService:\ "{}}\ +\ result.StatusCode\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ result.ReasonPhrase);}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Error\ in\ AzureImageAnalysisService:\ "{}}\ +\ result.StatusCode\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ result.ReasonPhrase);}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_azure_image_analysis_service_8cs_source_l00087}00087\ \}}
+
+\end{DoxyCode}

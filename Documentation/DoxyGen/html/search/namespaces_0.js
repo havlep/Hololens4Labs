@@ -13,5 +13,6 @@ var searchData=
   ['hololens4labs_3a_3ascripts_3a_3arepositories_10',['Repositories',['../namespace_holo_lens4_labs_1_1_scripts_1_1_repositories.html',1,'HoloLens4Labs::Scripts']]],
   ['hololens4labs_3a_3ascripts_3a_3arepositories_3a_3aazureblob_11',['AzureBlob',['../namespace_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob.html',1,'HoloLens4Labs::Scripts::Repositories']]],
   ['hololens4labs_3a_3ascripts_3a_3arepositories_3a_3aazuretables_12',['AzureTables',['../namespace_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables.html',1,'HoloLens4Labs::Scripts::Repositories']]],
-  ['hololens4labs_3a_3ascripts_3a_3autils_13',['Utils',['../namespace_holo_lens4_labs_1_1_scripts_1_1_utils.html',1,'HoloLens4Labs::Scripts']]]
+  ['hololens4labs_3a_3ascripts_3a_3aservices_13',['Services',['../namespace_holo_lens4_labs_1_1_scripts_1_1_services.html',1,'HoloLens4Labs::Scripts']]],
+  ['hololens4labs_3a_3ascripts_3a_3autils_14',['Utils',['../namespace_holo_lens4_labs_1_1_scripts_1_1_utils.html',1,'HoloLens4Labs::Scripts']]]
 ];

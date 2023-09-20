@@ -1,5 +1,10 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Image\+Analysis\+Manager Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager}\index{HoloLens4Labs.Scripts.Managers.ImageAnalysisManager@{HoloLens4Labs.Scripts.Managers.ImageAnalysisManager}}
+
+
+A facade class that handles the communication with the Azure Image Analysis service.  
+
+
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Image\+Analysis\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,14 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Image\+Analysis
 \begin{DoxyCompactItemize}
 \item 
 Task$<$ string $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager_aaa38d75f1be827deba8d6e5f4aada275}{Transcribe\+Image}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} image)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Transcribe an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A facade class that handles the communication with the Azure Image Analysis service. 
+
+Definition at line \mbox{\hyperlink{_image_analysis_manager_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_image_analysis_manager_8cs_source}{Image\+Analysis\+Manager.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -22,6 +34,27 @@ Task$<$ string $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_manage
 
 
 
+Transcribe an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The Image\+Data of the image that will be transcribed\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Thrown when the request is not successful\\
+\hline
+\end{DoxyExceptions}
+"{}"{}"{} \begin{DoxyReturn}{Returns}
+The transcription of the image
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_image_analysis_manager_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_image_analysis_manager_8cs_source}{Image\+Analysis\+Manager.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Managers/\mbox{\hyperlink{_image_analysis_manager_8cs}{Image\+Analysis\+Manager.\+cs}}\end{DoxyCompactItemize}
+Facades/Image\+Analysis\+Manager.\+cs\end{DoxyCompactItemize}

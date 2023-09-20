@@ -1,0 +1,157 @@
+\doxysection{Data\+Manager.\+cs}
+\hypertarget{_data_manager_8cs_source}{}\label{_data_manager_8cs_source}\index{Facades/DataManager.cs@{Facades/DataManager.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }UnityEngine.Events;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Debug\ =\ UnityEngine.Debug;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model}{HoloLens4Labs.Scripts.Model}};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_repositories}{HoloLens4Labs.Scripts.Repositories}};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs}{HoloLens4Labs.Scripts.Model.Logs}};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00009}\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_managers}{00009}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_managers}{HoloLens4Labs.Scripts.Managers}}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00014}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager}{DataManager}}\ :\ MonoBehaviour,\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}{RepositoryInterface}}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Repository"{}})]}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ repositoryObject;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00020}00020\ \ \ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ [Header(\textcolor{stringliteral}{"{}Events"{}})]}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ UnityEvent\ onRepoReadyReady\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}{RepositoryInterface}}\ repo\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Awake()}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!repositoryObject.TryGetComponent<\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface}{RepositoryInterface}}>(out\ repo))\ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Repository\ object\ does\ not\ implement\ the\ Repository\ Interface."{}});}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ MissingReferenceException(\textcolor{stringliteral}{"{}Unity\ project\ is\ not\ setup\ correctly"{}});}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (repo.IsReady())}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Repository\ object\ has\ been\ setup\ properly."{}});}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Debug.Log(\$\textcolor{stringliteral}{"{}Repository\ object\ has\ not\ been\ initialized."{}});}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00048}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a147464685c408b0546995441933cbb7f}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a147464685c408b0546995441933cbb7f}{Init}}()}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ the\ right\ repository\ was\ intialized\ and\ propagate\ the\ info}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsReady())}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onRepoReadyReady?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00062}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<Experiment>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}{CreateExperiment}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ experiment)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d}{CreateExperiment}}(experiment);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00072}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<Log>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}{CreateLog}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ log)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aae4d123f9de30d6fa7d613205959001f}{CreateLog}}(log);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00082}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{00082}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<Scientist>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{CreateScientist}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ scientist)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d}{CreateScientist}}(scientist);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00092}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a8ed9d14c10f2373331a294fd929a16ef}{DeleteExperiment}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ experiment)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}{DeleteExperiment}}(experiment);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00102}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1506fb82760170439968f00b58735d2c}{DeleteLog}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ log)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a80f716f66067771b33c8105f36f698f7}{DeleteLog}}(log);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00112}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341}{00112}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a79d52e66be04c71b0f608ffd8f86a341}{DeleteScientist}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ scientist)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ad3d618e9e3eacf7f89138da6048cef5b}{DeleteScientist}}(scientist);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00122}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}{UpdateExperiment}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ experiment)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}{UpdateExperiment}}(experiment);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00132}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}{UpdateLog}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ log)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae56c6ccbac2ebe5cac3c12e65308589b}{UpdateLog}}(log);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00142}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}{00142}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}{UpdateScientist}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ scientist)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_aa5dac7394b482651028ed640a1f0e1d8}{UpdateScientist}}(scientist);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00152}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a86c5b4bd9148a17782247887f77a77de}{00152}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Scientist>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a86c5b4bd9148a17782247887f77a77de}{CreateOrUpdateScientist}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ scientist)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scientist.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a17cb868798070097bd1ff6093cce0445}{Id}}\ ==\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{CreateScientist}}(scientist);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a0d513504af0459574db3c2030d8b2fa0}{UpdateScientist}}(scientist))}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scientist;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00171}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1598fd7f056534656b7dbc3a22f71b33}{00171}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Experiment>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a1598fd7f056534656b7dbc3a22f71b33}{CreateOrUpdateExperiment}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ experiment)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (experiment.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment_aa64a32811bb0ed1ed646da04ff3e5e10}{Id}}\ ==\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab8aae8dae4ae2b97fb00003227093fce}{CreateExperiment}}(experiment);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_adc5d1c42c18e7fb4b4088363189ff8a8}{UpdateExperiment}}(experiment))}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ experiment;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00190}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_afbde7460b9c8af2c7c9dd5b985faa6e5}{00190}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Log>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_afbde7460b9c8af2c7c9dd5b985faa6e5}{CreateOrUpdateLog}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ log)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (log.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}{Id}}\ ==\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aab75a43530aaed22416e038cd638ca95}{CreateLog}}(log);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (await\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a88fa1cb1e07843d76e1a64214ea09202}{UpdateLog}}(log))}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ log;}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsReady()}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.IsReady();}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00212}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}{00212}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<Log[]>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}{GetLogsForExperiment}}(\textcolor{keywordtype}{string}\ experimentID)}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f}{GetLogsForExperiment}}(experimentID);}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00221}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}{00221}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Experiment[]>\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}{GetAllExperiments}}()}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ repo.\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb}{GetAllExperiments}}();}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_manager_8cs_source_l00226}00226\ \}}
+
+\end{DoxyCode}

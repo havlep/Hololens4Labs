@@ -1,21 +1,33 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}\index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
+
+
+The Scientist data model class that represents users.  
+
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a0797e879fb54b913dbbec69c1e181333}{Scientist}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor used when scientist name is not yet known and the scientist is not in the database. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7}{Scientist}} (string name)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor used when scientist name is known and the scientist is not in the database. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601}{Scientist}} (string id, string name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor used when scientist name and id is known and the scientist is in the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the name of the scientist. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a17cb868798070097bd1ff6093cce0445}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the database id of the scientist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Scientist data model class that represents users. 
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -25,17 +37,53 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientis
 \doxysubsubsection{\texorpdfstring{Scientist()}{Scientist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Scientist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Constructor used when scientist name is not yet known and the scientist is not in the database. 
+
+
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Scientist@{Scientist}}
 \index{Scientist@{Scientist}!HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
 \doxysubsubsection{\texorpdfstring{Scientist()}{Scientist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Scientist (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
 
+
+
+Constructor used when scientist name is known and the scientist is not in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scientist\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Scientist@{Scientist}}
 \index{Scientist@{Scientist}!HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
 \doxysubsubsection{\texorpdfstring{Scientist()}{Scientist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Scientist (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor used when scientist name and id is known and the scientist is in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The database ID of the scientist\\
+\hline
+{\em name} & The name of the scientist\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
 
 
 
@@ -46,6 +94,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientis
 \doxysubsubsection{\texorpdfstring{Id}{Id}}
 {\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+
+
+Property for getting and setting the database id of the scientist. 
+
+
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Name@{Name}}
 \index{Name@{Name}!HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
@@ -54,6 +110,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientis
 
 
 
+Property for getting and setting the name of the scientist. 
+
+
+
+Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Model/\mbox{\hyperlink{_scientist_8cs}{Scientist.\+cs}}\end{DoxyCompactItemize}
+Model/Scientist.\+cs\end{DoxyCompactItemize}

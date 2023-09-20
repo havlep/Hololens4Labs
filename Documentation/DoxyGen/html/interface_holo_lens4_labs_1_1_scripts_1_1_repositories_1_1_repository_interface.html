@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,45 +79,64 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Repositories.RepositoryInterface Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>CRUD interface for all of the application model objects that are stored in a database.  
+ <a href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.Repositories.RepositoryInterface:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.png" usemap="#HoloLens4Labs.Scripts.Repositories.RepositoryInterface_map" alt=""/>
   <map id="HoloLens4Labs.Scripts.Repositories.RepositoryInterface_map" name="HoloLens4Labs.Scripts.Repositories.RepositoryInterface_map">
-<area href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html" alt="HoloLens4Labs.Scripts.Managers.DataManager" shape="rect" coords="0,56,419,80"/>
-<area href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html" alt="HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository" shape="rect" coords="429,56,848,80"/>
+<area href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html" title="A facade class that handles the communication with the repositories." alt="HoloLens4Labs.Scripts.Managers.DataManager" shape="rect" coords="0,56,419,80"/>
+<area href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html" title="A concrete implementation of the repository interface for the Azure Table service and Azure Blob serv..." alt="HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository" shape="rect" coords="429,56,848,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a006a9d6d3940c2cbd1fc28cd6e5a555d" id="r_a006a9d6d3940c2cbd1fc28cd6e5a555d"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a006a9d6d3940c2cbd1fc28cd6e5a555d">CreateExperiment</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> experiment)</td></tr>
+<tr class="memdesc:a006a9d6d3940c2cbd1fc28cd6e5a555d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new Experiment in the database.  <br /></td></tr>
 <tr class="separator:a006a9d6d3940c2cbd1fc28cd6e5a555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae937a2a88c1f125319bd8ba83092720e" id="r_ae937a2a88c1f125319bd8ba83092720e"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#ae937a2a88c1f125319bd8ba83092720e">UpdateExperiment</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> experiment)</td></tr>
+<tr class="memdesc:ae937a2a88c1f125319bd8ba83092720e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates an existing Experiment in the database.  <br /></td></tr>
 <tr class="separator:ae937a2a88c1f125319bd8ba83092720e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f95398fd4eba9e9fd7b232a59247016" id="r_a5f95398fd4eba9e9fd7b232a59247016"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a5f95398fd4eba9e9fd7b232a59247016">DeleteExperiment</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> experiment)</td></tr>
+<tr class="memdesc:a5f95398fd4eba9e9fd7b232a59247016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing Experiment from the database.  <br /></td></tr>
 <tr class="separator:a5f95398fd4eba9e9fd7b232a59247016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9edd3b7e8fc1a1f3efab777d4a74d36d" id="r_a9edd3b7e8fc1a1f3efab777d4a74d36d"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a9edd3b7e8fc1a1f3efab777d4a74d36d">CreateScientist</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> scientist)</td></tr>
+<tr class="memdesc:a9edd3b7e8fc1a1f3efab777d4a74d36d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Scientist in the database.  <br /></td></tr>
 <tr class="separator:a9edd3b7e8fc1a1f3efab777d4a74d36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5dac7394b482651028ed640a1f0e1d8" id="r_aa5dac7394b482651028ed640a1f0e1d8"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#aa5dac7394b482651028ed640a1f0e1d8">UpdateScientist</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> scientist)</td></tr>
+<tr class="memdesc:aa5dac7394b482651028ed640a1f0e1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing Scientist in the database.  <br /></td></tr>
 <tr class="separator:aa5dac7394b482651028ed640a1f0e1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3d618e9e3eacf7f89138da6048cef5b" id="r_ad3d618e9e3eacf7f89138da6048cef5b"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#ad3d618e9e3eacf7f89138da6048cef5b">DeleteScientist</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> scientist)</td></tr>
+<tr class="memdesc:ad3d618e9e3eacf7f89138da6048cef5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing Scientist from the database.  <br /></td></tr>
 <tr class="separator:ad3d618e9e3eacf7f89138da6048cef5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae4d123f9de30d6fa7d613205959001f" id="r_aae4d123f9de30d6fa7d613205959001f"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#aae4d123f9de30d6fa7d613205959001f">CreateLog</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a> log)</td></tr>
+<tr class="memdesc:aae4d123f9de30d6fa7d613205959001f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a log in the database.  <br /></td></tr>
 <tr class="separator:aae4d123f9de30d6fa7d613205959001f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56c6ccbac2ebe5cac3c12e65308589b" id="r_ae56c6ccbac2ebe5cac3c12e65308589b"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#ae56c6ccbac2ebe5cac3c12e65308589b">UpdateLog</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a> log)</td></tr>
+<tr class="memdesc:ae56c6ccbac2ebe5cac3c12e65308589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing log in the database.  <br /></td></tr>
 <tr class="separator:ae56c6ccbac2ebe5cac3c12e65308589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80f716f66067771b33c8105f36f698f7" id="r_a80f716f66067771b33c8105f36f698f7"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a80f716f66067771b33c8105f36f698f7">DeleteLog</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a> log)</td></tr>
+<tr class="memdesc:a80f716f66067771b33c8105f36f698f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing log from the database.  <br /></td></tr>
 <tr class="separator:a80f716f66067771b33c8105f36f698f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a591848727e59036f329ab4253a6ef13f" id="r_a591848727e59036f329ab4253a6ef13f"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a591848727e59036f329ab4253a6ef13f">GetLogsForExperiment</a> (string experimentID)</td></tr>
+<tr class="memdesc:a591848727e59036f329ab4253a6ef13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all logs for a given Experiment.  <br /></td></tr>
 <tr class="separator:a591848727e59036f329ab4253a6ef13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac4fae693877a40ea37aa4a1e68a7bb" id="r_a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a3ac4fae693877a40ea37aa4a1e68a7bb">GetAllExperiments</a> ()</td></tr>
+<tr class="memdesc:a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all Experiments from the database.  <br /></td></tr>
 <tr class="separator:a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95247d0d52430e004105ffb8ede2e35c" id="r_a95247d0d52430e004105ffb8ede2e35c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a95247d0d52430e004105ffb8ede2e35c">IsReady</a> ()</td></tr>
+<tr class="memitem:a95247d0d52430e004105ffb8ede2e35c" id="r_a95247d0d52430e004105ffb8ede2e35c"><td class="memItemLeft" align="right" valign="top"><a id="a95247d0d52430e004105ffb8ede2e35c" name="a95247d0d52430e004105ffb8ede2e35c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></tr>
 <tr class="separator:a95247d0d52430e004105ffb8ede2e35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CRUD interface for all of the application model objects that are stored in a database. </p>
+
+<p class="definition">Definition at line <a class="el" href="_repository_interface_8cs_source.html#l00011">11</a> of file <a class="el" href="_repository_interface_8cs_source.html">RepositoryInterface.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a006a9d6d3940c2cbd1fc28cd6e5a555d" name="a006a9d6d3940c2cbd1fc28cd6e5a555d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a006a9d6d3940c2cbd1fc28cd6e5a555d">&#9670;&#160;</a></span>CreateExperiment()</h2>
 
@@ -133,6 +152,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a new Experiment in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">experiment</td><td>The Experiment to be created</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created Experiment</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#ab8aae8dae4ae2b97fb00003227093fce">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#adfcfba314286e1891ecaf47191d68034">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
@@ -154,6 +182,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create a log in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log</td><td>The log to be created</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created log</dd></dl>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#aab75a43530aaed22416e038cd638ca95">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a4566939e1da3c524e6d911c6fedde850">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
@@ -173,6 +210,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create a new Scientist in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scientist</td><td>The Scientist to be created</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created Scientist</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#ac7394fba0c1d7d1730ac6d59a35b57fa">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a9e7ebee1e7c613500a31b105f72312e0">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
@@ -194,6 +240,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Delete an existing Experiment from the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">experiment</td><td>The Experiment to be deleted</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the deletion was successful, false otherwise</dd></dl>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a8ed9d14c10f2373331a294fd929a16ef">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a807670e7572300ef7a504b38b617156d">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
@@ -213,6 +268,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delete an existing log from the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log</td><td>The Log that will be deleted</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if deletion was succefull</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a1506fb82760170439968f00b58735d2c">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a1a52552ec5a0b2229d8bb73e813b70a3">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
@@ -234,6 +298,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Delete an existing Scientist from the database. </p>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a79d52e66be04c71b0f608ffd8f86a341">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#ac3726e6d3b66dcfbd041cab092710199">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
@@ -252,6 +318,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get all Experiments from the database. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of all experiment in the database</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#ae61fab3f2e6cb6338b65852141a52a23">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a26d08ae3861974fa94346f4597b27de4">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
@@ -273,26 +342,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get all logs for a given Experiment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">experimentID</td><td>The id of the Experiment</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of all the logs for the given Experiment</dd></dl>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#af478d5be5b677b53dd87dcdd564093f7">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a4b3823a3829e083819ef27a8eda38617">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
-
-</div>
-</div>
-<a id="a95247d0d52430e004105ffb8ede2e35c" name="a95247d0d52430e004105ffb8ede2e35c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95247d0d52430e004105ffb8ede2e35c">&#9670;&#160;</a></span>IsReady()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HoloLens4Labs.Scripts.Repositories.RepositoryInterface.IsReady </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#aa373a4d82bb8b2dd120b8e77df1bbd88">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a3f24c808a645636c4e24829c46ee0c3f">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
 </div>
@@ -311,6 +370,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates an existing Experiment in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">experiment</td><td>The Experiment to be updated</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the update was successful, false otherwise</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#adc5d1c42c18e7fb4b4088363189ff8a8">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#afd8f9e77526d955109c86ad9e3f6a538">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
@@ -332,6 +400,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update an existing log in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log</td><td>The Log that will be updated</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if update was succefull</dd></dl>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a88fa1cb1e07843d76e1a64214ea09202">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a9e02f83855f08ef735cae366a45296e6">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
@@ -352,12 +429,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update an existing Scientist in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scientist</td><td>The Scientist to be updated</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the update was successful, false otherwise</dd></dl>
+
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a0d513504af0459574db3c2030d8b2fa0">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a19360744cbf7a04dde908bd0b6bf416b">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Repositories/<a class="el" href="_repository_interface_8cs.html">RepositoryInterface.cs</a></li>
+<li>Repositories/<a class="el" href="_repository_interface_8cs_source.html">RepositoryInterface.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

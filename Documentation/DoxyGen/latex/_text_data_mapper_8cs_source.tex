@@ -1,0 +1,41 @@
+\doxysection{Text\+Data\+Mapper.\+cs}
+\hypertarget{_text_data_mapper_8cs_source}{}\label{_text_data_mapper_8cs_source}\index{Mappers/TextDataMapper.cs@{Mappers/TextDataMapper.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types}{HoloLens4Labs.Scripts.Model.DataTypes}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_d_t_os}{HoloLens4Labs.Scripts.DTOs}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_mappers}{HoloLens4Labs.Scripts.Mappers}}}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00008}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_text_data_mapper}{00008}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_text_data_mapper}{TextDataMapper}}\ :\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{MapperInterface}}<TextData,\ TextDataDTO,\ TextDataDTO>}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_text_data_d_t_o}{TextDataDTO}}\ CreateDTO(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data}{TextData}}\ obj)}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ToDTO(obj);}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_text_data_d_t_o}{TextDataDTO}}\ ToDTO(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data}{TextData}}\ obj)}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_text_data_d_t_o}{TextDataDTO}}\ dto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_text_data_d_t_o}{TextDataDTO}}();}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ dto.TextDataID\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_a2fa96f592890963caf730855bb9c7ac7}{Id}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ dto.TextLogID\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_a0bf3cdacbabd1bde257bc7e2dd4ffa88}{DoneWithinLogID}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ dto.ScientistID\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_aa787d7e08d805212f140b77a773a233e}{CreatedById}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ dto.Created\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_a1690433fa23d53f092b5ef1e2ded0543}{CreatedOn}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ dto.Text\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data_a2caa4bd446bc5d1e264d79af640acfb9}{Text}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ dto.RowKey\ =\ obj.\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type_a2fa96f592890963caf730855bb9c7ac7}{Id}};}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dto;}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_text_data}{TextData}}\ ToOBJ(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_text_data_d_t_o}{TextDataDTO}}\ dto)}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ System.NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_data_mapper_8cs_source_l00035}00035\ \}}
+
+\end{DoxyCode}

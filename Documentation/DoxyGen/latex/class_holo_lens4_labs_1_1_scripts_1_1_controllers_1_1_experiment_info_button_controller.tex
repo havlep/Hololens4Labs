@@ -14,8 +14,10 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a701edde0a0a75a24088f1aff7b500610}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aec8dcd55e9786acfdb6f0cbafb1a1314}{experiment}})
-\begin{DoxyCompactList}\small\item\em Initialize the button with the experiment data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a43aebb0339aa48197ef4e165ac5b93f9}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_list_menu_controller}{Experiment\+List\+Menu\+Controller}} parent)
+\begin{DoxyCompactList}\small\item\em Initialize the button with the experiment data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_acf82fd4e57c23c8e8dc77af3084cd21c}{On\+Click}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,7 +25,7 @@ TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controlle
 \item 
 TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a500df975c4581e1dbda776018a23f929}{experiment\+Name\+Label}} = default
 \item 
-TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_ad3f3ec5e077c9941787ef39e58068a1d}{experiment\+IDLabel}} = default
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_list_menu_controller}{Experiment\+List\+Menu\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aa18dab6eb1a83b590262de8120c1c12f}{parent}} = default
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aec8dcd55e9786acfdb6f0cbafb1a1314}{experiment}} = null
 \end{DoxyCompactItemize}
@@ -32,12 +34,16 @@ TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controlle
 \doxysubsection{Detailed Description}
 Controller for the experiment info button used in the experiment list. 
 
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a701edde0a0a75a24088f1aff7b500610}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a701edde0a0a75a24088f1aff7b500610} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a43aebb0339aa48197ef4e165ac5b93f9}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a43aebb0339aa48197ef4e165ac5b93f9} 
 \index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!Init@{Init}}
 \index{Init@{Init}!HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{experiment,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_list_menu_controller}{Experiment\+List\+Menu\+Controller}}}]{parent }\end{DoxyParamCaption})}
 
 
 
@@ -50,6 +56,20 @@ Initialize the button with the experiment data.
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_acf82fd4e57c23c8e8dc77af3084cd21c}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_acf82fd4e57c23c8e8dc77af3084cd21c} 
+\index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!OnClick@{OnClick}}
+\index{OnClick@{OnClick}!HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}}
+\doxysubsubsection{\texorpdfstring{OnClick()}{OnClick()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+On\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aec8dcd55e9786acfdb6f0cbafb1a1314}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aec8dcd55e9786acfdb6f0cbafb1a1314} 
 \index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!experiment@{experiment}}
@@ -57,17 +77,19 @@ Initialize the button with the experiment data.
 \doxysubsubsection{\texorpdfstring{experiment}{experiment}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+experiment = null\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aabd7d854c603a300cad79209fbfe1f6f}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aabd7d854c603a300cad79209fbfe1f6f} 
 \index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!experimentDateLabel@{experimentDateLabel}}
 \index{experimentDateLabel@{experimentDateLabel}!HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}}
 \doxysubsubsection{\texorpdfstring{experimentDateLabel}{experimentDateLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+experiment\+Date\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_ad3f3ec5e077c9941787ef39e58068a1d}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_ad3f3ec5e077c9941787ef39e58068a1d} 
-\index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!experimentIDLabel@{experimentIDLabel}}
-\index{experimentIDLabel@{experimentIDLabel}!HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}}
-\doxysubsubsection{\texorpdfstring{experimentIDLabel}{experimentIDLabel}}
-{\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+experiment\+IDLabel = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a500df975c4581e1dbda776018a23f929}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_a500df975c4581e1dbda776018a23f929} 
 \index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!experimentNameLabel@{experimentNameLabel}}
@@ -77,6 +99,20 @@ Initialize the button with the experiment data.
 
 
 
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aa18dab6eb1a83b590262de8120c1c12f}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_button_controller_aa18dab6eb1a83b590262de8120c1c12f} 
+\index{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}!parent@{parent}}
+\index{parent@{parent}!HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController@{HoloLens4Labs.Scripts.Controllers.ExperimentInfoButtonController}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_list_menu_controller}{Experiment\+List\+Menu\+Controller}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Experiment\+Info\+Button\+Controller.\+parent = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_experiment_info_button_controller_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_experiment_info_button_controller_8cs_source}{Experiment\+Info\+Button\+Controller.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Buttons/\mbox{\hyperlink{_experiment_info_button_controller_8cs}{Experiment\+Info\+Button\+Controller.\+cs}}\end{DoxyCompactItemize}
+Controllers/\+Buttons/Experiment\+Info\+Button\+Controller.\+cs\end{DoxyCompactItemize}

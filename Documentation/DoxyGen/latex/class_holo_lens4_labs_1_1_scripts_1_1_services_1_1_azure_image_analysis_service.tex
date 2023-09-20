@@ -1,0 +1,87 @@
+\doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Services.\+Azure\+Image\+Analysis\+Service Class Reference}
+\hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service}\index{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService@{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService}}
+
+
+Class that handles the communication with the Azure Image Analysis service arround transcription.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_ad5c30a6b64d7de466899c4e70b1c6200}{Azure\+Image\+Analysis\+Service}} (string key, string endpoint, Http\+Client client)
+\begin{DoxyCompactList}\small\item\em Constructor that setups the request URI and the Http\+Client. \end{DoxyCompactList}\item 
+async Task$<$ string $>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0}{Transcribe}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} image\+Data)
+\begin{DoxyCompactList}\small\item\em A method that sends a request to the Azure Image Analysis service to transcribe an image present in Image\+Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handles the communication with the Azure Image Analysis service arround transcription. 
+
+Definition at line \mbox{\hyperlink{_azure_image_analysis_service_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_azure_image_analysis_service_8cs_source}{Azure\+Image\+Analysis\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_ad5c30a6b64d7de466899c4e70b1c6200}\label{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_ad5c30a6b64d7de466899c4e70b1c6200} 
+\index{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService@{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService}!AzureImageAnalysisService@{AzureImageAnalysisService}}
+\index{AzureImageAnalysisService@{AzureImageAnalysisService}!HoloLens4Labs.Scripts.Services.AzureImageAnalysisService@{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService}}
+\doxysubsubsection{\texorpdfstring{AzureImageAnalysisService()}{AzureImageAnalysisService()}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Services.\+Azure\+Image\+Analysis\+Service.\+Azure\+Image\+Analysis\+Service (\begin{DoxyParamCaption}\item[{string}]{key,  }\item[{string}]{endpoint,  }\item[{Http\+Client}]{client }\end{DoxyParamCaption})}
+
+
+
+Constructor that setups the request URI and the Http\+Client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key that will be used to authenticate the request\\
+\hline
+{\em endpoint} & The endpoint that will be used to make the request\\
+\hline
+{\em client} & The Http\+Client that will be used to make the request\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Thrown when the request URI is not valid\\
+\hline
+\end{DoxyExceptions}
+"{} 
+
+Definition at line \mbox{\hyperlink{_azure_image_analysis_service_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_azure_image_analysis_service_8cs_source}{Azure\+Image\+Analysis\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0}\label{class_holo_lens4_labs_1_1_scripts_1_1_services_1_1_azure_image_analysis_service_a5f935d2fdc403ad89352269c8e2557a0} 
+\index{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService@{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService}!Transcribe@{Transcribe}}
+\index{Transcribe@{Transcribe}!HoloLens4Labs.Scripts.Services.AzureImageAnalysisService@{HoloLens4Labs.Scripts.Services.AzureImageAnalysisService}}
+\doxysubsubsection{\texorpdfstring{Transcribe()}{Transcribe()}}
+{\footnotesize\ttfamily async Task$<$ string $>$ Holo\+Lens4\+Labs.\+Scripts.\+Services.\+Azure\+Image\+Analysis\+Service.\+Transcribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}}}]{image\+Data }\end{DoxyParamCaption})}
+
+
+
+A method that sends a request to the Azure Image Analysis service to transcribe an image present in Image\+Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Data} & The Image\+Data that contains the image that will be transcribed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transcription of the image
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Thrown when the request is not successful\\
+\hline
+\end{DoxyExceptions}
+"{}"{} 
+
+Definition at line \mbox{\hyperlink{_azure_image_analysis_service_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_azure_image_analysis_service_8cs_source}{Azure\+Image\+Analysis\+Service.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Services/Azure\+Image\+Analysis\+Service.\+cs\end{DoxyCompactItemize}

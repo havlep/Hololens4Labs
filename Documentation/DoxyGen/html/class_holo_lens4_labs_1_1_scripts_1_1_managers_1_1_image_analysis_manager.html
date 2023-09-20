@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Managers.ImageAnalysisManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A facade class that handles the communication with the Azure Image Analysis service.  
+ <a href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.Managers.ImageAnalysisManager:</div>
 <div class="dyncontent">
@@ -89,9 +92,14 @@ Inheritance diagram for HoloLens4Labs.Scripts.Managers.ImageAnalysisManager:</di
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa38d75f1be827deba8d6e5f4aada275" id="r_aaa38d75f1be827deba8d6e5f4aada275"><td class="memItemLeft" align="right" valign="top">Task&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_image_analysis_manager.html#aaa38d75f1be827deba8d6e5f4aada275">TranscribeImage</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html">ImageData</a> image)</td></tr>
+<tr class="memdesc:aaa38d75f1be827deba8d6e5f4aada275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transcribe an image.  <br /></td></tr>
 <tr class="separator:aaa38d75f1be827deba8d6e5f4aada275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A facade class that handles the communication with the Azure Image Analysis service. </p>
+
+<p class="definition">Definition at line <a class="el" href="_image_analysis_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_image_analysis_manager_8cs_source.html">ImageAnalysisManager.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aaa38d75f1be827deba8d6e5f4aada275" name="aaa38d75f1be827deba8d6e5f4aada275"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa38d75f1be827deba8d6e5f4aada275">&#9670;&#160;</a></span>TranscribeImage()</h2>
 
@@ -108,10 +116,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Transcribe an image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>The ImageData of the image that will be transcribed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>Thrown when the request is not successful</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>""" </p><dl class="section return"><dt>Returns</dt><dd>The transcription of the image</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_image_analysis_manager_8cs_source.html#l00037">37</a> of file <a class="el" href="_image_analysis_manager_8cs_source.html">ImageAnalysisManager.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Managers/<a class="el" href="_image_analysis_manager_8cs.html">ImageAnalysisManager.cs</a></li>
+<li>Facades/<a class="el" href="_image_analysis_manager_8cs_source.html">ImageAnalysisManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

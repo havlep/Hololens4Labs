@@ -1,0 +1,223 @@
+\doxysection{Scrollable\+List\+Populator.\+cs}
+\hypertarget{_scrollable_list_populator_8cs_source}{}\label{_scrollable_list_populator_8cs_source}\index{Utils/ScrollableListPopulator.cs@{Utils/ScrollableListPopulator.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00001}00001\ \textcolor{comment}{//\ Copyright\ (c)\ Microsoft\ Corporation.}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00002}00002\ \textcolor{comment}{//\ Licensed\ under\ the\ MIT\ License.}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.MixedReality.Toolkit.UI;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Microsoft.MixedReality.Toolkit.Utilities;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_utils}{HoloLens4Labs.Scripts.Utils}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00014}00014\ \ \ \ \ [AddComponentMenu(\textcolor{stringliteral}{"{}Scripts/MRTK/Examples/ScrollableListPopulator"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00015}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator}{ScrollableListPopulator}}\ :\ MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}The\ ScrollingObjectCollection\ to\ populate,\ if\ left\ empty.\ the\ populator\ will\ create\ on\ your\ behalf."{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ ScrollingObjectCollection\ scrollView;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00024}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ac68b24e2c85860b33f42adc4a660827e}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ ScrollingObjectCollection\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_ac68b24e2c85860b33f42adc4a660827e}{ScrollView}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ scrollView;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ scrollView\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Prefab\ to\ duplicate\ in\ ScrollCollection"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ itemPrefab;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Actions\ to\ perform\ on\ the\ instantiated\ prefab"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_game_object_with_data_action_interface}{GameObjectWithDataActionInterface<object>}}\ onInstantiateActions;\ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00042}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a5fae7b96d1c51084c3b70e3c93d2abca}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a5fae7b96d1c51084c3b70e3c93d2abca}{DynamicItem}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ itemPrefab;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ itemPrefab\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Number\ of\ items\ to\ generate"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ numItems;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00055}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a93c1af1186627a07fd65deb7082f2ec3}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a93c1af1186627a07fd65deb7082f2ec3}{NumItems}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ numItems;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ numItems\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Demonstrate\ lazy\ loading"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ lazyLoad;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00068}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a684477ee6ee1167554ef209202fc68c2}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a684477ee6ee1167554ef209202fc68c2}{LazyLoad}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ lazyLoad;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ lazyLoad\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Number\ of\ items\ to\ load\ each\ frame\ during\ lazy\ load"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ itemsPerFrame\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00081}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a1d7b243835da9efec6eb2a6f474d6199}{00081}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a1d7b243835da9efec6eb2a6f474d6199}{ItemsPerFrame}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ itemsPerFrame;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ itemsPerFrame\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ [Tooltip(\textcolor{stringliteral}{"{}Indeterminate\ loader\ to\ hide\ /\ show\ for\ LazyLoad"{}})]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GameObject\ loader;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ cellWidth\ =\ 0.032f;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ cellHeight\ =\ 0.032f;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ cellDepth\ =\ 0.032f;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ cellsPerTier\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ tiersPerPage\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Transform\ scrollPositionRef\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ GridObjectCollection\ gridObjectCollection;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00114}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a966e738017167445bbcc0b10618b7ead}{00114}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ GameObject\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator_a966e738017167445bbcc0b10618b7ead}{Loader}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ loader;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ loader\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ OnEnable()}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Make\ sure\ we\ find\ a\ collection}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scrollView\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView\ =\ GetComponentInChildren<ScrollingObjectCollection>();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00129}00129\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MakeScrollingList()}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scrollView\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ newScroll\ =\ \textcolor{keyword}{new}\ GameObject(\textcolor{stringliteral}{"{}Scrolling\ Object\ Collection"{}});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newScroll.transform.parent\ =\ scrollPositionRef\ ?\ scrollPositionRef\ :\ transform;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newScroll.transform.localPosition\ =\ Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newScroll.transform.localRotation\ =\ Quaternion.identity;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newScroll.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView\ =\ newScroll.AddComponent<ScrollingObjectCollection>();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prevent\ the\ scrolling\ collection\ from\ running\ until\ we're\ done\ dynamically\ populating\ it.}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.CellWidth\ =\ cellWidth;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.CellHeight\ =\ cellHeight;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.CellDepth\ =\ cellDepth;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.CellsPerTier\ =\ cellsPerTier;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.TiersPerPage\ =\ tiersPerPage;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection\ =\ scrollView.GetComponentInChildren<GridObjectCollection>();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(gridObjectCollection\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Destroy(gridObjectCollection.gameObject);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ collectionGameObject\ =\ \textcolor{keyword}{new}\ GameObject(\textcolor{stringliteral}{"{}Grid\ Object\ Collection"{}});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ collectionGameObject.transform.position\ =\ scrollView.transform.position;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ collectionGameObject.transform.rotation\ =\ scrollView.transform.rotation;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection\ =\ collectionGameObject.AddComponent<GridObjectCollection>();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.CellWidth\ =\ cellWidth;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.CellHeight\ =\ cellHeight;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.SurfaceType\ =\ ObjectOrientationSurfaceType.Plane;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.Layout\ =\ LayoutOrder.ColumnThenRow;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.Columns\ =\ cellsPerTier;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.Anchor\ =\ LayoutAnchor.UpperLeft;}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.AddContent(collectionGameObject);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00176}00176\ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00177}00177\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!lazyLoad)}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00178}00178\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00179}00179\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ numItems;\ i++)}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00180}00180\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00181}00181\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddItemTest(itemPrefab);}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00182}00182\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00183}00183\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.gameObject.SetActive(true);}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00184}00184\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.UpdateCollection();}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00185}00185\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00186}00186\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00187}00187\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00188}00188\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (loader\ !=\ null)}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00189}00189\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00190}00190\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loader.SetActive(true);}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00191}00191\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00192}00192\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00193}00193\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartCoroutine(UpdateListOverTime(loader,\ itemsPerFrame));}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00194}00194\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00195}00195\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ IEnumerator\ UpdateListOverTime(GameObject\ loaderViz,\ \textcolor{keywordtype}{int}\ instancesPerFrame)}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ currItemCount\ =\ 0;\ currItemCount\ <\ numItems;\ currItemCount++)}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ instancesPerFrame;\ i++)}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AddItemTest(itemPrefab);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ that\ the\ list\ is\ populated,\ hide\ the\ loader\ and\ show\ the\ list}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ loaderViz.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ scrollView.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Finally,\ manually\ call\ UpdateCollection\ to\ set\ up\ the\ collection}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.UpdateCollection();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ AddItemTest(GameObject\ item)}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ itemInstance\ =\ Instantiate(item,\ gridObjectCollection.transform);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ itemInstance.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00225}00225\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddItem<T>(T\ data)}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ GameObject\ itemInstance\ =\ Instantiate(itemPrefab,\ gridObjectCollection.transform);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ itemInstance.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ onInstantiateActions.Invoke(itemInstance,\ data);}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ gridObjectCollection.UpdateCollection();}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00235}00235\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_scrollable_list_populator_8cs_source_l00238}00238\ \}}
+
+\end{DoxyCode}

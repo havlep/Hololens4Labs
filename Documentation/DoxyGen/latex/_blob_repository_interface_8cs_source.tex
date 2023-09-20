@@ -1,0 +1,23 @@
+\doxysection{Blob\+Repository\+Interface.\+cs}
+\hypertarget{_blob_repository_interface_8cs_source}{}\label{_blob_repository_interface_8cs_source}\index{Repositories/BlobRepositoryInterface.cs@{Repositories/BlobRepositoryInterface.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_repositories}{HoloLens4Labs.Scripts.Repositories}}}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00011}\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}{00011}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface}{BlobRepositoryInterface}}}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00019}\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<string>\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a4293409fdd748a1369ba97ba4fb0613f}{UploadBlob}}(\textcolor{keywordtype}{byte}[]\ data,\ \textcolor{keywordtype}{string}\ blobName);}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00026}\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<byte[]>\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_ac008850c4221a1fe3ff44bbf1761b796}{DownloadBlob}}(\textcolor{keywordtype}{string}\ blobName);}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00033}\mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface_a930e2412f24fdeedf89610fdf3c4c067}{DeleteBlob}}(\textcolor{keywordtype}{string}\ blobName);}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_blob_repository_interface_8cs_source_l00036}00036\ \}}
+
+\end{DoxyCode}

@@ -1,5 +1,10 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Experiment\+Mapper Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper}\index{HoloLens4Labs.Scripts.Mappers.ExperimentMapper@{HoloLens4Labs.Scripts.Mappers.ExperimentMapper}}
+
+
+Mapper class for mapping between the Experiment data model and the Experiment\+DTO.  
+
+
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Experiment\+Mapper\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,20 +15,27 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Experiment\+Mapp
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{Experiment\+DTO}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a7e6bee6f51a78a2cda4c96d2754a17e1}{Create\+DTO}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Method for mapping from an Experiment to the DTO when creating in a database for the first time. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{Experiment\+DTO}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0}{To\+DTO}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} obj)
-\item 
+\begin{DoxyCompactList}\small\item\em Method for mapping from an Experiment to the DTO. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_aa8ea2c8bcc22c40bbf3decf142a8b255}{To\+OBJ}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{Experiment\+DTO}} dto)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method for mapping from an Experiment\+DTO to the Experiment data model object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface}{Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Mapper\+Interface$<$ Experiment, Experiment\+DTO, Experiment\+DTO $>$}}}
 \begin{DoxyCompactItemize}
 \item 
 DTO \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface_a8ea40edb2ea9e0d3b4a4280a452d2475}{To\+DTO}} (OBJ obj)
-\item 
+\begin{DoxyCompactList}\small\item\em The method for mapping from the data model to the DTO. \end{DoxyCompactList}\item 
 CDTO \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface_af99b84a3a0b8dd0cf9a29c50c0041885}{Create\+DTO}} (OBJ obj)
-\item 
+\begin{DoxyCompactList}\small\item\em The method for creating a DTO from the data model. \end{DoxyCompactList}\item 
 OBJ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mapper_interface_a843b411db0d68ca67127f737bf204431}{To\+OBJ}} (DTO dto)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The method for mapping from the DTO to the data model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mapper class for mapping between the Experiment data model and the Experiment\+DTO. 
+
+Definition at line \mbox{\hyperlink{_experiment_mapper_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_experiment_mapper_8cs_source}{Experiment\+Mapper.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -33,11 +45,43 @@ OBJ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mappe
 \doxysubsubsection{\texorpdfstring{CreateDTO()}{CreateDTO()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{Experiment\+DTO}} Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Experiment\+Mapper.\+Create\+DTO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{obj }\end{DoxyParamCaption})}
 
+
+
+Method for mapping from an Experiment to the DTO when creating in a database for the first time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The Experiment being mapped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Experiment\+DTO
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_experiment_mapper_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_experiment_mapper_8cs_source}{Experiment\+Mapper.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0}\label{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_a681e34586a21d742afadfd08731997b0} 
 \index{HoloLens4Labs.Scripts.Mappers.ExperimentMapper@{HoloLens4Labs.Scripts.Mappers.ExperimentMapper}!ToDTO@{ToDTO}}
 \index{ToDTO@{ToDTO}!HoloLens4Labs.Scripts.Mappers.ExperimentMapper@{HoloLens4Labs.Scripts.Mappers.ExperimentMapper}}
 \doxysubsubsection{\texorpdfstring{ToDTO()}{ToDTO()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_experiment_d_t_o}{Experiment\+DTO}} Holo\+Lens4\+Labs.\+Scripts.\+Mappers.\+Experiment\+Mapper.\+To\+DTO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{obj }\end{DoxyParamCaption})}
+
+
+
+Method for mapping from an Experiment to the DTO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The Experiment being mapped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Experiment\+DTO
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_experiment_mapper_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_experiment_mapper_8cs_source}{Experiment\+Mapper.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_aa8ea2c8bcc22c40bbf3decf142a8b255}\label{class_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_experiment_mapper_aa8ea2c8bcc22c40bbf3decf142a8b255} 
 \index{HoloLens4Labs.Scripts.Mappers.ExperimentMapper@{HoloLens4Labs.Scripts.Mappers.ExperimentMapper}!ToOBJ@{ToOBJ}}
@@ -47,6 +91,22 @@ OBJ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_mappers_1_1_mappe
 
 
 
+Method for mapping from an Experiment\+DTO to the Experiment data model object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dto} & The DTO being mapped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Experiment data model object
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_experiment_mapper_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_experiment_mapper_8cs_source}{Experiment\+Mapper.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Mappers/\mbox{\hyperlink{_experiment_mapper_8cs}{Experiment\+Mapper.\+cs}}\end{DoxyCompactItemize}
+Mappers/Experiment\+Mapper.\+cs\end{DoxyCompactItemize}

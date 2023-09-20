@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,31 +79,39 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An implementation of the BlobRepositoryInterface for the Azure Blob service.  
+ <a href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.png" usemap="#HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository_map" alt=""/>
   <map id="HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository_map" name="HoloLens4Labs.Scripts.Repositories.AzureBlob.AzureBlobRepository_map">
-<area href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface.html" alt="HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface" shape="rect" coords="0,0,401,24"/>
+<area href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface.html" title="Interface for the BlobRepository." alt="HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface" shape="rect" coords="0,0,401,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aebde4b27ee501fca54579561588feca9" id="r_aebde4b27ee501fca54579561588feca9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.html#aebde4b27ee501fca54579561588feca9">AzureBlobRepository</a> (CloudBlobContainer blobContainer)</td></tr>
+<tr class="memdesc:aebde4b27ee501fca54579561588feca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the AzureBlobRepository.  <br /></td></tr>
 <tr class="separator:aebde4b27ee501fca54579561588feca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122dd4859088f137655aa7a44f39933a" id="r_a122dd4859088f137655aa7a44f39933a"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.html#a122dd4859088f137655aa7a44f39933a">DeleteBlob</a> (string blobName)</td></tr>
-<tr class="memdesc:a122dd4859088f137655aa7a44f39933a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a blob if it exists.  <br /></td></tr>
+<tr class="memdesc:a122dd4859088f137655aa7a44f39933a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a blob from the Blob Container.  <br /></td></tr>
 <tr class="separator:a122dd4859088f137655aa7a44f39933a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adccae5615d53ffa02bc38c2931da7f14" id="r_adccae5615d53ffa02bc38c2931da7f14"><td class="memItemLeft" align="right" valign="top">async Task&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.html#adccae5615d53ffa02bc38c2931da7f14">DownloadBlob</a> (string blobName)</td></tr>
-<tr class="memdesc:adccae5615d53ffa02bc38c2931da7f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download data from a blob.  <br /></td></tr>
+<tr class="memdesc:adccae5615d53ffa02bc38c2931da7f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads a blob from the Blob Container.  <br /></td></tr>
 <tr class="separator:adccae5615d53ffa02bc38c2931da7f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dbad38a5db0a0f57362c4c987d6f1d5" id="r_a3dbad38a5db0a0f57362c4c987d6f1d5"><td class="memItemLeft" align="right" valign="top">async Task&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_blob_1_1_azure_blob_repository.html#a3dbad38a5db0a0f57362c4c987d6f1d5">UploadBlob</a> (byte[] data, string blobName)</td></tr>
-<tr class="memdesc:a3dbad38a5db0a0f57362c4c987d6f1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload data to a blob.  <br /></td></tr>
+<tr class="memdesc:a3dbad38a5db0a0f57362c4c987d6f1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload a blob to the Blob Container.  <br /></td></tr>
 <tr class="separator:a3dbad38a5db0a0f57362c4c987d6f1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An implementation of the BlobRepositoryInterface for the Azure Blob service. </p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_blob_repository_8cs_source.html#l00011">11</a> of file <a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aebde4b27ee501fca54579561588feca9" name="aebde4b27ee501fca54579561588feca9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebde4b27ee501fca54579561588feca9">&#9670;&#160;</a></span>AzureBlobRepository()</h2>
 
@@ -119,6 +127,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for the AzureBlobRepository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blobContainer</td><td>The Blob Container of the repository</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_azure_blob_repository_8cs_source.html#l00023">23</a> of file <a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -139,16 +157,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Delete a blob if it exists. </p>
+<p>Deletes a blob from the Blob Container. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">blobName</td><td>Name of the blob to delete.</td></tr>
+    <tr><td class="paramname">blobName</td><td>The name of the blob to be deleted</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Success result of deletion.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the blob was deleted, false if it didn't exist</dd></dl>
 
 <p>Implements <a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface.html#a930e2412f24fdeedf89610fdf3c4c067">HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_blob_repository_8cs_source.html#l00033">33</a> of file <a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -168,16 +188,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Download data from a blob. </p>
+<p>Downloads a blob from the Blob Container. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">blobName</td><td>Name of the blob.</td></tr>
+    <tr><td class="paramname">blobName</td><td>The name of the blob to be downloaded</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Data as byte array.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The byte array of the blob</dd></dl>
 
 <p>Implements <a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface.html#ac008850c4221a1fe3ff44bbf1761b796">HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_blob_repository_8cs_source.html#l00044">44</a> of file <a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -207,22 +229,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Upload data to a blob. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Data to upload.</td></tr>
-    <tr><td class="paramname">blobName</td><td>Name of the blob, ideally with file type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Uri to the blob.</dd></dl>
+<p>Upload a blob to the Blob Container. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the blob that was uploaded</dd></dl>
 
 <p>Implements <a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_blob_repository_interface.html#a4293409fdd748a1369ba97ba4fb0613f">HoloLens4Labs.Scripts.Repositories.BlobRepositoryInterface</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_azure_blob_repository_8cs_source.html#l00058">58</a> of file <a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Repositories/AzureBlobRepository/<a class="el" href="_azure_blob_repository_8cs.html">AzureBlobRepository.cs</a></li>
+<li>Repositories/AzureBlobRepository/<a class="el" href="_azure_blob_repository_8cs_source.html">AzureBlobRepository.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

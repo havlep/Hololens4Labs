@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">HoloLens4Labs<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">HoloLens4Labs
    </div>
   </td>
  </tr>
@@ -79,19 +79,36 @@ $(function() {
   <div class="headertitle"><div class="title">HoloLens4Labs.Scripts.Repositories.ObjectRepositoryInterface&lt; T &gt; Interface Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>CRUD interface for handling one structured objects.  
+ <a href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af549dad056909dd49bf42c2e0d97c69e" id="r_af549dad056909dd49bf42c2e0d97c69e"><td class="memItemLeft" align="right" valign="top">Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#af549dad056909dd49bf42c2e0d97c69e">Create</a> (T obj)</td></tr>
+<tr class="memdesc:af549dad056909dd49bf42c2e0d97c69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new object.  <br /></td></tr>
 <tr class="separator:af549dad056909dd49bf42c2e0d97c69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa70c194fa85ce52ccf8d1bd1ae85a509" id="r_aa70c194fa85ce52ccf8d1bd1ae85a509"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#aa70c194fa85ce52ccf8d1bd1ae85a509">Update</a> (T obj)</td></tr>
+<tr class="memdesc:aa70c194fa85ce52ccf8d1bd1ae85a509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing object.  <br /></td></tr>
 <tr class="separator:aa70c194fa85ce52ccf8d1bd1ae85a509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2726044267a1751db79966207b981583" id="r_a2726044267a1751db79966207b981583"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#a2726044267a1751db79966207b981583">Delete</a> (T obj)</td></tr>
+<tr class="memdesc:a2726044267a1751db79966207b981583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing object from the repository.  <br /></td></tr>
 <tr class="separator:a2726044267a1751db79966207b981583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff1e2852ef3e6a0d51ffeae8ad0e807" id="r_afff1e2852ef3e6a0d51ffeae8ad0e807"><td class="memItemLeft" align="right" valign="top">Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_object_repository_interface.html#afff1e2852ef3e6a0d51ffeae8ad0e807">Read</a> (string id)</td></tr>
+<tr class="memdesc:afff1e2852ef3e6a0d51ffeae8ad0e807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an object from the repository.  <br /></td></tr>
 <tr class="separator:afff1e2852ef3e6a0d51ffeae8ad0e807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CRUD interface for handling one structured objects. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the object</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object_repository_interface_8cs_source.html#l00011">11</a> of file <a class="el" href="_object_repository_interface_8cs_source.html">ObjectRepositoryInterface.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af549dad056909dd49bf42c2e0d97c69e" name="af549dad056909dd49bf42c2e0d97c69e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af549dad056909dd49bf42c2e0d97c69e">&#9670;&#160;</a></span>Create()</h2>
 
@@ -107,6 +124,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create a new object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object that will be created in the database</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task holding the newly created object</dd></dl>
 
 </div>
 </div>
@@ -126,6 +152,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Delete an existing object from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object that will be deleted from the database</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task holding a boolean indicating whether the deletion was successful</dd></dl>
+
 </div>
 </div>
 <a id="afff1e2852ef3e6a0d51ffeae8ad0e807" name="afff1e2852ef3e6a0d51ffeae8ad0e807"></a>
@@ -143,6 +178,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read an object from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The id of the object to be read</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task holding the object</dd></dl>
 
 </div>
 </div>
@@ -162,10 +206,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update an existing object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object that will be updated in the database</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A task holding a boolean indicating whether the update was successful</dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/admin/Documents/gitrepo/Hololens4Labs/Assets/Scripts/Repositories/<a class="el" href="_object_repository_interface_8cs.html">ObjectRepositoryInterface.cs</a></li>
+<li>Repositories/<a class="el" href="_object_repository_interface_8cs_source.html">ObjectRepositoryInterface.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

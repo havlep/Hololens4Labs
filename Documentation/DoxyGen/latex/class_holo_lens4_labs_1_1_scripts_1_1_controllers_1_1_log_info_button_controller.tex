@@ -14,8 +14,10 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+B
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad977714322846f15cb72d20e088061e0}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log)
-\begin{DoxyCompactList}\small\item\em Initialize the button with the log data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ac8e73bb429e96444b8092fc3e69b2db1}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} log, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_selection_controller}{Log\+Selection\+Controller}} parent)
+\begin{DoxyCompactList}\small\item\em Initialize the button with the log data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_adeda59f79f22e8453bdcf89214198118}{On\+Click}} ()
+\begin{DoxyCompactList}\small\item\em Called when the item button is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,21 +25,27 @@ TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controlle
 \item 
 TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_a68ce467fb18ef2ec6f3e9e2314d76a08}{log\+Text\+Label}} = default
 \item 
-TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ace3a1aa810da3d41598d1c809a714f32}{log\+IDLabel}} = default
-\item 
 TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ab5f940dfb5080144f33218d02f662ad5}{log\+Type\+Label}} = default
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_selection_controller}{Log\+Selection\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad3ebcb12880a8919ea6988c585252ef0}{parent}} = default
+\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_acc930c8959aa5f26664dcc73a8161833}{log}} = null
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Controller for the log info button used in the log selection menu. 
 
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
+
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad977714322846f15cb72d20e088061e0}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad977714322846f15cb72d20e088061e0} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ac8e73bb429e96444b8092fc3e69b2db1}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ac8e73bb429e96444b8092fc3e69b2db1} 
 \index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!Init@{Init}}
 \index{Init@{Init}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{log,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_selection_controller}{Log\+Selection\+Controller}}}]{parent }\end{DoxyParamCaption})}
 
 
 
@@ -45,7 +53,7 @@ Initialize the button with the log data.
 
 
 \begin{DoxyParams}{Parameters}
-{\em log} & \\
+{\em log} & The log data\\
 \hline
 \end{DoxyParams}
 
@@ -55,24 +63,54 @@ Initialize the button with the log data.
 \end{DoxyExceptions}
 
 
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_adeda59f79f22e8453bdcf89214198118}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_adeda59f79f22e8453bdcf89214198118} 
+\index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!OnClick@{OnClick}}
+\index{OnClick@{OnClick}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
+\doxysubsubsection{\texorpdfstring{OnClick()}{OnClick()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+On\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the item button is clicked. 
+
+
+
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
+
+
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_acc930c8959aa5f26664dcc73a8161833}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_acc930c8959aa5f26664dcc73a8161833} 
+\index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!log@{log}}
+\index{log@{log}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
+\doxysubsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+log = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_a3c1a144752cab1693e0b119bd8b28df8}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_a3c1a144752cab1693e0b119bd8b28df8} 
 \index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!logDateLabel@{logDateLabel}}
 \index{logDateLabel@{logDateLabel}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
 \doxysubsubsection{\texorpdfstring{logDateLabel}{logDateLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+log\+Date\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ace3a1aa810da3d41598d1c809a714f32}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ace3a1aa810da3d41598d1c809a714f32} 
-\index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!logIDLabel@{logIDLabel}}
-\index{logIDLabel@{logIDLabel}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
-\doxysubsubsection{\texorpdfstring{logIDLabel}{logIDLabel}}
-{\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+log\+IDLabel = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_a68ce467fb18ef2ec6f3e9e2314d76a08}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_a68ce467fb18ef2ec6f3e9e2314d76a08} 
 \index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!logTextLabel@{logTextLabel}}
 \index{logTextLabel@{logTextLabel}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
 \doxysubsubsection{\texorpdfstring{logTextLabel}{logTextLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+log\+Text\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ab5f940dfb5080144f33218d02f662ad5}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ab5f940dfb5080144f33218d02f662ad5} 
 \index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!logTypeLabel@{logTypeLabel}}
@@ -82,6 +120,20 @@ Initialize the button with the log data.
 
 
 
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad3ebcb12880a8919ea6988c585252ef0}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_info_button_controller_ad3ebcb12880a8919ea6988c585252ef0} 
+\index{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}!parent@{parent}}
+\index{parent@{parent}!HoloLens4Labs.Scripts.Controllers.LogInfoButtonController@{HoloLens4Labs.Scripts.Controllers.LogInfoButtonController}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_selection_controller}{Log\+Selection\+Controller}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+Info\+Button\+Controller.\+parent = default\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_log_info_button_controller_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_log_info_button_controller_8cs_source}{Log\+Info\+Button\+Controller.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Buttons/\mbox{\hyperlink{_log_info_button_controller_8cs}{Log\+Info\+Button\+Controller.\+cs}}\end{DoxyCompactItemize}
+Controllers/\+Buttons/Log\+Info\+Button\+Controller.\+cs\end{DoxyCompactItemize}

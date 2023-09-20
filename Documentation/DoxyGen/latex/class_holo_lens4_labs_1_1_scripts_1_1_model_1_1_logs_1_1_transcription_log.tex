@@ -1,5 +1,10 @@
 \doxysection{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log Class Reference}
 \hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}{}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log}\index{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}}
+
+
+Log class for storing transcription data.  
+
+
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,24 +15,24 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcripti
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_ac8f8834fcc5c713a6af6f7d9f21e64a5}{Transcription\+Log}} (Date\+Time at, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Log is not yet in the database and the Scientist and Experiment exist as data model objects. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a9e7709a1ef7e853939d7cd16adfe0067}{Transcription\+Log}} (string id, Date\+Time at, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Log is already in the database and the Scientist and Experiment exist as data model objects. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aeb84965c145c11751e52cb748f5d29aa}{Transcription\+Log}} (string id, Date\+Time at, string created\+By\+ID, string done\+Within\+ID, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{Transcription\+Data}} data)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Log is already in the database and the Scientist and Experiment do not exist as data model objects at the moment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aea5c54e921ae084190239141ba00c51c}{Transcription\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor used to create a new Transcription\+Log when the Scientist and Experiment exist as data model objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a8b6e5f385b856c4f9d8be15824576b04}{Log}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for creating a new log when scientist and experiment is known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120}{Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor fore creating a new log at the current time when scientist and experiment is known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2}{Log}} (string log\+Id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of a log that is already present in the database when scientist and experiment are known. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268}{Log}} (string log\+Id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+ID)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for creating a data model representation of a log that is already present in the database when scientist id and experiment id are known. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,22 +47,30 @@ static String \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_l
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{Transcription\+Data}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The transcription data of the log. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log}}}
 \begin{DoxyCompactItemize}
 \item 
 Date\+Time \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}{Created\+On}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The data the that the log was created on. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{Created\+By}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The Scientist that created the log. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb}{Created\+By\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em ~\newline
+ The id of the scientist that created the log \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691}{Done\+Within}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The Experiment that the log was created within. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a}{Done\+Within\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em The ID of the Experiment that the log was created within. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Property of getting the log id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Log class for storing transcription data. 
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -67,11 +80,48 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{TranscriptionLog()}{TranscriptionLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log.\+Transcription\+Log (\begin{DoxyParamCaption}\item[{Date\+Time}]{at,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
 
+
+
+Constructor used when the Transcription\+Log is not yet in the database and the Scientist and Experiment exist as data model objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em at} & The timestamp of when the Transcription\+Log was created at\\
+\hline
+{\em created\+By} & The Scientist that created the Transcription\+Log\\
+\hline
+{\em done\+Within} & The Experiment that the Transcription\+Log was done within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a9e7709a1ef7e853939d7cd16adfe0067}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a9e7709a1ef7e853939d7cd16adfe0067} 
 \index{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}!TranscriptionLog@{TranscriptionLog}}
 \index{TranscriptionLog@{TranscriptionLog}!HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}}
 \doxysubsubsection{\texorpdfstring{TranscriptionLog()}{TranscriptionLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log.\+Transcription\+Log (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{at,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
+
+
+
+Constructor used when the Transcription\+Log is already in the database and the Scientist and Experiment exist as data model objects. 
+
+~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the Transcription\+Log in the database\\
+\hline
+{\em at} & The timestamp of when the Transcription\+Log was created at\\
+\hline
+{\em created\+By} & The Scientist that created the Transcription\+Log\\
+\hline
+{\em done\+Within} & The Experiment that the Transcription\+Log was done within\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aeb84965c145c11751e52cb748f5d29aa}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aeb84965c145c11751e52cb748f5d29aa} 
 \index{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}!TranscriptionLog@{TranscriptionLog}}
@@ -79,11 +129,48 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsubsection{\texorpdfstring{TranscriptionLog()}{TranscriptionLog()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log.\+Transcription\+Log (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{at,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+ID,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data}{Transcription\+Data}}}]{data }\end{DoxyParamCaption})}
 
+
+
+Constructor used when the Transcription\+Log is already in the database and the Scientist and Experiment do not exist as data model objects at the moment. 
+
+~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em id} & The Id of the Transcription\+Log in the database\\
+\hline
+{\em at} & The timestamp of when the Transcription\+Log was created at\\
+\hline
+{\em created\+By\+ID} & The id of the Scientist that created the Transcription\+Log\\
+\hline
+{\em done\+Within\+ID} & The Experiment that the Transcription\+Log was done within\\
+\hline
+{\em data} & The transcription data held within the Transcripiton\+Log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aea5c54e921ae084190239141ba00c51c}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_aea5c54e921ae084190239141ba00c51c} 
 \index{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}!TranscriptionLog@{TranscriptionLog}}
 \index{TranscriptionLog@{TranscriptionLog}!HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}}
 \doxysubsubsection{\texorpdfstring{TranscriptionLog()}{TranscriptionLog()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Transcription\+Log.\+Transcription\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
+
+
+
+Constructor used to create a new Transcription\+Log when the Scientist and Experiment exist as data model objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em created\+By} & The id of the Scientist that created the Transcription\+Log\\
+\hline
+{\em done\+Within} & The Experiment that the Transcription\+Log was done within\\
+\hline
+\end{DoxyParams}
+summary\texorpdfstring{$>$}{>} Static method for getting the type name of the log /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
 
 
 
@@ -96,6 +183,10 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 
 
 
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
+
+
+
 \doxysubsection{Property Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_transcription_log_a5e291db8874b4ec5018c33dced5d6e83} 
 \index{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog@{HoloLens4Labs.Scripts.Model.Logs.TranscriptionLog}!Data@{Data}}
@@ -105,6 +196,14 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 
 
 
+The transcription data of the log. 
+
+
+
+Definition at line \mbox{\hyperlink{_transcription_log_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_transcription_log_8cs_source}{Transcription\+Log.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Model/\+Logs/\mbox{\hyperlink{_transcription_log_8cs}{Transcription\+Log.\+cs}}\end{DoxyCompactItemize}
+Model/\+Logs/Transcription\+Log.\+cs\end{DoxyCompactItemize}

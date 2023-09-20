@@ -14,9 +14,9 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Image\+Log\+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a6a3e34dab2c2088fa9aa3c2145f64583}{Init\+With\+Existing}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log}{Image\+Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}}, Game\+Object parent\+Obj)
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a6a3e34dab2c2088fa9aa3c2145f64583}{Init\+With\+Existing}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log}{Image\+Log}} log, Game\+Object parent\+Obj)
 \begin{DoxyCompactList}\small\item\em Initialize the view with the existing image log data. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a7e1931ff4dc573002b1aa301542c09e9}{Init\+New}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log}{Image\+Log}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a171ca997708fc0d99903d95578a32b75}{log}}, Game\+Object parent\+Obj)
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a7e1931ff4dc573002b1aa301542c09e9}{Init\+New}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log}{Image\+Log}} log, Game\+Object parent\+Obj)
 \begin{DoxyCompactList}\small\item\em Initialize the view for a new image log. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a00b1f1eb2928b7ef9955cbbb1921a2c0}{Image\+Captured}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Data\+Type}} data)
 \begin{DoxyCompactList}\small\item\em Called when the image is captured. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -36,8 +36,6 @@ Image \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_ima
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller}{Scene\+Controller}} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a23170771843a2bff3d0c6ef114f067e5}{scene\+Controller}}
-\item 
-TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_ab3135ccc05fdac17ea3e6a425fb0ef7a}{log\+Name\+Label}} = default
 \item 
 TMP\+\_\+\+Text \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_af643be39f7ebd7a9e077b045ba30c07a}{created\+On\+Label}} = default
 \item 
@@ -60,13 +58,17 @@ Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_
 void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a46a12989ab7ed28d28dc1949571edfeb}{Awake}} ()
 \begin{DoxyCompactList}\small\item\em Connect the scenecontroller if it is not set. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a8444c6215f2f60c5136ca6f0e8dccf1d}{Init}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} source, Game\+Object parent)
-\begin{DoxyCompactList}\small\item\em Init the menu with the given Text\+Log\+DTO. Should be called from the previous menu. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Init\+With\+Existing the menu with the given Text\+Log\+DTO. Should be called from the previous menu. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a182e9c5958ee5154521786116834209b}{Set\+Buttons\+Interactive\+State}} (bool state)
 \begin{DoxyCompactList}\small\item\em Set the buttons interactive state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Controller for the image log view. 
+
+Definition at line \mbox{\hyperlink{_image_log_view_controller_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_image_log_view_controller_8cs_source}{Image\+Log\+View\+Controller.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a00b1f1eb2928b7ef9955cbbb1921a2c0}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a00b1f1eb2928b7ef9955cbbb1921a2c0} 
@@ -93,6 +95,10 @@ Called when the image is captured.
 
 Reimplemented from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller_a85d19b0b2f62ad1f265f6bc1dd5142ff}{Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Log\+View\+Controller}}.
 
+
+
+Definition at line \mbox{\hyperlink{_image_log_view_controller_8cs_source_l00078}{78}} of file \mbox{\hyperlink{_image_log_view_controller_8cs_source}{Image\+Log\+View\+Controller.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a7e1931ff4dc573002b1aa301542c09e9}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a7e1931ff4dc573002b1aa301542c09e9} 
 \index{HoloLens4Labs.Scripts.Controllers.ImageLogViewController@{HoloLens4Labs.Scripts.Controllers.ImageLogViewController}!InitNew@{InitNew}}
 \index{InitNew@{InitNew}!HoloLens4Labs.Scripts.Controllers.ImageLogViewController@{HoloLens4Labs.Scripts.Controllers.ImageLogViewController}}
@@ -110,6 +116,10 @@ Initialize the view for a new image log.
 {\em parent\+Obj} & The parent object that called this image log\\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_image_log_view_controller_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_image_log_view_controller_8cs_source}{Image\+Log\+View\+Controller.\+cs}}.
+
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a6a3e34dab2c2088fa9aa3c2145f64583}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_a6a3e34dab2c2088fa9aa3c2145f64583} 
 \index{HoloLens4Labs.Scripts.Controllers.ImageLogViewController@{HoloLens4Labs.Scripts.Controllers.ImageLogViewController}!InitWithExisting@{InitWithExisting}}
 \index{InitWithExisting@{InitWithExisting}!HoloLens4Labs.Scripts.Controllers.ImageLogViewController@{HoloLens4Labs.Scripts.Controllers.ImageLogViewController}}
@@ -134,6 +144,10 @@ Initialize the view with the existing image log data.
 \end{DoxyExceptions}
 
 
+Definition at line \mbox{\hyperlink{_image_log_view_controller_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_image_log_view_controller_8cs_source}{Image\+Log\+View\+Controller.\+cs}}.
+
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_ace3d014991e4fad0ccefacd324c7d55f}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller_ace3d014991e4fad0ccefacd324c7d55f} 
 \index{HoloLens4Labs.Scripts.Controllers.ImageLogViewController@{HoloLens4Labs.Scripts.Controllers.ImageLogViewController}!imageCanvas@{imageCanvas}}
@@ -143,6 +157,10 @@ Initialize the view with the existing image log data.
 
 
 
+Definition at line \mbox{\hyperlink{_image_log_view_controller_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_image_log_view_controller_8cs_source}{Image\+Log\+View\+Controller.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/admin/\+Documents/gitrepo/\+Hololens4\+Labs/\+Assets/\+Scripts/\+Controllers/\+Views/\mbox{\hyperlink{_image_log_view_controller_8cs}{Image\+Log\+View\+Controller.\+cs}}\end{DoxyCompactItemize}
+Controllers/\+Views/Image\+Log\+View\+Controller.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\doxysection{Log.\+cs}
+\hypertarget{_log_8cs_source}{}\label{_log_8cs_source}\index{Model/Logs/Log.cs@{Model/Logs/Log.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs}{HoloLens4Labs.Scripts.Model.Logs}}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00009}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ DateTime\ creationDateTime;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00020}00020\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ scientist\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ scientistID\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ experiment\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ experimentID;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00044}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a9f936c26160ef60a5256518283d36d5e}{CreatedOn}}\ \{\ \textcolor{keyword}{get}\ =>\ creationDateTime;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00049}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a73a5ecb456b0745743a8c4fed1557a74}{CreatedBy}}\ \{\ \textcolor{keyword}{get}\ =>\ scientist;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00054}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a4dd3bbade26f924a95e1140f69d1dafb}{CreatedByID}}\ \{\ \textcolor{keyword}{get}\ =>\ scientist\ !=\ \textcolor{keyword}{null}\ ?\ scientist.Id\ :\ scientistID;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00060}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_aa0590e4ae31be941ebd3749af9f06691}{DoneWithin}}\ \{\ \textcolor{keyword}{get}\ =>\ experiment;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00065}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a7a6443485aad2d252daea45d4f96f79a}{DoneWithinID}}\ \{\ \textcolor{keyword}{get}\ =>\ experiment\ !=\ \textcolor{keyword}{null}\ ?\ experiment.Id\ :\ experimentID;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00070}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a1868ac36ad4b5bbfa54e615ab6c710d1}{Id}}\ \{\ \textcolor{keyword}{get}\ =>\ id;\ \textcolor{keyword}{set}\ =>\ \textcolor{keywordtype}{id}\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00078}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a8b6e5f385b856c4f9d8be15824576b04}{00078}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a8b6e5f385b856c4f9d8be15824576b04}{Log}}(DateTime\ createdOn,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ createdBy,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ doneWithin)\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ this.scientist\ =\ createdBy;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ this.experiment\ =\ doneWithin;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ this.creationDateTime\ =\ createdOn;\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00090}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_af123450dcf12e6a60e6b6430188c4120}{Log}}(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ createdBy,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ doneWithin)\ :\ this(DateTime.Now,createdBy,doneWithin)\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00099}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2}{00099}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_a628874731ce993e46409ee7e31dea2c2}{Log}}(\textcolor{keywordtype}{string}\ logId,\ DateTime\ createdOn,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}\ createdBy,\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\ doneWithin)\ :\ this\ (createdOn,\ createdBy,\ doneWithin)}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ logId;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00111}\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268}{00111}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log_ad04e53842e7286cf0e40701649bc8268}{Log}}(\textcolor{keywordtype}{string}\ logId,\ DateTime\ createdOn,\ \textcolor{keywordtype}{string}\ createdByID,\ \textcolor{keywordtype}{string}\ doneWithinID)}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ logId;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ creationDateTime\ =\ createdOn;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ scientistID\ =\ createdByID;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ experimentID\ =\ doneWithinID;}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ GetTypeName()}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Log"{}};}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_log_8cs_source_l00127}00127\ \}}
+
+\end{DoxyCode}
