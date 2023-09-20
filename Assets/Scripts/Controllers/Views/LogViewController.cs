@@ -21,8 +21,6 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         [Header("UI Elements")]
         [SerializeField]
-        protected TMP_Text logNameLabel = default;
-        [SerializeField]
         protected TMP_Text createdOnLabel = default;
         [SerializeField]
         protected TMP_Text createdByLabel = default;
@@ -66,8 +64,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             Debug.Log($"Initializing textlog");
             log = source;
-            logNameLabel.SetText(log.Id);
-            createdOnLabel.SetText(log.CreatedOn.ToShortTimeString());
+            createdOnLabel.SetText(log.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss"));
             if (log.CreatedBy != null)
                 createdByLabel.SetText(log.CreatedBy.Name);
             else

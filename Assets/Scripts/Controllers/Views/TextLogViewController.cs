@@ -26,7 +26,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             if (log.TextData != null)
             {
-                lastModifiedLabel.SetText(log.TextData.CreatedOn.ToShortTimeString());
+                lastModifiedLabel.SetText(log.TextData.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss"));
                 descriptionInputField.text = log.TextData.Text;
             }
             else

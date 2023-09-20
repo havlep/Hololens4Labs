@@ -36,7 +36,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             if (log.Data == null)
                 throw new System.Exception("No image in existing image imagelog");
 
-            lastModifiedLabel.SetText(log.Data.CreatedOn.ToShortTimeString());
+            lastModifiedLabel.SetText(log.Data.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss"));
             imageCanvas.sprite = spriteFromImage(log.Data);
 
             base.Init(log, parentObj);

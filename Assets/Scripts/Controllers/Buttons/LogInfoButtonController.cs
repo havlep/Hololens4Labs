@@ -18,8 +18,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         protected TMP_Text logTextLabel = default;
         [SerializeField]
-        protected TMP_Text logIDLabel = default;
-        [SerializeField]
         protected TMP_Text logTypeLabel = default;
 
         protected LogSelectionController parent = default;
@@ -28,13 +26,12 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <summary>
         /// Initialize the button with the log data
         /// </summary>
-        /// <param name="log"></param>
+        /// <param name="log">The log data</param>
         /// <exception cref="NotImplementedException">If the log type in the DTO is not supported</exception>
         public void Init(Log log, LogSelectionController parent)
         {
 
-            logDateLabel.text = log.CreatedOn.ToShortTimeString();
-            logIDLabel.text = log.Id;
+            logDateLabel.text = log.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss");
 
             switch (log)
             {
