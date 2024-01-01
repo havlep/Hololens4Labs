@@ -1,7 +1,6 @@
 using System;
 using NUnit.Framework;
 using HoloLens4Labs.Scripts.Model.DataTypes;
-using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
 
@@ -19,7 +18,6 @@ public class TextDataTests
         experiment = new Experiment("Michelson-Morley", scientist);
 
         textLog = new TextLog(scientist, experiment);
-
 
     }
 
