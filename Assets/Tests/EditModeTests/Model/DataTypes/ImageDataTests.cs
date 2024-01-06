@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
 
 public class ImageDataTests
 {
@@ -26,7 +22,7 @@ public class ImageDataTests
 
     }
 
-    // Test the basic full instatiation of a imageData object when all variables are available
+    // Test constructor used when the ImageData is already in the database and scientist and log don't exist as data model objects
     [Test]
     public void FullDefinitionConstructor()
     {
@@ -56,21 +52,53 @@ public class ImageDataTests
 
     }
 
-
-    // A Test behaves as an ordinary method
+    // Test constructor used when the ImageData is not yet in the database and scientist and log exist as data model objects
     [Test]
-    public void ImageDataTestsSimplePasses()
+    public void ImageDataNotYetInDatabase()
     {
-        // Use the Assert class to test conditions
+        var dateTime = new System.DateTime(2022, 12, 25);
+        var imageData = new ImageData( dateTime, scientist,imageLog);
+
+        try
+        {
+
+            Assert.That(imageData.DoneWithinLog, Is.EqualTo(imageLog));
+
+            Assert.That(imageData.CreatedBy, Is.EqualTo(scientist));
+
+            Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
+
+
+        }
+        catch (Exception)
+        {
+
+            Assert.Fail();
+
+        }
+
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator ImageDataTestsWithEnumeratorPasses()
+    // Test constructor used when the ImageData is already in the database and scientist and log exist as data model objects
+    [Test]
+    public void ImageDataAlreadyInDatabase()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        var dateTime = new System.DateTime(2022, 12, 25);
+        var imageData = new ImageData("101", dateTime, scientist, imageLog);
+
+        try
+        {
+
+            Assert.That(imageData.Id, Is.EqualTo("101"));
+
+            Assert.That(imageData.DoneWithinLog, Is.EqualTo(imageLog));
+
+            Assert.That(imageData.CreatedBy, Is.EqualTo(scientist));
+
+            Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
+        }catch(Exception)
+        {
+            Assert.Fail();
+        }
     }
 }
