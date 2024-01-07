@@ -1,9 +1,8 @@
-using NUnit.Framework;
 using HoloLens4Labs.Scripts.Mappers;
 using HoloLens4Labs.Scripts.Model;
-using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
+using NUnit.Framework;
 using System;
 
 public class TextDataMapperTests
@@ -17,8 +16,8 @@ public class TextDataMapperTests
     public void Init()
     {
 
-        scientist = new Scientist("11","Albert A. Michelson");
-        experiment = new Experiment("12","Michelson-Morely",scientist, DateTime.Now);
+        scientist = new Scientist("11", "Albert A. Michelson");
+        experiment = new Experiment("12", "Michelson-Morely", scientist, DateTime.Now);
 
         textLog = new TextLog("31459", new DateTime(2031, 1, 1), scientist, experiment);
         data = new TextData("299792", new DateTime(1983, 1, 1), scientist, textLog, "To be or not to be");
@@ -35,7 +34,7 @@ public class TextDataMapperTests
 
         Assert.IsNotNull(dto);
         Assert.AreEqual(data.Id.ToString(), dto.TextDataID);
-        Assert.AreEqual(data.DoneWithinLogID.ToString(), dto.TextLogID); 
+        Assert.AreEqual(data.DoneWithinLogID.ToString(), dto.TextLogID);
         Assert.AreEqual(data.Text, dto.Text);
         Assert.AreEqual(data.CreatedOn, dto.Created);
         Assert.AreEqual(data.CreatedById.ToString(), dto.ScientistID);

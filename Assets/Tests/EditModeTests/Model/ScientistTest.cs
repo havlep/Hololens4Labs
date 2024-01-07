@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
-using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
+using NUnit.Framework;
 using System;
 
 public class ScientistTest
@@ -20,7 +15,7 @@ public class ScientistTest
 
             Assert.That(scientist.Id, Is.EqualTo("22"));
             Assert.That(scientist.Name, Is.EqualTo("John Glen"));
-          
+
 
         }
         catch (Exception)

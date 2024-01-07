@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
-using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;
+using NUnit.Framework;
+using System;
 
 
 public class ExperimentTest
@@ -14,7 +9,7 @@ public class ExperimentTest
     [Test]
     public void FullDefinitionConstructor()
     {
-        var experiment = new Experiment("22", "Trinity","99", DateTime.Now);
+        var experiment = new Experiment("22", "Trinity", "99", DateTime.Now);
 
         try
         {
@@ -39,7 +34,7 @@ public class ExperimentTest
     public void OnlyNameInConstructor()
     {
         var scientist = new Scientist("21", "Rutherford");
-        var experiment = new Experiment("Trinity",scientist);
+        var experiment = new Experiment("Trinity", scientist);
 
         try
         {
@@ -58,5 +53,5 @@ public class ExperimentTest
     }
 
 
-    
+
 }

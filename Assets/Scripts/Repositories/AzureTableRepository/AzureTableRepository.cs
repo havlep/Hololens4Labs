@@ -71,9 +71,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// </summary>
         private async void Awake()
         {
-            
+
             storageAccount = CloudStorageAccount.Parse(connectionString);
-            
+
             await this.SetupTablesRepository();
             this.SetupBlobRepository();
 
@@ -229,20 +229,22 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if (log.Id == string.Empty)
                 log.Id = System.Guid.NewGuid().ToString();
 
-            if (log is TextLog 
-                && (log as TextLog).TextData != null  
+            if (log is TextLog
+                && (log as TextLog).TextData != null
                 && (log as TextLog).TextData.Id == string.Empty)
                 (log as TextLog).TextData.Id = System.Guid.NewGuid().ToString();
 
-            else if (log is ImageLog && (log as ImageLog).Data != null) { 
+            else if (log is ImageLog && (log as ImageLog).Data != null)
+            {
                 var imageLog = log as ImageLog;
-                
+
                 if (imageLog.Data.Id == string.Empty)
                     imageLog.Data.Id = System.Guid.NewGuid().ToString();
 
-                 imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
-                
-            } else if(log is TranscriptionLog  && (log as TranscriptionLog).Data != null)
+                imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
+
+            }
+            else if (log is TranscriptionLog  && (log as TranscriptionLog).Data != null)
             {
                 var transcriptionLog = log as TranscriptionLog;
 
@@ -251,7 +253,8 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
                 transcriptionLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(transcriptionLog.Data.Data, transcriptionLog.Data.Id);
 
-            }else 
+            }
+            else
                 throw new System.NotImplementedException();
 
             return await atLogRepository.Create(log);
@@ -274,7 +277,8 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 if (imageLog.Data != null)
                     imageLog.Data.ThumbnailBlobName = await blobRepository.UploadBlob(imageLog.Data.Data, imageLog.Data.Id);
 
-            }else if (log is TranscriptionLog)
+            }
+            else if (log is TranscriptionLog)
             {
 
                 var transcriptionLog = log as TranscriptionLog;
@@ -312,22 +316,23 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// <param name="log">The Log that will be deleted</param>
         /// <returns>True if the Log was deleted</returns>
         /// <exception cref="ObjectDataBaseException">If the blob could not be deleted</exception>"
-        public async  Task<bool> DeleteLog(Log log)
+        public async Task<bool> DeleteLog(Log log)
         {
 
             if (log is ImageLog)
             {
-            
+
                 var imageLog = log as ImageLog;
                 if (imageLog.Data != null &&
-                    ! await blobRepository.DeleteBlob(imageLog.Data.ThumbnailBlobName))
-                throw new ObjectDataBaseException($"Could not delete image{imageLog.Data.Id}");
+                    !await blobRepository.DeleteBlob(imageLog.Data.ThumbnailBlobName))
+                    throw new ObjectDataBaseException($"Could not delete image{imageLog.Data.Id}");
 
-            }else if (log is TranscriptionLog)
+            }
+            else if (log is TranscriptionLog)
             {
                 var transcriptionLog = log as TranscriptionLog;
                 if (transcriptionLog.Data != null &&
-                                       ! await blobRepository.DeleteBlob(transcriptionLog.Data.ThumbnailBlobName))
+                                       !await blobRepository.DeleteBlob(transcriptionLog.Data.ThumbnailBlobName))
                     throw new ObjectDataBaseException($"Could not delete transcription{transcriptionLog.Data.Id}");
             }
             throw new System.NotImplementedException();
@@ -352,10 +357,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         public async Task<(Log[], TableContinuationToken)> GetLogsForExperiment(string experimentID, TableContinuationToken token)
         {
 
-            
-               return await atLogRepository.GetLogsForExperiment(experimentID, 100, token);
-                        
-           
+
+            return await atLogRepository.GetLogsForExperiment(experimentID, 100, token);
+
+
         }
         ///<summary>
         /// Get all logs for an experiment
@@ -375,7 +380,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// <returns>A list of experiments and a pagination token</returns>
         public async Task<(Experiment[], TableContinuationToken)> GetAllExperiments(TableContinuationToken token)
         {
-            return await atExperimentRepository.ReadOnePageAsync(100,token);
+            return await atExperimentRepository.ReadOnePageAsync(100, token);
         }
 
         /// <summary>

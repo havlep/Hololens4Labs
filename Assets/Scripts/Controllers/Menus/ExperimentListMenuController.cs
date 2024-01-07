@@ -1,7 +1,6 @@
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Utils;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -19,7 +18,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private ScrollableListPopulator scrollableListPopulator = default;
 
-        
+
         [Header("Views")]
         [SerializeField]
         private ExperimentInfoViewController experimentInfoViewPrefab = default;

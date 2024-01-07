@@ -20,7 +20,7 @@ namespace HoloLens4Labs.Scripts.Controllers
     /// <summary>
     /// Controller for the log view
     /// </summary>
-    public class PhotoCameraController: MonoBehaviour
+    public class PhotoCameraController : MonoBehaviour
     {
         public bool IsCameraActive { private set; get; }
 
@@ -50,7 +50,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 #else
         private WebCamTexture webCamTexture;
 #endif
-       
+
 
         private bool isWaitingForAirtap;
 
@@ -72,8 +72,9 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <param name="log">The log that will be filled in with data</param>
         /// <param name="parentObj">The calling object</param>
 
-        public void Init(Log log, LogViewController parentObj) { 
-        
+        public void Init(Log log, LogViewController parentObj)
+        {
+
             this.log = log;
             this.parentObj = parentObj;
             isWaitingForAirtap = true;
@@ -92,7 +93,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             gameObject.SetActive(false);
             parentObj.CloseCard();
             Destroy(gameObject);
-        
+
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
 
 #if UNITY_WSA
-        
+
         /// <summary>
         /// Start the camera
         /// </summary>
@@ -120,7 +121,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             if (IsCameraActive)
                 return;
-            
+
             Debug.Log("Starting camera system.");
             if (photoCapture == null)
             {
@@ -134,7 +135,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             {
                 StartPhotoMode();
             }
-            
+
             IsCameraActive = true;
         }
 
@@ -267,7 +268,7 @@ namespace HoloLens4Labs.Scripts.Controllers
                         var imageData = new ImageData(DateTime.Now, SceneController.CurrentUser, log);
                         imageData.Data = data;
                         imageData.Texture = texture;
-                  
+
                         completionSource.TrySetResult(imageData);
                     });
 #else
@@ -300,7 +301,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         public void HandleOnPointerClick()
         {
-                if (isWaitingForAirtap)
+            if (isWaitingForAirtap)
             {
                 CapturePhotoAndReturnAsync();
             }
@@ -310,10 +311,10 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// Capture the photo and return to the previous menu
         /// </summary>
         public async void CapturePhotoAndReturnAsync()
-                                                      {
-            
-           var imageData = await CapturePhoto();
-           CaptureCompleted(imageData);
+        {
+
+            var imageData = await CapturePhoto();
+            CaptureCompleted(imageData);
 
         }
 

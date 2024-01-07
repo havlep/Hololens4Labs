@@ -1,5 +1,5 @@
-using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model;
 
 namespace HoloLens4Labs.Scripts.Mappers
 {
@@ -30,7 +30,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.RowKey = dto.ScientistID = obj.Id;
             dto.Name = obj.Name;
             dto.ETag = "*";
-            
+
             return dto;
 
         }

@@ -1,5 +1,5 @@
-using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model.Logs;
 
 
 namespace HoloLens4Labs.Scripts.Mappers
@@ -8,7 +8,7 @@ namespace HoloLens4Labs.Scripts.Mappers
     {
         public TextLogDTO CreateDTO(TextLog obj)
         {
-           return ToDTO(obj);
+            return ToDTO(obj);
         }
 
         public TextLogDTO ToDTO(TextLog obj)

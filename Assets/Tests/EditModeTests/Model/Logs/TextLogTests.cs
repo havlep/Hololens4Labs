@@ -1,8 +1,8 @@
-using System;
-using NUnit.Framework;
+using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
-using HoloLens4Labs.Scripts.Model;
+using NUnit.Framework;
+using System;
 
 public class TextLogTests
 {
@@ -12,7 +12,7 @@ public class TextLogTests
     Experiment experiment;
 
     [SetUp]
-    public void Init() 
+    public void Init()
     {
 
         textDateTime = new DateTime(2022, 12, 25);
@@ -36,9 +36,9 @@ public class TextLogTests
         try
         {
 
-           Assert.That(textLog.Id, Is.EqualTo("101"));
-           Assert.That(textLog.TextData, Is.EqualTo(textData));
-           Assert.That(textLog.CreatedOn, Is.EqualTo(dateTime));
+            Assert.That(textLog.Id, Is.EqualTo("101"));
+            Assert.That(textLog.TextData, Is.EqualTo(textData));
+            Assert.That(textLog.CreatedOn, Is.EqualTo(dateTime));
 
         }
         catch (Exception e)

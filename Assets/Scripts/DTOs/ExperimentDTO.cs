@@ -12,7 +12,7 @@ namespace HoloLens4Labs.Scripts.DTOs
         /// The name of the experiment    
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
         /// The ID of the scientist who created the experiment
         /// </summary>

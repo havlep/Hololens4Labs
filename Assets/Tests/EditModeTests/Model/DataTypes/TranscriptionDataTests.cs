@@ -1,8 +1,8 @@
-using System;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
+using System;
 
 
 public class TranscriptionDataTests
@@ -56,13 +56,13 @@ public class TranscriptionDataTests
 
     // Constructor used when the TranscriptionData is not in the database and the Scientist and Log exist as data model objects
     [Test]
-    public  void NotInDatabaseScientistAndLogConstructor()
+    public void NotInDatabaseScientistAndLogConstructor()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
         var transcriptionData = new TranscriptionData(dateTime, scientist, transcriptionLog);
 
         try
-        {   
+        {
 
             Assert.That(transcriptionData.CreatedOn, Is.EqualTo(dateTime));
 
@@ -96,7 +96,7 @@ public class TranscriptionDataTests
             Assert.That(transcriptionData.CreatedBy, Is.EqualTo(scientist));
 
             Assert.That(transcriptionData.DoneWithinLog, Is.EqualTo(transcriptionLog));
-            
+
             Assert.That(transcriptionData.Id, Is.EqualTo("1411"));
 
         }

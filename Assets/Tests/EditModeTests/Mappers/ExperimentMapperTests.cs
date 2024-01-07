@@ -1,18 +1,18 @@
-using NUnit.Framework;
 using HoloLens4Labs.Scripts.Mappers;
 using HoloLens4Labs.Scripts.Model;
+using NUnit.Framework;
 using System;
 
 public class ExperimentMapperTests
 {
     Experiment experiment;
-    
+
 
     [SetUp]
     public void Init()
     {
 
-        experiment = new Experiment("12", "Michelson-Morely","12", DateTime.Now);
+        experiment = new Experiment("12", "Michelson-Morely", "12", DateTime.Now);
 
 
     }
@@ -27,7 +27,7 @@ public class ExperimentMapperTests
         Assert.IsNotNull(dto);
         Assert.AreEqual(experiment.Id.ToString(), dto.ExperimentID);
         Assert.AreEqual(experiment.Name, dto.Name);
-      
+
     }
 
     [Test]

@@ -48,7 +48,7 @@ namespace HoloLens4Labs.Scripts.Model
         /// <summary>
         /// Property for getting and setting the id of the experiment
         /// </summary>
-        public string Id { get => this.id ; set => this.id = value; }
+        public string Id { get => this.id; set => this.id = value; }
 
         /// <summary>
         /// Property for getting and setting the id of the scientist who created the experiment
@@ -61,10 +61,11 @@ namespace HoloLens4Labs.Scripts.Model
         /// <param name="name"> The name of the experiment </param>
         /// <param name="createdByID"> The id of the scientist who created the experiment </param>
         /// <param name="createdOn"> The date and time when the experiment was created </param>
-        public Experiment(string name, string createdByID, DateTime createOn) { 
-            this.Name = name; 
-            CreatedByID = createdByID; 
-            CreatedOn = createOn; 
+        public Experiment(string name, string createdByID, DateTime createOn)
+        {
+            this.Name = name;
+            CreatedByID = createdByID;
+            CreatedOn = createOn;
         }
 
         // <summary>
@@ -73,10 +74,11 @@ namespace HoloLens4Labs.Scripts.Model
         /// <param name="name">The name of the experiment</param>
         /// <param name="createdBy"> The Scientist object representing the user </param>
         /// <param name="createdOn"> The date and time when the experiment was created </param>
-        public Experiment(string name, Scientist createdBy, DateTime createdOn) { 
-            this.Name = name; 
-            CreatedBy = createdBy; 
-            CreatedOn = createdOn; 
+        public Experiment(string name, Scientist createdBy, DateTime createdOn)
+        {
+            this.Name = name;
+            CreatedBy = createdBy;
+            CreatedOn = createdOn;
         }
 
         /// <summary>
@@ -85,7 +87,7 @@ namespace HoloLens4Labs.Scripts.Model
         /// <param name="name">The name of the experiment</param>
         /// <param name="createdBy"> The Scientist object representing the user </param>
         /// <param name="createdOn"> The date and time when the experiment was created </param>
-        public Experiment(string name, Scientist createdBy) : this (name, createdBy, DateTime.Now){}
+        public Experiment(string name, Scientist createdBy) : this(name, createdBy, DateTime.Now) { }
 
         /// <summary>
         /// Constructor for creating a data model representation of an Experiment that is already present in the database when name, id and scientist is known

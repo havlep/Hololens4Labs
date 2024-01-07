@@ -23,7 +23,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         protected TMP_Text createdOnLabel = default;
         [SerializeField]
         protected TMP_InputField nameField = default;
-        
+
 
         protected GameObject parent;
 
@@ -43,7 +43,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         /// <param name="experiment">The experiment that will be modified</param>
         /// <param name="parent">The parrent object</param>
-        public void InitExisting(Experiment experiment, GameObject parent) {
+        public void InitExisting(Experiment experiment, GameObject parent)
+        {
 
             nameField.text = experiment.Name;
             createdByLabel.text = experiment.CreatedBy.Name;
@@ -53,7 +54,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             gameObject.SetActive(true);
 
         }
-        
+
         /// <summary>
         /// Intialize the view for a new experiment
         /// </summary>
@@ -63,14 +64,15 @@ namespace HoloLens4Labs.Scripts.Controllers
             actionLabel.text = "Create New Experiment";
             gameObject.SetActive(true);
             this.parent = parent;
-        
+
         }
 
         /// <summary>
         /// Save the experiment and open the log selection menu
         /// </summary>
-        public async void SaveExperiment() { 
-        
+        public async void SaveExperiment()
+        {
+
             var experiment = new Experiment(nameField.text, sceneController.CurrentUser);
             experiment = await sceneController.DataManager.CreateOrUpdateExperiment(experiment);
             sceneController.CurrentExperiment = experiment;
@@ -84,12 +86,12 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public void CloseView()
         {
-        
+
             parent.SetActive(true);
             Destroy(gameObject);
 
         }
-    
+
     }
 
 }

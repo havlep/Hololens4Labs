@@ -1,5 +1,5 @@
-using System;
 using HoloLens4Labs.Scripts.Model.DataTypes;
+using System;
 
 namespace HoloLens4Labs.Scripts.Model.Logs
 {

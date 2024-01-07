@@ -1,10 +1,10 @@
 using HoloLens4Labs.Scripts.Exceptions;
-using Microsoft.WindowsAzure.Storage.Table;
 using HoloLens4Labs.Scripts.Mappers;
-using System.Threading.Tasks;
-using System.Net;
+using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Repositories.AzureTables
@@ -26,7 +26,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// The mapper between the data model class and the DTO
         /// </summary>
         protected MapperInterface<OBJ, DTO, DTO> mapper;
-        
+
         /// <summary>
         /// The default partition key for the repository
         /// </summary>
@@ -69,10 +69,10 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             var dto = mapper.CreateDTO(obj);
 
-            if ( dto.RowKey == null || dto.RowKey == string.Empty )
+            if (dto.RowKey == null || dto.RowKey == string.Empty)
                 dto.RowKey = Guid.NewGuid().ToString();
 
-            if ( dto.PartitionKey == null || dto.PartitionKey == string.Empty )
+            if (dto.PartitionKey == null || dto.PartitionKey == string.Empty)
                 dto.PartitionKey = defaultPartitionKey;
 
             // See if there is an object with a similiar id
@@ -87,7 +87,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if (respDTO != null)
                 // Object with a given id already exists throw an exception
                 throw new ObjectDataBaseException("Object of given ID" + dto.PartitionKey +" already exists");
-            
+
 
             // Insert the object into the database
             var insertOrMergeOperation = TableOperation.InsertOrMerge(dto);
@@ -154,9 +154,9 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var deleteOperation = TableOperation.Delete(dto);
             var result = await this.table.ExecuteAsync(deleteOperation);
 
-            if(result.HttpStatusCode == (int)HttpStatusCode.OK)
+            if (result.HttpStatusCode == (int)HttpStatusCode.OK)
                 Debug.Log($"Object {dto.RowKey} deleted from the repo");
-            else 
+            else
                 Debug.LogError($"Failed to delete Object {dto.RowKey} from repo with status code" + result.HttpStatusCode);
 
             return result.HttpStatusCode == (int)HttpStatusCode.OK;
@@ -182,7 +182,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             var insertOrMergeOperation = TableOperation.InsertOrMerge(dto);
             var result = await this.table.ExecuteAsync(insertOrMergeOperation);
 
-            if(result.Result != null)
+            if (result.Result != null)
                 Debug.Log($"Object {dto.RowKey} updated in the repo");
             else
                 Debug.Log($"Failed to update Object {dto.RowKey} in repo with status code" + result.HttpStatusCode);

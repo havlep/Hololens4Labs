@@ -1,12 +1,12 @@
-using System;
 using HoloLens4Labs.Scripts.Model.Logs;
+using System;
 
 namespace HoloLens4Labs.Scripts.Model.DataTypes
 {
     /// <summary>
     /// Class that holds the text data of a Log
     /// </summary>
-    public class TextData: DataType
+    public class TextData : DataType
     {
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         /// <param name="createdBy">The Scientist that created the TextData</param>
         /// <param name="doneWithinLog">The Log that the TextData was created within</param>
         /// <param name="textValue">The text data of the log</param>
-        public TextData( string id, DateTime createdOn, Scientist createdBy, Log doneWithinLog, string textValue ) : base(id, createdOn, createdBy, doneWithinLog )
+        public TextData(string id, DateTime createdOn, Scientist createdBy, Log doneWithinLog, string textValue) : base(id, createdOn, createdBy, doneWithinLog)
         {
             Text = textValue;
         }

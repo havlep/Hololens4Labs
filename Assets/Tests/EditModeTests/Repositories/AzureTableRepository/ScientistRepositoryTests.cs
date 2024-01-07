@@ -1,23 +1,17 @@
-using System;
-using System.Collections;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Exceptions;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.Repositories.AzureTables;
+using HoloLens4Labs.Tests;
 using Microsoft.WindowsAzure.Storage.Table;
 using Moq;
-using HoloLens4Labs.Scripts.DTOs;
-using HoloLens4Labs.Scripts.Repositories;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Linq;
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
-using HoloLens4Labs.Scripts.Exceptions;
+using System.Linq;
 using System.Net;
-using HoloLens4Labs.Tests;
-using HoloLens4Labs.Scripts.Repositories.AzureTables;
-using HoloLens4Labs.Scripts.Model;
-using static UnityEngine.Networking.UnityWebRequest;
+using System.Reflection;
+using System.Threading.Tasks;
 
 public class ScientistRepositoryTests
 {
@@ -174,7 +168,7 @@ public class ScientistRepositoryTests
     public void DeleteSuccess()
     {
 
-       
+
         var scientist = new Scientist("2467", "Scientist");
 
 

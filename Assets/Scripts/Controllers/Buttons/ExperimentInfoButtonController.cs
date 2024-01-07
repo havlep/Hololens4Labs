@@ -1,5 +1,4 @@
 using HoloLens4Labs.Scripts.Model;
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -28,7 +27,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <param name="experiment">The experiment that will be shown in the button</param>
         public void Init(Experiment experiment, ExperimentListMenuController parent)
         {
-   
+
             experimentDateLabel.text = experiment.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss");
             experimentNameLabel.text = experiment.Name;
             this.experiment = experiment;

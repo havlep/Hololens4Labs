@@ -1,8 +1,8 @@
-using System;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
+using System;
 
 public class ImageLogTests
 {
@@ -85,9 +85,9 @@ public class ImageLogTests
     public void ImageLogScientistExperimentInDatabaseConstructor()
     {
         var dateTime = DateTime.Now;
-        var imageData = new ImageData("21",imageDateTime, scientist.Id, "101", "this is a test blob name");
-        var imageLog = new ImageLog("101", dateTime,scientist.Id , experiment.Id,imageData);
-   
+        var imageData = new ImageData("21", imageDateTime, scientist.Id, "101", "this is a test blob name");
+        var imageLog = new ImageLog("101", dateTime, scientist.Id, experiment.Id, imageData);
+
 
         try
         {
@@ -107,5 +107,5 @@ public class ImageLogTests
         }
 
     }
-    
+
 }

@@ -35,7 +35,7 @@ namespace HoloLens4Labs.Scripts.Controllers
                 descriptionInputField.text = string.Empty;
             }
             base.Init(log, parentObj);
-            
+
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         override public void SaveChanges()
         {
 
-            var textLog  = log as TextLog;
+            var textLog = log as TextLog;
             textLog.TextData = new TextData(DateTime.Now, sceneController.CurrentUser, textLog, descriptionInputField.text);
 
             base.SaveChanges();

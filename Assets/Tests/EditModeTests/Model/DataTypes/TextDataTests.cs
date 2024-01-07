@@ -1,8 +1,8 @@
-using System;
-using NUnit.Framework;
-using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
+using NUnit.Framework;
+using System;
 
 public class TextDataTests
 {
@@ -12,9 +12,10 @@ public class TextDataTests
     Experiment experiment;
 
     [SetUp]
-    public void Init() {
-             
-        scientist = new Scientist ("Albert A. Michelson");
+    public void Init()
+    {
+
+        scientist = new Scientist("Albert A. Michelson");
         experiment = new Experiment("Michelson-Morley", scientist);
 
         textLog = new TextLog(scientist, experiment);
@@ -25,8 +26,8 @@ public class TextDataTests
     [Test]
     public void FullDefinitionConstructor()
     {
-        var dateTime = new DateTime(2022,12, 25);
-        var textData = new TextData("101", dateTime, scientist, textLog , "Three quarks for master Mark");
+        var dateTime = new DateTime(2022, 12, 25);
+        var textData = new TextData("101", dateTime, scientist, textLog, "Three quarks for master Mark");
 
         try
         {
@@ -54,7 +55,7 @@ public class TextDataTests
     {
         var dateTime = DateTime.Now;
         var textData = new TextData(dateTime, scientist, textLog, "Three quarks for master Mark");
-        
+
 
         try
         {

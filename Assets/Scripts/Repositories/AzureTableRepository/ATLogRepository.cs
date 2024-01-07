@@ -37,23 +37,25 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 .Take(pageSize);
 
             var segment = await this.table.ExecuteQuerySegmentedAsync(query, continuationToken);
-            
+
             // Map the result to the Log type skipping over any problematic entries
-            var logs = segment.Results.Aggregate( new List<Log>(), (acc, dto) => {
+            var logs = segment.Results.Aggregate(new List<Log>(), (acc, dto) =>
+            {
                 try
                 {
                     acc.Add(mapper.ToOBJ(dto));
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     Debug.Log(e.Message);
                 }
                 return acc;
-                });
+            });
 
             return (logs.ToArray(), segment.ContinuationToken);
-        
+
         }
-        
+
 
 
 

@@ -29,7 +29,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         [SerializeField]
         protected TMP_Text messageLabel = default;
-        
+
         [SerializeField]
         protected Interactable[] buttons = default;
 
@@ -70,7 +70,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             else
                 createdByLabel.SetText("User not found!");
 
-            
+
             parentObject = parent;
             SetButtonsInteractiveState(true);
 
@@ -91,7 +91,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <summary>
         /// Save changes for the log into the azure table storage.
         /// </summary>
-        virtual public async void SaveChanges() 
+        virtual public async void SaveChanges()
         {
 
             Debug.Log($"Saving Log.");

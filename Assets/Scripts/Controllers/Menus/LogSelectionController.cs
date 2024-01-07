@@ -1,8 +1,6 @@
-using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Utils;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -52,7 +50,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             scrollableListPopulator.MakeScrollingList();
             PopulateList(sceneController.DataManager.GetLogsForExperiment(sceneController.CurrentExperiment.Id));
-        
+
         }
 
         /// <summary>
@@ -139,12 +137,13 @@ namespace HoloLens4Labs.Scripts.Controllers
 
         }
 
-        
+
         /// <summary>
         /// Called when the log item button is clicked
         /// </summary>
         /// <param name="log">The log that was clicked</param>
-        public void OnLogItemSelected(Log log) { 
+        public void OnLogItemSelected(Log log)
+        {
 
             switch (log)
             {
@@ -160,7 +159,7 @@ namespace HoloLens4Labs.Scripts.Controllers
                     var tracsciptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
                     tracsciptionLogView.InitWithExisting(transcriptionLog, gameObject);
                     break;
-                 default:
+                default:
                     throw new NotImplementedException("Not implemented log type");
             }
             gameObject.SetActive(false);

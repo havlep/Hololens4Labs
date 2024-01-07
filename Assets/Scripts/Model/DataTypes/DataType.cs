@@ -1,6 +1,6 @@
-using System;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model.Logs;
+using System;
 
 namespace HoloLens4Labs.Scripts.Model.DataTypes
 {
@@ -14,7 +14,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         /// The id of the data type in the database
         /// </summary>
         private string id = string.Empty;
-        
+
         /// <summary>
         /// The timestamp of when the data type was created
         /// </summary>
@@ -34,7 +34,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         /// The database id of the scientist that created the data type
         /// </summary>
         private string scientistID = string.Empty;
-        
+
         /// <summary>
         /// The database id of the log that the data type was created within
         /// <summary>
@@ -83,7 +83,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
             this.dateTime = createdOn;
             this.id = dataTypeId;
             this.scientistID = createdById;
-            
+
             this.logID = doneWithinLogId;
 
         }
@@ -94,8 +94,9 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         ///<param name="createdOn">The timestamp of when the data type was created</param>
         ///<param name="createdBy">The Scientist that created the data type</param>
         ///<param name="doneWithinLog">The Log that the data type was created within</param>
-        public DataType(DateTime createdOn, Scientist createdBy, Log doneWithinLog) { 
-            this.dateTime = createdOn; 
+        public DataType(DateTime createdOn, Scientist createdBy, Log doneWithinLog)
+        {
+            this.dateTime = createdOn;
             this.scientist = createdBy;
             this.log = doneWithinLog;
         }
@@ -105,7 +106,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         ///</summary>
         ///<param name="createdBy">The Scientist that created the data type</param> 
         ///<param name="doneWithinLog">The Log that the data type was created within</param>
-        public DataType(Scientist createdBy, Log doneWithinLog): this(DateTime.Now, createdBy, doneWithinLog){ }
+        public DataType(Scientist createdBy, Log doneWithinLog) : this(DateTime.Now, createdBy, doneWithinLog) { }
 
         ///<summary>
         ///Constructor used when the data type is already in the database and the Scientist and Log exist as data model objects
@@ -114,7 +115,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         ///<param name="createdOn">The timestamp of when the data type was created</param>
         ///<param name="createdBy">The Scientist that created the data type</param>
         ///<param name="doneWithinLog">The Log that the data type was created within</param>
-        public DataType(string dataTypeId, DateTime createdOn, Scientist createdBy, Log doneWithinLog): this(createdOn, createdBy, doneWithinLog)
+        public DataType(string dataTypeId, DateTime createdOn, Scientist createdBy, Log doneWithinLog) : this(createdOn, createdBy, doneWithinLog)
         { this.id = dataTypeId; }
 
     }

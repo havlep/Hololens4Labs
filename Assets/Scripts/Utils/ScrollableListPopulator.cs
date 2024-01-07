@@ -34,7 +34,7 @@ namespace HoloLens4Labs.Scripts.Utils
 
         [SerializeField]
         [Tooltip("Actions to perform on the instantiated prefab")]
-        public GameObjectWithDataActionInterface<object> onInstantiateActions;  
+        public GameObjectWithDataActionInterface<object> onInstantiateActions;
 
         /// <summary>
         /// Object to duplicate in <see cref="ScrollView"/>. 
@@ -126,8 +126,8 @@ namespace HoloLens4Labs.Scripts.Utils
             }
         }
 
-       
-        
+
+
 
 
         public void MakeScrollingList()
@@ -151,12 +151,12 @@ namespace HoloLens4Labs.Scripts.Utils
 
             gridObjectCollection = scrollView.GetComponentInChildren<GridObjectCollection>();
 
-            if(gridObjectCollection != null)
+            if (gridObjectCollection != null)
             {
                 Destroy(gridObjectCollection.gameObject);
             }
 
-         
+
             GameObject collectionGameObject = new GameObject("Grid Object Collection");
             collectionGameObject.transform.position = scrollView.transform.position;
             collectionGameObject.transform.rotation = scrollView.transform.rotation;
@@ -170,29 +170,29 @@ namespace HoloLens4Labs.Scripts.Utils
             gridObjectCollection.Anchor = LayoutAnchor.UpperLeft;
 
             scrollView.AddContent(collectionGameObject);
-            
+
             scrollView.gameObject.SetActive(true);
 
- /*
-                        if (!lazyLoad)
-                        {
-                            for (int i = 0; i < numItems; i++)
-                            {
-                                AddItemTest(itemPrefab);
-                            }
-                            scrollView.gameObject.SetActive(true);
-                            gridObjectCollection.UpdateCollection();
-                        }
-                        else
-                        {
-                            if (loader != null)
-                            {
-                                loader.SetActive(true);
-                            }
+            /*
+                                   if (!lazyLoad)
+                                   {
+                                       for (int i = 0; i < numItems; i++)
+                                       {
+                                           AddItemTest(itemPrefab);
+                                       }
+                                       scrollView.gameObject.SetActive(true);
+                                       gridObjectCollection.UpdateCollection();
+                                   }
+                                   else
+                                   {
+                                       if (loader != null)
+                                       {
+                                           loader.SetActive(true);
+                                       }
 
-                            StartCoroutine(UpdateListOverTime(loader, itemsPerFrame));
-                        }
- */
+                                       StartCoroutine(UpdateListOverTime(loader, itemsPerFrame));
+                                   }
+            */
         }
 
         private IEnumerator UpdateListOverTime(GameObject loaderViz, int instancesPerFrame)
@@ -214,25 +214,25 @@ namespace HoloLens4Labs.Scripts.Utils
             gridObjectCollection.UpdateCollection();
         }
 
-        
-        
+
+
         private void AddItemTest(GameObject item)
         {
             GameObject itemInstance = Instantiate(item, gridObjectCollection.transform);
             itemInstance.SetActive(true);
         }
-        
-       
+
+
         public void AddItem<T>(T data)
         {
-            
+
             GameObject itemInstance = Instantiate(itemPrefab, gridObjectCollection.transform);
             itemInstance.SetActive(true);
             onInstantiateActions.Invoke(itemInstance, data);
             gridObjectCollection.UpdateCollection();
-            
+
         }
-    
+
 
     }
 }

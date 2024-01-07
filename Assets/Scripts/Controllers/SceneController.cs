@@ -1,6 +1,6 @@
-using UnityEngine;
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;
+using UnityEngine;
 
 
 namespace HoloLens4Labs.Scripts.Controllers
@@ -69,7 +69,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Handeling of singleton uniqueness on Awake
+        /// Handling of singleton uniqueness on Awake
         /// </summary>
         private void Awake()
         {
@@ -90,7 +90,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         public async void Init()
         {
 
-            CurrentUser = new Scientist("11","Rutherford");
+            CurrentUser = new Scientist("11", "Rutherford");
             CurrentUser = await dataManager.CreateOrUpdateScientist(CurrentUser);
 
             OpenStartMenu();

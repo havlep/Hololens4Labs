@@ -1,22 +1,17 @@
-using System;
-using System.Collections;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Exceptions;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.Repositories.AzureTables;
+using HoloLens4Labs.Tests;
 using Microsoft.WindowsAzure.Storage.Table;
 using Moq;
-using HoloLens4Labs.Scripts.DTOs;
-using HoloLens4Labs.Scripts.Repositories;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Linq;
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
-using HoloLens4Labs.Scripts.Exceptions;
+using System.Linq;
 using System.Net;
-using HoloLens4Labs.Tests;
-using HoloLens4Labs.Scripts.Repositories.AzureTables;
-using HoloLens4Labs.Scripts.Model;
+using System.Reflection;
+using System.Threading.Tasks;
 
 public class ExperimentRepositoryTests
 {
@@ -56,7 +51,7 @@ public class ExperimentRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
         var experimentRepository = new ATExperimentRepository(mockTable.Object, "l");
-        var experiment = new Experiment("Experiment", "11", DateTime.Now); 
+        var experiment = new Experiment("Experiment", "11", DateTime.Now);
 
         Assert.Throws<ObjectDataBaseException>(
                           () => UnityTestUtils.RunAsyncMethodSync(() => experimentRepository.Create(experiment)));
@@ -84,15 +79,17 @@ public class ExperimentRepositoryTests
 
 
         var experiment = new Experiment("Experiment2", "12", DateTime.Now);
-        var experimentDTO = new ExperimentDTO() {
+        var experimentDTO = new ExperimentDTO()
+        {
 
             Name = experiment.Name,
             ScientistsID = experiment.CreatedByID
-        
+
         };
 
 
-        var operationResult = new TableResult {
+        var operationResult = new TableResult
+        {
 
             Result = experimentDTO
 
@@ -225,7 +222,7 @@ public class ExperimentRepositoryTests
     [Test]
     public void ReadDoesNotExistException()
     {
-        
+
         var experimentDto = new ExperimentDTO()
         {
 
@@ -257,7 +254,8 @@ public class ExperimentRepositoryTests
 
 
     [Test]
-    public void UpdateSuccessfull() {
+    public void UpdateSuccessfull()
+    {
 
         var experimentDto = new ExperimentDTO()
         {
@@ -270,12 +268,12 @@ public class ExperimentRepositoryTests
 
         };
 
-        var experiment = new Experiment("12", "testexp", "13",DateTime.Now);
+        var experiment = new Experiment("12", "testexp", "13", DateTime.Now);
 
         var operationResult = new TableResult
         {
 
-           Result = experimentDto
+            Result = experimentDto
 
         };
 

@@ -37,7 +37,7 @@ namespace HoloLens4Labs.Scripts.Repositories
         /// <param name="scientist">The Scientist to be created</param>
         /// <returns>The created Scientist</returns>
         public Task<Scientist> CreateScientist(Scientist scientist);
-        
+
         /// <summary>
         /// Update an existing Scientist in the database
         /// </summary>

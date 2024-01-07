@@ -1,4 +1,5 @@
-namespace HoloLens4Labs.Scripts.Model {
+namespace HoloLens4Labs.Scripts.Model
+{
 
     /// <summary>
     /// The Scientist data model class that represents users
@@ -18,9 +19,10 @@ namespace HoloLens4Labs.Scripts.Model {
         /// <summary>
         /// Property for getting and setting the name of the scientist
         /// </summary>
-        public string Name {
+        public string Name
+        {
             get => name;
-            set => name = value; 
+            set => name = value;
         }
 
         /// <summary>

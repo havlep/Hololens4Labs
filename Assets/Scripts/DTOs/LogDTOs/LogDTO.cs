@@ -69,12 +69,12 @@ namespace HoloLens4Labs.Scripts.DTOs
         /// <summary>
         /// The ID of the DataType element    
         /// </summary>
-        public string DataID { get; set; } = string.Empty; 
+        public string DataID { get; set; } = string.Empty;
 
         /// <summary>
         /// The timestamp of when the DataType element was created
         /// </summary>
-        public DateTime DataDateTime { get; set; }      
+        public DateTime DataDateTime { get; set; }
 
         /// <summary>
         /// The text associated with the DataType element

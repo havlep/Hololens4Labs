@@ -1,25 +1,20 @@
-using System;
-using System.Collections;
-using NUnit.Framework;
-using UnityEngine.TestTools;
+using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Exceptions;
+using HoloLens4Labs.Scripts.Mappers;
+using HoloLens4Labs.Scripts.Model;
+using HoloLens4Labs.Scripts.Model.DataTypes;
+using HoloLens4Labs.Scripts.Model.Logs;
+using HoloLens4Labs.Scripts.Repositories.AzureTables;
+using HoloLens4Labs.Tests;
 using Microsoft.WindowsAzure.Storage.Table;
 using Moq;
-using HoloLens4Labs.Scripts.DTOs;
-using HoloLens4Labs.Scripts.Repositories;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Linq;
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
-using HoloLens4Labs.Scripts.Exceptions;
+using System.Linq;
 using System.Net;
-using HoloLens4Labs.Tests;
-using HoloLens4Labs.Scripts.Repositories.AzureTables;
-using HoloLens4Labs.Scripts.Model.Logs;
-using HoloLens4Labs.Scripts.Model.DataTypes;
-using HoloLens4Labs.Scripts.Model;
-using HoloLens4Labs.Scripts.Mappers;
+using System.Reflection;
+using System.Threading.Tasks;
 
 public class LogRepositoryTests
 {
@@ -38,14 +33,15 @@ public class LogRepositoryTests
     }
 
     [SetUp]
-    public void init() {
+    public void init()
+    {
 
         scientist = new Scientist("12", "Galileo");
         experiment = new Experiment("13", "Gravity", "12", DateTime.Now);
-        log = new TextLog (scientist, experiment);
-        data = new TextData("14", DateTime.Now, scientist,log, "Feathers and weights have a different acceleration");
+        log = new TextLog(scientist, experiment);
+        data = new TextData("14", DateTime.Now, scientist, log, "Feathers and weights have a different acceleration");
         mapper = new LogMapper();
-    
+
     }
 
     [Test]
@@ -81,7 +77,7 @@ public class LogRepositoryTests
           .Returns(Task.FromResult(mockQuerySegment));
 
         var logRepository = new ATLogRepository(mockTable.Object, "l");
- 
+
 
         Assert.Throws<ObjectDataBaseException>(
                           () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
@@ -128,7 +124,7 @@ public class LogRepositoryTests
                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
 
         var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log));
-        
+
         // TODO 
         Assert.That(result.Id, Is.EqualTo(logDto.RowKey));
         Assert.That(result.CreatedByID, Is.EqualTo(logDto.ScientistID));
@@ -220,7 +216,7 @@ public class LogRepositoryTests
 
         log.Id = "135";
         var logDTO = mapper.ToDTO(log);
-   
+
         var logList = new List<LogDTO>
         {
             logDTO
@@ -338,7 +334,7 @@ public class LogRepositoryTests
         Assert.IsFalse(result);
 
     }
-    
+
 
 }
 

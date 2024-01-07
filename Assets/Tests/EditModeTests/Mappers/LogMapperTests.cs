@@ -1,10 +1,10 @@
-using NUnit.Framework;
+using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Mappers;
 using HoloLens4Labs.Scripts.Model;
-using HoloLens4Labs.Scripts.Model.Logs;
-using System;
 using HoloLens4Labs.Scripts.Model.DataTypes;
-using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model.Logs;
+using NUnit.Framework;
+using System;
 
 public class LogMapperTests
 {
@@ -17,19 +17,20 @@ public class LogMapperTests
     public void Init()
     {
 
-        scientist = new Scientist("1","Albert A. Michelson");
-        experiment = new Experiment("12","Michelson-Morely", scientist, DateTime.Now);
+        scientist = new Scientist("1", "Albert A. Michelson");
+        experiment = new Experiment("12", "Michelson-Morely", scientist, DateTime.Now);
         textLog = new TextLog("31459", new DateTime(2031, 2, 1), scientist, experiment);
 
-        logDTO = new LogDTO() {
+        logDTO = new LogDTO()
+        {
 
             RowKey = "1",
             ScientistID = "1",
             ExperimentID = "1",
             DateTime = DateTime.Now,
             TextLogID = "1",
-           
-   
+
+
         };
 
     }
@@ -96,19 +97,20 @@ public class LogMapperTests
         Assert.IsNotNull(dto);
         Assert.AreEqual(cdto.RowKey, dto.RowKey);
         Assert.AreEqual(cdto.TextLogID, dto.TextLogID);
-     
+
 
     }
 
     [Test]
-    public void ToObjWithData() {
+    public void ToObjWithData()
+    {
 
 
         logDTO.DataID = "1";
         logDTO.DataDateTime = DateTime.Now;
         logDTO.DataScientistID = "1";
         logDTO.Text = "My test data";
-        
+
         LogMapper mapper = new LogMapper();
         var mappedLog = mapper.ToOBJ(logDTO);
 

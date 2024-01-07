@@ -1,6 +1,6 @@
-using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model.DataTypes;
+using HoloLens4Labs.Scripts.Model.Logs;
 
 
 namespace HoloLens4Labs.Scripts.Mappers
@@ -83,7 +83,8 @@ namespace HoloLens4Labs.Scripts.Mappers
 
         }
 
-        private LogDTO ToDTO(TranscriptionLog transcriptionLog, LogDTO dto) {
+        private LogDTO ToDTO(TranscriptionLog transcriptionLog, LogDTO dto)
+        {
 
             dto.TranscriptionLogID = transcriptionLog.Id;
 
@@ -127,7 +128,7 @@ namespace HoloLens4Labs.Scripts.Mappers
         /// <returns>A Log data model object</returns>
         public Log ToOBJ(LogDTO dto)
         {
-            if (dto.TextLogID != null && dto.TextLogID != string.Empty )
+            if (dto.TextLogID != null && dto.TextLogID != string.Empty)
             {
 
                 TextData data = null;
@@ -146,7 +147,8 @@ namespace HoloLens4Labs.Scripts.Mappers
                 return new ImageLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
 
             }
-            else if (dto.TranscriptionLogID != null && dto.TranscriptionLogID != string.Empty) {
+            else if (dto.TranscriptionLogID != null && dto.TranscriptionLogID != string.Empty)
+            {
                 TranscriptionData data = null;
                 if (dto.DataID != null && dto.DataID != string.Empty)
                     data = new TranscriptionData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.ThumbnailBlobName, dto.Text);

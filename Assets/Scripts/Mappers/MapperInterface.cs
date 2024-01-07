@@ -1,12 +1,13 @@
 
-namespace HoloLens4Labs.Scripts.Mappers { 
+namespace HoloLens4Labs.Scripts.Mappers
+{
 
     /// <summary>
     /// An interface for the mappers for mapping between the data model and the DTOs
     /// </summary>
-    public interface MapperInterface<OBJ, DTO, CDTO> 
+    public interface MapperInterface<OBJ, DTO, CDTO>
     {
-       
+
         /// <summary>
         /// The method for mapping from the data model to the DTO
         /// </summary>

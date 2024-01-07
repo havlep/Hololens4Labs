@@ -1,8 +1,8 @@
-using System;
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
+using System;
 
 public class ImageDataTests
 {
@@ -57,7 +57,7 @@ public class ImageDataTests
     public void ImageDataNotYetInDatabase()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var imageData = new ImageData( dateTime, scientist,imageLog);
+        var imageData = new ImageData(dateTime, scientist, imageLog);
 
         try
         {
@@ -96,7 +96,8 @@ public class ImageDataTests
             Assert.That(imageData.CreatedBy, Is.EqualTo(scientist));
 
             Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
-        }catch(Exception)
+        }
+        catch (Exception)
         {
             Assert.Fail();
         }

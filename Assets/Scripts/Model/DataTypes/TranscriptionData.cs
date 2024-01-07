@@ -35,9 +35,9 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         /// <param name="thumbnailBlobName">The blob name of the thumbnail in the blob repository</param>
         /// <param name="text">The textual representation of the transcription</param>
 
-        public TranscriptionData(string id, DateTime createdOn, string createdByID, string doneWithinLogID, string thumbnailBlobName, string text) : base(id, createdOn, createdByID, doneWithinLogID,thumbnailBlobName)
+        public TranscriptionData(string id, DateTime createdOn, string createdByID, string doneWithinLogID, string thumbnailBlobName, string text) : base(id, createdOn, createdByID, doneWithinLogID, thumbnailBlobName)
         {
-            
+
             this.Text = text;
         }
 
@@ -53,7 +53,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
 
         }
 
-        
+
     }
-  
+
 }

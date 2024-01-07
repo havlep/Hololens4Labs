@@ -7,7 +7,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
     /// <summary>
     /// Class that represents image data
     /// </summary>
-    public class ImageData: DataType
+    public class ImageData : DataType
     {
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace HoloLens4Labs.Scripts.Model.DataTypes
         /// <param name="doneWithinLog">The Log that the ImageData was created within</param>
         public ImageData(DateTime createdOn, Scientist createdBy, Log doneWithinLog) : base(createdOn, createdBy, doneWithinLog)
         {
-            
+
         }
 
         /// <summary>

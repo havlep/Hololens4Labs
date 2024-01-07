@@ -6,7 +6,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
     /// <summary>
     /// The Log data model class that represents logs
     /// </summary>
-    public abstract class Log 
+    public abstract class Log
     {
         /// <summary>
         /// The Id of the log in the database
@@ -17,7 +17,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// The timestamp of when the log was created
         /// </summary>
         private DateTime creationDateTime;
-   
+
         /// <summary>
         /// The scientist who created the log
         /// </summary>
@@ -75,11 +75,11 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="createdOn">The timestamp of when the log was created</param>
         /// <param name="createdBy">The Scientist who create the log</param>
         /// <param name="doneWithin">The Experiment that the log was created within</param>
-        public Log(DateTime createdOn, Scientist createdBy, Experiment doneWithin) 
+        public Log(DateTime createdOn, Scientist createdBy, Experiment doneWithin)
         {
             this.scientist = createdBy;
             this.experiment = doneWithin;
-            this.creationDateTime = createdOn; 
+            this.creationDateTime = createdOn;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// </summary>
         /// <param name="createdBy">The Scientist who create the log</param>
         /// <param name="doneWithin">The Experiment that the log was created within</param>
-        public Log(Scientist createdBy, Experiment doneWithin) : this(DateTime.Now,createdBy,doneWithin) { }
+        public Log(Scientist createdBy, Experiment doneWithin) : this(DateTime.Now, createdBy, doneWithin) { }
 
         /// <summary>
         /// Constructor for creating a data model representation of a log that is already present in the database when scientist and experiment are known
@@ -96,7 +96,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="createdOn">The timestamp of when the log was created</param>
         /// <param name="createdBy">The Scientist who create the log</param>
         /// <param name="doneWithin">The Experiment that the log was created within</param>
-        public Log(string logId, DateTime createdOn, Scientist createdBy, Experiment doneWithin) : this (createdOn, createdBy, doneWithin)
+        public Log(string logId, DateTime createdOn, Scientist createdBy, Experiment doneWithin) : this(createdOn, createdBy, doneWithin)
         {
             id = logId;
         }

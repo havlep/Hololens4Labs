@@ -48,7 +48,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="data">The transcription data held within the TranscripitonLog </param>
         public TranscriptionLog(string id, DateTime at, string createdByID, string doneWithinID, TranscriptionData data) : base(id, at, createdByID, doneWithinID)
         {
-          Data = data;
+            Data = data;
         }
 
         /// <summary>

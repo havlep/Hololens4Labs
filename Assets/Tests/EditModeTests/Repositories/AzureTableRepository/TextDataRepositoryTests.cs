@@ -1,24 +1,3 @@
-using System;
-using System.Collections;
-using NUnit.Framework;
-using UnityEngine.TestTools;
-using Microsoft.WindowsAzure.Storage.Table;
-using Moq;
-using HoloLens4Labs.Scripts.DTOs;
-using HoloLens4Labs.Scripts.Repositories;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Linq;
-using Microsoft.WindowsAzure.Storage.Auth;
-using Microsoft.WindowsAzure.Storage;
-using System.Collections.Generic;
-using HoloLens4Labs.Scripts.Exceptions;
-using System.Net;
-using HoloLens4Labs.Tests;
-
-
-
-
 public class TextDataRepositoryTests
 {
 

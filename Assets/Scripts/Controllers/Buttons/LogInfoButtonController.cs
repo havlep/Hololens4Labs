@@ -49,9 +49,9 @@ namespace HoloLens4Labs.Scripts.Controllers
                         logTextLabel.text = transcriptionLog.Data.Text;
                     logTypeLabel.text = TranscriptionLog.GetTypeName();
                     break;
-                 default:
+                default:
                     throw new NotImplementedException("Not implemented log type");
-            
+
             }
 
             this.log = log;

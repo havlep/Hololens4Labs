@@ -18,7 +18,7 @@ namespace HoloLens4Labs.Scripts.Managers
         [SerializeField]
         private string endpoint;
 
-        private AzureImageAnalysisService AzureImageAnalysis ;
+        private AzureImageAnalysisService AzureImageAnalysis;
 
         /// <summary>
         /// Setup the Azure Image Analysis service when the object is created
@@ -39,6 +39,6 @@ namespace HoloLens4Labs.Scripts.Managers
             var result = AzureImageAnalysis.Transcribe(image);
             return result;
         }
-        
+
     }
 }

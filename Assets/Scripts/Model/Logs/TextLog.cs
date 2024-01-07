@@ -1,5 +1,5 @@
-using System;
 using HoloLens4Labs.Scripts.Model.DataTypes;
+using System;
 
 namespace HoloLens4Labs.Scripts.Model.Logs
 {
@@ -25,7 +25,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="createdBy">The Scientist who created the log</param>
         /// <param name="doneWithin">The Experiment under which the log was created</param>
 
-        public TextLog(DateTime at, Scientist createdBy, Experiment doneWithin) : base(at,createdBy,doneWithin)
+        public TextLog(DateTime at, Scientist createdBy, Experiment doneWithin) : base(at, createdBy, doneWithin)
         { }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="createdBy">The Scientist who created the TextLog</param>
         /// <param name="doneWithin">The Experiment under which the TextLog was created</param>
         public TextLog(string id, DateTime at, Scientist createdBy, Experiment doneWithin) : base(id, at, createdBy, doneWithin)
-        {}
+        { }
 
         /// <summary>
         /// Constructor used when the TextLog is already in the database and the Scientist and Experiment do not exist as data model objects at the moment
@@ -47,9 +47,9 @@ namespace HoloLens4Labs.Scripts.Model.Logs
         /// <param name="doneWithinID">The id of the Experiment under which the TextLog was created</param>
         /// <param name="data">The text data of the log</param>
         public TextLog(string id, DateTime at, string createdByID, string doneWithinID, TextData data) : base(id, at, createdByID, doneWithinID)
-        { 
+        {
             TextData = data;
-        
+
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
-using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.DTOs;
+using HoloLens4Labs.Scripts.Model;
 
 namespace HoloLens4Labs.Scripts.Mappers
 {
@@ -9,7 +9,7 @@ namespace HoloLens4Labs.Scripts.Mappers
     /// </summary>
     public class ExperimentMapper : MapperInterface<Experiment, ExperimentDTO, ExperimentDTO>
     {
-    
+
         /// <summary>
         /// Method for mapping from an Experiment to the DTO when creating in a database for the first time 
         /// </summary>
