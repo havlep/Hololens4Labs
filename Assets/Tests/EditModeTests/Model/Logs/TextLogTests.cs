@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Model;
-using HoloLens4Labs.Scripts.Exceptions;
-using System.Security.Cryptography;
 
 public class TextLogTests
 {
