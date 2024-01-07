@@ -51,13 +51,6 @@ namespace HoloLens4Labs.Scripts.Model.Logs
 
         }
 
-        /// <summary>
-        /// Constructor used to create a new ImageLog when the Scientist and Experiment exist as data model objects
-        /// </summary>
-        /// <param name="createdBy">The Scientist that created the ImageLog</param>
-        /// <param name="doneWithin">The Experiment that the ImageLog was created within</param>
-        public ImageLog(Scientist createdBy, Experiment doneWithin) : base(createdBy, doneWithin)
-        { }
 
         /// <summary>
         /// Static method for getting the type name of the Log
