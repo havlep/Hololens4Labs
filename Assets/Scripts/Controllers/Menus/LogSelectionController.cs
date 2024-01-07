@@ -49,25 +49,16 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         void OnEnable()
         {
+
             scrollableListPopulator.MakeScrollingList();
-
-            var logs = new List<Log>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                var log = new TextLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
-                log.Id = i.ToString();
-                var textData = new TextData(DateTime.Now, sceneController.CurrentUser, log, "Testo di prova");
-                log.TextData = textData;
-
-                logs.Add(log);
-            }
-
-
-            //  PopulateList(Task<Log[]>.FromResult(logs.ToArray()));
             PopulateList(sceneController.DataManager.GetLogsForExperiment(sceneController.CurrentExperiment.Id));
+        
         }
 
+        /// <summary>
+        /// Populate the scrollable list populator with the list of logs
+        /// </summary>  
+        /// <param name="logs">A list of logs</param>
         private async void PopulateList(Task<Log[]> logs)
         {
             var logsArray = await logs;
