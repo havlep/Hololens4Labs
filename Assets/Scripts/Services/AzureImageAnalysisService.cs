@@ -16,8 +16,8 @@ namespace HoloLens4Labs.Scripts.Services
     public class AzureImageAnalysisService
     {
 
-        string requestParameters = "/computervision/imageanalysis:analyze?features=read&model-version=latest&language=en&api-version=2023-02-01-preview";
-        string requestURI;
+        private string requestParameters = "/computervision/imageanalysis:analyze?features=read&model-version=latest&language=en&api-version=2023-02-01-preview";
+        private string requestURI;
         private readonly HttpClient client;
 
         /// <summary>
@@ -46,13 +46,15 @@ namespace HoloLens4Labs.Scripts.Services
         {
             HttpResponseMessage result;
 
-            if (imageData.Data == null)
+            var data = await imageData.getData();
+
+            if (data == null)
             {
                 Debug.LogError("Error in AzureImageAnalysisService: ImageData does not contain any image data");
                 throw new Exception("Error in AzureImageAnalysisService: ImageData does not contain any image data");
             }
 
-            using (var content = new ByteArrayContent(imageData.Data))
+            using (var content = new ByteArrayContent(data))
             {
 
 
@@ -77,11 +79,6 @@ namespace HoloLens4Labs.Scripts.Services
                 Debug.LogError("Error in AzureImageAnalysisService: " + result.StatusCode + " " + result.ReasonPhrase);
                 throw new Exception("Error in AzureImageAnalysisService: " + result.StatusCode + " " + result.ReasonPhrase);
             }
-
-
-
-
-
         }
     }
 }

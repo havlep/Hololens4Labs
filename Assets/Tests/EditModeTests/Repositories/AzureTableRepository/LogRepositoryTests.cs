@@ -40,7 +40,7 @@ public class LogRepositoryTests
         experiment = new Experiment("13", "Gravity", "12", DateTime.Now);
         log = new TextLog(scientist, experiment);
         data = new TextData("14", DateTime.Now, scientist, log, "Feathers and weights have a different acceleration");
-        mapper = new LogMapper();
+        mapper = new LogMapper(null);
 
     }
 
@@ -76,7 +76,7 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
 
 
         Assert.Throws<ObjectDataBaseException>(
@@ -118,7 +118,7 @@ public class LogRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
 
         Assert.DoesNotThrow(
                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
@@ -170,7 +170,7 @@ public class LogRepositoryTests
          .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
          .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
 
         Assert.Throws<ObjectDataBaseException>(
                          () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Create(log)));
@@ -204,7 +204,7 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
         var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Delete(log));
         Assert.IsTrue(result);
 
@@ -236,7 +236,7 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
 
         var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDTO.RowKey));
 
@@ -271,7 +271,7 @@ public class LogRepositoryTests
             It.IsAny<TableContinuationToken>()))
           .Returns(Task.FromResult(mockQuerySegment));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
 
         Assert.Throws<ObjectDataBaseException>(
                           () => UnityTestUtils.RunAsyncMethodSync(() => logRepository.Read(logDto.RowKey)));
@@ -305,7 +305,7 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
         var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(log));
         Assert.IsTrue(result);
 
@@ -329,7 +329,7 @@ public class LogRepositoryTests
         .Setup(w => w.ExecuteAsync(It.IsAny<TableOperation>()))
         .Returns(Task.FromResult(operationResult));
 
-        var logRepository = new ATLogRepository(mockTable.Object, "l");
+        var logRepository = new ATLogRepository(mockTable.Object, "l", null);
         var result = UnityTestUtils.RunAsyncMethodSync(() => logRepository.Update(log));
         Assert.IsFalse(result);
 

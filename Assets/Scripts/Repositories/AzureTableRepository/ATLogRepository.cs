@@ -16,7 +16,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// <summary>
         /// Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses
         /// </summary>
-        public ATLogRepository(CloudTable table, string partitionKey) : base(new LogMapper(), table, partitionKey) { }
+        public ATLogRepository(CloudTable table, string partitionKey, Func<string, Task<byte[]>> getBlobData) : base(new LogMapper(getBlobData), table, partitionKey) { }
 
         /// <summary>
         /// Get all Logs for Experiment using pagination

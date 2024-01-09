@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
@@ -7,6 +9,13 @@ namespace HoloLens4Labs.Scripts.Mappers
 {
     public class LogMapper : MapperInterface<Log, LogDTO, LogDTO>
     {
+
+        private Func<string, Task<byte[]>> getBlobData;
+
+        public LogMapper(Func<string, Task<byte[]>> getBlobData)
+        {
+            this.getBlobData = getBlobData;
+        }
 
         /// <summary>
         /// Method for mapping from an Log to the DTO when creating in a database for the first time 
@@ -101,7 +110,7 @@ namespace HoloLens4Labs.Scripts.Mappers
                 dto.DataID = transcriptionData.Id;
                 dto.DataDateTime = transcriptionData.CreatedOn;
                 dto.DataScientistID = transcriptionData.CreatedById;
-                dto.ThumbnailBlobName = transcriptionData.ThumbnailBlobName;
+                
             }
             return dto;
 
@@ -115,7 +124,7 @@ namespace HoloLens4Labs.Scripts.Mappers
                 dto.DataID = imageData.Id;
                 dto.DataDateTime = imageData.CreatedOn;
                 dto.DataScientistID = imageData.CreatedById;
-                dto.ThumbnailBlobName = imageData.ThumbnailBlobName;
+                
             }
             return dto;
 
@@ -142,7 +151,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             {
                 ImageData data = null;
                 if (dto.DataID != null && dto.DataID != string.Empty)
-                    data = new ImageData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.ThumbnailBlobName);
+                    data = new ImageData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, getBlobData);
 
                 return new ImageLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
 
@@ -151,7 +160,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             {
                 TranscriptionData data = null;
                 if (dto.DataID != null && dto.DataID != string.Empty)
-                    data = new TranscriptionData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.ThumbnailBlobName, dto.Text);
+                    data = new TranscriptionData(dto.DataID, dto.DataDateTime, dto.DataScientistID, dto.RowKey, dto.Text, getBlobData);
 
                 return new TranscriptionLog(dto.RowKey, dto.DateTime, dto.ScientistID, dto.ExperimentID, data);
 

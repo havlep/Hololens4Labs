@@ -3,6 +3,8 @@ using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
+using UnityEngine;
 
 public class ImageDataTests
 {
@@ -27,14 +29,12 @@ public class ImageDataTests
     public void FullDefinitionConstructor()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var imageData = new ImageData("101", dateTime, "1015", "2023", "Blob name");
+        var imageData = new ImageData("101", dateTime, "1015", "2023", null);
 
         try
         {
 
             Assert.That(imageData.Id, Is.EqualTo("101"));
-
-            Assert.That(imageData.ThumbnailBlobName, Is.EqualTo("Blob name"));
 
             Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
 
@@ -57,7 +57,9 @@ public class ImageDataTests
     public void ImageDataNotYetInDatabase()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var imageData = new ImageData(dateTime, scientist, imageLog);
+        byte[] data = new byte[10];
+        Texture2D texture = new Texture2D(1, 1);
+        var imageData = new ImageData(dateTime, scientist, imageLog, data, texture);
 
         try
         {
@@ -67,6 +69,10 @@ public class ImageDataTests
             Assert.That(imageData.CreatedBy, Is.EqualTo(scientist));
 
             Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
+
+            Assert.That(imageData.getData().Result, Is.EqualTo(data));
+
+            Assert.That(imageData.Texture, Is.EqualTo(texture));
 
 
         }
@@ -84,7 +90,8 @@ public class ImageDataTests
     public void ImageDataAlreadyInDatabase()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var imageData = new ImageData("101", dateTime, scientist, imageLog);
+        var data = new byte[10];
+        var imageData = new ImageData("101", dateTime, scientist, imageLog, _ => Task.FromResult(data));
 
         try
         {
@@ -96,6 +103,9 @@ public class ImageDataTests
             Assert.That(imageData.CreatedBy, Is.EqualTo(scientist));
 
             Assert.That(imageData.CreatedOn, Is.EqualTo(dateTime));
+
+            Assert.That(imageData.getData().Result, Is.EqualTo(data));
+
         }
         catch (Exception)
         {

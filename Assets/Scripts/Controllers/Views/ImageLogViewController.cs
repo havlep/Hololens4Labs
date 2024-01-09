@@ -3,6 +3,7 @@ using HoloLens4Labs.Scripts.Model.Logs;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace HoloLens4Labs.Scripts.Controllers
 {
     /// <summary>
@@ -36,8 +37,9 @@ namespace HoloLens4Labs.Scripts.Controllers
             if (log.Data == null)
                 throw new System.Exception("No image in existing image imagelog");
 
-            lastModifiedLabel.SetText(log.Data.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss"));
-            imageCanvas.sprite = spriteFromImage(log.Data);
+            lastModifiedLabel.SetText(log.Data.CreatedOn.ToString("dd/MM/yyyy HH:mm:ss")); 
+            imageCanvas.sprite = SpriteFromImage(log.Data);
+            
 
             base.Init(log, parentObj);
 
@@ -64,7 +66,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         /// <param name="imageData">The data of the image</param>
         /// <returns>A sprite created from the image data</returns>
-        private Sprite spriteFromImage(ImageData imageData)
+        private Sprite SpriteFromImage(ImageData imageData)
         {
             return Sprite.Create(imageData.Texture, new Rect(0, 0, imageData.Texture.width, imageData.Texture.height), new Vector2(0.5f, 0.5f));
         }
@@ -82,7 +84,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             var imagelog = log as ImageLog;
             imagelog.Data = (ImageData)data;
-            imageCanvas.sprite = spriteFromImage(imagelog.Data);
+            imageCanvas.sprite = SpriteFromImage(imagelog.Data);
             gameObject.SetActive(true);
 
         }

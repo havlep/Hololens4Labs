@@ -91,11 +91,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             var imageData = data as ImageData;
 
             // Ugly hack to get the data to the right type until I can refactor the data type to ImageData
-            var transData = new TranscriptionData(imageData.Id, imageData.CreatedOn, imageData.CreatedBy, imageData.DoneWithinLog);
-            transData.Data = imageData.Data;
-            transData.Texture = imageData.Texture;
-
-            transData.Text = Transcribe();
+            var transData = new TranscriptionData(imageData, Transcribe(imageData));
 
             if (transData.Text == null || transData.Text == string.Empty)
                 messageLabel.text = "No transcription available";
@@ -129,15 +125,13 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Trascribes the image that was captured
+        /// Transcribes the image that was captured
         /// </summary>
+        /// <param name="imageData">An image data object that will be transcribed</param>
         /// <returns>The transcription</returns>
-        private string Transcribe()
+        private string Transcribe(ImageData imageData)
         {
-
-            var transcriptionLog = log as TranscriptionLog;
-            return sceneController.ImageAnalysisManager.TranscribeImage(transcriptionLog.Data).Result;
-
+            return sceneController.ImageAnalysisManager.TranscribeImage(imageData).Result;
         }
 
     }

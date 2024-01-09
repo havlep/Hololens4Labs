@@ -3,6 +3,7 @@ using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
 using System;
+using UnityEngine;
 
 public class ImageLogTests
 {
@@ -29,7 +30,7 @@ public class ImageLogTests
 
         var dateTime = new DateTime(2023, 1, 20);
         var imageLog = new ImageLog(dateTime, scientist, experiment);
-        var imageData = new ImageData(imageDateTime, scientist, imageLog);
+        var imageData = new ImageData(imageDateTime, scientist, imageLog, new byte[10], new Texture2D(1,1));
         imageLog.Data = imageData;
 
         try
@@ -58,7 +59,7 @@ public class ImageLogTests
 
         var dateTime = new DateTime(2023, 1, 20);
         var imageLog = new ImageLog("101", dateTime, scientist, experiment);
-        var imageData = new ImageData(imageDateTime, scientist, imageLog);
+        var imageData = new ImageData(imageDateTime, scientist, imageLog, new byte[10], new Texture2D(1,1));
         imageLog.Data = imageData;
 
         try
@@ -85,7 +86,7 @@ public class ImageLogTests
     public void ImageLogScientistExperimentInDatabaseConstructor()
     {
         var dateTime = DateTime.Now;
-        var imageData = new ImageData("21", imageDateTime, scientist.Id, "101", "this is a test blob name");
+        var imageData = new ImageData("21", imageDateTime, scientist.Id, "101", null);
         var imageLog = new ImageLog("101", dateTime, scientist.Id, experiment.Id, imageData);
 
 

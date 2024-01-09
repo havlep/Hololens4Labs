@@ -265,10 +265,8 @@ namespace HoloLens4Labs.Scripts.Controllers
                         var texture = new Texture2D(2, 2);
                         var data = buffer.ToArray();
                         texture.LoadImage(data);
-                        var imageData = new ImageData(DateTime.Now, SceneController.CurrentUser, log);
-                        imageData.Data = data;
-                        imageData.Texture = texture;
-
+                        var imageData = new ImageData(DateTime.Now, SceneController.CurrentUser, log, data, texture);
+                        
                         completionSource.TrySetResult(imageData);
                     });
 #else

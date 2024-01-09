@@ -39,7 +39,7 @@ public class LogMapperTests
     public void ToDTONoData()
     {
 
-        LogMapper mapper = new LogMapper();
+        LogMapper mapper = new LogMapper(null);
         var dto = mapper.ToDTO(textLog);
 
         Assert.IsNotNull(dto);
@@ -64,7 +64,7 @@ public class LogMapperTests
         var textData = new TextData("1", DateTime.Now, "2", "31459", "This is a test");
         textLog.TextData = textData;
 
-        LogMapper mapper = new LogMapper();
+        LogMapper mapper = new LogMapper(null);
         var dto = mapper.ToDTO(textLog);
 
         Assert.IsNotNull(dto);
@@ -89,7 +89,7 @@ public class LogMapperTests
     public void CreateDTO()
     {
 
-        LogMapper mapper = new LogMapper();
+        LogMapper mapper = new LogMapper(null);
         var dto = mapper.ToDTO(textLog);
         var cdto = mapper.CreateDTO(textLog);
 
@@ -111,7 +111,7 @@ public class LogMapperTests
         logDTO.DataScientistID = "1";
         logDTO.Text = "My test data";
 
-        LogMapper mapper = new LogMapper();
+        LogMapper mapper = new LogMapper(null);
         var mappedLog = mapper.ToOBJ(logDTO);
 
         Assert.IsNotNull(mappedLog);
@@ -136,7 +136,7 @@ public class LogMapperTests
     public void ToObjNoData()
     {
 
-        LogMapper mapper = new LogMapper();
+        LogMapper mapper = new LogMapper(null);
         var mappedLog = mapper.ToOBJ(logDTO);
 
         Assert.IsNotNull(mappedLog);

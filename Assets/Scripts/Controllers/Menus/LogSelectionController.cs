@@ -151,13 +151,13 @@ namespace HoloLens4Labs.Scripts.Controllers
                     var textLogView = Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
                     textLogView.InitWithExisting(textLog, gameObject);
                     break;
+                case TranscriptionLog transcriptionLog:
+                    var transcriptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
+                    transcriptionLogView.InitWithExisting(transcriptionLog, gameObject);
+                    break;
                 case ImageLog imageLog:
                     var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);
                     imageLogView.InitWithExisting(imageLog, gameObject);
-                    break;
-                case TranscriptionLog transcriptionLog:
-                    var tracsciptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
-                    tracsciptionLogView.InitWithExisting(transcriptionLog, gameObject);
                     break;
                 default:
                     throw new NotImplementedException("Not implemented log type");

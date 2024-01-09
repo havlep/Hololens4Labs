@@ -3,6 +3,7 @@ using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using NUnit.Framework;
 using System;
+using UnityEngine;
 
 
 public class TranscriptionDataTests
@@ -27,14 +28,12 @@ public class TranscriptionDataTests
     public void InDatabaseScientistAndLogIDConstructor()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var transcriptionData = new TranscriptionData("101", dateTime, "1015", "2023", "Blob name", "Text");
+        var transcriptionData = new TranscriptionData("101", dateTime, "1015", "2023", "Text", null);
 
         try
         {
 
             Assert.That(transcriptionData.Id, Is.EqualTo("101"));
-
-            Assert.That(transcriptionData.ThumbnailBlobName, Is.EqualTo("Blob name"));
 
             Assert.That(transcriptionData.CreatedOn, Is.EqualTo(dateTime));
 
@@ -59,7 +58,9 @@ public class TranscriptionDataTests
     public void NotInDatabaseScientistAndLogConstructor()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var transcriptionData = new TranscriptionData(dateTime, scientist, transcriptionLog);
+        byte[] data = new byte[10];
+        Texture2D texture = new Texture2D(1, 1);
+        var transcriptionData = new TranscriptionData(dateTime, scientist, transcriptionLog, data, texture);
 
         try
         {
@@ -69,6 +70,10 @@ public class TranscriptionDataTests
             Assert.That(transcriptionData.CreatedBy, Is.EqualTo(scientist));
 
             Assert.That(transcriptionData.DoneWithinLog, Is.EqualTo(transcriptionLog));
+
+            Assert.That(transcriptionData.getData().Result, Is.EqualTo(data));
+
+            Assert.That(transcriptionData.Texture, Is.EqualTo(texture));
 
         }
         catch (Exception)
@@ -86,7 +91,7 @@ public class TranscriptionDataTests
     public void InDatabaseScientistAndLogConstructor()
     {
         var dateTime = new System.DateTime(2022, 12, 25);
-        var transcriptionData = new TranscriptionData("1411", dateTime, scientist, transcriptionLog);
+        var transcriptionData = new TranscriptionData("1411", dateTime, scientist, transcriptionLog, null);
 
         try
         {
