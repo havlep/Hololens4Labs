@@ -35,11 +35,6 @@ namespace HoloLens4Labs.Scripts.Managers
                 Debug.Log($"Repository object does not implement the Repository Interface.");
                 throw new MissingReferenceException("Unity project is not setup correctly");
             }
-            if (repo.IsReady())
-                Debug.Log($"Repository object has been setup properly.");
-            else
-                Debug.Log($"Repository object has not been initialized.");
-
 
         }
 
@@ -50,8 +45,14 @@ namespace HoloLens4Labs.Scripts.Managers
         {
             // Check that the right repository was intialized and propagate the info
             if (IsReady())
+            {
+                Debug.Log($"Repository object has been setup properly.");
                 onRepoReadyReady?.Invoke();
-
+            }
+            else
+            {
+                Debug.Log($"Repository object has not been initialized.");
+            }
         }
 
 
@@ -80,9 +81,19 @@ namespace HoloLens4Labs.Scripts.Managers
         /// </summary>
         /// <param name="scientist">The scientist</param>
         /// <returns>A new scientist object with an ID in the repo</returns>
-        public Task<Scientist> CreateScientist(Scientist scientist)
+        public async Task<Scientist> CreateScientist(Scientist scientist)
         {
-            return repo.CreateScientist(scientist);
+            return await repo.CreateScientist(scientist);
+        }
+
+        /// <summary>
+        /// Get Scientist by ID from the repository
+        /// </summary>
+        /// <param name="scientistId">The id of the scientist that we want to return</param>
+        /// <returns>The scientist with the given ID if he/she exist</returns>
+        public async Task<Scientist> GetScientistById(string scientistId)
+        {
+            return await repo.GetScientistById(scientistId);
         }
 
         /// <summary>
@@ -222,6 +233,16 @@ namespace HoloLens4Labs.Scripts.Managers
         public async Task<Experiment[]> GetAllExperiments()
         {
             return await repo.GetAllExperiments();
+        }
+
+        /// <summary>
+        /// Get experiment by ID from the repository
+        /// </summary>
+        /// <param name="experimentID"> The Id of the Experiment </param>
+        /// <returns> The Experiment with the given ID </returns>
+        public async Task<Experiment> GetExperimentByID(string experimentID)
+        {
+            return await repo.GetExperimentByID(experimentID);
         }
     }
 }

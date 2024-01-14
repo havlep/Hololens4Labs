@@ -36,7 +36,7 @@ public class LogRepositoryTests
     public void init()
     {
 
-        scientist = new Scientist("12", "Galileo");
+        scientist = new Scientist("12", "Galileo", "");
         experiment = new Experiment("13", "Gravity", "12", DateTime.Now);
         log = new TextLog(scientist, experiment);
         data = new TextData("14", DateTime.Now, scientist, log, "Feathers and weights have a different acceleration");

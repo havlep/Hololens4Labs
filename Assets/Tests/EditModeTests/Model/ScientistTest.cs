@@ -8,7 +8,7 @@ public class ScientistTest
     [Test]
     public void FullDefinitionConstructor()
     {
-        var scientist = new Scientist("22", "John Glen");
+        var scientist = new Scientist("22", "John Glen", "");
 
         try
         {

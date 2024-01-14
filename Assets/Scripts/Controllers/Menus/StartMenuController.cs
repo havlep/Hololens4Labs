@@ -34,7 +34,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// <summary>
         /// Initialize the view with the last experiment data
         /// </summary>
-        void Start()
+        async void OnEnable()
         {
 
             if (sceneController == null)
@@ -42,18 +42,18 @@ namespace HoloLens4Labs.Scripts.Controllers
                 sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
             }
 
-            /*
-            if (ExperimentManager.Instance.LastExperiment != null)
+            if(sceneController.CurrentUser.LastExperimentId != null)
             {
-                lastExpEditDateLabel.text = ExperimentManager.Instance.LastExperiment.LastEditDate.ToShortDateString();
-                lastExpEditNameLabel.text = ExperimentManager.Instance.LastExperiment.Name;
-                lastExpUsedLabel.text = ExperimentManager.Instance.LastExperiment.LastUseDate.ToShortDateString();
+                var experiment =  await sceneController.DataManager.GetExperimentByID(sceneController.CurrentUser.LastExperimentId);
+                lastExpEditDateLabel.text = experiment.CreatedOn.ToLongDateString();
+                lastExpEditNameLabel.text = experiment.Name;
+                ContinueLastExpButton.SetActive(true);
             }
             else
             {
                 ContinueLastExpButton.SetActive(false);
             }
-            */
+            
         }
 
         // Select From Existing Experiments

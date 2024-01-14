@@ -17,5 +17,10 @@ namespace HoloLens4Labs.Scripts.DTOs
         /// </summary>
         public string ScientistID { get; set; }
 
+        /// <summary>
+        /// The id of the last experiment that the scientist worked on
+        /// </summary>
+        public string LastExperimentId { get; set; }
+
     }
 }

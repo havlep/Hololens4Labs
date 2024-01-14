@@ -25,6 +25,13 @@ namespace HoloLens4Labs.Scripts.Repositories
         public Task<bool> UpdateExperiment(Experiment experiment);
 
         /// <summary>
+        /// Get Scientist by ID from the repository
+        /// </summary>
+        /// <param name="scientistId">The id of the scientist that we want to return</param>
+        /// <returns>The scientist with the given ID if he/she exist</returns>
+        public Task<Scientist> GetScientistById(string scientistId);
+
+        /// <summary>
         /// Delete an existing Experiment from the database
         /// </summary>
         /// <param name="experiment">The Experiment to be deleted</param>
@@ -83,6 +90,13 @@ namespace HoloLens4Labs.Scripts.Repositories
         /// </summary>
         /// <returns>A list of all experiment in the database</returns>
         public Task<Experiment[]> GetAllExperiments();
+
+        /// <summary>
+        /// Get experiment by ID from the repository
+        /// </summary>
+        /// <param name="experimentID"> The Id of the Experiment </param>
+        /// <returns> The Experiment with the given ID </returns>
+        public Task<Experiment> GetExperimentByID(string experimentID);
 
         bool IsReady();
 

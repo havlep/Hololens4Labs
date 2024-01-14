@@ -131,7 +131,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OnExperimentInfoButtonClick(Experiment experiment)
         {
 
-            sceneController.CurrentExperiment = experiment;
+            sceneController.SetExperiment(experiment);
             sceneController.OpenLogSelectionMenu();
             gameObject.SetActive(false);
 

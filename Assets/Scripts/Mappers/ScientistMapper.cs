@@ -30,6 +30,7 @@ namespace HoloLens4Labs.Scripts.Mappers
             dto.RowKey = dto.ScientistID = obj.Id;
             dto.Name = obj.Name;
             dto.ETag = "*";
+            dto.LastExperimentId = obj.LastExperimentId;
 
             return dto;
 
@@ -42,7 +43,7 @@ namespace HoloLens4Labs.Scripts.Mappers
         /// <returns>Scientist data model object</returns>
         public Scientist ToOBJ(ScientistDTO dto)
         {
-            return new Scientist(dto.RowKey, dto.Name);
+            return new Scientist(dto.RowKey, dto.Name, dto.LastExperimentId);
         }
     }
 }

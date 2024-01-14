@@ -16,7 +16,7 @@ public class TextDataMapperTests
     public void Init()
     {
 
-        scientist = new Scientist("11", "Albert A. Michelson");
+        scientist = new Scientist("11", "Albert A. Michelson", "");
         experiment = new Experiment("12", "Michelson-Morely", scientist, DateTime.Now);
 
         textLog = new TextLog("31459", new DateTime(2031, 1, 1), scientist, experiment);

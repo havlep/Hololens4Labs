@@ -33,7 +33,7 @@ public class ExperimentTest
     [Test]
     public void OnlyNameInConstructor()
     {
-        var scientist = new Scientist("21", "Rutherford");
+        var scientist = new Scientist("21", "Rutherford", "");
         var experiment = new Experiment("Trinity", scientist);
 
         try

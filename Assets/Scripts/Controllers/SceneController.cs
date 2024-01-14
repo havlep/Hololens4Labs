@@ -1,3 +1,6 @@
+using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.Controllers;
+using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;
 using UnityEngine;
@@ -28,11 +31,34 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private GameObject logSelectionMenu = default;
 
+        private Experiment currentExperiment = default;
 
         /// <summary>
         /// The experiment that is currently being worked on
         /// </summary>
-        public Experiment CurrentExperiment { get; set; }
+        public Experiment CurrentExperiment
+        {
+            get => currentExperiment;
+        }
+
+        /// <summary>
+        /// Set the current experiment
+        /// </summary>
+        /// <param name="experiment">The experiment that will be used as current</param>
+        /// 
+        public async void SetExperiment(Experiment experiment)
+        {
+                
+            if (CurrentUser != null && CurrentUser.LastExperimentId != experiment.Id)
+            { 
+                CurrentUser.LastExperimentId = experiment.Id; 
+                await dataManager.CreateOrUpdateScientist(CurrentUser);
+            }
+
+            currentExperiment = experiment;
+
+        }
+        
 
         /// <summary>
         /// The user currently using the app
@@ -63,9 +89,9 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             loadingMenu?.SetActive(true);
             currentMenu = loadingMenu;
-            startMenu?.SetActive(false);
-            experimentListMenu?.SetActive(false);
-            logSelectionMenu?.SetActive(false);
+            //startMenu?.SetActive(false);
+            //experimentListMenu?.SetActive(false);
+            //logSelectionMenu?.SetActive(false);
         }
 
         /// <summary>
@@ -85,13 +111,20 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Initialize the scene controller called from the databasemanager once it is ready
+        /// Initialize the scene controller called from the database manager once it is ready
         /// </summary>
         public async void Init()
         {
 
-            CurrentUser = new Scientist("11", "Rutherford");
-            CurrentUser = await dataManager.CreateOrUpdateScientist(CurrentUser);
+            try
+            {
+                CurrentUser = await dataManager.GetScientistById("11");
+            }
+            catch (ObjectDataBaseException)
+            {
+                CurrentUser = new Scientist("11", "Rutherford", "");
+                CurrentUser = await dataManager.CreateOrUpdateScientist(CurrentUser);
+            }
 
             OpenStartMenu();
 

@@ -37,7 +37,7 @@ public class ScientistRepositoryTests
             scientistdto
         };
 
-        var scientist = new Scientist(scientistdto.ScientistID, scientistdto.Name);
+        var scientist = new Scientist(scientistdto.ScientistID, scientistdto.Name,"");
 
         var constructorInfo = typeof(TableQuerySegment<ScientistDTO>)
                 .GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic)
@@ -149,7 +149,7 @@ public class ScientistRepositoryTests
 
         };
 
-        var scientist = new Scientist("2467", "Scientist");
+        var scientist = new Scientist("2467", "Scientist", "");
 
 
         mockTable
@@ -169,7 +169,7 @@ public class ScientistRepositoryTests
     {
 
 
-        var scientist = new Scientist("2467", "Scientist");
+        var scientist = new Scientist("2467", "Scientist", "");
 
 
         var operationResult = new TableResult
@@ -195,7 +195,7 @@ public class ScientistRepositoryTests
     public void ReadSuccess()
     {
 
-        var scientist = new Scientist("2467", "Scientist");
+        var scientist = new Scientist("2467", "Scientist", "");
 
         var scientistDTO = new ScientistDTO
         {
@@ -283,7 +283,7 @@ public class ScientistRepositoryTests
         };
 
 
-        var scientist = new Scientist("2467", "Scientist");
+        var scientist = new Scientist("2467", "Scientist", "");
 
         var operationResult = new TableResult
         {
@@ -319,7 +319,7 @@ public class ScientistRepositoryTests
 
         };
 
-        var scientist = new Scientist("2467", "Scientist");
+        var scientist = new Scientist("2467", "Scientist", "");
 
         var operationResult = new TableResult
         {

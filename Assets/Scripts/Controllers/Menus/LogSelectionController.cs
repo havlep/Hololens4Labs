@@ -27,10 +27,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private ScrollableListPopulator scrollableListPopulator = default;
 
-        [Header("Misc Settings")]
-        [SerializeField]
-        private GameObject mainMenu = default;
-
         /// <summary>
         /// Initialize the scene controller
         /// </summary>

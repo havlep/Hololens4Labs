@@ -74,8 +74,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             storageAccount = CloudStorageAccount.Parse(connectionString);
 
+          
+            await this.SetupBlobRepository();
+            
             await this.SetupTablesRepository();
-            this.SetupBlobRepository();
+            atLogRepository = new ATLogRepository(logsTable, partitionKey, blobRepository.DownloadBlob);
+
 
             Debug.Log($"Azure repository intialized.");
             IsReady = true;
@@ -93,15 +97,18 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             if(atExperimentRepository != null && atScientistRepository != null && atLogRepository != null)
                 return true;
 
+            
             cloudTableClient = storageAccount.CreateCloudTableClient();
             experimentsTable = cloudTableClient.GetTableReference(experimentsTableName);
             scientistsTable = cloudTableClient.GetTableReference(scientistsTableName);
             logsTable = cloudTableClient.GetTableReference(logsTableName);
 
+            
             if (tryCreateTableOnStart)
             {
                 try
                 {
+                    
                     if (await experimentsTable.CreateIfNotExistsAsync())
                     {
                         Debug.Log($"Created table {experimentsTableName}.");
@@ -115,6 +122,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                         Debug.Log($"Created table {logsTableName}.");
                     }
 
+                    Debug.Log($"All required tables exist");
                 }
                 catch (StorageException ex)
                 {
@@ -124,14 +132,12 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                 }
             }
 
+            
+
             // Setup the repository objects that will be used to get data
             atExperimentRepository = new ATExperimentRepository(experimentsTable, partitionKey);
             atScientistRepository = new ATScientistRepository(scientistsTable, partitionKey);
-
-            if (blobRepository == null)
-                SetupBlobRepository();
-
-            atLogRepository = new ATLogRepository(logsTable, partitionKey, blobRepository.DownloadBlob);
+            
             return true;
 
         }
@@ -141,7 +147,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// </summary>
         /// <returns>True on success</returns>
         /// <exception cref="StorageException">If the connection to the Azure Blob Storage fails</exception>""
-        private bool SetupBlobRepository()
+        private async Task<bool> SetupBlobRepository()
         {
             if (blobRepository != null)
                 return true;
@@ -153,7 +159,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
             {
                 try
                 {
-                    if (blobContainer.CreateIfNotExistsAsync().Result)
+                    if (await blobContainer.CreateIfNotExistsAsync())
                     {
                         Debug.Log($"Created blob container {blockBlobContainerName}.");
                     }
@@ -202,6 +208,16 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
 
             return await atExperimentRepository.Update(experiment);
 
+        }
+
+        /// <summary>
+        /// Get Scientist by ID from the repository
+        /// </summary>
+        /// <param name="scientistId">The id of the scientist that we want to return</param>
+        /// <returns>The scientist with the given ID if he/she exist</returns>
+        public async Task<Scientist> GetScientistById(string scientistId)
+        {
+            return await atScientistRepository.Read(scientistId);
         }
 
         /// <summary>
@@ -332,6 +348,17 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
                     throw new ObjectDataBaseException($"Could not delete transcription{transcriptionLog.Data.Id}");
             }
             throw new System.NotImplementedException();
+
+        }
+
+        /// <summary>
+        /// Get experiment by ID from the repository
+        /// </summary>
+        /// <param name="experimentID"> The Id of the Experiment </param>
+        /// <returns> The Experiment with the given ID </returns>
+        public async Task<Experiment> GetExperimentByID(string experimentID)
+        {
+            return await atExperimentRepository.Read(experimentID);
 
         }
 

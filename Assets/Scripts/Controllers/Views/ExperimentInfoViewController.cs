@@ -75,7 +75,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             var experiment = new Experiment(nameField.text, sceneController.CurrentUser);
             experiment = await sceneController.DataManager.CreateOrUpdateExperiment(experiment);
-            sceneController.CurrentExperiment = experiment;
+            sceneController.SetExperiment(experiment);
             sceneController.OpenLogSelectionMenu();
             Destroy(gameObject);
 

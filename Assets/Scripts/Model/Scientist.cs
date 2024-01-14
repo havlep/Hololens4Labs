@@ -15,6 +15,11 @@ namespace HoloLens4Labs.Scripts.Model
         /// The name of the scientist
         /// </summary>
         string name = string.Empty;
+        
+        /// <summary>
+        /// The id of the last experiment that the scientist worked on
+        /// </summary>
+        string lastExperimentId = string.Empty;
 
         /// <summary>
         /// Property for getting and setting the name of the scientist
@@ -23,6 +28,15 @@ namespace HoloLens4Labs.Scripts.Model
         {
             get => name;
             set => name = value;
+        }
+
+        /// <summary>
+        /// Property for getting and setting the id of the last experiment that the scientist worked on
+        /// </summary>
+        public string LastExperimentId
+        {
+            get => lastExperimentId; 
+            set => lastExperimentId = value;
         }
 
         /// <summary>
@@ -46,7 +60,12 @@ namespace HoloLens4Labs.Scripts.Model
         /// </summary>
         /// <param name="id">The database ID of the scientist</param>
         /// <param name="name">The name of the scientist</param>
-        public Scientist(string id, string name) : this(name) { this.id = id; }
+        /// <param name="lastExperimentId">The Id of the last experiment used by the scientist</param>
+        public Scientist(string id, string name, string lastExperimentId) : this(name)
+        {
+            this.id = id;
+            this.LastExperimentId = lastExperimentId;
+        }
 
     }
 }
