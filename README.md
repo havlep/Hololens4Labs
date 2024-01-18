@@ -63,12 +63,14 @@ Although unity is fully support on OSX we recommend to use MS Windows for any de
 To start off please install unity by following the instructions:
 1. Dowload and install the [Unity Hub] (https://unity.com/download)
 2. Once Unity Hub has been installed select the Installs section in the tab on the left
-3. Inside of the 'Installs' section click on the Install Editor Button
-4. Select the latest LTS install version of the Unity Engine (the project was last tested on version 2021.3.25f1)
-5. Select the following components in the 'Platform' section:
-  - Universal Windows Platform Build Support
-  - Windows Build Support (IL2CPP)
-6. Finish the installation 
+   ![unity select ](https://github.com/havlep/Hololens4Labs/assets/4102880/b6cbce0d-d34d-4188-88f9-b6673eb7948c)
+4. Inside of the 'Installs' section click on the Install Editor Button
+5. Select the latest LTS install version of the Unity Engine (the project was last tested on version 2021.3.25f1)
+6. Select the following components in the 'Platform' section:
+    - Universal Windows Platform Build Support
+    - Windows Build Support (IL2CPP)
+  ![platform select](https://github.com/havlep/Hololens4Labs/assets/4102880/bb08e16b-882b-47db-8e2b-eca88051d607)
+7. Click on the Install button to finish the installation 
  
 #### 
 
