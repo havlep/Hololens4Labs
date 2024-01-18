@@ -66,8 +66,8 @@ To start off please install unity by following the instructions:
 3. Inside of the 'Installs' section click on the Install Editor Button
 4. Select the latest LTS install version of the Unity Engine (the project was last tested on version 2021.3.25f1)
 5. Select the following components in the 'Platform' section:
-  -- Universal Windows Platform Build Support
-  -- Windows Build Support (IL2CPP)
+  - Universal Windows Platform Build Support
+  - Windows Build Support (IL2CPP)
 6. Finish the installation 
  
 #### 
