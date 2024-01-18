@@ -30,33 +30,13 @@ A UI for the Microsoft HoloLens v2.0 for capturing logs inside of labs
 <tr>
 <td>
 
-Open Source Software is not about the code in the first place but the communications and community. People love good documentation and obvious workflows. If your software solves some problem, but nobody can figure out how to use it or, for example, how to create an effective bug report, there's something very bad going on. Did you hear about Readme Driven Development? Check out the awesome [article written by GitHub co-founder Tom Preston-Werner](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
-
-There are many great README or issues templates available on GitHub, however, you have to find them yourself and combine different templates yourself. In addition, if you want extensive docs like CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md or even advanced GitHub features like a pull request template, additional labels, code scanning, and automatic issue/PR closing and locking you have to do much more work. Your time should be focused on creating something **amazing**. You shouldn't be doing the same tasks over and over like creating your GitHub project template from scratch. Follow the **don’t repeat yourself** principle. Use a template **and go create something amazing**!
-
-Key features of **Amazing GitHub Template**:
-
-- Configurable README.md template
-- Configurable LICENSE template
-- Configurable CODE_OF_CONDUCT.md template
-- Configurable CONTRIBUTING.md template
-- Configurable SECURITY.md template
-- Configurable issues template
-- Pull request template
-- CODEOWNERS template
-- Additional labels template
-- Automatic locking for closed issues and PRs workflow
-- Automatic cleaning for stale issues and PRs workflow
-- Automatic label verification for PRs workflow
-- Automatic security code scanning workflow via CodeQL
+HoloLens4Labs is a mixed reality application designed for scientists working in chemical laboratories. This application was built in Unty and leverages the Microsoft HoloLens 2 to facilitate efficient and intuitive note-taking directly within the lab environment, syncing the results to an azure server backend.
 
 <details open>
 <summary>Additional info</summary>
 <br>
 
-This project is the result of huge research. I'm a long-time GitHub user so I've seen more than [7.3k](https://github.com/dec0dOS?tab=stars) READMEs so far. I've started writing docs for my open source projects (that are currently in their early stages so they exist in the private space for now). After I've analyzed many popular GitHub READMEs and other GitHub-related docs and features I've tried to create a general-propose template that may be useful for any project.
-
-
+This project was developed as part of my thesis and is currently in a stage of a prototype that will be further enhanced and used for a real world lab study in the near future. Although it was developed with the aim of being used primarely in the lab, the UI flow should be congruent with any work requiring note taking and hand free use. 
 
 </details>
 
@@ -64,26 +44,37 @@ This project is the result of huge research. I'm a long-time GitHub user so I've
 </tr>
 </table>
 
+### Key Features 
+- **Hands-Free Note-Taking:** Use voice commands or simple gestures to create and manage notes without interrupting lab work.
+- **Mixed Reality Integration:** Seamlessly overlay digital notes onto the physical lab space, enhancing information accessibility.
+- **Image capture:** Capture images from your the surrounding envinronment and integrate them into notes. 
+- **Text Transcription:** Quickly trancribe text from any objecte and edit it before it is saved as a note for future reference.
+- **User-Centric Design:** Developed with a focus on ease of use and minimal disruption to existing lab workflow
+
 ### Built With
 
-- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
-- [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
-- [GitHub Actions](https://github.com/features/actions)
-- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
+- [Unity](https://unity.com/)
+- [Microsoft Mixed Reality Toolkit](https://learn.microsoft.com/en-us/windows/mixed-reality/mrtk-unity/mrtk2/?view=mrtkunity-2022-05)
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 
 ## Getting Started
 
 ### Prerequisites
+Although unity is fully support on OSX we recommend to use MS Windows for any development activity on this project.
+#### Unity Installation
 
-The recommended method to install **Amazing GitHub Template** is by using [Cookiecutter](https://github.com/cookiecutter/cookiecutter). For manual install please refer to [manual setup section](#manual-setup).
+To start off please install unity by following the instructions:
+1. Dowload and install the [Unity Hub] (https://unity.com/download)
+2. Once Unity Hub has been installed select the Installs section in the tab on the left
+3. Inside of the 'Installs' section click on the Install Editor Button
+4. Select the latest LTS install version of the Unity Engine (the project was last tested on version 2021.3.25f1)
+5. Select the following components in the 'Platform' section:
+  - Universal Windows Platform Build Support
+  - Windows Build Support (IL2CPP)
+6. Finish the installation 
+ 
+#### 
 
-The easiest way to install Cookiecutter is by running:
-
-```sh
-pip install --user cookiecutter
-```
-
-For other install options, please refer to [Cookiecutter installation manual](https://cookiecutter.readthedocs.io/en/latest/installation.html).
 
 ### Usage
 
