@@ -1,5 +1,7 @@
 # Hololens4Labs
 
+
+
 <details open="open">
 <summary>Table of Contents</summary>
 
@@ -26,7 +28,9 @@
 <table>
 <tr>
 <td>
-
+  
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+  
 HoloLens4Labs is a mixed reality application designed for scientists working in chemical laboratories. This application was built in Unty and leverages the Microsoft HoloLens 2 to facilitate efficient and intuitive note-taking directly within the lab environment, syncing the results to an azure server backend.
 
 <details open>
@@ -49,15 +53,35 @@ This project was developed as part of my thesis and is currently in a stage of a
 - **User-Centric Design:** Developed with a focus on ease of use and minimal disruption to existing lab workflow
 
 ### Built With
+Supported Unity versions | Built with XR configuration
+:------------------: | :---------------: |
+Unity 2021 or higher | Windows XR Plugin |
 
 - [Unity](https://unity.com/)
 - [Microsoft Mixed Reality Toolkit](https://learn.microsoft.com/en-us/windows/mixed-reality/mrtk-unity/mrtk2/?view=mrtkunity-2022-05)
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 
+## Contents
+
+| File/folder | Description |
+|-------------|-------------|
+| `Hololens4Labs/Assets` | Unity assets, MRTK assets, scenes, prefabs, scripts and unit tests. |
+| `Hololens4Labs/Documentation` | Documentation for the project. |
+| `Hololens4Labs/Packages` | Project manifest and packages list. |
+| `Hololens4Labs/ProjectSettings` | Unity asset setting files. |
+| `Hololens4Labs/UserSettings` | Generated user settings from Unity. |
+| `.gitignore` | Define what to ignore at commit time. |
+| `README.md` | This README file. |
+| `LICENSE`   | The license for this project. |
+
+
 ## Getting Started
 
 ### Prerequisites
 Although unity is fully support on OSX we recommend to use MS Windows for any development activity on this project.
+
+Install the [latest Mixed Reality tools](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools?tabs=unity)
+  
 #### Unity Installation
 
 To start off please install unity by following the instructions:
@@ -75,63 +99,11 @@ To start off please install unity by following the instructions:
 #### 
 
 
-### Usage
-
-#### Cookiecutter template
-
-After installing Cookiecutter, all you need to do is to run the following command:
-
-```sh
-cookiecutter gh:dec0dOS/amazing-github-template
-```
-
-You will get an interactive prompt where you'll specify relevant options for your project (or the default value will be used).
-
-![Preview](docs/images/preview.svg)
-
-#### Manual setup
+###  Setup
 
 Please follow these steps for manual setup:
-
-1. [Download the precompiled template](https://github.com/dec0dOS/amazing-github-template/releases/download/latest/template.zip)
-2. Replace all the [variables](#variables-reference) to your desired values
-3. Initialize the repo in the precompiled template folder
-
-    `or`
-
-    Move the necessary files from precompiled template folder to your existing project directory. Don't forget the `.github` directory that may be hidden by default in your operating system
-
-#### Variables reference
-
-Please note that entered values are case-sensitive.
-Default values are provided as an example to help you figure out what should be entered.
-
-> On manual setup, you need to replace only values written in **uppercase**.
-
-| Name                       | Default value      | Description                                                                 |
-| -------------------------- | ------------------ | --------------------------------------------------------------------------- |
-| PROJECT_NAME               | My Amazing Project | Your project name                                                           |
-| REPO_SLUG                  | my-amazing-project | Repo slug must match the GitHub repo URL slug part                          |
-| GITHUB_USERNAME            | dec0dOS            | Your GitHub username **without @**                                          |
-| FULL_NAME                  | Alexey Potapov     | Your full name                                                              |
-| OPEN_SOURCE_LICENSE        | MIT license        | Full OSS license name                                                       |
-| modern_header              | y                  | Use HTML to prettify your header                                            |
-| table_in_about             | n                  | Use table to wrap around About section                                      |
-| include_logo               | y                  | Include Logo section. Only valid when `modern_header == y`          |
-| include_badges             | y                  | Include section for badges                                                  |
-| include_toc                | y                  | Include Table of Contents                                                   |
-| include_screenshots        | y                  | Include Screenshots section                                                 |
-| include_project_assistance | y                  | Include Project assistance section                                          |
-| include_authors            | y                  | Include Authors & contributors section                                      |
-| include_security           | y                  | Include Security section and SECURITY.md file                               |
-| include_acknowledgements   | y                  | Include Acknowledgements section                                            |
-| include_code_of_conduct    | y                  | Include CODE_OF_CONDUCT.md file                                             |
-| include_workflows          | y                  | Include .github/workflows directory                                         |
-| use_codeql                 | y                  | Use [CodeQL](https://securitylab.github.com/tools/codeql/)                  |
-| use_conventional_commits   | y                  | Add [Conventional Commits](https://www.conventionalcommits.org) notice      |
-| use_github_discussions     | n                  | Use [GitHub Discussions](https://docs.github.com/en/discussions/quickstart) |
-
-> NOTICE: to use GitHub Discussions, you have to [enable it first](https://docs.github.com/en/discussions/quickstart).
+  1. Clone or download this sample repository.
+  2. Open the **Hololens4Labs** folder in Unity Hub and launch the project
 
 ## Roadmap
 
