@@ -11,7 +11,6 @@
 - [Contents](#contents)
 - [Prerequisites](#prerequisites)
 - [Set-up the project](#set-up-the-project)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -99,7 +98,7 @@ The current version of this application uses Azure Tables and Azure Blob reposit
 Please refer to the Microsoft documentation on how to [Create an Azure Storage Acount](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
 
 #### Azure Cognitive Services
-The application uses Azure Vision For image to text transcription. 
+The application uses Azure Computer Vision resource For image to text transcription. 
 
 Please refer to the Microsoft documentation on how to [Create a multi-service resource for Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=linux&pivots=azportal)
 
@@ -132,13 +131,51 @@ Take the following steps in Unity once the HoloLens4Labs project is open:
 
 Once you have complete the above steps the project will reimport and recompile for the UWP platform.
 
-### Configuration the Azure tables and blob endpoints
+### Configuration the Azure Storage Endpoint
+#### Getting the endpoint for storage
+You will first need to retrieve the azure storage endpoint from your Azure storage account
+  1. Go to your [Azure services portal](https://portal.azure.com/#home) and log in
+    * If you created an azure storage resource you should see the account under resources 
+  2. Under resources Select the storage resource that you would like to use
+    * The storage resource page opens up
+  3. In the left hand toolbar under your storage resource select 'AccessKeys' in the 'Secturity + networking' section
+    * You should see the keys and endpoints available for your resource
+     <img width="778" alt="Azure Storage Resource Enpoints and Keys" src="https://github.com/havlep/Hololens4Labs/assets/4102880/846b5034-1283-4f21-aef2-30afc4b58e6f">
+  4. Copy either of the connection strings available into your clipboard
 
+#### Configuring the project to use your storage resource
+Inside of your the unity project that you imported do the following:
+  1. Inside of the Unity project browser select 'Assets'->'Scenes'->'MainScene'
+     * The scene should load and open up inside of the heirarchy window
+  2. Inside of the hierachy window select 'SceneController'->'DataManager'->'AzureRepository'
+     * You should see the properties for the 'AzureRepository' gameobject in the inspector
+  3. Inside of the inspector copy your storage endpoint into the 'Connection String' property under the 'Base Settings' section
+     <img width="960" alt="Unity Azure Storage Settings" src="https://github.com/havlep/Hololens4Labs/assets/4102880/5603338e-241d-4ca1-ac2d-b4821538de73">
+     * You should see the enpoint url under the 'Connection String' property  
+  4. Save your project
 
+### Configuration the Computer Vision resource
+#### Getting the endpoint for computer vision
+You will first need to retrieve the azure storage endpoint from your Azure storage account
+  1. Go to your [Azure services portal](https://portal.azure.com/#home) and log in
+    * If you created an azure computer vision resource you should see the account under resources 
+  2. Under 'Resources' select the vision resource that you would like to use
+    * The Computer Vision resource page opens up
+  3. In the left hand toolbar under your Computer vision resource acount select 'Keys and Endpoint' in the 'Resource Management' section
+    * You should see the keys, endpoint, and location for your resource
+     <img width="789" alt="Azure Portal Computer Vision Keys and Enpoint" src="https://github.com/havlep/Hololens4Labs/assets/4102880/a1d483cc-b75c-4783-8fc8-a42f289cfe7b">
+  5. You will need to copy one key, endpoint in the following section
 
-## Roadmap
-
-
+#### Configuring the project to use your computer vision resource
+Inside of your the unity project that you imported do the following:
+  1. Inside of the Unity project browser select 'Assets'->'Scenes'->'MainScene'
+     * The scene should load and open up inside of the heirarchy window
+  2. Inside of the hierachy window select 'SceneController'->'ImageAnalysisManadger'
+     * You should see the properties for the 'ImageAnalysis' gameobject in the inspector
+  3. Inside of the inspector input the key and endpoint that you obtained in the previous section into the 'Subscription Key' and 'Endpoint' propeties under the 'Azure Image Settings' section
+     * You should see the enpoint url and key under the 'endpoint' and 'Subscription Key' properties
+     <img width="960" alt="Unity Azure Image Settings" src="https://github.com/havlep/Hololens4Labs/assets/4102880/a0cb61d4-220c-46e4-b883-c2ad56de5bc4">
+  4. Save your project
 
 ## Contributing
 
