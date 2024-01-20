@@ -96,12 +96,12 @@ To start off please install unity by following the instructions:
 #### Azure Tables & Blob Repository Services
 The current version of this application uses Azure Tables and Azure Blob repositories for long term storage. You will need to create both by creating an Azure Storage Account.
 
-Refer to the Microsoft documentation on how to [Create an Azure Storage Acount](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
+Please refer to the Microsoft documentation on how to [Create an Azure Storage Acount](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
 
 #### Azure Cognitive Services
 The application uses Azure Vision For image to text transcription. 
 
-Refer to the Microsoft documentation on how to [Create a multi-service resource for Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=linux&pivots=azportal)
+Please refer to the Microsoft documentation on how to [Create a multi-service resource for Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=linux&pivots=azportal)
 
 ## Setting-up the project
 
