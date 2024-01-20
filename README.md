@@ -10,7 +10,7 @@
   - [Built With](#built-with)
 - [Contents](#contents)
 - [Prerequisites](#prerequisites)
-- [Setting-up the project](#setting-up-the-project)
+- [Set-up the project](#set-up-the-project)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -77,7 +77,7 @@ Although unity is fully support on OSX we recommend to use MS Windows for any de
 
 Install the [latest Mixed Reality tools](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools?tabs=unity)
   
-### Installing Unity
+### Instal Unity
 
 To start off please install unity by following the instructions:
 1. Dowload and install the [Unity Hub] (https://unity.com/download)
@@ -103,7 +103,7 @@ The application uses Azure Vision For image to text transcription.
 
 Please refer to the Microsoft documentation on how to [Create a multi-service resource for Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=linux&pivots=azportal)
 
-## Setting-up the project
+## Set-up the project
 
 ### Import the project into Unity
 Please follow these steps to import the project into your unity engine:
@@ -113,8 +113,28 @@ Please follow these steps to import the project into your unity engine:
 In case you get some import errors, reimport the directories that have these issues. 
 
 ### Configure the build environment in Unity
+You will need to switch your build evnironment to windows universal to build for the HoloLens 4. 
+
+Take the following steps in Unity once the HoloLens4Labs project is open:
+  1. Go to File->Build Settings
+  2. In the platfrom section on the left hand side select Universal Windows Platform
+  3. Select the following settings for the Unviersal Windows Platform:
+    * Architecture: ARM-64bit
+    * Build Type: D3D Project
+    * Target SDK Version: Latest Installed
+    * Minimum Platform version: 10.0.1024
+    * Visual Studio Version: Latest Installed
+    * Build Configuration: Release
+     
+     <img width="959" alt="UWP platform settings" src="https://github.com/havlep/Hololens4Labs/assets/4102880/8589f371-f71d-48d0-a9e4-60c6a566f916">
+
+  5. Click on the Switch Plafrom button in the lower left hand corner
+
+Once you have complete the above steps the project will reimport and recompile for the UWP platform.
 
 ### Configuration the Azure tables and blob endpoints
+
+
 
 ## Roadmap
 
