@@ -21,15 +21,15 @@ namespace HoloLens4Labs.Scripts.Controllers
         private ImageAnalysisManager imageAnalysisManager = default;
 
 
-        [Header("Menus")]
+        [Header("Menu Prefabs")]
         [SerializeField]
-        private GameObject loadingMenu = default;
+        private MenuController loadingMenu = default;
+        [SerializeField] 
+        protected StartMenuController startMenu = default;
         [SerializeField]
-        private GameObject startMenu = default;
+        private ExperimentListMenuController experimentListMenu = default;
         [SerializeField]
-        private GameObject experimentListMenu = default;
-        [SerializeField]
-        private GameObject logSelectionMenu = default;
+        private LogSelectionController logSelectionMenu = default;
 
         private Experiment currentExperiment = default;
 
@@ -80,18 +80,14 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public static SceneController Instance { get; private set; }
 
-        private GameObject currentMenu = default;
+        private MenuController currentMenu = default;
 
         /// <summary>
         /// Set the loading menu as the current menu and turn all other menus off
         /// </summary>
         void Start()
         {
-            loadingMenu?.SetActive(true);
-            currentMenu = loadingMenu;
-            //startMenu?.SetActive(false);
-            //experimentListMenu?.SetActive(false);
-            //logSelectionMenu?.SetActive(false);
+            currentMenu = Instantiate(loadingMenu, this.transform.position, Quaternion.identity); ;
         }
 
         /// <summary>
@@ -135,9 +131,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public void OpenStartMenu()
         {
-            currentMenu?.SetActive(false);
-            startMenu?.SetActive(true);
-            currentMenu = startMenu;
+            currentMenu.CloseMenu();
+            currentMenu = Instantiate(startMenu, transform.position, Quaternion.identity); ;
         }
 
         /// <summary>
@@ -145,9 +140,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public void OpenExperimentListMenu()
         {
-            currentMenu?.SetActive(false);
-            experimentListMenu?.SetActive(true);
-            currentMenu = experimentListMenu;
+            currentMenu.CloseMenu();
+            currentMenu = Instantiate(experimentListMenu, transform.position, Quaternion.identity); ;
         }
 
         /// <summary>
@@ -155,9 +149,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         public void OpenLogSelectionMenu()
         {
-            currentMenu?.SetActive(false);
-            logSelectionMenu?.SetActive(true);
-            currentMenu = logSelectionMenu;
+            currentMenu.CloseMenu();
+            currentMenu = Instantiate(logSelectionMenu, transform.position, Quaternion.identity); ;
         }
 
     }

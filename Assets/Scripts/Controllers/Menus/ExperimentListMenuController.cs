@@ -9,7 +9,7 @@ namespace HoloLens4Labs.Scripts.Controllers
     /// <summary>
     /// Controller for the experiment list menu
     /// </summary>
-    public class ExperimentListMenuController : MonoBehaviour
+    public class ExperimentListMenuController : MenuController
     {
         [Header("Managers")]
         [SerializeField]
@@ -41,7 +41,10 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         private void OnEnable()
         {
-
+            if (sceneController == null)
+            {
+                sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
+            }
             scrollableListPopulator.MakeScrollingList();
             PopulateList(sceneController.DataManager.GetAllExperiments());
 

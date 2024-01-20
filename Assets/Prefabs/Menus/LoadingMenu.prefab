@@ -191,14 +191,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1069772591013599415}
   - component: {fileID: 3644655641307817241}
-  - component: {fileID: 2264745391585135545}
+  - component: {fileID: 6714322842551031142}
   m_Layer: 0
   m_Name: LoadingMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1069772591013599415
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2264745391585135545
+--- !u!114 &6714322842551031142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,17 +321,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4942042164517944019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5fe16e3e1963c849aba2c793e1f002e, type: 3}
+  m_Script: {fileID: 11500000, guid: 97346d4260d99a74797d14b096d1df10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController: {fileID: 0}
-  lastExpEditDateLabel: {fileID: 0}
-  lastExpUsedLabel: {fileID: 0}
-  lastExpEditNameLabel: {fileID: 0}
-  ContinueLastExpButton: {fileID: 0}
-  ExperimentDetailMenu: {fileID: 771523963018353910, guid: 4ed097d6d503ad14fadd48ca7aaf0562, type: 3}
-  ListExperimentsMenu: {fileID: 0}
-  CreateExperimentMenu: {fileID: 0}
 --- !u!1 &6438175949119960604
 GameObject:
   m_ObjectHideFlags: 0

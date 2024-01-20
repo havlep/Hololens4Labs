@@ -7,7 +7,7 @@ namespace HoloLens4Labs.Scripts.Controllers
     /// Controller for the start menu
     /// </summary>
 
-    public class StartMenuController : MonoBehaviour
+    public class StartMenuController : MenuController
     {
 
         [Header("Managers")]

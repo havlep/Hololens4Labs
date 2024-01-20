@@ -9,7 +9,7 @@ namespace HoloLens4Labs.Scripts.Controllers
     /// <summary>
     /// Controller for the log selection menu
     /// </summary>
-    public class LogSelectionController : MonoBehaviour
+    public class LogSelectionController : MenuController
     {
 
         [Header("Managers")]
