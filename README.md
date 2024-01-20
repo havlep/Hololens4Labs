@@ -6,16 +6,14 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
+  - [Key Features](#key-features)
   - [Built With](#built-with)
+- [Contents](#contents)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-    - [Cookiecutter template](#cookiecutter-template)
-    - [Manual setup](#manual-setup)
-    - [Variables reference](#variables-reference)
+  - [Setting-up the project](#setting-up-the-project)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [Support](#support)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -82,7 +80,7 @@ Although unity is fully support on OSX we recommend to use MS Windows for any de
 
 Install the [latest Mixed Reality tools](https://docs.microsoft.com/windows/mixed-reality/develop/install-the-tools?tabs=unity)
   
-#### Unity Installation
+#### Installing Unity
 
 To start off please install unity by following the instructions:
 1. Dowload and install the [Unity Hub] (https://unity.com/download)
@@ -96,17 +94,30 @@ To start off please install unity by following the instructions:
   ![platform select](https://github.com/havlep/Hololens4Labs/assets/4102880/bb08e16b-882b-47db-8e2b-eca88051d607)
 7. Click on the Install button to finish the installation 
 
-#### Azure Tables and Blob repositories
+#### Azure Service Accounts
 
+##### Azure Tables & Blob Repository Services
+The current version of this application uses Azure Tables and Azure Blob repositories for long term storage. You will need to create both by creating an Azure Storage Account.
 
-###  Setup
+Refer to the Microsoft documentation on how to [Create an Azure Storage Acount](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
 
-#### Project Setup in Unity
-Please follow these steps for manual setup:
+##### Azure Cognitive Services
+The application uses Azure Vision For image to text transcription. 
+
+Refer to the Microsoft documentation on how to [Create a multi-service resource for Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/multi-service-resource?tabs=linux&pivots=azportal)
+
+### Setting-up the project
+
+#### Import the project into Unity
+Please follow these steps to import the project into your unity engine:
   1. Clone or download this sample repository.
   2. Open the **Hololens4Labs** folder in Unity Hub and launch the project
 
-#### Azure Tables and Blob Configuration
+In case you get some import errors, reimport the directories that have these issues. 
+
+#### Configure the build environment in Unity
+
+#### Configuration the Azure tables and blob endpoints
 
 ## Roadmap
 
@@ -117,7 +128,6 @@ Please follow these steps for manual setup:
 First off, thanks for taking the time to contribute! Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
 
 Please try to create bug reports that are:
-
 - _Reproducible._ Include steps to reproduce the problem.
 - _Specific._ Include as much detail as possible: which version, what environment, etc.
 - _Unique._ Do not duplicate existing opened issues.
@@ -131,5 +141,5 @@ See [LICENSE](LICENSE) for more information.
 
 ## Acknowledgements
 
-Thanks for these awesome resources that were used during the development of the **HOlolens4Labs**:
+Thanks for these awesome resources that were used during the development of the **Hololens4Labs**:
 
