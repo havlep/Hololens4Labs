@@ -91,6 +91,7 @@ To start off please install unity by following the instructions:
 7. Click on the Install button to finish the installation 
 
 ### Azure Service Accounts
+All the endpoints in the images below and the within the source code are no longer valid, please make sure to setup your own and not commit them to the project. As this is a limited use prototype that will be used with test resources, key vault was not implemented.
 
 #### Azure Tables & Blob Repository Services
 The current version of this application uses Azure Tables and Azure Blob repositories for long term storage. You will need to create both by creating an Azure Storage Account.
