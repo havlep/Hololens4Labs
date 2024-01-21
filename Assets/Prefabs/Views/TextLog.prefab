@@ -8456,10 +8456,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9150943, g: 0.90358365, b: 0.90358365, a: 1}
-    m_HighlightedColor: {r: 0.9863085, g: 0.990566, b: 0.735137, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9996069, g: 1, b: 0.98742133, a: 1}
+    m_NormalColor: {r: 0.8962264, g: 0.8764981, b: 0.8764981, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9936605, b: 0.78930813, a: 1}
+    m_PressedColor: {r: 0.9220363, g: 0.9724796, b: 0.990566, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
