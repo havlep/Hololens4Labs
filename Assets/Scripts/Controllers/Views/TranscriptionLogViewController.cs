@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Model.Logs;
 using TMPro;
@@ -84,15 +85,15 @@ namespace HoloLens4Labs.Scripts.Controllers
         ///  Called by the PhotoCameraController when the image is captured
         /// </summary>
         /// <param name="data">The image data</param>
-        public override void ImageCaptured(DataType data)
+        public async override void ImageCaptured(DataType data)
         {
             if (!(data is ImageData))
                 throw new System.Exception("Wrong data type call for transcription log");
 
             var imageData = data as ImageData;
 
-            // Ugly hack to get the data to the right type until I can refactor the data type to ImageData
-            var transData = new TranscriptionData(imageData, Transcribe(imageData));
+            var text = await Transcribe(imageData);
+            var transData = new TranscriptionData(imageData, text);
 
             if (transData.Text == null || transData.Text == string.Empty)
                 messageLabel.text = "No transcription available";
@@ -130,9 +131,9 @@ namespace HoloLens4Labs.Scripts.Controllers
         /// </summary>
         /// <param name="imageData">An image data object that will be transcribed</param>
         /// <returns>The transcription</returns>
-        private string Transcribe(ImageData imageData)
+        private Task<string> Transcribe(ImageData imageData)
         {
-            return sceneController.ImageAnalysisManager.TranscribeImage(imageData).Result;
+            return  sceneController.ImageAnalysisManager.TranscribeImage(imageData);
         }
 
     }
