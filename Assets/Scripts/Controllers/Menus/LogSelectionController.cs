@@ -95,6 +95,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             var textLogView = Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
+            textLogView.transform.localScale = gameObject.transform.localScale;
             var textLog = new TextLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
             textLogView.InitWithExisting(textLog, gameObject);
             gameObject.SetActive(false);
@@ -108,6 +109,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);
+            imageLogView.transform.localScale = gameObject.transform.localScale;
             var imageLog = new ImageLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
             imageLogView.InitNew(imageLog, gameObject);
             gameObject.SetActive(false);
@@ -121,6 +123,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             var transcriptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
+            transcriptionLogView.transform.localScale = gameObject.transform.localScale;
             TranscriptionLog transcriptionLog = new TranscriptionLog(DateTime.Now, sceneController.CurrentUser, sceneController.CurrentExperiment);
             transcriptionLogView.InitNew(transcriptionLog, gameObject);
             gameObject.SetActive(false);
@@ -140,18 +143,22 @@ namespace HoloLens4Labs.Scripts.Controllers
                 case TextLog textLog:
                     var textLogView = Instantiate(textLogViewPrefab, this.transform.position, Quaternion.identity);
                     textLogView.InitWithExisting(textLog, gameObject);
+                    textLogView.transform.localScale = gameObject.transform.localScale;
                     break;
                 case TranscriptionLog transcriptionLog:
                     var transcriptionLogView = Instantiate(transcriptionLogViewPrefab, this.transform.position, Quaternion.identity);
+                    transcriptionLogView.transform.localScale = gameObject.transform.localScale;
                     transcriptionLogView.InitWithExisting(transcriptionLog, gameObject);
                     break;
                 case ImageLog imageLog:
                     var imageLogView = Instantiate(photoLogViewPrefab, this.transform.position, Quaternion.identity);
+                    imageLogView.transform.localScale = gameObject.transform.localScale;
                     imageLogView.InitWithExisting(imageLog, gameObject);
                     break;
                 default:
                     throw new NotImplementedException("Not implemented log type");
             }
+            
             gameObject.SetActive(false);
 
         }

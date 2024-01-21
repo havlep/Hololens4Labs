@@ -509,7 +509,6 @@ MonoBehaviour:
   photoLogViewPrefab: {fileID: 7179814431767217727, guid: 4b0a9e02addbc9840ac3fb026af98177, type: 3}
   transcriptionLogViewPrefab: {fileID: 3705874457011644958, guid: b237db4edf2fbe746846c3bca66bae55, type: 3}
   scrollableListPopulator: {fileID: 2953753024123517049}
-  mainMenu: {fileID: 0}
 --- !u!1 &909856710425972775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,8 +3362,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2953753023714962974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.225, y: -0.08500001, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.17000002, z: 0.025}
+  m_LocalPosition: {x: 0.195, y: -0.08500001, z: 0}
+  m_LocalScale: {x: 0.39, y: 0.17000002, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2953753024123517055}
@@ -3428,8 +3427,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2953753024123517050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0351, y: 0.102, z: -0.001}
-  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
+  m_LocalPosition: {x: -0.044, y: 0.102, z: -0.001}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2953753024840521338}
@@ -3491,7 +3490,7 @@ MonoBehaviour:
   animationLength: 0.25
   cellsPerTier: 1
   tiersPerPage: 5
-  cellWidth: 0.45
+  cellWidth: 0.39
   cellHeight: 0.034
   cellDepth: 0.025
   bounceMultiplier: 0.1
@@ -3527,8 +3526,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.17000002, z: 0.001}
-  m_Center: {x: 0.225, y: -0.08500001, z: 0.0135}
+  m_Size: {x: 0.39, y: 0.17000002, z: 0.001}
+  m_Center: {x: 0.195, y: -0.08500001, z: 0.0135}
 --- !u!114 &2953753024123517054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,8 +3544,8 @@ MonoBehaviour:
   debounceThreshold: 0.01
   localForward: {x: -0, y: -0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
-  localCenter: {x: 0.225, y: -0.08500001, z: -0.0125}
-  bounds: {x: 0.45, y: 0.17000002}
+  localCenter: {x: 0.195, y: -0.08500001, z: -0.0125}
+  bounds: {x: 0.39, y: 0.17000002}
   touchableCollider: {fileID: 2953753024123517053}
 --- !u!114 &2953753024123517049
 MonoBehaviour:
@@ -3581,9 +3580,9 @@ MonoBehaviour:
   lazyLoad: 0
   itemsPerFrame: 3
   loader: {fileID: 0}
-  cellWidth: 0.4
+  cellWidth: 0.39
   cellHeight: 0.032
-  cellDepth: 0.017
+  cellDepth: 0.025
   cellsPerTier: 1
   tiersPerPage: 5
   scrollPositionRef: {fileID: 0}

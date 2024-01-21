@@ -270,7 +270,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4311855069576609331}
   - {fileID: 2802343085422506035}
@@ -770,7 +770,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logDateLabel: {fileID: 7870940158515110431}
   logTextLabel: {fileID: 924902435393059486}
-  logIDLabel: {fileID: 0}
   logTypeLabel: {fileID: 2379108593186087651}
 --- !u!1 &4311855069576609332
 GameObject:
@@ -1472,5 +1471,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logDateLabel: {fileID: 7870940158515110431}
   logTextLabel: {fileID: 924902435393059486}
-  logIDLabel: {fileID: 0}
   logTypeLabel: {fileID: 2379108593186087651}

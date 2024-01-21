@@ -92,6 +92,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             var experimentInfoView = Instantiate(experimentInfoViewPrefab, this.transform.position, Quaternion.identity);
+            experimentInfoView.transform.localScale = gameObject.transform.localScale;
             experimentInfoView.InitNew(gameObject);
             gameObject.SetActive(false);
 
@@ -105,6 +106,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             var experimentInfoView = Instantiate(experimentInfoViewPrefab, this.transform.position, Quaternion.identity);
+            experimentInfoView.transform.localScale = gameObject.transform.localScale;
             experimentInfoView.InitExisting(experiment, gameObject);
             gameObject.SetActive(false);
 

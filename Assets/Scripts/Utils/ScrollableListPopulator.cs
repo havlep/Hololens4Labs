@@ -160,6 +160,7 @@ namespace HoloLens4Labs.Scripts.Utils
             GameObject collectionGameObject = new GameObject("Grid Object Collection");
             collectionGameObject.transform.position = scrollView.transform.position;
             collectionGameObject.transform.rotation = scrollView.transform.rotation;
+            collectionGameObject.transform.localScale = scrollView.transform.localScale;
 
             gridObjectCollection = collectionGameObject.AddComponent<GridObjectCollection>();
             gridObjectCollection.CellWidth = cellWidth;

@@ -1,3 +1,4 @@
+using HoloLens4Labs.Scripts.Model;
 using TMPro;
 using UnityEngine;
 
@@ -30,6 +31,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         protected ExperimentInfoViewController experimentInfoView = default;
 
+        private Experiment lastExperiment = default;
+
 
         /// <summary>
         /// Initialize the view with the last experiment data
@@ -44,19 +47,20 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             if(sceneController.CurrentUser.LastExperimentId != null)
             {
-                var experiment =  await sceneController.DataManager.GetExperimentByID(sceneController.CurrentUser.LastExperimentId);
-                lastExpEditDateLabel.text = experiment.CreatedOn.ToLongDateString();
-                lastExpEditNameLabel.text = experiment.Name;
+                lastExperiment =  await sceneController.DataManager.GetExperimentByID(sceneController.CurrentUser.LastExperimentId);
+                lastExpEditDateLabel.text = lastExperiment.CreatedOn.ToLongDateString();
+                lastExpEditNameLabel.text = lastExperiment.Name;
                 ContinueLastExpButton.SetActive(true);
             }
             else
             {
                 ContinueLastExpButton.SetActive(false);
             }
+           
             
         }
 
-        // Select From Existing Experiments
+
         /// <summary>
         /// Open the create experiment view
         /// </summary>
@@ -64,10 +68,21 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             ExperimentInfoViewController view = Instantiate(experimentInfoView, this.transform.position, Quaternion.identity);
+            view.transform.localScale = gameObject.transform.localScale;
             view.InitNew(gameObject);
             gameObject.SetActive(false);
 
         }
+
+        /// <summary>
+        /// Open last experiment used by the current user
+        /// </summary>
+        public void OpenLastExperiment()
+        {
+            sceneController.SetExperiment(lastExperiment);
+            sceneController.OpenLogSelectionMenu();
+        }
+
 
         /// <summary>
         /// Open the list all experiments menu

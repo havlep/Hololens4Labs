@@ -88,6 +88,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         void Start()
         {
             currentMenu = Instantiate(loadingMenu, this.transform.position, Quaternion.identity); ;
+            currentMenu.transform.localScale = gameObject.transform.localScale;
+
         }
 
         /// <summary>
@@ -132,7 +134,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenStartMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(startMenu, gameObject.transform, false); ;
+            currentMenu = Instantiate(startMenu, gameObject.transform, false); 
+            currentMenu.transform.localScale = gameObject.transform.localScale;
             currentMenu.enabled = true;
         }
 
@@ -142,7 +145,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenExperimentListMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(experimentListMenu, gameObject.transform, false); 
+            currentMenu = Instantiate(experimentListMenu, gameObject.transform, false);
+            currentMenu.transform.localScale = gameObject.transform.localScale;
             currentMenu.enabled = true;
         }
 
@@ -152,7 +156,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenLogSelectionMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(logSelectionMenu, gameObject.transform, false); ;
+            currentMenu = Instantiate(logSelectionMenu, gameObject.transform, false);
+            currentMenu.transform.localScale = gameObject.transform.localScale;
             currentMenu.enabled = true;
         }
 
