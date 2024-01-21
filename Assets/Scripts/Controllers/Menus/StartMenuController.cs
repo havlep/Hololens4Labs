@@ -57,7 +57,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         // Select From Existing Experiments
-
         /// <summary>
         /// Open the create experiment view
         /// </summary>
@@ -76,7 +75,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void ListAllExperiments()
         {
             sceneController.OpenExperimentListMenu();
-            gameObject.SetActive(false);
 
         }
 

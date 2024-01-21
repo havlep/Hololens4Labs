@@ -27,23 +27,17 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private ScrollableListPopulator scrollableListPopulator = default;
 
+      
+
         /// <summary>
-        /// Initialize the scene controller
+        ///  Initialize the scene controller and create the scrolling list and populate it with the logs
         /// </summary>
-        private void Awake()
+        void OnEnable()
         {
             if (sceneController == null)
             {
                 sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
             }
-        }
-
-        /// <summary>
-        /// Create the scrolling list and populate it with the logs
-        /// </summary>
-        void OnEnable()
-        {
-
             scrollableListPopulator.MakeScrollingList();
             PopulateList(sceneController.DataManager.GetLogsForExperiment(sceneController.CurrentExperiment.Id));
 

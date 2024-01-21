@@ -132,7 +132,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenStartMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(startMenu, transform.position, Quaternion.identity); ;
+            currentMenu = Instantiate(startMenu, gameObject.transform, false); ;
+            currentMenu.enabled = true;
         }
 
         /// <summary>
@@ -141,7 +142,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenExperimentListMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(experimentListMenu, transform.position, Quaternion.identity); ;
+            currentMenu = Instantiate(experimentListMenu, gameObject.transform, false); 
+            currentMenu.enabled = true;
         }
 
         /// <summary>
@@ -150,7 +152,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void OpenLogSelectionMenu()
         {
             currentMenu.CloseMenu();
-            currentMenu = Instantiate(logSelectionMenu, transform.position, Quaternion.identity); ;
+            currentMenu = Instantiate(logSelectionMenu, gameObject.transform, false); ;
+            currentMenu.enabled = true;
         }
 
     }

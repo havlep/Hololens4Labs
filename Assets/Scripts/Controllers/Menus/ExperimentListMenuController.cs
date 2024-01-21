@@ -23,19 +23,6 @@ namespace HoloLens4Labs.Scripts.Controllers
         [SerializeField]
         private ExperimentInfoViewController experimentInfoViewPrefab = default;
 
-        // Todo implement the creation of a new experiment
-        //private TextLogViewController textLogViewPrefab = default;
-
-
-        private void Start()
-        {
-            if (sceneController == null)
-            {
-                sceneController = GameObject.Find("SceneController").GetComponent<SceneController>();
-            }
-
-        }
-
         /// <summary>
         /// Initialize the button with the experiment data
         /// </summary>
@@ -65,7 +52,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         }
 
         /// <summary>
-        /// Populate the butto, item with the experiment data
+        /// Populate the button, item with the experiment data
         /// </summary>
         /// <param name="itemInstance">Experiment info button instance</param>
         /// <param name="data">Experiment data</param>
@@ -135,8 +122,7 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
 
             sceneController.SetExperiment(experiment);
-            sceneController.OpenLogSelectionMenu();
-            gameObject.SetActive(false);
+            sceneController.OpenLogSelectionMenu(); ;
 
         }
 
