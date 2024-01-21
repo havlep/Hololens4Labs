@@ -1,3 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 namespace HoloLens4Labs.Scripts.DTOs
 {
     /// <summary>

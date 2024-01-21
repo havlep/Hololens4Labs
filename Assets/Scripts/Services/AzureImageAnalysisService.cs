@@ -1,3 +1,5 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using Newtonsoft.Json;
@@ -11,7 +13,7 @@ using UnityEngine;
 namespace HoloLens4Labs.Scripts.Services
 {
     /// <summary>
-    /// Class that handles the communication with the Azure Image Analysis service arround transcription
+    /// Class that handles the communication with the Azure Image Analysis service around transcription
     /// </summary>
     public class AzureImageAnalysisService
     {

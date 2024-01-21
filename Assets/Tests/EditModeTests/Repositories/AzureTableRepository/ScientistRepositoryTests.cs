@@ -1,3 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Model;

@@ -1,3 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine.TestTools;

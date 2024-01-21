@@ -1,6 +1,5 @@
-
-using System;
-using System.Threading.Tasks;
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 
 namespace HoloLens4Labs.Scripts.Mappers
 {

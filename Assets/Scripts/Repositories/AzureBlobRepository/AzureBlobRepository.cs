@@ -1,3 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.IO;
 using System.Threading.Tasks;

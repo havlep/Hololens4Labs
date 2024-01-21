@@ -1,6 +1,9 @@
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Mappers;
 using Microsoft.WindowsAzure.Storage.Table;
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using System;
 using System.Linq;
 using System.Net;

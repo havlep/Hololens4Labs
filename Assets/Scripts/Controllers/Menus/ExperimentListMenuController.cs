@@ -1,3 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Utils;
 using System;

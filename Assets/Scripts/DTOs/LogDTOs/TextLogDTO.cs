@@ -1,5 +1,7 @@
-using Microsoft.WindowsAzure.Storage.Table;
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace HoloLens4Labs.Scripts.DTOs
 {

@@ -1,15 +1,6 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 
-/* Unmerged change from project 'Scripts.Player'
-Before:
-using System.Collections;
-using System.Collections.Generic;
-
-using System;
-After:
-using System;
-using System.Collections;
-using System.Collections.Generic;
-*/
 using System;
 
 

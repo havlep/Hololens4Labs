@@ -1,5 +1,6 @@
-using System.Threading.Tasks;
-using HoloLens4Labs.Scripts.Controllers;
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
+
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;

@@ -1,5 +1,7 @@
-using System;
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 
+using System;
 
 namespace HoloLens4Labs.Scripts.Exceptions
 {

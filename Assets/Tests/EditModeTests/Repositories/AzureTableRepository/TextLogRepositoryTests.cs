@@ -1,3 +1,5 @@
+// Copyright (c) Petr Havel 2023.
+// Licensed under the MIT License.
 public class TextLogRepositoryTests
 {
 
