@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">HoloLens4Labs
    </div>
+   <div id="projectbrief">Hololens 2 application for lab note teaking</div>
   </td>
  </tr>
  </tbody>
@@ -91,9 +92,9 @@ Inheritance diagram for HoloLens4Labs.Scripts.Repositories.AzureTables.ATLogRepo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acd21fadd03746df7cc91e4f543b1a111" id="r_acd21fadd03746df7cc91e4f543b1a111"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository.html#acd21fadd03746df7cc91e4f543b1a111">ATLogRepository</a> (CloudTable <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a061d28ed81c44c11ffed5f06902c0f9a">table</a>, string partitionKey)</td></tr>
-<tr class="memdesc:acd21fadd03746df7cc91e4f543b1a111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses.  <br /></td></tr>
-<tr class="separator:acd21fadd03746df7cc91e4f543b1a111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac179d224da8aa3aa14620c09e720ce36" id="r_ac179d224da8aa3aa14620c09e720ce36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository.html#ac179d224da8aa3aa14620c09e720ce36">ATLogRepository</a> (CloudTable <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository.html#a061d28ed81c44c11ffed5f06902c0f9a">table</a>, string partitionKey, Func&lt; string, Task&lt; byte[]&gt; &gt; getBlobData)</td></tr>
+<tr class="memdesc:ac179d224da8aa3aa14620c09e720ce36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses.  <br /></td></tr>
+<tr class="separator:ac179d224da8aa3aa14620c09e720ce36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8cc365f325d490c23094721bd93402" id="r_a3c8cc365f325d490c23094721bd93402"><td class="memItemLeft" align="right" valign="top">async Task&lt;(<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">Log</a>[], TableContinuationToken)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository.html#a3c8cc365f325d490c23094721bd93402">GetLogsForExperiment</a> (string experimentID, int pageSize, TableContinuationToken continuationToken=null)</td></tr>
 <tr class="memdesc:a3c8cc365f325d490c23094721bd93402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all Logs for Experiment using pagination.  <br /></td></tr>
 <tr class="separator:a3c8cc365f325d490c23094721bd93402"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,12 +137,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a2d489948cadc6cd8dde31462d48dd76b inherit pro_attribs_class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default partition key for the repository.  <br /></td></tr>
 <tr class="separator:a2d489948cadc6cd8dde31462d48dd76b inherit pro_attribs_class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_a_t_log_repository_8cs_source.html#l00014">14</a> of file <a class="el" href="_a_t_log_repository_8cs_source.html">ATLogRepository.cs</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acd21fadd03746df7cc91e4f543b1a111" name="acd21fadd03746df7cc91e4f543b1a111"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd21fadd03746df7cc91e4f543b1a111">&#9670;&#160;</a></span>ATLogRepository()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac179d224da8aa3aa14620c09e720ce36" name="ac179d224da8aa3aa14620c09e720ce36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac179d224da8aa3aa14620c09e720ce36">&#9670;&#160;</a></span>ATLogRepository()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +154,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>partitionKey</em>&#160;</td>
+          <td class="paramname"><em>partitionKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; string, Task&lt; byte[]&gt; &gt;&#160;</td>
+          <td class="paramname"><em>getBlobData</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -167,8 +171,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses. </p>
-
-<p class="definition">Definition at line <a class="el" href="_a_t_log_repository_8cs_source.html#l00019">19</a> of file <a class="el" href="_a_t_log_repository_8cs_source.html">ATLogRepository.cs</a>.</p>
 
 </div>
 </div>
@@ -222,12 +224,10 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_t_log_repository_8cs_source.html#l00029">29</a> of file <a class="el" href="_a_t_log_repository_8cs_source.html">ATLogRepository.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Repositories/AzureTableRepository/<a class="el" href="_a_t_log_repository_8cs_source.html">ATLogRepository.cs</a></li>
+<li>Assets/Scripts/Repositories/AzureTableRepository/<a class="el" href="_a_t_log_repository_8cs.html">ATLogRepository.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

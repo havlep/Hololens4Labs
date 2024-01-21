@@ -14,11 +14,13 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Imag
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a5590a1aafd13bf7421f9547dfb6eb073}{Image\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ac7d071bcd1b9ff7f8d65cd3cd4f9302f}{get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em The image data of the log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a6877c1076a593c8fb1c58cbd6fbfd60d}{Image\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, byte\mbox{[}$\,$\mbox{]} data, Texture2D texture)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is not yet in the database and scientist and log exist as data model objects. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a1394160073ddf3da5f4d885d498daddf}{Image\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, string thumbnail\+Blob\+Name)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a66d25dc3daae70929d71f7fc49bf75bc}{Image\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is already in the database and scientist and log don\textquotesingle{}t exist as data model objects. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a666fb8081b4c39e9571b982924e21fa6}{Image\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a342e39ddb081bef308bf1c72159aa104}{Image\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is already in the database and scientist and log exist as data model objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Data\+Type}}}
 \begin{DoxyCompactItemize}
@@ -34,12 +36,8 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Imag
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The image data of the log. \end{DoxyCompactList}\item 
 Texture2D \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}{Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The thumbnail of the image data. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ad2b69924b4f9646d529030d294f48ea4}{Thumbnail\+Blob\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The blob name of the thumbnail in the blob repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The thumbnail of the image data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Data\+Type}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,16 +58,12 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_typ
 \doxysubsection{Detailed Description}
 Class that represents image data. 
 
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a5590a1aafd13bf7421f9547dfb6eb073}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a5590a1aafd13bf7421f9547dfb6eb073} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a6877c1076a593c8fb1c58cbd6fbfd60d}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a6877c1076a593c8fb1c58cbd6fbfd60d} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!ImageData@{ImageData}}
 \index{ImageData@{ImageData}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
 \doxysubsubsection{\texorpdfstring{ImageData()}{ImageData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log,  }\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{Texture2D}]{texture }\end{DoxyParamCaption})}
 
 
 
@@ -83,16 +77,14 @@ Constructor used when the Image\+Data is not yet in the database and scientist a
 \hline
 {\em done\+Within\+Log} & The Log that the Image\+Data was created within\\
 \hline
+{\em data} & The byte array of the image data\\
+\hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a1394160073ddf3da5f4d885d498daddf}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a1394160073ddf3da5f4d885d498daddf} 
+\texorpdfstring{$<$}{<}pa \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a66d25dc3daae70929d71f7fc49bf75bc}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a66d25dc3daae70929d71f7fc49bf75bc} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!ImageData@{ImageData}}
 \index{ImageData@{ImageData}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
 \doxysubsubsection{\texorpdfstring{ImageData()}{ImageData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+Log\+ID,  }\item[{string}]{thumbnail\+Blob\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+Log\+ID,  }\item[{Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$}]{get\+Image\+Data }\end{DoxyParamCaption})}
 
 
 
@@ -108,18 +100,12 @@ Constructor used when the Image\+Data is already in the database and scientist a
 \hline
 {\em done\+Within\+Log\+ID} & The id of the Log that the Image\+Data was created within\\
 \hline
-{\em thumbnail\+Blob\+Name} & The blob name of the thumbnail in the blob repository\\
-\hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a666fb8081b4c39e9571b982924e21fa6}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a666fb8081b4c39e9571b982924e21fa6} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a342e39ddb081bef308bf1c72159aa104}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a342e39ddb081bef308bf1c72159aa104} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!ImageData@{ImageData}}
 \index{ImageData@{ImageData}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
 \doxysubsubsection{\texorpdfstring{ImageData()}{ImageData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Image\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log,  }\item[{Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$}]{get\+Image\+Data }\end{DoxyParamCaption})}
 
 
 
@@ -138,16 +124,12 @@ Constructor used when the Image\+Data is already in the database and scientist a
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-
-
-\doxysubsection{Property Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190} 
-\index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!Data@{Data}}
-\index{Data@{Data}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
-\doxysubsubsection{\texorpdfstring{Data}{Data}}
-{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ac7d071bcd1b9ff7f8d65cd3cd4f9302f}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ac7d071bcd1b9ff7f8d65cd3cd4f9302f} 
+\index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!getData@{getData}}
+\index{getData@{getData}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -155,8 +137,7 @@ The image data of the log.
 
 
 
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
+\doxysubsection{Property Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!Texture@{Texture}}
 \index{Texture@{Texture}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
@@ -169,24 +150,6 @@ The thumbnail of the image data.
 
 
 
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ad2b69924b4f9646d529030d294f48ea4}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ad2b69924b4f9646d529030d294f48ea4} 
-\index{HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}!ThumbnailBlobName@{ThumbnailBlobName}}
-\index{ThumbnailBlobName@{ThumbnailBlobName}!HoloLens4Labs.Scripts.Model.DataTypes.ImageData@{HoloLens4Labs.Scripts.Model.DataTypes.ImageData}}
-\doxysubsubsection{\texorpdfstring{ThumbnailBlobName}{ThumbnailBlobName}}
-{\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data.\+Thumbnail\+Blob\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
-
-
-
-The blob name of the thumbnail in the blob repository. 
-
-
-
-Definition at line \mbox{\hyperlink{_image_data_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_image_data_8cs_source}{Image\+Data.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Model/\+Data\+Types/Image\+Data.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Model/\+Data\+Types/\mbox{\hyperlink{_image_data_8cs}{Image\+Data.\+cs}}\end{DoxyCompactItemize}

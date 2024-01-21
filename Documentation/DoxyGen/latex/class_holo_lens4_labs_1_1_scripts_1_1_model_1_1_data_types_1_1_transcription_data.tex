@@ -14,20 +14,24 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Tran
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ac35b7b92e7a542b3da65556b85fe0a2a}{Transcription\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a28abbd85c70a848ada8fc4ea90e7abfd}{Transcription\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, byte\mbox{[}$\,$\mbox{]} data, Texture2D texture)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Data is not yet in the database. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aa149f55389450d0cd3fb99d8a4ee5a3f}{Transcription\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, string thumbnail\+Blob\+Name, string text)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a44e11d8871023ee2e4ed4009aa0a6c4a}{Transcription\+Data}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} image\+Data, string text)
+\begin{DoxyCompactList}\small\item\em Constructor used when transcription is done from an image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a31032e11e660107dc9c3954757d38f0a}{Transcription\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, string text, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Data is already in the database and the Scientist and Log don\textquotesingle{}t exist as data model objects. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ae65fdd4a71d3a0ad8950144e160eea78}{Transcription\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ad8050fcd6e35679c0bd089e5138da318}{Transcription\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Transcription\+Data is already in the database and the Scientist and Log exist as data model objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a5590a1aafd13bf7421f9547dfb6eb073}{Image\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ac7d071bcd1b9ff7f8d65cd3cd4f9302f}{get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em The image data of the log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a6877c1076a593c8fb1c58cbd6fbfd60d}{Image\+Data}} (Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, byte\mbox{[}$\,$\mbox{]} data, Texture2D texture)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is not yet in the database and scientist and log exist as data model objects. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a1394160073ddf3da5f4d885d498daddf}{Image\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, string thumbnail\+Blob\+Name)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a66d25dc3daae70929d71f7fc49bf75bc}{Image\+Data}} (string id, Date\+Time created\+On, string created\+By\+ID, string done\+Within\+Log\+ID, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is already in the database and scientist and log don\textquotesingle{}t exist as data model objects. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a666fb8081b4c39e9571b982924e21fa6}{Image\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a342e39ddb081bef308bf1c72159aa104}{Image\+Data}} (string id, Date\+Time created\+On, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}} done\+Within\+Log, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Image\+Data)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Data is already in the database and scientist and log exist as data model objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Data\+Type}}}
 \begin{DoxyCompactItemize}
@@ -48,12 +52,8 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_typ
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Image\+Data}}}
 \begin{DoxyCompactItemize}
 \item 
-byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_a99984491e64b70f5e50465a2262d1190}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The image data of the log. \end{DoxyCompactList}\item 
 Texture2D \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_abe77b31ec0e8a3150dac47fd8cefefae}{Texture}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The thumbnail of the image data. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data_ad2b69924b4f9646d529030d294f48ea4}{Thumbnail\+Blob\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The blob name of the thumbnail in the blob repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The thumbnail of the image data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Data\+Type}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -74,16 +74,12 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_typ
 \doxysubsection{Detailed Description}
 A data type that contains text data and image data for transcriptions. 
 
-Definition at line \mbox{\hyperlink{_transcription_data_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_transcription_data_8cs_source}{Transcription\+Data.\+cs}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ac35b7b92e7a542b3da65556b85fe0a2a}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ac35b7b92e7a542b3da65556b85fe0a2a} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a28abbd85c70a848ada8fc4ea90e7abfd}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a28abbd85c70a848ada8fc4ea90e7abfd} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}!TranscriptionData@{TranscriptionData}}
 \index{TranscriptionData@{TranscriptionData}!HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}}
-\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log,  }\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{Texture2D}]{texture }\end{DoxyParamCaption})}
 
 
 
@@ -97,16 +93,33 @@ Constructor used when the Transcription\+Data is not yet in the database.
 \hline
 {\em done\+Within\+Log} & The Log that the Transcription\+Data was created within\\
 \hline
+{\em data} & The image data that will be transcribed\\
+\hline
+{\em texture} & The texture of the image that will be transcribed\\
+\hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_transcription_data_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_transcription_data_8cs_source}{Transcription\+Data.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aa149f55389450d0cd3fb99d8a4ee5a3f}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aa149f55389450d0cd3fb99d8a4ee5a3f} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a44e11d8871023ee2e4ed4009aa0a6c4a}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a44e11d8871023ee2e4ed4009aa0a6c4a} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}!TranscriptionData@{TranscriptionData}}
 \index{TranscriptionData@{TranscriptionData}!HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}}
-\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+Log\+ID,  }\item[{string}]{thumbnail\+Blob\+Name,  }\item[{string}]{text }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}}}]{image\+Data,  }\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+
+Constructor used when transcription is done from an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Data} & \\
+\hline
+{\em text} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a31032e11e660107dc9c3954757d38f0a}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_a31032e11e660107dc9c3954757d38f0a} 
+\index{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}!TranscriptionData@{TranscriptionData}}
+\index{TranscriptionData@{TranscriptionData}!HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}}
+\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+Log\+ID,  }\item[{string}]{text,  }\item[{Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$}]{get\+Image\+Data }\end{DoxyParamCaption})}
 
 
 
@@ -122,20 +135,14 @@ Constructor used when the Transcription\+Data is already in the database and the
 \hline
 {\em done\+Within\+Log\+ID} & The id of the Log that the Transcription\+Data was created within\\
 \hline
-{\em thumbnail\+Blob\+Name} & The blob name of the thumbnail in the blob repository\\
-\hline
 {\em text} & The textual representation of the transcription\\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_transcription_data_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_transcription_data_8cs_source}{Transcription\+Data.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ae65fdd4a71d3a0ad8950144e160eea78}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ae65fdd4a71d3a0ad8950144e160eea78} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ad8050fcd6e35679c0bd089e5138da318}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_ad8050fcd6e35679c0bd089e5138da318} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}!TranscriptionData@{TranscriptionData}}
 \index{TranscriptionData@{TranscriptionData}!HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}}
-\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{TranscriptionData()}{TranscriptionData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Data\+Types.\+Transcription\+Data.\+Transcription\+Data (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{created\+On,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}}]{done\+Within\+Log,  }\item[{Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$}]{get\+Image\+Data }\end{DoxyParamCaption})}
 
 
 
@@ -154,10 +161,6 @@ Constructor used when the Transcription\+Data is already in the database and the
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_transcription_data_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_transcription_data_8cs_source}{Transcription\+Data.\+cs}}.
-
-
-
 \doxysubsection{Property Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aecca2629a5f9d3217977e0515985201b}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_transcription_data_aecca2629a5f9d3217977e0515985201b} 
 \index{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData@{HoloLens4Labs.Scripts.Model.DataTypes.TranscriptionData}!Text@{Text}}
@@ -171,10 +174,6 @@ The textual representation of the transcription.
 
 
 
-Definition at line \mbox{\hyperlink{_transcription_data_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_transcription_data_8cs_source}{Transcription\+Data.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Model/\+Data\+Types/Transcription\+Data.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Model/\+Data\+Types/\mbox{\hyperlink{_transcription_data_8cs}{Transcription\+Data.\+cs}}\end{DoxyCompactItemize}

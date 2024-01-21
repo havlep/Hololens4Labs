@@ -19,9 +19,7 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Image\+Log\
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a53ad2190cb7f61a2e99384b4f8a3de95}{Image\+Log}} (string id, Date\+Time at, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
 \begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Log is already in the database and the Scientist and Experiment exist as data model objects. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a8f0c97829b71246c944cb77f42aa0d15}{Image\+Log}} (string id, Date\+Time at, string created\+By\+ID, string done\+Within\+ID, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}} data)
-\begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Log is already in the database and the Scientist and Experiment do not exist as data model objects at the moment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a741f85cf0a56cc5eb59a721ab62c4a0d}{Image\+Log}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} created\+By, \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} done\+Within)
-\begin{DoxyCompactList}\small\item\em Constructor used to create a new Image\+Log when the Scientist and Experiment exist as data model objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor used when the Image\+Log is already in the database and the Scientist and Experiment do not exist as data model objects at the moment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Log}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,15 +67,11 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1
 \doxysubsection{Detailed Description}
 Log class for storing image data. 
 
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a9a81ae1430fe5ecf7f0eb24cf0bc96e2}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a9a81ae1430fe5ecf7f0eb24cf0bc96e2} 
 \index{HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}!ImageLog@{ImageLog}}
 \index{ImageLog@{ImageLog}!HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}}
-\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Image\+Log.\+Image\+Log (\begin{DoxyParamCaption}\item[{Date\+Time}]{at,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
 
 
@@ -93,14 +87,10 @@ Constructor used when the Image\+Log is not yet in the database and the Scientis
 {\em done\+Within} & The Experiment that the Image\+Log was created within\\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a53ad2190cb7f61a2e99384b4f8a3de95}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a53ad2190cb7f61a2e99384b4f8a3de95} 
 \index{HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}!ImageLog@{ImageLog}}
 \index{ImageLog@{ImageLog}!HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}}
-\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Image\+Log.\+Image\+Log (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{at,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
 
 
@@ -118,14 +108,10 @@ Constructor used when the Image\+Log is already in the database and the Scientis
 {\em done\+Within} & The Experiment that the Image\+Log was created within\\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a8f0c97829b71246c944cb77f42aa0d15}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a8f0c97829b71246c944cb77f42aa0d15} 
 \index{HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}!ImageLog@{ImageLog}}
 \index{ImageLog@{ImageLog}!HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}}
-\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Image\+Log.\+Image\+Log (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{Date\+Time}]{at,  }\item[{string}]{created\+By\+ID,  }\item[{string}]{done\+Within\+ID,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data}{Image\+Data}}}]{data }\end{DoxyParamCaption})}
 
 
@@ -147,31 +133,6 @@ Constructor used when the Image\+Log is already in the database and the Scientis
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a741f85cf0a56cc5eb59a721ab62c4a0d}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_a741f85cf0a56cc5eb59a721ab62c4a0d} 
-\index{HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}!ImageLog@{ImageLog}}
-\index{ImageLog@{ImageLog}!HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}}
-\doxysubsubsection{\texorpdfstring{ImageLog()}{ImageLog()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Logs.\+Image\+Log.\+Image\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}}}]{created\+By,  }\item[{\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}}]{done\+Within }\end{DoxyParamCaption})}
-
-
-
-Constructor used to create a new Image\+Log when the Scientist and Experiment exist as data model objects. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em created\+By} & The Scientist that created the Image\+Log\\
-\hline
-{\em done\+Within} & The Experiment that the Image\+Log was created within\\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00059}{59}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
-
-
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_ac03e660596fb30024f121deb90fb0b6d}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log_ac03e660596fb30024f121deb90fb0b6d} 
 \index{HoloLens4Labs.Scripts.Model.Logs.ImageLog@{HoloLens4Labs.Scripts.Model.Logs.ImageLog}!GetTypeName@{GetTypeName}}
@@ -182,10 +143,6 @@ Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00059}{59}} of file \
 
 
 Static method for getting the type name of the Log. 
-
-
-
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00065}{65}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
 
 
 
@@ -202,10 +159,6 @@ The image data of the log.
 
 
 
-Definition at line \mbox{\hyperlink{_image_log_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_image_log_8cs_source}{Image\+Log.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Model/\+Logs/Image\+Log.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Model/\+Logs/\mbox{\hyperlink{_image_log_8cs}{Image\+Log.\+cs}}\end{DoxyCompactItemize}

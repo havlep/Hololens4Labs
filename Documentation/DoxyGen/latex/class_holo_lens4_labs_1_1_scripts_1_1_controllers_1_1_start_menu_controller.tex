@@ -8,7 +8,7 @@ Controller for the start menu.
 Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller}
+\includegraphics[height=3.000000cm]{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -16,8 +16,15 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\
 \item 
 void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_ad9b3e60f445a6bd204acc0f96a181a97}{Create\+New\+Experiment}} ()
 \begin{DoxyCompactList}\small\item\em Open the create experiment view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a89442171ac4309767d7f9dafda70c642}{Open\+Last\+Experiment}} ()
+\begin{DoxyCompactList}\small\item\em Open last experiment used by the current user. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a84d1bbef57c996485925f1c0a6247f98}{List\+All\+Experiments}} ()
 \begin{DoxyCompactList}\small\item\em Open the list all experiments menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_menu_controller}{Menu\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_menu_controller_a5899f4e3f397f1b09a94c8bc33fc5b09}{Close\+Menu}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,10 +45,6 @@ Game\+Object \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_
 \doxysubsection{Detailed Description}
 Controller for the start menu. 
 
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
-
-
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_ad9b3e60f445a6bd204acc0f96a181a97}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_ad9b3e60f445a6bd204acc0f96a181a97} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!CreateNewExperiment@{CreateNewExperiment}}
@@ -53,10 +56,6 @@ Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00010}{10
 
 Open the create experiment view. 
 
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a84d1bbef57c996485925f1c0a6247f98}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a84d1bbef57c996485925f1c0a6247f98} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!ListAllExperiments@{ListAllExperiments}}
 \index{ListAllExperiments@{ListAllExperiments}!HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}}
@@ -67,9 +66,15 @@ Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00064}{64
 
 Open the list all experiments menu. 
 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a89442171ac4309767d7f9dafda70c642}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a89442171ac4309767d7f9dafda70c642} 
+\index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!OpenLastExperiment@{OpenLastExperiment}}
+\index{OpenLastExperiment@{OpenLastExperiment}!HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}}
+\doxysubsubsection{\texorpdfstring{OpenLastExperiment()}{OpenLastExperiment()}}
+{\footnotesize\ttfamily void Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+Open\+Last\+Experiment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00076}{76}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
+
+Open last experiment used by the current user. 
 
 
 
@@ -80,19 +85,11 @@ Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00076}{76
 \doxysubsubsection{\texorpdfstring{ContinueLastExpButton}{ContinueLastExpButton}}
 {\footnotesize\ttfamily Game\+Object Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+Continue\+Last\+Exp\+Button = default\hspace{0.3cm}{\ttfamily [protected]}}
 
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a3bfc2b2ccdfac23efc7f6f4076b78313}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a3bfc2b2ccdfac23efc7f6f4076b78313} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!experimentInfoView@{experimentInfoView}}
 \index{experimentInfoView@{experimentInfoView}!HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}}
 \doxysubsubsection{\texorpdfstring{experimentInfoView}{experimentInfoView}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_experiment_info_view_controller}{Experiment\+Info\+View\+Controller}} Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+experiment\+Info\+View = default\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a20078890b22cb1f8df66912dad7c58a4}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a20078890b22cb1f8df66912dad7c58a4} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!lastExpEditDateLabel@{lastExpEditDateLabel}}
@@ -100,29 +97,17 @@ Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00031}{31
 \doxysubsubsection{\texorpdfstring{lastExpEditDateLabel}{lastExpEditDateLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+last\+Exp\+Edit\+Date\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
 
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a506f2406098fd79c320eca5ab22884dc}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a506f2406098fd79c320eca5ab22884dc} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!lastExpEditNameLabel@{lastExpEditNameLabel}}
 \index{lastExpEditNameLabel@{lastExpEditNameLabel}!HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}}
 \doxysubsubsection{\texorpdfstring{lastExpEditNameLabel}{lastExpEditNameLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+last\+Exp\+Edit\+Name\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
 
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a9e29f8a50a8add2e62ba108cf49f99ae}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a9e29f8a50a8add2e62ba108cf49f99ae} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!lastExpUsedLabel@{lastExpUsedLabel}}
 \index{lastExpUsedLabel@{lastExpUsedLabel}!HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}}
 \doxysubsubsection{\texorpdfstring{lastExpUsedLabel}{lastExpUsedLabel}}
 {\footnotesize\ttfamily TMP\+\_\+\+Text Holo\+Lens4\+Labs.\+Scripts.\+Controllers.\+Start\+Menu\+Controller.\+last\+Exp\+Used\+Label = default\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a0220ca24ce564c8df9e566fe6ff49459}\label{class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_start_menu_controller_a0220ca24ce564c8df9e566fe6ff49459} 
 \index{HoloLens4Labs.Scripts.Controllers.StartMenuController@{HoloLens4Labs.Scripts.Controllers.StartMenuController}!sceneController@{sceneController}}
@@ -132,10 +117,6 @@ Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00022}{22
 
 
 
-Definition at line \mbox{\hyperlink{_start_menu_controller_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_start_menu_controller_8cs_source}{Start\+Menu\+Controller.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Controllers/\+Menus/Start\+Menu\+Controller.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Controllers/\+Menus/\mbox{\hyperlink{_start_menu_controller_8cs}{Start\+Menu\+Controller.\+cs}}\end{DoxyCompactItemize}

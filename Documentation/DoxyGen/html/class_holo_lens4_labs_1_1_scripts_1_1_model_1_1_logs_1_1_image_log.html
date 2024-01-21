@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">HoloLens4Labs
    </div>
+   <div id="projectbrief">Hololens 2 application for lab note teaking</div>
   </td>
  </tr>
  </tbody>
@@ -105,9 +106,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f0c97829b71246c944cb77f42aa0d15" id="r_a8f0c97829b71246c944cb77f42aa0d15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html#a8f0c97829b71246c944cb77f42aa0d15">ImageLog</a> (string id, DateTime at, string createdByID, string doneWithinID, <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html">ImageData</a> data)</td></tr>
 <tr class="memdesc:a8f0c97829b71246c944cb77f42aa0d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor used when the ImageLog is already in the database and the Scientist and Experiment do not exist as data model objects at the moment.  <br /></td></tr>
 <tr class="separator:a8f0c97829b71246c944cb77f42aa0d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a741f85cf0a56cc5eb59a721ab62c4a0d" id="r_a741f85cf0a56cc5eb59a721ab62c4a0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html#a741f85cf0a56cc5eb59a721ab62c4a0d">ImageLog</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> createdBy, <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> doneWithin)</td></tr>
-<tr class="memdesc:a741f85cf0a56cc5eb59a721ab62c4a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor used to create a new ImageLog when the Scientist and Experiment exist as data model objects.  <br /></td></tr>
-<tr class="separator:a741f85cf0a56cc5eb59a721ab62c4a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html">HoloLens4Labs.Scripts.Model.Logs.Log</a></td></tr>
 <tr class="memitem:a8b6e5f385b856c4f9d8be15824576b04 inherit pub_methods_class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log" id="r_a8b6e5f385b856c4f9d8be15824576b04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log.html#a8b6e5f385b856c4f9d8be15824576b04">Log</a> (DateTime createdOn, <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> createdBy, <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> doneWithin)</td></tr>
 <tr class="memdesc:a8b6e5f385b856c4f9d8be15824576b04 inherit pub_methods_class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for creating a new log when scientist and experiment is known.  <br /></td></tr>
@@ -159,11 +157,9 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Log class for storing image data. </p>
-
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00010">10</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9a81ae1430fe5ecf7f0eb24cf0bc96e2" name="a9a81ae1430fe5ecf7f0eb24cf0bc96e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a81ae1430fe5ecf7f0eb24cf0bc96e2">&#9670;&#160;</a></span>ImageLog() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a81ae1430fe5ecf7f0eb24cf0bc96e2">&#9670;&#160;</a></span>ImageLog() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,12 +200,10 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00027">27</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
 </div>
 </div>
 <a id="a53ad2190cb7f61a2e99384b4f8a3de95" name="a53ad2190cb7f61a2e99384b4f8a3de95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53ad2190cb7f61a2e99384b4f8a3de95">&#9670;&#160;</a></span>ImageLog() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ad2190cb7f61a2e99384b4f8a3de95">&#9670;&#160;</a></span>ImageLog() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,12 +251,10 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00037">37</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
 </div>
 </div>
 <a id="a8f0c97829b71246c944cb77f42aa0d15" name="a8f0c97829b71246c944cb77f42aa0d15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f0c97829b71246c944cb77f42aa0d15">&#9670;&#160;</a></span>ImageLog() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0c97829b71246c944cb77f42aa0d15">&#9670;&#160;</a></span>ImageLog() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,47 +309,6 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00048">48</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
-</div>
-</div>
-<a id="a741f85cf0a56cc5eb59a721ab62c4a0d" name="a741f85cf0a56cc5eb59a721ab62c4a0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a741f85cf0a56cc5eb59a721ab62c4a0d">&#9670;&#160;</a></span>ImageLog() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">HoloLens4Labs.Scripts.Model.Logs.ImageLog.ImageLog </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a>&#160;</td>
-          <td class="paramname"><em>createdBy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a>&#160;</td>
-          <td class="paramname"><em>doneWithin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor used to create a new ImageLog when the Scientist and Experiment exist as data model objects. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">createdBy</td><td>The Scientist that created the ImageLog</td></tr>
-    <tr><td class="paramname">doneWithin</td><td>The Experiment that the ImageLog was created within</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00059">59</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -386,8 +337,6 @@ Properties</h2></td></tr>
 
 <p>Static method for getting the type name of the Log. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00065">65</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -413,12 +362,10 @@ Properties</h2></td></tr>
 
 <p>The image data of the log. </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_8cs_source.html#l00016">16</a> of file <a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Model/Logs/<a class="el" href="_image_log_8cs_source.html">ImageLog.cs</a></li>
+<li>Assets/Scripts/Model/Logs/<a class="el" href="_image_log_8cs.html">ImageLog.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

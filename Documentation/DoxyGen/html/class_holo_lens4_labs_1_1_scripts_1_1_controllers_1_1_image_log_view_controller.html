@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">HoloLens4Labs
    </div>
+   <div id="projectbrief">Hololens 2 application for lab note teaking</div>
   </td>
  </tr>
  </tbody>
@@ -95,10 +96,12 @@ Inheritance diagram for HoloLens4Labs.Scripts.Controllers.ImageLogViewController
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a3e34dab2c2088fa9aa3c2145f64583" id="r_a6a3e34dab2c2088fa9aa3c2145f64583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a6a3e34dab2c2088fa9aa3c2145f64583">InitWithExisting</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html">ImageLog</a> log, GameObject parentObj)</td></tr>
+<tr class="memitem:a6a3e34dab2c2088fa9aa3c2145f64583" id="r_a6a3e34dab2c2088fa9aa3c2145f64583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a6a3e34dab2c2088fa9aa3c2145f64583">InitWithExisting</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html">ImageLog</a> <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a171ca997708fc0d99903d95578a32b75">log</a>, GameObject parentObj)</td></tr>
 <tr class="memdesc:a6a3e34dab2c2088fa9aa3c2145f64583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the view with the existing image log data.  <br /></td></tr>
 <tr class="separator:a6a3e34dab2c2088fa9aa3c2145f64583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e1931ff4dc573002b1aa301542c09e9" id="r_a7e1931ff4dc573002b1aa301542c09e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a7e1931ff4dc573002b1aa301542c09e9">InitNew</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html">ImageLog</a> log, GameObject parentObj)</td></tr>
+<tr class="memitem:aff8ba6bc5e2bf2189ada3088276dff10" id="r_aff8ba6bc5e2bf2189ada3088276dff10"><td class="memItemLeft" align="right" valign="top">async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#aff8ba6bc5e2bf2189ada3088276dff10">setImageCanvas</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html">ImageData</a> imageData)</td></tr>
+<tr class="separator:aff8ba6bc5e2bf2189ada3088276dff10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1931ff4dc573002b1aa301542c09e9" id="r_a7e1931ff4dc573002b1aa301542c09e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a7e1931ff4dc573002b1aa301542c09e9">InitNew</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_image_log.html">ImageLog</a> <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a171ca997708fc0d99903d95578a32b75">log</a>, GameObject parentObj)</td></tr>
 <tr class="memdesc:a7e1931ff4dc573002b1aa301542c09e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the view for a new image log.  <br /></td></tr>
 <tr class="separator:a7e1931ff4dc573002b1aa301542c09e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00b1f1eb2928b7ef9955cbbb1921a2c0" id="r_a00b1f1eb2928b7ef9955cbbb1921a2c0"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_image_log_view_controller.html#a00b1f1eb2928b7ef9955cbbb1921a2c0">ImageCaptured</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_data_type.html">DataType</a> data)</td></tr>
@@ -148,8 +151,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Controller for the image log view. </p>
-
-<p class="definition">Definition at line <a class="el" href="_image_log_view_controller_8cs_source.html#l00012">12</a> of file <a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a00b1f1eb2928b7ef9955cbbb1921a2c0" name="a00b1f1eb2928b7ef9955cbbb1921a2c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00b1f1eb2928b7ef9955cbbb1921a2c0">&#9670;&#160;</a></span>ImageCaptured()</h2>
@@ -191,8 +192,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_log_view_controller.html#a85d19b0b2f62ad1f265f6bc1dd5142ff">HoloLens4Labs.Scripts.Controllers.LogViewController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_view_controller_8cs_source.html#l00078">78</a> of file <a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a>.</p>
-
 </div>
 </div>
 <a id="a7e1931ff4dc573002b1aa301542c09e9" name="a7e1931ff4dc573002b1aa301542c09e9"></a>
@@ -229,8 +228,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="_image_log_view_controller_8cs_source.html#l00051">51</a> of file <a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a>.</p>
 
 </div>
 </div>
@@ -275,7 +272,23 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_log_view_controller_8cs_source.html#l00033">33</a> of file <a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a>.</p>
+</div>
+</div>
+<a id="aff8ba6bc5e2bf2189ada3088276dff10" name="aff8ba6bc5e2bf2189ada3088276dff10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff8ba6bc5e2bf2189ada3088276dff10">&#9670;&#160;</a></span>setImageCanvas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async void HoloLens4Labs.Scripts.Controllers.ImageLogViewController.setImageCanvas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_data_types_1_1_image_data.html">ImageData</a>&#160;</td>
+          <td class="paramname"><em>imageData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -300,12 +313,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_log_view_controller_8cs_source.html#l00018">18</a> of file <a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Controllers/Views/<a class="el" href="_image_log_view_controller_8cs_source.html">ImageLogViewController.cs</a></li>
+<li>Assets/Scripts/Controllers/Views/<a class="el" href="_image_log_view_controller_8cs.html">ImageLogViewController.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

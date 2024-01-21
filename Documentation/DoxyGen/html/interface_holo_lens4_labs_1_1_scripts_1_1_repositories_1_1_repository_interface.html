@@ -23,6 +23,7 @@
   <td id="projectalign">
    <div id="projectname">HoloLens4Labs
    </div>
+   <div id="projectbrief">Hololens 2 application for lab note teaking</div>
   </td>
  </tr>
  </tbody>
@@ -101,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae937a2a88c1f125319bd8ba83092720e" id="r_ae937a2a88c1f125319bd8ba83092720e"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#ae937a2a88c1f125319bd8ba83092720e">UpdateExperiment</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> experiment)</td></tr>
 <tr class="memdesc:ae937a2a88c1f125319bd8ba83092720e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates an existing Experiment in the database.  <br /></td></tr>
 <tr class="separator:ae937a2a88c1f125319bd8ba83092720e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6fe7abba13a31032c3226b8c3f7244a" id="r_ab6fe7abba13a31032c3226b8c3f7244a"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#ab6fe7abba13a31032c3226b8c3f7244a">GetScientistById</a> (string scientistId)</td></tr>
+<tr class="memdesc:ab6fe7abba13a31032c3226b8c3f7244a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Scientist by ID from the repository.  <br /></td></tr>
+<tr class="separator:ab6fe7abba13a31032c3226b8c3f7244a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f95398fd4eba9e9fd7b232a59247016" id="r_a5f95398fd4eba9e9fd7b232a59247016"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a5f95398fd4eba9e9fd7b232a59247016">DeleteExperiment</a> (<a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> experiment)</td></tr>
 <tr class="memdesc:a5f95398fd4eba9e9fd7b232a59247016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an existing Experiment from the database.  <br /></td></tr>
 <tr class="separator:a5f95398fd4eba9e9fd7b232a59247016"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,14 +132,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3ac4fae693877a40ea37aa4a1e68a7bb" id="r_a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a3ac4fae693877a40ea37aa4a1e68a7bb">GetAllExperiments</a> ()</td></tr>
 <tr class="memdesc:a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all Experiments from the database.  <br /></td></tr>
 <tr class="separator:a3ac4fae693877a40ea37aa4a1e68a7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95247d0d52430e004105ffb8ede2e35c" id="r_a95247d0d52430e004105ffb8ede2e35c"><td class="memItemLeft" align="right" valign="top"><a id="a95247d0d52430e004105ffb8ede2e35c" name="a95247d0d52430e004105ffb8ede2e35c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></tr>
+<tr class="memitem:a22331f2153479b1b652e5db90e12c3dd" id="r_a22331f2153479b1b652e5db90e12c3dd"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a22331f2153479b1b652e5db90e12c3dd">GetExperimentByID</a> (string experimentID)</td></tr>
+<tr class="memdesc:a22331f2153479b1b652e5db90e12c3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get experiment by ID from the repository.  <br /></td></tr>
+<tr class="separator:a22331f2153479b1b652e5db90e12c3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95247d0d52430e004105ffb8ede2e35c" id="r_a95247d0d52430e004105ffb8ede2e35c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface.html#a95247d0d52430e004105ffb8ede2e35c">IsReady</a> ()</td></tr>
 <tr class="separator:a95247d0d52430e004105ffb8ede2e35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CRUD interface for all of the application model objects that are stored in a database. </p>
-
-<p class="definition">Definition at line <a class="el" href="_repository_interface_8cs_source.html#l00011">11</a> of file <a class="el" href="_repository_interface_8cs_source.html">RepositoryInterface.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a006a9d6d3940c2cbd1fc28cd6e5a555d" name="a006a9d6d3940c2cbd1fc28cd6e5a555d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a006a9d6d3940c2cbd1fc28cd6e5a555d">&#9670;&#160;</a></span>CreateExperiment()</h2>
@@ -220,7 +224,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The created Scientist</dd></dl>
 
-<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#ac7394fba0c1d7d1730ac6d59a35b57fa">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a9e7ebee1e7c613500a31b105f72312e0">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
+<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#a30f84bcd918c088687f4f6b0d3a9c5f8">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a9e7ebee1e7c613500a31b105f72312e0">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
 </div>
@@ -326,6 +330,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></
 
 </div>
 </div>
+<a id="a22331f2153479b1b652e5db90e12c3dd" name="a22331f2153479b1b652e5db90e12c3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22331f2153479b1b652e5db90e12c3dd">&#9670;&#160;</a></span>GetExperimentByID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment.html">Experiment</a> &gt; HoloLens4Labs.Scripts.Repositories.RepositoryInterface.GetExperimentByID </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>experimentID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get experiment by ID from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">experimentID</td><td>The Id of the Experiment </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The Experiment with the given ID </dd></dl>
+
+<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#aef67bc42f65145344db6476d14e3294c">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#aadf75300ff9209d475c5d3beab10ab88">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
+
+</div>
+</div>
 <a id="a591848727e59036f329ab4253a6ef13f" name="a591848727e59036f329ab4253a6ef13f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a591848727e59036f329ab4253a6ef13f">&#9670;&#160;</a></span>GetLogsForExperiment()</h2>
 
@@ -352,6 +385,54 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></
 <dl class="section return"><dt>Returns</dt><dd>An array of all the logs for the given Experiment</dd></dl>
 
 <p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#af478d5be5b677b53dd87dcdd564093f7">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a4b3823a3829e083819ef27a8eda38617">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
+
+</div>
+</div>
+<a id="ab6fe7abba13a31032c3226b8c3f7244a" name="ab6fe7abba13a31032c3226b8c3f7244a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6fe7abba13a31032c3226b8c3f7244a">&#9670;&#160;</a></span>GetScientistById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist.html">Scientist</a> &gt; HoloLens4Labs.Scripts.Repositories.RepositoryInterface.GetScientistById </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>scientistId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Scientist by ID from the repository. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scientistId</td><td>The id of the scientist that we want to return</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scientist with the given ID if he/she exist</dd></dl>
+
+<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#ab0823a17b84df6b814f6b59a42f28f04">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#aee38ab139d19498cb49722cb15e5a6e7">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
+
+</div>
+</div>
+<a id="a95247d0d52430e004105ffb8ede2e35c" name="a95247d0d52430e004105ffb8ede2e35c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95247d0d52430e004105ffb8ede2e35c">&#9670;&#160;</a></span>IsReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HoloLens4Labs.Scripts.Repositories.RepositoryInterface.IsReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager.html#aa373a4d82bb8b2dd120b8e77df1bbd88">HoloLens4Labs.Scripts.Managers.DataManager</a>, and <a class="el" href="class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a3f24c808a645636c4e24829c46ee0c3f">HoloLens4Labs.Scripts.Repositories.AzureTables.AzureTableRepository</a>.</p>
 
 </div>
 </div>
@@ -443,7 +524,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsReady</b> ()</td></
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>Repositories/<a class="el" href="_repository_interface_8cs_source.html">RepositoryInterface.cs</a></li>
+<li>Assets/Scripts/Repositories/<a class="el" href="_repository_interface_8cs.html">RepositoryInterface.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

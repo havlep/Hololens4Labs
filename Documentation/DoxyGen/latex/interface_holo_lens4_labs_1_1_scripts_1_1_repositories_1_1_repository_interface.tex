@@ -18,6 +18,8 @@ Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experim
 \begin{DoxyCompactList}\small\item\em Creates a new Experiment in the database. \end{DoxyCompactList}\item 
 Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}{Update\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
 \begin{DoxyCompactList}\small\item\em Updates an existing Experiment in the database. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ab6fe7abba13a31032c3226b8c3f7244a}{Get\+Scientist\+By\+Id}} (string scientist\+Id)
+\begin{DoxyCompactList}\small\item\em Get Scientist by ID from the repository. \end{DoxyCompactList}\item 
 Task$<$ bool $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}{Delete\+Experiment}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} experiment)
 \begin{DoxyCompactList}\small\item\em Delete an existing Experiment from the database. \end{DoxyCompactList}\item 
 Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a9edd3b7e8fc1a1f3efab777d4a74d36d}{Create\+Scientist}} (\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} scientist)
@@ -36,17 +38,14 @@ Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_
 \begin{DoxyCompactList}\small\item\em Get all logs for a given Experiment. \end{DoxyCompactList}\item 
 Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a3ac4fae693877a40ea37aa4a1e68a7bb}{Get\+All\+Experiments}} ()
 \begin{DoxyCompactList}\small\item\em Get all Experiments from the database. \end{DoxyCompactList}\item 
-\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c} 
-bool {\bfseries Is\+Ready} ()
+Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a22331f2153479b1b652e5db90e12c3dd}{Get\+Experiment\+By\+ID}} (string experiment\+ID)
+\begin{DoxyCompactList}\small\item\em Get experiment by ID from the repository. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}{Is\+Ready}} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 CRUD interface for all of the application model objects that are stored in a database. 
-
-Definition at line \mbox{\hyperlink{_repository_interface_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_repository_interface_8cs_source}{Repository\+Interface.\+cs}}.
-
-
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a006a9d6d3940c2cbd1fc28cd6e5a555d} 
@@ -113,7 +112,7 @@ The created Scientist
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ac7394fba0c1d7d1730ac6d59a35b57fa}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a9e7ebee1e7c613500a31b105f72312e0}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_a30f84bcd918c088687f4f6b0d3a9c5f8}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a9e7ebee1e7c613500a31b105f72312e0}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
 
 \Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a5f95398fd4eba9e9fd7b232a59247016} 
 \index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!DeleteExperiment@{DeleteExperiment}}
@@ -190,6 +189,28 @@ A list of all experiment in the database
 
 Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ae61fab3f2e6cb6338b65852141a52a23}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a26d08ae3861974fa94346f4597b27de4}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
 
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a22331f2153479b1b652e5db90e12c3dd}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a22331f2153479b1b652e5db90e12c3dd} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!GetExperimentByID@{GetExperimentByID}}
+\index{GetExperimentByID@{GetExperimentByID}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{GetExperimentByID()}{GetExperimentByID()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_experiment}{Experiment}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Get\+Experiment\+By\+ID (\begin{DoxyParamCaption}\item[{string}]{experiment\+ID }\end{DoxyParamCaption})}
+
+
+
+Get experiment by ID from the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em experiment\+ID} & The Id of the Experiment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Experiment with the given ID 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aef67bc42f65145344db6476d14e3294c}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_aadf75300ff9209d475c5d3beab10ab88}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
 \Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a591848727e59036f329ab4253a6ef13f} 
 \index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!GetLogsForExperiment@{GetLogsForExperiment}}
 \index{GetLogsForExperiment@{GetLogsForExperiment}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
@@ -211,6 +232,38 @@ An array of all the logs for the given Experiment
 
 
 Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_af478d5be5b677b53dd87dcdd564093f7}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a4b3823a3829e083819ef27a8eda38617}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ab6fe7abba13a31032c3226b8c3f7244a}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ab6fe7abba13a31032c3226b8c3f7244a} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!GetScientistById@{GetScientistById}}
+\index{GetScientistById@{GetScientistById}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{GetScientistById()}{GetScientistById()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist}{Scientist}} $>$ Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Get\+Scientist\+By\+Id (\begin{DoxyParamCaption}\item[{string}]{scientist\+Id }\end{DoxyParamCaption})}
+
+
+
+Get Scientist by ID from the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scientist\+Id} & The id of the scientist that we want to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scientist with the given ID if he/she exist
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_ab0823a17b84df6b814f6b59a42f28f04}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_aee38ab139d19498cb49722cb15e5a6e7}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
+
+\Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_a95247d0d52430e004105ffb8ede2e35c} 
+\index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!IsReady@{IsReady}}
+\index{IsReady@{IsReady}!HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}}
+\doxysubsubsection{\texorpdfstring{IsReady()}{IsReady()}}
+{\footnotesize\ttfamily bool Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Repository\+Interface.\+Is\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1_1_data_manager_aa373a4d82bb8b2dd120b8e77df1bbd88}{Holo\+Lens4\+Labs.\+Scripts.\+Managers.\+Data\+Manager}}, and \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository_a3f24c808a645636c4e24829c46ee0c3f}{Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+Azure\+Table\+Repository}}.
 
 \Hypertarget{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e}\label{interface_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_repository_interface_ae937a2a88c1f125319bd8ba83092720e} 
 \index{HoloLens4Labs.Scripts.Repositories.RepositoryInterface@{HoloLens4Labs.Scripts.Repositories.RepositoryInterface}!UpdateExperiment@{UpdateExperiment}}
@@ -282,4 +335,4 @@ Implemented in \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_managers_1
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Repositories/Repository\+Interface.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Repositories/\mbox{\hyperlink{_repository_interface_8cs}{Repository\+Interface.\+cs}}\end{DoxyCompactItemize}

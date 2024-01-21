@@ -9,7 +9,7 @@ Inheritance diagram for Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tabl
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_acd21fadd03746df7cc91e4f543b1a111}{ATLog\+Repository}} (Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}}, string partition\+Key)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_ac179d224da8aa3aa14620c09e720ce36}{ATLog\+Repository}} (Cloud\+Table \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_object_repository_a061d28ed81c44c11ffed5f06902c0f9a}{table}}, string partition\+Key, Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$ get\+Blob\+Data)
 \begin{DoxyCompactList}\small\item\em Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses. \end{DoxyCompactList}\item 
 async Task$<$(\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_logs_1_1_log}{Log}}\mbox{[}$\,$\mbox{]}, Table\+Continuation\+Token)$>$ \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_a3c8cc365f325d490c23094721bd93402}{Get\+Logs\+For\+Experiment}} (string experiment\+ID, int page\+Size, Table\+Continuation\+Token continuation\+Token=null)
 \begin{DoxyCompactList}\small\item\em Get all Logs for Experiment using pagination. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -44,27 +44,16 @@ string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_a
 \begin{DoxyCompactList}\small\item\em The default partition key for the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line \mbox{\hyperlink{_a_t_log_repository_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_a_t_log_repository_8cs_source}{ATLog\+Repository.\+cs}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_acd21fadd03746df7cc91e4f543b1a111}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_acd21fadd03746df7cc91e4f543b1a111} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_ac179d224da8aa3aa14620c09e720ce36}\label{class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_a_t_log_repository_ac179d224da8aa3aa14620c09e720ce36} 
 \index{HoloLens4Labs.Scripts.Repositories.AzureTables.ATLogRepository@{HoloLens4Labs.Scripts.Repositories.AzureTables.ATLogRepository}!ATLogRepository@{ATLogRepository}}
 \index{ATLogRepository@{ATLogRepository}!HoloLens4Labs.Scripts.Repositories.AzureTables.ATLogRepository@{HoloLens4Labs.Scripts.Repositories.AzureTables.ATLogRepository}}
 \doxysubsubsection{\texorpdfstring{ATLogRepository()}{ATLogRepository()}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+ATLog\+Repository.\+ATLog\+Repository (\begin{DoxyParamCaption}\item[{Cloud\+Table}]{table,  }\item[{string}]{partition\+Key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Repositories.\+Azure\+Tables.\+ATLog\+Repository.\+ATLog\+Repository (\begin{DoxyParamCaption}\item[{Cloud\+Table}]{table,  }\item[{string}]{partition\+Key,  }\item[{Func$<$ string, Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ $>$}]{get\+Blob\+Data }\end{DoxyParamCaption})}
 
 
 
 Concerete implementation of Azure Table object repository interface for the Log data model class and its sublcasses. 
-
-
-
-Definition at line \mbox{\hyperlink{_a_t_log_repository_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_a_t_log_repository_8cs_source}{ATLog\+Repository.\+cs}}.
 
 
 
@@ -98,10 +87,6 @@ An array of Logs and a continuation token
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_a_t_log_repository_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_a_t_log_repository_8cs_source}{ATLog\+Repository.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Repositories/\+Azure\+Table\+Repository/ATLog\+Repository.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Repositories/\+Azure\+Table\+Repository/\mbox{\hyperlink{_a_t_log_repository_8cs}{ATLog\+Repository.\+cs}}\end{DoxyCompactItemize}

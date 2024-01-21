@@ -4,5 +4,7 @@ var searchData=
   ['imageanalysismanager_1',['ImageAnalysisManager',['../class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller.html#a332e6f7108a5c9c9f4cd390ea492e245',1,'HoloLens4Labs::Scripts::Controllers::SceneController']]],
   ['imagelogid_2',['ImageLogID',['../class_holo_lens4_labs_1_1_scripts_1_1_d_t_os_1_1_log_d_t_o.html#ac1481af02287ee7a87a560f8ef798385',1,'HoloLens4Labs::Scripts::DTOs::LogDTO']]],
   ['instance_3',['Instance',['../class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_scene_controller.html#a03ca3bfddefbf77e5f63a40b28662147',1,'HoloLens4Labs::Scripts::Controllers::SceneController']]],
-  ['itemsperframe_4',['ItemsPerFrame',['../class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator.html#a1d7b243835da9efec6eb2a6f474d6199',1,'HoloLens4Labs::Scripts::Utils::ScrollableListPopulator']]]
+  ['iscameraactive_4',['IsCameraActive',['../class_holo_lens4_labs_1_1_scripts_1_1_controllers_1_1_photo_camera_controller.html#a9f43663acc3b5518c885ffa9bde12731',1,'HoloLens4Labs::Scripts::Controllers::PhotoCameraController']]],
+  ['isready_5',['IsReady',['../class_holo_lens4_labs_1_1_scripts_1_1_repositories_1_1_azure_tables_1_1_azure_table_repository.html#a3f24c808a645636c4e24829c46ee0c3f',1,'HoloLens4Labs::Scripts::Repositories::AzureTables::AzureTableRepository']]],
+  ['itemsperframe_6',['ItemsPerFrame',['../class_holo_lens4_labs_1_1_scripts_1_1_utils_1_1_scrollable_list_populator.html#a1d7b243835da9efec6eb2a6f474d6199',1,'HoloLens4Labs::Scripts::Utils::ScrollableListPopulator']]]
 ];

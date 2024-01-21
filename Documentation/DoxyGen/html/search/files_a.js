@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['objectdatabaseexception_2ecs_0',['ObjectDatabaseException.cs',['../_object_database_exception_8cs.html',1,'']]],
-  ['objectnotinitializedexception_2ecs_1',['ObjectNotInitializedException.cs',['../_object_not_initialized_exception_8cs.html',1,'']]],
-  ['objectrepositoryinterface_2ecs_2',['ObjectRepositoryInterface.cs',['../_object_repository_interface_8cs.html',1,'']]]
+  ['photocameracontroller_2ecs_0',['PhotoCameraController.cs',['../_photo_camera_controller_8cs.html',1,'']]],
+  ['photodto_2ecs_1',['PhotoDTO.cs',['../_photo_d_t_o_8cs.html',1,'']]]
 ];

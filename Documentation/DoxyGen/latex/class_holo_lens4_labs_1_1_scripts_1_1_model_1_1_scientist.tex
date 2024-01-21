@@ -12,23 +12,21 @@ The Scientist data model class that represents users.
 \begin{DoxyCompactList}\small\item\em Constructor used when scientist name is not yet known and the scientist is not in the database. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7}{Scientist}} (string name)
 \begin{DoxyCompactList}\small\item\em Constructor used when scientist name is known and the scientist is not in the database. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601}{Scientist}} (string id, string name)
+\mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_abf4b84912bb3846405dfab5d6a2b7533}{Scientist}} (string id, string name, string last\+Experiment\+Id)
 \begin{DoxyCompactList}\small\item\em Constructor used when scientist name and id is known and the scientist is in the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Property for getting and setting the name of the scientist. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a311796e54ab2959619759dd9d439bef6}{Last\+Experiment\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Property for getting and setting the id of the last experiment that the scientist worked on. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a17cb868798070097bd1ff6093cce0445}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Property for getting and setting the database id of the scientist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The Scientist data model class that represents users. 
-
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
-
-
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a0797e879fb54b913dbbec69c1e181333}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a0797e879fb54b913dbbec69c1e181333} 
@@ -40,10 +38,6 @@ Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00006}{6}} of file \m
 
 
 Constructor used when scientist name is not yet known and the scientist is not in the database. 
-
-
-
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f4ff3936ab39e25c7c9f194f384cba7} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Scientist@{Scientist}}
@@ -60,15 +54,11 @@ Constructor used when scientist name is known and the scientist is not in the da
 {\em name} & The name of the scientist\\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
-
-\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a4f49e19df76fa533eea5a19a86626601} 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_abf4b84912bb3846405dfab5d6a2b7533}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_abf4b84912bb3846405dfab5d6a2b7533} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Scientist@{Scientist}}
 \index{Scientist@{Scientist}!HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
 \doxysubsubsection{\texorpdfstring{Scientist()}{Scientist()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Scientist (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Scientist (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{name,  }\item[{string}]{last\+Experiment\+Id }\end{DoxyParamCaption})}
 
 
 
@@ -80,11 +70,9 @@ Constructor used when scientist name and id is known and the scientist is in the
 \hline
 {\em name} & The name of the scientist\\
 \hline
+{\em last\+Experiment\+Id} & The Id of the last experiment used by the scientist\\
+\hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00047}{47}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
-
 
 
 \doxysubsection{Property Documentation}
@@ -98,9 +86,15 @@ Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00047}{47}} of file \
 
 Property for getting and setting the database id of the scientist. 
 
+\Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a311796e54ab2959619759dd9d439bef6}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_a311796e54ab2959619759dd9d439bef6} 
+\index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!LastExperimentId@{LastExperimentId}}
+\index{LastExperimentId@{LastExperimentId}!HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}}
+\doxysubsubsection{\texorpdfstring{LastExperimentId}{LastExperimentId}}
+{\footnotesize\ttfamily string Holo\+Lens4\+Labs.\+Scripts.\+Model.\+Scientist.\+Last\+Experiment\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
+
+Property for getting and setting the id of the last experiment that the scientist worked on. 
 
 \Hypertarget{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4}\label{class_holo_lens4_labs_1_1_scripts_1_1_model_1_1_scientist_afe762070d7add498855ff177a03e47c4} 
 \index{HoloLens4Labs.Scripts.Model.Scientist@{HoloLens4Labs.Scripts.Model.Scientist}!Name@{Name}}
@@ -114,10 +108,6 @@ Property for getting and setting the name of the scientist.
 
 
 
-Definition at line \mbox{\hyperlink{_scientist_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_scientist_8cs_source}{Scientist.\+cs}}.
-
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Model/Scientist.\+cs\end{DoxyCompactItemize}
+Assets/\+Scripts/\+Model/\mbox{\hyperlink{_scientist_8cs}{Scientist.\+cs}}\end{DoxyCompactItemize}
