@@ -60,7 +60,10 @@ namespace HoloLens4Labs.Scripts.Controllers
         public void PopulateItemAction(GameObject itemInstance, object data)
         {
 
-            var experimentInfoButtonController = itemInstance.GetComponent<ExperimentInfoButtonController>();
+            ExperimentInfoButtonController experimentInfoButtonController;
+
+            if(! itemInstance.TryGetComponent<ExperimentInfoButtonController>(out experimentInfoButtonController))
+                return;
 
             if (experimentInfoButtonController == null)
             {
