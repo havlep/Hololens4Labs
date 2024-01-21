@@ -62,6 +62,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             gameObject.SetActive(false);
             this.log = log;
             var photoCaptureView = Instantiate(photoCapturePanelPrefab, this.transform.position, Quaternion.identity);
+            photoCaptureView.transform.localScale = parentObj.transform.localScale;
             photoCaptureView.Init(log, this);
             base.Init(log, parentObj);
 
