@@ -17,6 +17,10 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
+# Azure cofiguration endpoints - these should stay local for development 
+/Assets/Resources/AzureServicesEndpointsConfig.json
+/Assets/Resources/AzureServicesEndpointsConfig.json.meta
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
