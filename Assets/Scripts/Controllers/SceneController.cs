@@ -1,6 +1,7 @@
 // Copyright (c) Petr Havel 2023.
 // Licensed under the MIT License.
 
+using HoloLens4Labs.Scripts.DTOs;
 using HoloLens4Labs.Scripts.Exceptions;
 using HoloLens4Labs.Scripts.Managers;
 using HoloLens4Labs.Scripts.Model;
@@ -41,6 +42,8 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             get => currentExperiment;
         }
+
+        private AzureServicesEndpointsDTO azureServicesEndpoints = default;
 
         /// <summary>
         /// Set the current experiment
@@ -90,6 +93,22 @@ namespace HoloLens4Labs.Scripts.Controllers
         {
             currentMenu = Instantiate(loadingMenu, this.transform.position, Quaternion.identity); ;
             currentMenu.transform.localScale = gameObject.transform.localScale;
+            var textAsset = Resources.Load<TextAsset>("AzureServicesEndpointsConfig");
+            if (textAsset == null)
+            {
+                Debug.LogError("AzureServicesEndpointsConfig.json not found in Resources folder");
+                throw new ObjectNotInitializedException("Azure services endpoint missing");
+            }
+            Debug.Log("AzureServicesEndpoints.json loaded from Resources folder" + textAsset.text);
+            azureServicesEndpoints = JsonUtility.FromJson<AzureServicesEndpointsDTO>(textAsset.text);
+
+            Debug.Log("ImageAnalysisEndpoint:" + azureServicesEndpoints.ImageAnalysisEndpoint);
+            Debug.Log("AzureStorageEndpoint:" + azureServicesEndpoints.AzureStorageEndpoint);
+            Debug.Log("ImageAnalysisKey:" + azureServicesEndpoints.ImageAnalysisKey);
+            Debug.Log("ImageAnalysisRegion:" + azureServicesEndpoints.ImageAnalysisRegion );
+            
+
+            
 
         }
 

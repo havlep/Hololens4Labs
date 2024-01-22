@@ -1,0 +1,6 @@
+{
+  "ImageAnalysisEndpoint":"<Enter your Custom Vision Endpoint>",
+  "ImageAnalysisKey":"<Enter the associated key to your custom vision endpoint>",
+  "ImageAnalysisRegion":"<Enter the region associated with your customer vision endpoint>",
+  "AzureStorageEndpoint":"<Enter your Azure storage endpoint>"
+}
