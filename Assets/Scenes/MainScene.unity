@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d709a0e3d24bdbd4aa01a572171fa5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subscriptionKey: 00aea6c033354ee7b9a3c54e423846a7
-  endpoint: https://westeurope.api.cognitive.microsoft.com
+  subscriptionKey: 
+  endpoint: 
 --- !u!4 &1062917278
 Transform:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05882da9d4d4b5c4c9a34329d351c5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionString: DefaultEndpointsProtocol=https;AccountName=hololens4labsdev;AccountKey=5aGVTB0sWv1kSRQBzdRflqI8WXqz5rhdS21NDgeFLWll6WNU075vRfiMZulRi/65MCBS+7WBN4f4+AStfvGCiQ==;EndpointSuffix=core.windows.net
+  connectionString: 
   experimentsTableName: experiments
   scientistsTableName: scientists
   logsTableName: logs
@@ -609,8 +609,8 @@ Camera:
   m_GameObject: {fileID: 2054377092}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
