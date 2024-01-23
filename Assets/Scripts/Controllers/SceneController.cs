@@ -107,13 +107,16 @@ namespace HoloLens4Labs.Scripts.Controllers
             Debug.Log("ImageAnalysisKey:" + azureServicesEndpoints.ImageAnalysisKey);
             Debug.Log("ImageAnalysisRegion:" + azureServicesEndpoints.ImageAnalysisRegion );
             
+            // Initialize the DataManager
+            dataManager.Init(azureServicesEndpoints);
 
-            
+            // Initialize the ImageAnalysisManager
+            imageAnalysisManager.Init(azureServicesEndpoints);
 
         }
 
         /// <summary>
-        /// Handling of singleton uniqueness on Awake
+        /// Handling of singleton uniqueness on Awake 
         /// </summary>
         private void Awake()
         {

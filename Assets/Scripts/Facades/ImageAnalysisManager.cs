@@ -1,9 +1,11 @@
 // Copyright (c) Petr Havel 2023.
 // Licensed under the MIT License.
 
+using System;
 using HoloLens4Labs.Scripts.Model.DataTypes;
 using HoloLens4Labs.Scripts.Services;
 using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.DTOs;
 using UnityEngine;
 
 namespace HoloLens4Labs.Scripts.Managers
@@ -26,8 +28,15 @@ namespace HoloLens4Labs.Scripts.Managers
         /// <summary>
         /// Setup the Azure Image Analysis service when the object is created
         /// </summary>
-        private void Awake()
+        public void Init(AzureServicesEndpointsDTO azureServicesEndpoints)
         {
+            
+            if(string.IsNullOrEmpty(subscriptionKey))
+                subscriptionKey = azureServicesEndpoints.ImageAnalysisKey;
+
+            if(string.IsNullOrEmpty(endpoint))
+                endpoint = azureServicesEndpoints.ImageAnalysisEndpoint;
+            
             AzureImageAnalysis = new AzureImageAnalysisService(subscriptionKey, endpoint, new System.Net.Http.HttpClient());
         }
 

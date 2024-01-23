@@ -9,6 +9,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Table;
 using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.DTOs;
 using UnityEngine;
 using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
@@ -22,7 +23,7 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
     {
 
 
-        public bool IsReady { get; private set; }
+        public bool IsReady { get; private set; } 
 
         [Header("Base Settings")]
         [SerializeField]
@@ -72,11 +73,13 @@ namespace HoloLens4Labs.Scripts.Repositories.AzureTables
         /// <summary>
         /// Initialize the repository when the unity object is created
         /// </summary>
-        private async void Awake()
+        public async void Init(AzureServicesEndpointsDTO azureServicesEndpoints)
         {
 
+            if(string.IsNullOrEmpty(connectionString))
+                connectionString = azureServicesEndpoints.AzureStorageEndpoint;
+            
             storageAccount = CloudStorageAccount.Parse(connectionString);
-
           
             await this.SetupBlobRepository();
             

@@ -5,6 +5,7 @@ using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
 using HoloLens4Labs.Scripts.Repositories;
 using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.DTOs;
 using UnityEngine;
 using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
@@ -29,7 +30,10 @@ namespace HoloLens4Labs.Scripts.Managers
 
         private RepositoryInterface repo = default;
 
-        private void Awake()
+        /// <summary>
+        /// Check that the games object was correctly configured on start
+        /// </summary>
+        private void Start()
         {
 
             if (!repositoryObject.TryGetComponent<RepositoryInterface>(out repo))
@@ -42,11 +46,21 @@ namespace HoloLens4Labs.Scripts.Managers
         }
 
         /// <summary>
-        /// Check if the repository has been initialized
+        /// Initialize the repository
         /// </summary>
-        public void Init()
+        /// <param name="azureServicesEndpoints"> Object carrying the azure storage service endpoint</param>
+        public void Init(AzureServicesEndpointsDTO azureServicesEndpoints)
         {
-            // Check that the right repository was intialized and propagate the info
+            if(!IsReady()) 
+                repo.Init(azureServicesEndpoints);
+        }
+
+        /// <summary>
+        /// Trigger invoked by the repository object when it is ready
+        /// </summary>
+        public void InitComplete()
+        {
+            // Check that the right repository was initialized and propagate the info
             if (IsReady())
             {
                 Debug.Log($"Repository object has been setup properly.");

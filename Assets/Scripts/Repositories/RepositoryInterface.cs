@@ -4,6 +4,7 @@
 using HoloLens4Labs.Scripts.Model;
 using HoloLens4Labs.Scripts.Model.Logs;
 using System.Threading.Tasks;
+using HoloLens4Labs.Scripts.DTOs;
 
 namespace HoloLens4Labs.Scripts.Repositories
 {
@@ -13,6 +14,12 @@ namespace HoloLens4Labs.Scripts.Repositories
     /// </summary>
     public interface RepositoryInterface
     {
+
+        /// <summary>
+        /// Initialize the repository
+        /// </summary>
+        public void Init(AzureServicesEndpointsDTO azureServicesEndpoints);
+
         /// <summary>
         /// Creates a new Experiment in the database
         /// </summary>
