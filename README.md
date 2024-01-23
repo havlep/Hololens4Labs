@@ -161,9 +161,11 @@ Inside of your the unity project that you imported do the following:
 ##### B) File AzureServicesEndpointsConfig configuration
 Inside of the project do the following:
    1. Open the Assets/Resources/AzureServicesEndpointsConfig.json file
-   2. Enter the key into the value of the ImageAnalysisKey
+   2. Enter the key into the value of ImageAnalysisKey
    3. Enter the endpoint into the value of ImageAnalysisEndpoint
    4. Save the file
+   ![storageendpointsetting](https://github.com/havlep/Hololens4Labs/assets/4102880/c64d54f6-6126-431d-8598-7628d14a40b2)
+
 
 ### Configuration the Computer Vision resource
 #### Getting the endpoint for computer vision
@@ -197,7 +199,8 @@ Inside of the project do the following:
    2. Enter the key into the value of the ImageAnalysisKey
    3. Enter the endpoint into the value of ImageAnalysisEndpoint
    4. Save the file
-      
+   ![imageanalysisendpointsetting](https://github.com/havlep/Hololens4Labs/assets/4102880/6bc2d6e3-1c25-4078-8ee1-3258660bf579)
+   
 
 ## Contributing
 
