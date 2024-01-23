@@ -145,6 +145,9 @@ You will first need to retrieve the azure storage endpoint from your Azure stora
   4. Copy either of the connection strings available into your clipboard
 
 #### Configuring the project to use your storage resource
+The azure respository resource can be either configured directly in Unity or using the AzureServicesEndpointsConfig.json file. (The second approach is recommended for development purposes).
+
+##### A) Unity Configuration
 Inside of your the unity project that you imported do the following:
   1. Inside of the Unity project browser select 'Assets'->'Scenes'->'MainScene'
      * The scene should load and open up inside of the heirarchy window
@@ -154,6 +157,13 @@ Inside of your the unity project that you imported do the following:
      <img width="960" alt="Unity Azure Storage Settings" src="https://github.com/havlep/Hololens4Labs/assets/4102880/5603338e-241d-4ca1-ac2d-b4821538de73">
      * You should see the enpoint url under the 'Connection String' property  
   4. Save your project
+
+##### B) File AzureServicesEndpointsConfig configuration
+Inside of the project do the following:
+   1. Open the Assets/Resources/AzureServicesEndpointsConfig.json file
+   2. Enter the key into the value of the ImageAnalysisKey
+   3. Enter the endpoint into the value of ImageAnalysisEndpoint
+   4. Save the file
 
 ### Configuration the Computer Vision resource
 #### Getting the endpoint for computer vision
@@ -168,6 +178,9 @@ You will first need to retrieve the azure storage endpoint from your Azure stora
   5. You will need to copy one key, endpoint in the following section
 
 #### Configuring the project to use your computer vision resource
+Similiar to the azure respository resource you can either configure the Vision resource in Unity or using the AzureServicesEndpointsConfig.json file. (The second approach is recommended for development purposes).
+
+##### A) Unity configuration
 Inside of your the unity project that you imported do the following:
   1. Inside of the Unity project browser select 'Assets'->'Scenes'->'MainScene'
      * The scene should load and open up inside of the heirarchy window
@@ -177,6 +190,14 @@ Inside of your the unity project that you imported do the following:
      * You should see the enpoint url and key under the 'endpoint' and 'Subscription Key' properties
      <img width="960" alt="Unity Azure Image Settings" src="https://github.com/havlep/Hololens4Labs/assets/4102880/a0cb61d4-220c-46e4-b883-c2ad56de5bc4">
   4. Save your project
+
+##### B) File AzureServicesEndpointsConfig configuration
+Inside of the project do the following:
+   1. Open the Assets/Resources/AzureServicesEndpointsConfig.json file
+   2. Enter the key into the value of the ImageAnalysisKey
+   3. Enter the endpoint into the value of ImageAnalysisEndpoint
+   4. Save the file
+      
 
 ## Contributing
 
