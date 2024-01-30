@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 418280807011873195}
   - component: {fileID: 418280807011873239}
   - component: {fileID: 418280807011873238}
-  - component: {fileID: 418280807011873193}
   - component: {fileID: 418280807011873192}
   m_Layer: 0
   m_Name: TextMeshPro
@@ -155,14 +154,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418280807011873194}
   m_Mesh: {fileID: 0}
---- !u!222 &418280807011873193
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418280807011873194}
-  m_CullTransparentMesh: 0
 --- !u!114 &418280807011873192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073200631851049366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0.1}
+  m_LocalPosition: {x: -0.0282, y: -0.0451, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1158,7 +1149,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073200631851049366}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4684083f6dff4a1d8a790bccc354fcf4, type: 3}
   m_Name: 
@@ -1171,10 +1162,10 @@ MonoBehaviour:
   smoothing: 1
   lifetime: 0
   referenceDirection: 1
-  minDistance: 0.3
-  maxDistance: 0.6
+  minDistance: 1
+  maxDistance: 2
   minViewDegrees: 0
-  maxViewDegrees: 20
+  maxViewDegrees: 30
   aspectV: 1
   ignoreAngleClamp: 0
   ignoreDistanceClamp: 0
@@ -1422,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2261546966857402749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0399, y: 0.0226, z: -0.001}
+  m_LocalPosition: {x: -0.0399, y: 0.0254, z: -0.001}
   m_LocalScale: {x: 0.0034266084, y: 0.023154724, z: 0.0039000595}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1490,7 +1481,6 @@ GameObject:
   - component: {fileID: 858084165704382210}
   - component: {fileID: 7893433976342685883}
   - component: {fileID: 4825709952348398926}
-  - component: {fileID: 3140972396537095087}
   - component: {fileID: 2086094606842683821}
   m_Layer: 0
   m_Name: TextMeshPro
@@ -1569,14 +1559,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2445627815866293728}
   m_Mesh: {fileID: 0}
---- !u!222 &3140972396537095087
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445627815866293728}
-  m_CullTransparentMesh: 0
 --- !u!114 &2086094606842683821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,7 +2543,6 @@ GameObject:
   - component: {fileID: 7906521923476383149}
   - component: {fileID: 853995823517678100}
   - component: {fileID: 2641714598597408737}
-  - component: {fileID: 5604700104569204992}
   - component: {fileID: 8836721291468796674}
   m_Layer: 0
   m_Name: TextMeshPro
@@ -2640,14 +2621,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5161548788209405775}
   m_Mesh: {fileID: 0}
---- !u!222 &5604700104569204992
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161548788209405775}
-  m_CullTransparentMesh: 0
 --- !u!114 &8836721291468796674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3163,7 +3136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7178479290266804996}
   - component: {fileID: 7178479290266805112}
-  - component: {fileID: 7178479290266804998}
   - component: {fileID: 7178479290266804999}
   m_Layer: 0
   m_Name: TextMeshPro
@@ -3234,14 +3206,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &7178479290266804998
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178479290266804997}
-  m_CullTransparentMesh: 0
 --- !u!114 &7178479290266804999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4131,7 +4095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7620553242670404486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0949, y: 0.0236, z: -0.001}
+  m_LocalPosition: {x: 0.0949, y: 0.0267, z: -0.001}
   m_LocalScale: {x: 0.0034266084, y: 0.023154724, z: 0.0039000595}
   m_ConstrainProportionsScale: 0
   m_Children: []
