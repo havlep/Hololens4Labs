@@ -44,6 +44,7 @@ namespace HoloLens4Labs.Scripts.Controllers
 
             lastModifiedLabel.SetText(log.Data.CreatedOn.ToShortTimeString());
             imageCanvas.sprite = spriteFromImage(log.Data);
+            descriptionInputField.text = log.Data.Text;
 
             base.Init(log, parentObj);
 
@@ -104,6 +105,7 @@ namespace HoloLens4Labs.Scripts.Controllers
             var transLog = log as TranscriptionLog;
             transLog.Data = transData;
             imageCanvas.sprite = spriteFromImage(transLog.Data);
+            descriptionInputField.text = transLog.Data.Text;
 
             gameObject.SetActive(true);
 
